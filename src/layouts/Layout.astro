@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = '52Eighty Creative — Creative with a heartbeat',
+  description = 'Warm, faith-based branding & creative-storytelling agency. Video, storytelling, brand work.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot name="header">
+      <header class="site-header">
+        <div class="container">
+          <nav class="site-nav">
+            <a href="/" class="site-nav__logo">52Eighty</a>
+            <ul class="site-nav__links">
+              <li><a href="/work">Our Work</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/start">Start Your Project</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </slot>
+
+    <main>
+      <slot />
+    </main>
+
+    <slot name="footer">
+      <footer class="site-footer">
+        <div class="container">
+          <p>&copy; {new Date().getUTCFullYear()} 52Eighty Creative — Creative with a heartbeat.</p>
+        </div>
+      </footer>
+    </slot>
+  </body>
+</html>

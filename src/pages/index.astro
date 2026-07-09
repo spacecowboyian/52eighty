@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
+
+const settings = await getSiteSettings();
+const featured = await getFeaturedCaseStudies();
+---
+
+<Layout>
+  <section class="hero container">
+    <h1>{settings?.heroTitle ?? 'Creative with a heartbeat.'}</h1>
+    <p>{settings?.heroText ?? 'A brand-first agency for video, storytelling, and brand work.'}</p>
+  </section>
+
+  <section class="container">
+    <h2>Recent work</h2>
+    <ul>
+      {featured.map((cs) => (
+        <li><a href={`/work/${cs.slug}`}>{cs.title}</a></li>
+      ))}
+    </ul>
+  </section>
+</Layout>

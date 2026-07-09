@@ -1,0 +1,34 @@
+:root {
+  --color-pine: #184a4f;
+  --color-jade: #096d61;
+  --color-red: #c1440e;
+  --color-periwinkle: #8891d9;
+  --color-gold: #e0a94b;
+  --color-blush: #f6dfd6;
+  --color-sky: #d8ecec;
+  --color-lime: #e4f0c8;
+
+  --color-bg: #ffffff;
+  --color-text: var(--color-pine);
+
+  --font-display: 'Georgia', serif;
+  --font-ui: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllCaseStudies } from '../../utils/queries';
+
+const caseStudies = await getAllCaseStudies();
+---
+
+<Layout title="Our Work — 52Eighty Creative">
+  <section class="container">
+    <h1>Our Work</h1>
+    <ul>
+      {caseStudies.map((cs) => (
+        <li><a href={`/work/${cs.slug}`}>{cs.title}</a> — {cs.category}</li>
+      ))}
+    </ul>
+  </section>
+</Layout>

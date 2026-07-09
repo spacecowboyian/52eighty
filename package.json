@@ -1,0 +1,26 @@
+{
+  "name": "52eighty",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "52Eighty Creative — brand website",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.0",
+    "@portabletext/to-html": "^5.0.2",
+    "@sanity/client": "^7.17.0",
+    "@sanity/image-url": "^2.0.3",
+    "astro": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}

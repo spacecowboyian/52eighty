@@ -1,0 +1,19 @@
+{
+  "name": "52eighty-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio for the 52Eighty Creative site",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "manage": "sanity manage"
+  },
+  "dependencies": {
+    "@sanity/vision": "^5.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^5.16.0",
+    "styled-components": "^6.3.11"
+  }
+}

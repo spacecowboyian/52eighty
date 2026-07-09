@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteSettings } from '../utils/queries';
+
+const settings = await getSiteSettings();
+---
+
+<Layout title="About — 52Eighty Creative">
+  <section class="container">
+    <h1>About</h1>
+    <p>{settings?.aboutText ?? 'A brand-first agency in St. Joseph, MO — Miles & Alysa Ramsay.'}</p>
+  </section>
+</Layout>

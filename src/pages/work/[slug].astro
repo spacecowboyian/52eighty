@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
+
+export async function getStaticPaths() {
+  const slugs = await getAllCaseStudySlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const caseStudy = await getCaseStudyBySlug(slug!);
+---
+
+<Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`}>
+  <article class="container">
+    <h1>{caseStudy?.title}</h1>
+    <p>{caseStudy?.summary}</p>
+  </article>
+</Layout>
