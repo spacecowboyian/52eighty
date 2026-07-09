@@ -154,7 +154,8 @@ export function Footer() {
             color: '#6B7572',
           }}
         >
-          © 2026 52 Eighty Creative. All rights reserved.
+          © {new Date().getFullYear()} 52 Eighty Creative. All rights
+          reserved.
         </div>
         <div
           style={{

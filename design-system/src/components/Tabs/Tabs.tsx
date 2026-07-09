@@ -66,19 +66,18 @@ export function Tabs({ tabs }: TabsProps) {
         })}
       </div>
       <div style={{ padding: '22px 16px 14px' }}>
-        <p
+        <div
           key={active?.id}
           style={{
             fontFamily: font.serif,
             fontSize: 16,
             color: colors.ink,
             lineHeight: 1.55,
-            margin: 0,
             animation: 'sc-pop .25s ease both',
           }}
         >
           {active?.content}
-        </p>
+        </div>
       </div>
     </div>
   );

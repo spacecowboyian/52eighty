@@ -10,7 +10,7 @@ export interface LinkProps
 }
 
 /** Underlined text link: jade → red on hover, with matching border-color. */
-export function Link({ href, children, ...rest }: LinkProps) {
+export function Link({ href, children, style, ...rest }: LinkProps) {
   const { isHovered, hoverProps } = useHover();
 
   const base: React.CSSProperties = {
@@ -34,7 +34,7 @@ export function Link({ href, children, ...rest }: LinkProps) {
       {...rest}
       {...hoverProps}
       href={href}
-      style={{ ...base, ...(isHovered ? hover : {}) }}
+      style={{ ...base, ...(isHovered ? hover : {}), ...style }}
     >
       {children}
     </a>

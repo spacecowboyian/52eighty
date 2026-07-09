@@ -76,24 +76,26 @@ export function Accordion({ items }: AccordionProps) {
             </button>
             <div
               style={{
-                maxHeight: isOpen ? 200 : 0,
-                overflow: 'hidden',
-                transition: 'max-height .34s ease,opacity .3s ease',
+                display: 'grid',
+                gridTemplateRows: isOpen ? '1fr' : '0fr',
+                transition: 'grid-template-rows .34s ease,opacity .3s ease',
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <p
-                style={{
-                  fontFamily: font.serif,
-                  fontSize: 15,
-                  color: colors.muted,
-                  lineHeight: 1.5,
-                  margin: 0,
-                  padding: '0 22px 20px',
-                }}
-              >
-                {item.answer}
-              </p>
+              <div style={{ overflow: 'hidden' }}>
+                <p
+                  style={{
+                    fontFamily: font.serif,
+                    fontSize: 15,
+                    color: colors.muted,
+                    lineHeight: 1.5,
+                    margin: 0,
+                    padding: '0 22px 20px',
+                  }}
+                >
+                  {item.answer}
+                </p>
+              </div>
             </div>
           </div>
         );

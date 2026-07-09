@@ -107,7 +107,9 @@ export function NewsletterSignup({
 
   const submitNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubscribe?.(email);
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail) return;
+    onSubscribe?.(trimmedEmail);
     setSubscribed(true);
   };
 
@@ -125,6 +127,8 @@ export function NewsletterSignup({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
+            required
+            autoComplete="email"
             {...focusProps}
             style={{ ...inputBase, ...(isFocused ? inputFocus : {}) }}
           />
