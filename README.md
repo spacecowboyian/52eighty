@@ -16,7 +16,7 @@ Marketing site for 52Eighty Creative ("Creative with a heartbeat"), a brand-firs
 | Plain CSS | Styling — brand palette (pine/jade/gold), no framework |
 | GitHub Pages | Static frontend hosting |
 
-Design system reference: the existing 5280 component library (18 React + TS components, tokens, Storybook) lives in the `clayground` repo at `projects/5280-design-system/`. Pull components/tokens from there as the intake flow and marketing pages get built out, rather than re-deriving the brand system from scratch.
+Design system: the 5280 component library (18 React + TS components, tokens, Storybook) lives in this repo at `design-system/` (npm workspace). Pull components/tokens from there as the intake flow and marketing pages get built out, rather than re-deriving the brand system from scratch. Storybook publishes to `/storybook` alongside the site — see `design-system/README.md`.
 
 ---
 
@@ -27,6 +27,13 @@ Design system reference: the existing 5280 component library (18 React + TS comp
 ├── astro.config.mjs          # Astro config (static output + React integration)
 ├── tsconfig.json
 ├── .env.example               # Required environment variables
+├── design-system/             # 5280 component library (npm workspace) + Storybook
+│   ├── src/
+│   │   ├── components/
+│   │   ├── stories/
+│   │   ├── tokens.ts
+│   │   └── styles/theme.css
+│   └── .storybook/
 ├── sanity/                    # Sanity Studio project
 │   ├── sanity.config.ts
 │   ├── schemas/
@@ -91,7 +98,7 @@ npm run dev
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site and deploys it to GitHub Pages. The `PUBLIC_SANITY_PROJECT_ID` repo secret must be set (see repo Settings → Secrets → Actions).
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site, builds Storybook into `dist/storybook/`, and deploys the combined `dist/` tree to GitHub Pages — so the site is at the Pages root and Storybook is at `/storybook`. The `PUBLIC_SANITY_PROJECT_ID` repo secret must be set (see repo Settings → Secrets → Actions).
 
 ## Content model
 

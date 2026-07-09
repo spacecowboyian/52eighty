@@ -3,12 +3,17 @@
   "type": "module",
   "version": "0.1.0",
   "description": "52Eighty Creative — brand website",
+  "workspaces": [
+    "design-system"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "storybook": "npm run storybook --workspace=design-system",
+    "build:storybook": "npm run build --workspace=design-system"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
