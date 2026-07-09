@@ -29,7 +29,7 @@ export const Plain: Story = {
   args: {
     variant: 'plain',
     quote:
-      '"Working with 5280 felt like having a creative partner who actually cared about our mission."',
+      '"Working with 52Eighty felt like having a creative partner who actually cared about our mission."',
     author: 'Marcus Hale',
     role: 'Founder, Altitude',
   },
@@ -62,7 +62,7 @@ export const AllVariants: Story = {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
         <Testimonial
           variant="plain"
-          quote={'"Working with 5280 felt like having a creative partner who actually cared about our mission."'}
+          quote={'"Working with 52Eighty felt like having a creative partner who actually cared about our mission."'}
           author="Marcus Hale"
           role="Founder, Altitude"
         />

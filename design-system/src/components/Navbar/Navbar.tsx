@@ -17,6 +17,12 @@ export interface NavbarProps {
   links?: NavbarLink[];
   /** Destination for the Contact pill. Renders a `<button>` (no-op) when omitted. */
   contactHref?: string;
+  /**
+   * 'card' (default) — the floating bordered/rounded card, as shown in Storybook.
+   * 'flush' — no background/border/radius of its own, for embedding in a
+   * full-width sticky page header that supplies its own chrome. Light tone only.
+   */
+  chrome?: 'card' | 'flush';
 }
 
 const LIGHT_DEFAULT_LINKS: NavbarLink[] = [
@@ -126,7 +132,7 @@ function ContactPillDark({ href }: { href?: string }) {
   );
 }
 
-/** The "52" circle badge + "5280 Creative" wordmark. */
+/** The "52" circle badge + "52Eighty Creative" wordmark. */
 function Wordmark({ tone }: { tone: NavbarTone }) {
   if (tone === 'dark') {
     // Dark variant shows the wordmark text only (no badge), per source.
@@ -140,7 +146,7 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
           letterSpacing: '-.01em',
         }}
       >
-        5280 Creative
+        52Eighty Creative
       </span>
     );
   }
@@ -172,14 +178,19 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
           letterSpacing: '-.01em',
         }}
       >
-        5280 Creative
+        52Eighty Creative
       </span>
     </div>
   );
 }
 
-/** The 5280 site header. */
-export function Navbar({ tone = 'light', links, contactHref }: NavbarProps) {
+/** The 52Eighty site header. */
+export function Navbar({
+  tone = 'light',
+  links,
+  contactHref,
+  chrome = 'card',
+}: NavbarProps) {
   const resolvedLinks =
     links ?? (tone === 'dark' ? DARK_DEFAULT_LINKS : LIGHT_DEFAULT_LINKS);
 
@@ -192,12 +203,14 @@ export function Navbar({ tone = 'light', links, contactHref }: NavbarProps) {
           backgroundImage:
             'repeating-linear-gradient(45deg,#1c2a27 0 12px,#1a2724 12px 24px)',
         }
-      : {
-          background: colors.surface,
-          border: `1px solid ${colors.border}`,
-          borderRadius: 16,
-          overflow: 'hidden',
-        };
+      : chrome === 'flush'
+        ? { background: 'transparent' }
+        : {
+            background: colors.surface,
+            border: `1px solid ${colors.border}`,
+            borderRadius: 16,
+            overflow: 'hidden',
+          };
 
   return (
     <div style={outer}>

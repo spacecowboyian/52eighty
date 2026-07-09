@@ -51,7 +51,7 @@ export function Footer({
               marginBottom: 12,
             }}
           >
-            5280 Creative
+            52Eighty Creative
           </div>
           <p
             style={{
@@ -166,7 +166,7 @@ export function Footer({
             color: '#6B7572',
           }}
         >
-          © {new Date().getFullYear()} 52 Eighty Creative. All rights
+          © {new Date().getFullYear()} 52Eighty Creative. All rights
           reserved.
         </div>
         <div

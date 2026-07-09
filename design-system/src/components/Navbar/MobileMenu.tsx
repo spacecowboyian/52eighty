@@ -45,7 +45,7 @@ export function MobileMenu() {
         }}
       >
         <span style={{ fontFamily: font.display, fontWeight: 800, fontSize: 15 }}>
-          5280
+          52Eighty
         </span>
         <button
           onClick={toggle}

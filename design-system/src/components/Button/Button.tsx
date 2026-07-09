@@ -106,6 +106,8 @@ export function Button({
     fontSize: sizeStyles[size].fontSize,
     borderRadius: radius.pill,
     cursor: 'pointer',
+    textDecoration: 'none',
+    display: 'inline-block',
     padding: icon ? iconPadding[size] : sizeStyles[size].padding,
     ...variantBase[variant],
     transition: variantTransition[variant],
