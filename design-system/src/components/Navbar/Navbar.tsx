@@ -224,9 +224,11 @@ export function Navbar({
       >
         <Wordmark tone={tone} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
-          {resolvedLinks.map((link) => (
-            <NavLink key={link.label} {...link} tone={tone} />
-          ))}
+          <div className="sc-navbar-links">
+            {resolvedLinks.map((link) => (
+              <NavLink key={link.label} {...link} tone={tone} />
+            ))}
+          </div>
           {tone === 'dark' ? (
             <ContactPillDark href={contactHref} />
           ) : (
@@ -234,6 +236,25 @@ export function Navbar({
           )}
         </div>
       </div>
+      {/*
+        Below 640px there's no room for the link row alongside the
+        wordmark + Contact pill (the primary CTA) without overflowing —
+        collapse to wordmark + Contact only. Mobile-first: base state is
+        hidden, min-width reveals it. A real hamburger/drawer is a
+        follow-up; this is the minimum fix for "doesn't clip on a phone".
+      */}
+      <style>{`
+        .sc-navbar-links {
+          display: none;
+          align-items: center;
+          gap: 26px;
+        }
+        @media (min-width: 640px) {
+          .sc-navbar-links {
+            display: flex;
+          }
+        }
+      `}</style>
     </div>
   );
 }
