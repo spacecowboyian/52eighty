@@ -14,6 +14,8 @@ export interface ButtonProps
   /** Render the small lime-ringed circle icon + gap before the label. */
   icon?: boolean;
   children?: React.ReactNode;
+  /** Render as a same-styled `<a>` instead of a `<button>` — for real navigation. */
+  href?: string;
 }
 
 /** Padding + font-size per size, ported from the source markup. */
@@ -92,6 +94,7 @@ export function Button({
   size = 'md',
   icon = false,
   disabled = false,
+  href,
   children,
   ...rest
 }: ButtonProps) {
@@ -115,6 +118,27 @@ export function Button({
     ? { ...base, ...disabledStyle }
     : { ...base, ...(isHovered ? variantHover[variant] : {}) };
 
+  const icon_ = icon && (
+    <span
+      style={{
+        display: 'inline-block',
+        width: 16,
+        height: 16,
+        borderRadius: '50%',
+        border: `2px solid ${colors.lime}`,
+      }}
+    />
+  );
+
+  if (href && !disabled) {
+    return (
+      <a href={href} {...hoverProps} style={style}>
+        {icon_}
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       {...rest}
@@ -122,17 +146,7 @@ export function Button({
       disabled={disabled}
       style={style}
     >
-      {icon && (
-        <span
-          style={{
-            display: 'inline-block',
-            width: 16,
-            height: 16,
-            borderRadius: '50%',
-            border: `2px solid ${colors.lime}`,
-          }}
-        />
-      )}
+      {icon_}
       {children}
     </button>
   );

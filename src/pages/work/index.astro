@@ -1,17 +1,57 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudies } from '../../utils/queries';
+import { SectionHeader, Card } from '5280-design-system';
 
 const caseStudies = await getAllCaseStudies();
 ---
 
 <Layout title="Our Work — 52Eighty Creative">
-  <section class="container">
-    <h1>Our Work</h1>
-    <ul>
-      {caseStudies.map((cs) => (
-        <li><a href={`/work/${cs.slug}`}>{cs.title}</a> — {cs.category}</li>
-      ))}
-    </ul>
+  <section class="work">
+    <SectionHeader
+      eyebrow="Portfolio"
+      title="Our Work"
+      subtitle="Branding, marketing campaigns, video, and social & digital work for clients who go further."
+    />
+    {
+      caseStudies.length > 0 ? (
+        <div class="work-grid">
+          {caseStudies.map((cs) => (
+            <a href={`/work/${cs.slug}`} class="work-grid__link">
+              <Card
+                variant="work"
+                eyebrow={cs.category}
+                title={cs.title}
+                blurb={cs.summary}
+                client:load
+              />
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">Case studies are on their way.</p>
+      )
+    }
   </section>
 </Layout>
+
+<style>
+  .work {
+    padding: 2rem 0;
+  }
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .work-grid__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .empty-state {
+    color: var(--muted, #5c6b68);
+    font-style: italic;
+    margin-top: 1.5rem;
+  }
+</style>

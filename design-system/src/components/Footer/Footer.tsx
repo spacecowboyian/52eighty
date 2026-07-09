@@ -1,18 +1,28 @@
 import { colors, font } from '../../tokens';
 
-interface FooterLink {
+export interface FooterLink {
   label: string;
   href: string;
 }
 
-const EXPLORE_LINKS: FooterLink[] = [
+const DEFAULT_EXPLORE_LINKS: FooterLink[] = [
   { label: 'About', href: '#footer' },
   { label: 'Our Work', href: '#footer' },
   { label: 'Newsletter', href: '#footer' },
 ];
 
+export interface FooterProps {
+  /** Explore column links. Defaults to placeholder `#footer` anchors matching the source design. */
+  links?: FooterLink[];
+  /** Contact email, rendered as a `mailto:` link. */
+  email?: string;
+}
+
 /** The ink footer with wordmark, blurb, link columns, and sign-off. */
-export function Footer() {
+export function Footer({
+  links = DEFAULT_EXPLORE_LINKS,
+  email = 'hello@52eightycreative.com',
+}: FooterProps) {
   return (
     <div
       style={{
@@ -73,7 +83,7 @@ export function Footer() {
             <div
               style={{ display: 'flex', flexDirection: 'column', gap: 9 }}
             >
-              {EXPLORE_LINKS.map((link) => (
+              {links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -123,15 +133,17 @@ export function Footer() {
               >
                 (816) 752-0325
               </div>
-              <div
+              <a
+                href={`mailto:${email}`}
                 style={{
                   fontFamily: font.ui,
                   fontSize: 15,
                   color: colors.lime,
+                  textDecoration: 'none',
                 }}
               >
-                hello@52eightycreative.com
-              </div>
+                {email}
+              </a>
             </div>
           </div>
         </div>

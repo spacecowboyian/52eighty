@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button } from '5280-design-system';
 
 /**
  * Placeholder for the branching 3-step intake flow ("anti-contact-form").
@@ -12,7 +13,11 @@ export default function IntakeFlow() {
   return (
     <div>
       <p>Step {step} of 3</p>
-      {step < 3 && <button onClick={() => setStep(step + 1)}>Next</button>}
+      {step < 3 && (
+        <Button variant="primary" onClick={() => setStep(step + 1)}>
+          Next
+        </Button>
+      )}
     </div>
   );
 }

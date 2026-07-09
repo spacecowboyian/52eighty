@@ -1,11 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import IntakeFlow from '../components/islands/IntakeFlow';
+import { SectionHeader } from '5280-design-system';
 ---
 
 <Layout title="Start Your Project — 52Eighty Creative">
-  <section class="container">
-    <h1>Tell us your vision.</h1>
-    <IntakeFlow client:load />
+  <section class="start">
+    <SectionHeader eyebrow="Start Your Project" title="Tell us your vision." />
+    <div class="start__flow">
+      <IntakeFlow client:load />
+    </div>
   </section>
 </Layout>
+
+<style>
+  .start {
+    padding: 2rem 0;
+  }
+  .start__flow {
+    margin-top: 1.5rem;
+  }
+</style>
