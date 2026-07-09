@@ -1,23 +1,77 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
+import { SectionHeader, Card, Button } from '5280-design-system';
 
 const settings = await getSiteSettings();
 const featured = await getFeaturedCaseStudies();
 ---
 
 <Layout>
-  <section class="hero container">
-    <h1>{settings?.heroTitle ?? 'Creative with a heartbeat.'}</h1>
-    <p>{settings?.heroText ?? 'A brand-first agency for video, storytelling, and brand work.'}</p>
+  <section class="hero">
+    <SectionHeader
+      eyebrow="52Eighty Creative"
+      title={settings?.heroTitle ?? 'Creative with a heartbeat.'}
+      subtitle={
+        settings?.heroText ??
+        'A brand-first agency for video, storytelling, and brand work.'
+      }
+    />
+    <div class="hero__ctas">
+      <Button href="/work" variant="primary" client:load>See our work</Button>
+      <Button href="/start" variant="outline" client:load>
+        Start your project
+      </Button>
+    </div>
   </section>
 
-  <section class="container">
-    <h2>Recent work</h2>
-    <ul>
-      {featured.map((cs) => (
-        <li><a href={`/work/${cs.slug}`}>{cs.title}</a></li>
-      ))}
-    </ul>
+  <section>
+    <SectionHeader variant="divider" label="Recent Work" />
+    {
+      featured.length > 0 ? (
+        <div class="work-grid">
+          {featured.map((cs) => (
+            <a href={`/work/${cs.slug}`} class="work-grid__link">
+              <Card
+                variant="work"
+                eyebrow={cs.category}
+                title={cs.title}
+                blurb={cs.summary}
+                client:load
+              />
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">Case studies are on their way.</p>
+      )
+    }
   </section>
 </Layout>
+
+<style>
+  .hero {
+    padding: 2rem 0 1rem;
+  }
+  .hero__ctas {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .work-grid__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .empty-state {
+    color: var(--muted, #5c6b68);
+    font-style: italic;
+    margin-top: 1.5rem;
+  }
+</style>

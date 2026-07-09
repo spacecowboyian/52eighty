@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
+import { SectionHeader } from '5280-design-system';
 
 export async function getStaticPaths() {
   const slugs = await getAllCaseStudySlugs();
@@ -12,8 +13,25 @@ const caseStudy = await getCaseStudyBySlug(slug!);
 ---
 
 <Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`}>
-  <article class="container">
-    <h1>{caseStudy?.title}</h1>
-    <p>{caseStudy?.summary}</p>
+  <article class="case-study">
+    <SectionHeader
+      variant="marker"
+      eyebrow={caseStudy?.category ?? 'Case Study'}
+      title={caseStudy?.title}
+    />
+    <p class="case-study__summary">{caseStudy?.summary}</p>
   </article>
 </Layout>
+
+<style>
+  .case-study {
+    padding: 2rem 0;
+  }
+  .case-study__summary {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    max-width: 60ch;
+  }
+</style>

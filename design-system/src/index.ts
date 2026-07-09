@@ -1,4 +1,4 @@
-// 5280 Creative — component library barrel.
+// 52Eighty Creative — component library barrel.
 
 // Tokens & utilities
 export { colors, font, radius, space, shadow, spring } from './tokens';

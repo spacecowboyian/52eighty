@@ -1,5 +1,7 @@
 ---
+import '5280-design-system/theme.css';
 import '../styles/global.css';
+import { Navbar, Footer } from '5280-design-system';
 
 interface Props {
   title?: string;
@@ -10,6 +12,13 @@ const {
   title = '52Eighty Creative — Creative with a heartbeat',
   description = 'Warm, faith-based branding & creative-storytelling agency. Video, storytelling, brand work.',
 } = Astro.props;
+
+// No dedicated newsletter page/section exists yet, so it's omitted here
+// (rather than linked to a dead '#' anchor) until one is built.
+const SITE_LINKS = [
+  { label: 'About', href: '/about' },
+  { label: 'Our Work', href: '/work' },
+];
 ---
 
 <!doctype html>
@@ -23,31 +32,40 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <slot name="header">
-      <header class="site-header">
-        <div class="container">
-          <nav class="site-nav">
-            <a href="/" class="site-nav__logo">52Eighty</a>
-            <ul class="site-nav__links">
-              <li><a href="/work">Our Work</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/start">Start Your Project</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </slot>
+    <div class="site-shell">
+      <slot name="header">
+        <header class="site-header">
+          <div class="container">
+            <Navbar
+              links={SITE_LINKS}
+              contactHref="/start"
+              chrome="flush"
+              client:load
+            />
+          </div>
+        </header>
+      </slot>
 
-    <main>
-      <slot />
-    </main>
+      <main class="container">
+        <slot />
+      </main>
 
-    <slot name="footer">
-      <footer class="site-footer">
-        <div class="container">
-          <p>&copy; {new Date().getUTCFullYear()} 52Eighty Creative — Creative with a heartbeat.</p>
-        </div>
-      </footer>
-    </slot>
+      <slot name="footer">
+        <footer class="container">
+          <Footer links={SITE_LINKS} client:load />
+        </footer>
+      </slot>
+    </div>
   </body>
 </html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+  }
+</style>

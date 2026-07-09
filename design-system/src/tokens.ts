@@ -1,5 +1,5 @@
 /**
- * 5280 Creative design tokens.
+ * 52Eighty Creative design tokens.
  * Source of truth for colors, typography, radii, spacing, and elevation.
  * Mirrors the CSS custom properties declared in styles/theme.css.
  */

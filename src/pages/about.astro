@@ -1,13 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings } from '../utils/queries';
+import { SectionHeader } from '5280-design-system';
 
 const settings = await getSiteSettings();
 ---
 
 <Layout title="About — 52Eighty Creative">
-  <section class="container">
-    <h1>About</h1>
-    <p>{settings?.aboutText ?? 'A brand-first agency in St. Joseph, MO — Miles & Alysa Ramsay.'}</p>
+  <section class="about">
+    <SectionHeader
+      eyebrow="About"
+      title="A brand-first agency."
+      subtitle={
+        settings?.aboutText ??
+        'A brand-first agency in St. Joseph, MO — Miles & Alysa Ramsay.'
+      }
+    />
   </section>
 </Layout>
+
+<style>
+  .about {
+    padding: 2rem 0;
+  }
+</style>

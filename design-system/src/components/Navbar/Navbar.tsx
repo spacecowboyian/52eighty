@@ -4,22 +4,46 @@ import { useHover } from '../../utils/useHover';
 
 export type NavbarTone = 'light' | 'dark';
 
+export interface NavbarLink {
+  label: string;
+  href: string;
+}
+
 export interface NavbarProps {
   /** 'light' = cream/white header with underline-on-hover links + pine Contact pill.
    *  'dark'  = ink striped background, lime Contact pill ("Over imagery" variant). */
   tone?: NavbarTone;
+  /** Nav links to render. Defaults to placeholder `#nav` anchors matching the source design. */
+  links?: NavbarLink[];
+  /** Destination for the Contact pill. Renders a `<button>` (no-op) when omitted. */
+  contactHref?: string;
+  /**
+   * 'card' (default) — the floating bordered/rounded card, as shown in Storybook.
+   * 'flush' — no background/border/radius of its own, for embedding in a
+   * full-width sticky page header that supplies its own chrome. Light tone only.
+   */
+  chrome?: 'card' | 'flush';
 }
 
-const NAV_LINKS = ['About', 'Our Work', 'Newsletter'] as const;
+const LIGHT_DEFAULT_LINKS: NavbarLink[] = [
+  { label: 'About', href: '#nav' },
+  { label: 'Our Work', href: '#nav' },
+  { label: 'Newsletter', href: '#nav' },
+];
+
+const DARK_DEFAULT_LINKS: NavbarLink[] = [
+  { label: 'About', href: '#nav' },
+  { label: 'Our Work', href: '#nav' },
+];
 
 /** A nav link with the gold underline-on-hover (light tone only). */
-function NavLink({ label, tone }: { label: string; tone: NavbarTone }) {
+function NavLink({ label, href, tone }: NavbarLink & { tone: NavbarTone }) {
   const { isHovered, hoverProps } = useHover();
 
   if (tone === 'dark') {
     return (
       <a
-        href="#nav"
+        href={href}
         style={{
           fontFamily: font.ui,
           fontWeight: 500,
@@ -46,7 +70,7 @@ function NavLink({ label, tone }: { label: string; tone: NavbarTone }) {
 
   return (
     <a
-      href="#nav"
+      href={href}
       {...hoverProps}
       style={{ ...base, ...(isHovered ? { borderColor: colors.gold } : {}) }}
     >
@@ -55,8 +79,8 @@ function NavLink({ label, tone }: { label: string; tone: NavbarTone }) {
   );
 }
 
-/** The pine "Contact" pill (light) — lifts on hover. */
-function ContactPillLight() {
+/** The pine "Contact" pill (light) — lifts on hover. Anchor when `href` is given, else a no-op button. */
+function ContactPillLight({ href }: { href?: string }) {
   const { isHovered, hoverProps } = useHover();
   const base: CSSProperties = {
     fontFamily: font.ui,
@@ -69,39 +93,46 @@ function ContactPillLight() {
     borderRadius: radius.pill,
     cursor: 'pointer',
     transition: `transform .2s ${spring}`,
+    textDecoration: 'none',
+    display: 'inline-block',
   };
-  return (
-    <button
-      {...hoverProps}
-      style={{ ...base, ...(isHovered ? { transform: 'translateY(-2px)' } : {}) }}
-    >
+  const style = { ...base, ...(isHovered ? { transform: 'translateY(-2px)' } : {}) };
+  return href ? (
+    <a href={href} {...hoverProps} style={style}>
+      Contact
+    </a>
+  ) : (
+    <button {...hoverProps} style={style}>
       Contact
     </button>
   );
 }
 
-/** The lime "Contact" pill (dark variant). */
-function ContactPillDark() {
-  return (
-    <button
-      style={{
-        fontFamily: font.ui,
-        fontWeight: 600,
-        fontSize: 14,
-        background: colors.lime,
-        color: colors.ink,
-        border: 'none',
-        padding: '10px 22px',
-        borderRadius: radius.pill,
-        cursor: 'pointer',
-      }}
-    >
+/** The lime "Contact" pill (dark variant). Anchor when `href` is given, else a no-op button. */
+function ContactPillDark({ href }: { href?: string }) {
+  const style: CSSProperties = {
+    fontFamily: font.ui,
+    fontWeight: 600,
+    fontSize: 14,
+    background: colors.lime,
+    color: colors.ink,
+    border: 'none',
+    padding: '10px 22px',
+    borderRadius: radius.pill,
+    cursor: 'pointer',
+    textDecoration: 'none',
+    display: 'inline-block',
+  };
+  return href ? (
+    <a href={href} style={style}>
       Contact
-    </button>
+    </a>
+  ) : (
+    <button style={style}>Contact</button>
   );
 }
 
-/** The "52" circle badge + "5280 Creative" wordmark. */
+/** The "52" circle badge + "52Eighty Creative" wordmark. */
 function Wordmark({ tone }: { tone: NavbarTone }) {
   if (tone === 'dark') {
     // Dark variant shows the wordmark text only (no badge), per source.
@@ -115,7 +146,7 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
           letterSpacing: '-.01em',
         }}
       >
-        5280 Creative
+        52Eighty Creative
       </span>
     );
   }
@@ -147,14 +178,22 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
           letterSpacing: '-.01em',
         }}
       >
-        5280 Creative
+        52Eighty Creative
       </span>
     </div>
   );
 }
 
-/** The 5280 site header. */
-export function Navbar({ tone = 'light' }: NavbarProps) {
+/** The 52Eighty site header. */
+export function Navbar({
+  tone = 'light',
+  links,
+  contactHref,
+  chrome = 'card',
+}: NavbarProps) {
+  const resolvedLinks =
+    links ?? (tone === 'dark' ? DARK_DEFAULT_LINKS : LIGHT_DEFAULT_LINKS);
+
   const outer: CSSProperties =
     tone === 'dark'
       ? {
@@ -164,12 +203,14 @@ export function Navbar({ tone = 'light' }: NavbarProps) {
           backgroundImage:
             'repeating-linear-gradient(45deg,#1c2a27 0 12px,#1a2724 12px 24px)',
         }
-      : {
-          background: colors.surface,
-          border: `1px solid ${colors.border}`,
-          borderRadius: 16,
-          overflow: 'hidden',
-        };
+      : chrome === 'flush'
+        ? { background: 'transparent' }
+        : {
+            background: colors.surface,
+            border: `1px solid ${colors.border}`,
+            borderRadius: 16,
+            overflow: 'hidden',
+          };
 
   return (
     <div style={outer}>
@@ -183,22 +224,37 @@ export function Navbar({ tone = 'light' }: NavbarProps) {
       >
         <Wordmark tone={tone} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
+          <div className="sc-navbar-links">
+            {resolvedLinks.map((link) => (
+              <NavLink key={link.label} {...link} tone={tone} />
+            ))}
+          </div>
           {tone === 'dark' ? (
-            <>
-              <NavLink label="About" tone={tone} />
-              <NavLink label="Our Work" tone={tone} />
-              <ContactPillDark />
-            </>
+            <ContactPillDark href={contactHref} />
           ) : (
-            <>
-              {NAV_LINKS.map((label) => (
-                <NavLink key={label} label={label} tone={tone} />
-              ))}
-              <ContactPillLight />
-            </>
+            <ContactPillLight href={contactHref} />
           )}
         </div>
       </div>
+      {/*
+        Below 640px there's no room for the link row alongside the
+        wordmark + Contact pill (the primary CTA) without overflowing —
+        collapse to wordmark + Contact only. Mobile-first: base state is
+        hidden, min-width reveals it. A real hamburger/drawer is a
+        follow-up; this is the minimum fix for "doesn't clip on a phone".
+      */}
+      <style>{`
+        .sc-navbar-links {
+          display: none;
+          align-items: center;
+          gap: 26px;
+        }
+        @media (min-width: 640px) {
+          .sc-navbar-links {
+            display: flex;
+          }
+        }
+      `}</style>
     </div>
   );
 }
