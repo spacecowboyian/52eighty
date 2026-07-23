@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { colors } from '../../tokens';
 import { useFocus } from '../../utils/useHover';
 
@@ -29,9 +29,13 @@ const controlBase: React.CSSProperties = {
   transition: 'border-color .2s ease,box-shadow .2s ease',
 };
 
-/** Soft focus ring: pine border + box-shadow. */
+/**
+ * Soft focus ring: pine border + box-shadow. Uses the `border` shorthand
+ * rather than `borderColor` so it doesn't conflict with the valid/invalid
+ * styles above — React warns when the two forms are mixed across rerenders.
+ */
 const focusStyle: React.CSSProperties = {
-  borderColor: colors.pine,
+  border: `1.5px solid ${colors.pine}`,
   boxShadow: '0 0 0 3px rgba(24,74,79,.14)',
 };
 
@@ -69,9 +73,13 @@ function stateStyle(state: FieldState): React.CSSProperties {
   return {};
 }
 
-function Label({ children }: { children?: React.ReactNode }) {
+function Label({ children, htmlFor }: { children?: React.ReactNode; htmlFor?: string }) {
   if (!children) return null;
-  return <label style={labelStyle}>{children}</label>;
+  return (
+    <label htmlFor={htmlFor} style={labelStyle}>
+      {children}
+    </label>
+  );
 }
 
 /** Render the helper message that accompanies valid/invalid states. */
@@ -108,12 +116,16 @@ export function TextInput({
   ...rest
 }: TextInputProps) {
   const { isFocused, focusProps } = useFocus();
+  // Associate the label with the control; callers may still pass their own id.
+  const generatedId = useId();
+  const id = rest.id ?? generatedId;
   return (
     <div>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <input
         type={type}
         {...rest}
+        id={id}
         {...focusProps}
         style={{
           ...controlBase,
@@ -145,11 +157,14 @@ export function SelectInput({
   ...rest
 }: SelectInputProps) {
   const { isFocused, focusProps } = useFocus();
+  const generatedId = useId();
+  const id = rest.id ?? generatedId;
   return (
     <div>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <select
         {...rest}
+        id={id}
         {...focusProps}
         style={{
           ...controlBase,
@@ -182,12 +197,15 @@ export function TextAreaField({
   ...rest
 }: TextAreaFieldProps) {
   const { isFocused, focusProps } = useFocus();
+  const generatedId = useId();
+  const id = rest.id ?? generatedId;
   return (
     <div>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <textarea
         rows={rows}
         {...rest}
+        id={id}
         {...focusProps}
         style={{
           ...controlBase,

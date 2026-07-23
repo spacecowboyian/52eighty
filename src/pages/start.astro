@@ -19,5 +19,8 @@ import { SectionHeader } from '5280-design-system';
   }
   .start__flow {
     margin-top: 1.5rem;
+    /* The flow is read, not scanned — cap the measure so lines stay short on
+       wide screens. Full-width is fine below this, so no media query. */
+    max-width: 46rem;
   }
 </style>

@@ -4,6 +4,9 @@ import { getAllCaseStudies } from '../../utils/queries';
 import { SectionHeader, Card } from '5280-design-system';
 
 const caseStudies = await getAllCaseStudies();
+
+// Internal links need the Pages base path — see Layout.astro.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Our Work — 52Eighty Creative">
@@ -17,7 +20,7 @@ const caseStudies = await getAllCaseStudies();
       caseStudies.length > 0 ? (
         <div class="work-grid">
           {caseStudies.map((cs) => (
-            <a href={`/work/${cs.slug}`} class="work-grid__link">
+            <a href={`${base}/work/${cs.slug}`} class="work-grid__link">
               <Card
                 variant="work"
                 eyebrow={cs.category}

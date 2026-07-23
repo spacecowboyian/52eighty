@@ -15,9 +15,13 @@ const {
 
 // No dedicated newsletter page/section exists yet, so it's omitted here
 // (rather than linked to a dead '#' anchor) until one is built.
+// Every internal href is prefixed with `import.meta.env.BASE_URL`: the site
+// deploys to a GitHub Pages project subpath (/52eighty/), where root-relative
+// links resolve against the domain root and 404.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const SITE_LINKS = [
-  { label: 'About', href: '/about' },
-  { label: 'Our Work', href: '/work' },
+  { label: 'About', href: `${base}/about` },
+  { label: 'Our Work', href: `${base}/work` },
 ];
 ---
 
@@ -28,7 +32,7 @@ const SITE_LINKS = [
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <title>{title}</title>
   </head>
   <body>
@@ -38,7 +42,7 @@ const SITE_LINKS = [
           <div class="container">
             <Navbar
               links={SITE_LINKS}
-              contactHref="/start"
+              contactHref={`${base}/start`}
               chrome="flush"
               client:load
             />
