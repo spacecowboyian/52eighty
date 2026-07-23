@@ -1,4 +1,5 @@
 import { Button, colors, radius } from '5280-design-system';
+import { StepShell } from './StepShell';
 import { detailQuestions, investmentOptions, labelFor, timelineOptions } from './flow';
 import type { IntakeAnswers } from './types';
 
@@ -48,7 +49,8 @@ export function Recap({ answers, delivered, onRestart }: RecapProps) {
   const questions = detailQuestions(answers.path);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+    <StepShell tone="surface" first label="Your brief">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
       <div>
         <h2
           style={{
@@ -115,6 +117,7 @@ export function Recap({ answers, delivered, onRestart }: RecapProps) {
           Start over
         </Button>
       </div>
-    </div>
+      </div>
+    </StepShell>
   );
 }

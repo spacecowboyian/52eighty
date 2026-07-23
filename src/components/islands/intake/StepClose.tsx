@@ -1,6 +1,7 @@
-import { Button, ChoiceGrid, TextInput, TextAreaField, colors } from '5280-design-system';
+import { Button, ChoiceGrid, StepProgress, TextInput, TextAreaField, colors } from '5280-design-system';
+import { StepShell } from './StepShell';
 import { TeamGuide } from './TeamGuide';
-import { detailQuestions, investmentOptions, timelineOptions } from './flow';
+import { STEP_LABELS, detailQuestions, investmentOptions, timelineOptions } from './flow';
 import type { IntakeAnswers } from './types';
 
 /**
@@ -29,7 +30,9 @@ export function StepClose({ answers, onChange, onDetailChange, onSubmit, onBack 
   const canSubmit = Boolean(answers.name?.trim() && answers.email?.trim());
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+    <StepShell label="Let's make it happen">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+      <StepProgress current={3} total={3} labels={STEP_LABELS} />
       <TeamGuide
         name="Andy Rivera"
         role="Production"
@@ -130,6 +133,7 @@ export function StepClose({ answers, onChange, onDetailChange, onSubmit, onBack 
           Name and email are the only two things we actually need.
         </p>
       )}
-    </div>
+      </div>
+    </StepShell>
   );
 }

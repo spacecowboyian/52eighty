@@ -28,3 +28,136 @@ body {
   gap: 1.5rem;
   padding: 1.5rem 0 3rem;
 }
+
+/* --------------------------------------------------------------------------
+   Intake discipline showcase (`islands/intake/PathShowcase.tsx`).
+
+   Lives here rather than in inline styles because the layout genuinely needs
+   media queries: a sticky chip row under the header on small screens, a
+   floating rail beside the panels once there's width for one.
+
+   `--site-header-h` is what the sticky site header occupies; the showcase nav
+   pins directly beneath it.
+   -------------------------------------------------------------------------- */
+:root {
+  --site-header-h: 4.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Intake step shell (`islands/intake/StepShell.tsx`).
+
+   Every step in the flow — and every discipline panel — presents as its own
+   full-height screen, so the flow reads as a sequence of moments rather than
+   one long form. Each `.step` fills the viewport below the sticky header and
+   centers its content; taller content (the long step-3 question set) simply
+   grows past the fold and scrolls, since the height is a floor not a cap.
+   -------------------------------------------------------------------------- */
+.step {
+  /* Break out of the page's reading column to full-bleed. `margin-inline`
+     rather than `100vw` so the scrollbar never causes horizontal overflow. */
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(1.5rem, 5vw, 4rem);
+  padding-block: clamp(2rem, 6vh, 4.5rem);
+  min-height: calc(100svh - var(--site-header-h));
+  display: grid;
+  align-content: center;
+  scroll-margin-top: var(--site-header-h);
+  border-top: 1px solid var(--border);
+}
+
+/* The opening screen sits directly under the intro, so no divider rule. */
+.step--first {
+  border-top: none;
+}
+
+.step--surface {
+  background: var(--surface, #ffffff);
+}
+
+/* Inner reading column so prose keeps a sane measure inside the full-bleed
+   section. The showcase opts out of this — it manages its own wide layout. */
+.step__inner {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.showcase {
+  /* Mobile-first: plain block flow, so the sticky nav below has the whole
+     showcase to travel inside rather than a one-row-tall grid area. */
+  display: block;
+}
+
+/* Mobile-first: horizontal, scrollable, pinned under the site header. */
+.showcase__nav {
+  position: sticky;
+  top: var(--site-header-h);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.6rem 0;
+  margin: 0 0 1rem;
+  list-style: none;
+  /* Grid/flex children default to min-width:auto, which lets the chip row grow
+     past the viewport instead of scrolling. */
+  min-width: 0;
+  background: var(--bg, #fbf9f5);
+  border-bottom: 1px solid var(--border);
+  scrollbar-width: none;
+}
+
+.showcase__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase__nav-item {
+  flex: 0 0 auto;
+}
+
+.showcase__panels {
+  display: grid;
+  gap: clamp(2rem, 8vh, 5rem);
+}
+
+/* Every discipline fills the window, so scrolling moves one panel at a time.
+   `svh` rather than `vh` so mobile browser chrome collapsing doesn't leave a
+   panel taller than the screen it's supposed to fit. Height is capped from
+   below only — a panel whose content outgrows the viewport still scrolls. */
+.showcase__panel {
+  min-height: calc(100svh - var(--site-header-h));
+  display: grid;
+  align-content: center;
+  scroll-margin-top: calc(var(--site-header-h) + 4rem);
+}
+
+@media (min-width: 1024px) {
+  .showcase__panel {
+    scroll-margin-top: calc(var(--site-header-h) + 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Rail floats alongside the panels and follows the scroll. */
+  .showcase {
+    display: grid;
+    grid-template-columns: minmax(12rem, 16rem) 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    /* Deliberately NOT `align-items: start` — the rail's column has to stretch
+       the full height of the panels, otherwise its sticky child has no box to
+       travel inside and scrolls away with the first panel. */
+    align-items: stretch;
+  }
+
+  .showcase__nav {
+    position: sticky;
+    top: calc(var(--site-header-h) + 2rem);
+    align-self: start;
+    flex-direction: column;
+    overflow-x: visible;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+    background: transparent;
+  }
+}
