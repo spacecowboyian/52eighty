@@ -1,3 +1,12 @@
+import {
+  faArrowTrendUp,
+  faBullseye,
+  faPlus,
+  faRocket,
+  faSprayCanSparkles,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons';
+import type { ChoiceOption } from '5280-design-system';
 import type { DetailQuestion, Driver, Path } from './types';
 
 /**
@@ -14,21 +23,116 @@ export const STEP_LABELS = ['The spark', 'What we see', "Let's make it happen"];
 
 /* ----------------------------------------------------------------- Step 1 */
 
-export const driverOptions: { value: Driver; label: string; hint: string }[] = [
-  { value: 'launch', label: 'Launching something new', hint: 'A product, a place, a whole company.' },
-  { value: 'rebrand', label: 'Rebranding', hint: 'What we look like stopped matching who we are.' },
-  { value: 'refresh', label: 'Refreshing what we have', hint: 'The bones are good. The skin is tired.' },
-  { value: 'problem', label: 'Solving a specific problem', hint: "Something isn't landing and we know it." },
-  { value: 'scale', label: 'Scaling what already works', hint: 'More of the thing that is working.' },
+/**
+ * Icons are decorative — they give each card something to land on before the
+ * words are read. Rebranding uses a combo mark (a badge notched into the
+ * primary icon) because one glyph didn't carry "a *new* identity". Keep badge
+ * glyphs simple: anything detailed turns to mush at 18px.
+ */
+export const driverOptions: (ChoiceOption & { value: Driver })[] = [
+  {
+    value: 'launch',
+    label: 'Launching something new',
+    hint: 'A product, a place, a whole company.',
+    icon: faRocket,
+  },
+  {
+    value: 'rebrand',
+    label: 'Rebranding',
+    hint: 'What we look like stopped matching who we are.',
+    icon: faSprayCanSparkles,
+    badgeIcon: faPlus,
+  },
+  {
+    value: 'refresh',
+    label: 'Refreshing what we have',
+    hint: 'The bones are good. The skin is tired.',
+    icon: faWandMagicSparkles,
+  },
+  {
+    value: 'problem',
+    label: 'Solving a specific problem',
+    hint: "Something isn't landing and we know it.",
+    icon: faBullseye,
+  },
+  {
+    value: 'scale',
+    label: 'Scaling what already works',
+    hint: 'More of the thing that is working.',
+    icon: faArrowTrendUp,
+  },
 ];
 
-export const pathOptions: { value: Path; label: string; hint: string }[] = [
-  { value: 'video', label: 'Video', hint: 'Social cuts, product, event, series.' },
-  { value: 'brandFilm', label: 'A brand film', hint: 'The longer story, told properly.' },
-  { value: 'brandStrategy', label: 'Brand + identity', hint: 'Positioning, voice, the way it looks.' },
-  { value: 'campaign', label: 'A campaign', hint: 'Multi-channel push with a deadline on it.' },
-  { value: 'unsure', label: "Honestly, not sure yet", hint: "That's a fine place to start." },
+/**
+ * The disciplines, as showcase panels rather than option cards — each one is a
+ * tab with its own copy and reel (see `PathShowcase.tsx`). `proof` is the line
+ * that points at real work; swap it for live case-study data once the reels
+ * exist.
+ */
+export interface PathPanel {
+  value: Path;
+  /** Short label for the tab strip. */
+  tabLabel: string;
+  title: string;
+  description: string;
+  /** Which real work this discipline is backed by. */
+  proof: string;
+  cta: string;
+}
+
+export const pathShowcase: PathPanel[] = [
+  {
+    value: 'video',
+    tabLabel: 'Video',
+    title: 'Video that earns the next five seconds.',
+    description:
+      'Social cuts, product films, event coverage, series work. The kind that survives a thumb moving at speed, and still means something when it lands.',
+    proof: 'River Bluff Trails Park · Uncommon Character · Kansas Fairgrounds',
+    cta: "That's the one",
+  },
+  {
+    value: 'brandFilm',
+    tabLabel: 'Brand film',
+    title: 'The longer story, told properly.',
+    description:
+      "One story, room to breathe, and a person at the center of it. Usually the piece that makes someone care before they've been asked for anything.",
+    proof: 'Hillyard · Robidoux Resident Theatre',
+    cta: "That's the one",
+  },
+  {
+    value: 'brandStrategy',
+    tabLabel: 'Brand + identity',
+    title: 'Look like the company you actually are.',
+    description:
+      'Positioning, voice, and the way it all looks — from a clip-art logo turned into a real identity, to a brand book a whole team can work from.',
+    proof: 'Full Circle GIS · Nomad Trails · Garden Gate Flowers · Outside 45',
+    cta: "That's the one",
+  },
+  {
+    value: 'campaign',
+    tabLabel: 'Campaign',
+    title: 'One idea, everywhere it needs to be.',
+    description:
+      'Video, radio, outdoor, paid social, email — pointed at a date. The work is holding a single idea together across every channel it shows up in.',
+    proof: 'Kansas Fairgrounds "1861 Club" · American Trails',
+    cta: "That's the one",
+  },
+  {
+    value: 'unsure',
+    tabLabel: 'Not sure yet',
+    title: "Not sure yet is a fine place to start.",
+    description:
+      "Plenty of good projects start as a problem nobody's named properly. Tell us what's going on and we'll work out what it needs — that's the job.",
+    proof: 'Every project starts here more often than not',
+    cta: 'Start there',
+  },
 ];
+
+/** Flat label lookup for the recap screen and matching logic. */
+export const pathOptions = pathShowcase.map(({ value, tabLabel }) => ({
+  value,
+  label: tabLabel,
+}));
 
 /* ----------------------------------------------------------------- Step 3 */
 

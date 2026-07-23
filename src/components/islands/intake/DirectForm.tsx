@@ -1,4 +1,5 @@
 import { Button, TextInput, TextAreaField, colors } from '5280-design-system';
+import { StepShell } from './StepShell';
 import type { IntakeAnswers } from './types';
 
 /**
@@ -17,7 +18,8 @@ export function DirectForm({ answers, onChange, onSubmit, onSwitch }: DirectForm
   const canSubmit = Boolean(answers.name?.trim() && answers.email?.trim());
 
   return (
-    <div style={{ display: 'grid', gap: 14 }}>
+    <StepShell first label="Send a message">
+      <div style={{ display: 'grid', gap: 14 }}>
       <p
         style={{
           margin: 0,
@@ -59,6 +61,7 @@ export function DirectForm({ answers, onChange, onSubmit, onSwitch }: DirectForm
           Actually, walk me through it
         </Button>
       </div>
-    </div>
+      </div>
+    </StepShell>
   );
 }

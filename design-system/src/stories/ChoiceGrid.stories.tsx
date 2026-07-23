@@ -1,5 +1,14 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import {
+  faArrowTrendUp,
+  faBullseye,
+  faPlus,
+  faRocket,
+  faSeedling,
+  faSprayCanSparkles,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons';
 import { ChoiceGrid } from '../components/ChoiceGrid/ChoiceGrid';
 
 const meta = {
@@ -18,8 +27,25 @@ const drivers = [
   { value: 'scale', label: 'Scaling what already works', hint: 'More of the thing that is working.' },
 ];
 
+/** The same options with Font Awesome icons, two of them as combo marks. */
+const driversWithIcons = [
+  { ...drivers[0], icon: faRocket },
+  { ...drivers[1], icon: faSprayCanSparkles, badgeIcon: faPlus },
+  { ...drivers[2], icon: faWandMagicSparkles },
+  { ...drivers[3], icon: faBullseye },
+  { ...drivers[4], icon: faArrowTrendUp, badgeIcon: faSeedling },
+];
+
 export const SingleSelect: Story = {
   args: { options: drivers, legend: "What's driving this?" },
+  render: (args) => {
+    const [value, setValue] = useState<string>('rebrand');
+    return <ChoiceGrid {...args} value={value} onChange={setValue} />;
+  },
+};
+
+export const WithIcons: Story = {
+  args: { options: driversWithIcons, legend: "What's driving this?", minColumnWidth: 260 },
   render: (args) => {
     const [value, setValue] = useState<string>('rebrand');
     return <ChoiceGrid {...args} value={value} onChange={setValue} />;

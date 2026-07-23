@@ -1,26 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import IntakeFlow from '../components/islands/IntakeFlow';
-import { SectionHeader } from '5280-design-system';
 ---
 
 <Layout title="Start Your Project — 52Eighty Creative">
-  <section class="start">
-    <SectionHeader eyebrow="Start Your Project" title="Tell us your vision." />
-    <div class="start__flow">
-      <IntakeFlow client:load />
-    </div>
-  </section>
+  {/* The flow presents as a sequence of full-height screens and owns its own
+      intro/heading, so there's no page-level header or reading-column cap here
+      — each step manages its own width via `StepShell`. */}
+  <IntakeFlow client:load />
 </Layout>
-
-<style>
-  .start {
-    padding: 2rem 0;
-  }
-  .start__flow {
-    margin-top: 1.5rem;
-    /* The flow is read, not scanned — cap the measure so lines stay short on
-       wide screens. Full-width is fine below this, so no media query. */
-    max-width: 46rem;
-  }
-</style>

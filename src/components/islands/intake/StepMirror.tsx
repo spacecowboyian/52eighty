@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Button, TextInput, TextAreaField, colors, radius } from '5280-design-system';
+import { Button, StepProgress, TextInput, TextAreaField, colors, radius } from '5280-design-system';
+import { StepShell } from './StepShell';
 import { TeamGuide } from './TeamGuide';
 import { analyzeSite, normalizeUrl, type BrandMirror } from './mirror';
 import { matchCaseStudies } from './portfolio';
+import { STEP_LABELS } from './flow';
 import type { IntakeAnswers } from './types';
 
 /**
@@ -63,7 +65,9 @@ export function StepMirror({ answers, onChange, onNext, onBack }: StepMirrorProp
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+    <StepShell label="What we see">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+      <StepProgress current={2} total={3} labels={STEP_LABELS} />
       <TeamGuide
         name="Mandy Mays"
         role="Brand"
@@ -160,6 +164,7 @@ export function StepMirror({ answers, onChange, onNext, onBack }: StepMirrorProp
           Back
         </Button>
       </div>
-    </div>
+      </div>
+    </StepShell>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { colors, radius, spring } from '../../tokens';
 
 export interface ChoiceOption {
@@ -8,6 +10,14 @@ export interface ChoiceOption {
   label: string;
   /** Optional one-line clarifier under the label. */
   hint?: string;
+  /**
+   * Decorative Font Awesome icon for the card. Purely visual — the option's
+   * accessible name comes from `label`/`hint`, so the icon is hidden from
+   * assistive tech. Pass a second icon to stack them into a combo mark.
+   */
+  icon?: IconDefinition;
+  /** Small badge icon layered on the primary one, bottom-right. */
+  badgeIcon?: IconDefinition;
 }
 
 export interface ChoiceGridProps {
@@ -55,6 +65,44 @@ const hintStyle: React.CSSProperties = {
   fontSize: 14,
   lineHeight: 1.4,
   color: colors.muted,
+};
+
+/** Tinted disc the icon sits in — pine on selection, muted otherwise. */
+const iconWrapBase: React.CSSProperties = {
+  position: 'relative',
+  flex: '0 0 auto',
+  width: 40,
+  height: 40,
+  borderRadius: radius.pill,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: '#F0EFE6',
+  color: colors.muted,
+  fontSize: 16,
+  transition: 'background .2s ease,color .2s ease',
+};
+
+const iconWrapSelected: React.CSSProperties = {
+  background: colors.pine,
+  color: colors.lime,
+};
+
+/** Combo mark: a small badge notched into the primary icon's bottom-right. */
+const badgeStyle: React.CSSProperties = {
+  position: 'absolute',
+  right: -2,
+  bottom: -2,
+  width: 18,
+  height: 18,
+  borderRadius: radius.pill,
+  background: colors.gold,
+  color: colors.ink,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 9,
+  border: '2px solid #fff',
 };
 
 /**
@@ -118,8 +166,25 @@ export function ChoiceGrid({
             onClick={() => toggle(option.value)}
             style={{ ...cardBase, ...(isSelected ? cardSelected : {}) }}
           >
-            <span style={labelStyle}>{option.label}</span>
-            {option.hint && <span style={{ ...hintStyle, display: 'block' }}>{option.hint}</span>}
+            <span style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+              {option.icon && (
+                <span
+                  aria-hidden="true"
+                  style={{ ...iconWrapBase, ...(isSelected ? iconWrapSelected : {}) }}
+                >
+                  <FontAwesomeIcon icon={option.icon} />
+                  {option.badgeIcon && (
+                    <span style={badgeStyle}>
+                      <FontAwesomeIcon icon={option.badgeIcon} />
+                    </span>
+                  )}
+                </span>
+              )}
+              <span>
+                <span style={{ ...labelStyle, display: 'block' }}>{option.label}</span>
+                {option.hint && <span style={{ ...hintStyle, display: 'block' }}>{option.hint}</span>}
+              </span>
+            </span>
           </button>
         );
       })}
