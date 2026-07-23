@@ -30,6 +30,10 @@ export { NewsletterSignup } from './components/NewsletterSignup/NewsletterSignup
 export type { NewsletterSignupProps } from './components/NewsletterSignup/NewsletterSignup';
 export { ContactForm } from './components/ContactForm/ContactForm';
 export type { ContactFormProps } from './components/ContactForm/ContactForm';
+export { ChoiceGrid } from './components/ChoiceGrid/ChoiceGrid';
+export type { ChoiceGridProps, ChoiceOption } from './components/ChoiceGrid/ChoiceGrid';
+export { StepProgress } from './components/StepProgress/StepProgress';
+export type { StepProgressProps } from './components/StepProgress/StepProgress';
 
 // Content
 export { Card } from './components/Card/Card';
