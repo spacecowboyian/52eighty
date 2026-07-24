@@ -25,6 +25,9 @@ export interface StepHookProps {
   onDirect: () => void;
 }
 
+/** Base path so the public hero asset resolves under the Pages subpath too. */
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const introEyebrow: React.CSSProperties = {
   margin: 0,
   fontFamily: 'var(--ui)',
@@ -37,15 +40,17 @@ const introEyebrow: React.CSSProperties = {
 /**
  * The opening headline is deliberately about half the size of the old hero
  * title — big enough to own the screen, small enough to sit above a couple of
- * sentences of lede rather than standing alone.
+ * sentences of lede rather than standing alone. Light, since it sits over the
+ * darkened hero photo (a rider on 5280's River Bluff Trails Park work).
  */
 const heroTitle: React.CSSProperties = {
   margin: '12px 0 0',
   fontFamily: 'var(--display)',
   fontSize: 'clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem)',
   lineHeight: 1.08,
-  color: colors.ink,
+  color: '#FCFAF4',
   maxWidth: '18ch',
+  textShadow: '0 1px 24px rgba(0,0,0,.38)',
 };
 
 const heroLede: React.CSSProperties = {
@@ -53,9 +58,36 @@ const heroLede: React.CSSProperties = {
   fontFamily: 'var(--serif)',
   fontSize: 'clamp(1.05rem, .98rem + .5vw, 1.35rem)',
   lineHeight: 1.55,
-  color: colors.ink,
+  color: 'rgba(255,255,255,.92)',
   maxWidth: '38rem',
+  textShadow: '0 1px 18px rgba(0,0,0,.34)',
 };
+
+/** Full-bleed hero photo + legibility scrim, passed to the opening StepShell. */
+const heroScrim: React.CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  background:
+    'linear-gradient(180deg, rgba(16,33,31,.34) 0%, rgba(16,33,31,.62) 100%),' +
+    'linear-gradient(90deg, rgba(16,33,31,.66) 0%, rgba(16,33,31,.20) 58%, rgba(16,33,31,0) 100%)',
+};
+
+const heroBackground = (
+  <>
+    <img
+      src={`${base}/intake/river-bluff-hero-1280.jpg`}
+      srcSet={
+        `${base}/intake/river-bluff-hero-1280.jpg 1280w, ` +
+        `${base}/intake/river-bluff-hero-2560.jpg 2560w`
+      }
+      sizes="100vw"
+      alt=""
+      loading="eager"
+      decoding="async"
+    />
+    <div style={heroScrim} />
+  </>
+);
 
 const questionStyle: React.CSSProperties = {
   margin: '0 0 16px',
@@ -101,7 +133,14 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
 
   return (
     <>
-      <StepShell ref={heroRef} first id={SCREEN_ANCHORS.start} label="Start your project">
+      <StepShell
+        ref={heroRef}
+        first
+        onDark
+        background={heroBackground}
+        id={SCREEN_ANCHORS.start}
+        label="Start your project"
+      >
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <p style={introEyebrow}>Start your project</p>
           <h1 style={heroTitle}>You&rsquo;ve got something you want to make.</h1>
@@ -117,7 +156,7 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
             </Button>
           </div>
 
-          <FlowFooter onDirect={onDirect} />
+          <FlowFooter onDirect={onDirect} onDark />
         </div>
       </StepShell>
 

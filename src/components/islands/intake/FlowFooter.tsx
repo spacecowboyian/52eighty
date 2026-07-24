@@ -7,7 +7,12 @@ import { colors } from '5280-design-system';
  */
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-export function FlowFooter({ onDirect }: { onDirect: () => void }) {
+/** `onDark` recolors the links for a photo/scrim background instead of cream. */
+export function FlowFooter({ onDirect, onDark = false }: { onDirect: () => void; onDark?: boolean }) {
+  const linkColor = onDark ? 'rgba(255,255,255,.92)' : colors.pine;
+  const mutedColor = onDark ? 'rgba(255,255,255,.7)' : colors.muted;
+  const rule = onDark ? 'rgba(255,255,255,.28)' : colors.border;
+
   return (
     <div
       style={{
@@ -16,7 +21,7 @@ export function FlowFooter({ onDirect }: { onDirect: () => void }) {
         gap: 16,
         marginTop: 28,
         paddingTop: 18,
-        borderTop: `1px solid ${colors.border}`,
+        borderTop: `1px solid ${rule}`,
         fontFamily: 'var(--ui)',
         fontSize: 13,
       }}
@@ -29,7 +34,7 @@ export function FlowFooter({ onDirect }: { onDirect: () => void }) {
           border: 'none',
           padding: 0,
           cursor: 'pointer',
-          color: colors.pine,
+          color: linkColor,
           fontFamily: 'inherit',
           fontSize: 'inherit',
           textDecoration: 'underline',
@@ -37,7 +42,7 @@ export function FlowFooter({ onDirect }: { onDirect: () => void }) {
       >
         Rather just send a message?
       </button>
-      <a href={`${base}/work`} style={{ color: colors.muted }}>
+      <a href={`${base}/work`} style={{ color: mutedColor }}>
         Or go look at the work →
       </a>
     </div>

@@ -3,6 +3,11 @@
 ## [Unreleased]
 
 ### Added
+- Full-bleed action photo behind the intake opening screen: a rider on 5280's River Bluff
+  Trails Park work, pulled from the case-study footage, darkened with a scrim so the pitch
+  reads in light type over it (`public/intake/river-bluff-hero-*.jpg`, served responsively via
+  `srcset`). `StepShell` gained a `background` slot and an `onDark` palette flip; `FlowFooter`
+  gained an `onDark` variant so its escape-hatch links stay legible on the photo.
 - Initial Astro + React islands + Sanity scaffold.
 - Case study and site settings Sanity schemas.
 - GitHub Pages deploy workflow.
