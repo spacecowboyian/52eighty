@@ -32,7 +32,31 @@
   `/start` page dropped its page-level heading and reading-column cap — the flow owns its
   own layout.
 
+- Opening "why go on this journey" screen for the intake flow: the `/start` page now leads
+  with a single-message pitch (the anti-contact-form premise from `website-intake-flow.md` —
+  "the first half of a discovery call, no email until you want to give one"), a smaller
+  headline over a couple of sentences of lede, and one prominent "Let's do this" call to
+  action that carries the visitor into the real first question. "What's driving this?" is now
+  its own full-height screen reached from that CTA rather than the first thing on the page.
+- URL-hash anchors for every screen and discipline (`intake/anchors.ts`): the opening pitch
+  (`#start`), the "what's driving this" question (`#whats-driving-this`), each discipline
+  panel (`#video`, `#brand-film`, `#brand-identity`, `#campaign`, `#not-sure`), and the
+  continue screen (`#ready`). The address bar tracks whatever the visitor is looking at, and
+  deep-linking straight to any anchor is honored on load — so a particular moment in the flow
+  is linkable.
+
+### Changed
+- The intake commit CTAs — "Let's do this", the per-discipline "That's the one", and the
+  "Show me what you see" advance — use the brighter `accent` (red) button so the call to
+  action stands out from the pine primaries around it.
+- Removed the founder team-guide from the opening screen; the illustrated/caricature team
+  guides are still to come.
+
 ### Fixed
+- `package.json` now declares the Font Awesome packages the intake flow imports
+  (`@fortawesome/fontawesome-svg-core`, `-/free-solid-svg-icons`, `-/react-fontawesome`) —
+  they were used in the merged step-1 rework but never added as dependencies, so a clean
+  install couldn't build `/start`.
 - `Field` labels are now associated with their controls (`htmlFor`/`id`) — previously no
   input in the design system had an accessible name from its visible label.
 - `Field` focus ring no longer mixes the `border` shorthand with `borderColor`, which

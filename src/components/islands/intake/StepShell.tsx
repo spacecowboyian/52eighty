@@ -19,10 +19,12 @@ export interface StepShellProps {
   wide?: boolean;
   /** Accessible label for the section. */
   label?: string;
+  /** DOM id — the anchor a deep-link/URL hash targets for this screen. */
+  id?: string;
 }
 
 export const StepShell = forwardRef<HTMLElement, StepShellProps>(function StepShell(
-  { children, tone = 'cream', first = false, wide = false, label },
+  { children, tone = 'cream', first = false, wide = false, label, id },
   ref,
 ) {
   const className = [
@@ -34,7 +36,7 @@ export const StepShell = forwardRef<HTMLElement, StepShellProps>(function StepSh
     .join(' ');
 
   return (
-    <section ref={ref} className={className} aria-label={label}>
+    <section ref={ref} id={id} className={className} aria-label={label}>
       {wide ? children : <div className="step__inner">{children}</div>}
     </section>
   );
