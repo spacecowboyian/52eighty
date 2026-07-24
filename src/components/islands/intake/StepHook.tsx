@@ -1,18 +1,21 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button, ChoiceGrid, StepProgress, colors } from '5280-design-system';
-import { TeamGuide } from './TeamGuide';
 import { PathShowcase } from './PathShowcase';
 import { StepShell } from './StepShell';
 import { FlowFooter } from './FlowFooter';
 import { STEP_LABELS, driverOptions } from './flow';
+import { SCREEN_ANCHORS, setHash } from './anchors';
 import { scrollToElement, usePrefersReducedMotion } from './useParallax';
 import type { Driver, IntakeAnswers, Path } from './types';
 
 /**
- * Step 1 — "The Hook". Two questions, both about the why rather than the
- * deliverable, each its own full-height screen: answering the first carries the
- * visitor down into the discipline showcase, which shows the work instead of
- * describing it. The answers set the branch used by steps 2-3.
+ * Step 1 — "The Hook". Opens on a single-message screen whose only job is the
+ * pitch: *why* this is worth doing at all (the anti-contact-form premise from
+ * `website-intake-flow.md` — "light up their brain, show value before asking").
+ * The one action is "Let's do this", which carries the visitor into the real
+ * first question — "What's driving this?" — and from there down into the
+ * discipline showcase, which shows the work instead of describing it. Every
+ * screen is its own full-height moment and its own URL anchor (see `anchors.ts`).
  */
 export interface StepHookProps {
   answers: IntakeAnswers;
@@ -31,12 +34,27 @@ const introEyebrow: React.CSSProperties = {
   color: colors.red,
 };
 
-const introTitle: React.CSSProperties = {
-  margin: '10px 0 0',
+/**
+ * The opening headline is deliberately about half the size of the old hero
+ * title — big enough to own the screen, small enough to sit above a couple of
+ * sentences of lede rather than standing alone.
+ */
+const heroTitle: React.CSSProperties = {
+  margin: '12px 0 0',
   fontFamily: 'var(--display)',
-  fontSize: 'clamp(2.2rem, 1.4rem + 2.6vw, 3.4rem)',
-  lineHeight: 1.04,
+  fontSize: 'clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem)',
+  lineHeight: 1.08,
   color: colors.ink,
+  maxWidth: '18ch',
+};
+
+const heroLede: React.CSSProperties = {
+  margin: '18px 0 0',
+  fontFamily: 'var(--serif)',
+  fontSize: 'clamp(1.05rem, .98rem + .5vw, 1.35rem)',
+  lineHeight: 1.55,
+  color: colors.ink,
+  maxWidth: '38rem',
 };
 
 const questionStyle: React.CSSProperties = {
@@ -48,42 +66,67 @@ const questionStyle: React.CSSProperties = {
 };
 
 export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps) {
-  const topRef = useRef<HTMLElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
+  const drivingRef = useRef<HTMLElement | null>(null);
   const showcaseRef = useRef<HTMLElement | null>(null);
   const continueRef = useRef<HTMLElement | null>(null);
   const reduced = usePrefersReducedMotion();
 
+  // Deep-link: if the visitor arrived on a specific anchor, take them there
+  // rather than always dropping them on the opening pitch.
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) requestAnimationFrame(() => scrollToElement(target, true));
+  }, []);
+
+  const begin = () => {
+    setHash(SCREEN_ANCHORS.driving);
+    requestAnimationFrame(() => scrollToElement(drivingRef.current, reduced));
+  };
+
   const chooseDriver = (driver: Driver) => {
     onChange({ driver });
-    // Carry them into the showcase rather than making them go find it.
-    // Deferred a frame so layout has settled before the scroll starts.
+    // Carry them into the showcase rather than making them go find it. The
+    // showcase owns the discipline anchors from here (see PathShowcase).
     requestAnimationFrame(() => scrollToElement(showcaseRef.current, reduced));
   };
 
   const choosePath = (path: Path) => {
     onChange({ path });
+    setHash(SCREEN_ANCHORS.ready);
     requestAnimationFrame(() => scrollToElement(continueRef.current, reduced));
   };
 
   return (
     <>
-      <StepShell ref={topRef} first label="What's driving this?">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          <div>
-            <p style={introEyebrow}>Start your project</p>
-            <h1 style={introTitle}>Tell us your vision.</h1>
+      <StepShell ref={heroRef} first id={SCREEN_ANCHORS.start} label="Start your project">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <p style={introEyebrow}>Start your project</p>
+          <h1 style={heroTitle}>You&rsquo;ve got something you want to make.</h1>
+          <p style={heroLede}>
+            This isn&rsquo;t a contact form &mdash; it&rsquo;s the first half of a discovery call.
+            Answer a few honest questions and you&rsquo;ll leave seeing your own project more clearly
+            than when you showed up. No name, no email, until you actually want to give one.
+          </p>
+
+          <div style={{ marginTop: 28 }}>
+            <Button variant="accent" size="lg" onClick={begin}>
+              Let&rsquo;s do this &rarr;
+            </Button>
           </div>
 
+          <FlowFooter onDirect={onDirect} />
+        </div>
+      </StepShell>
+
+      <StepShell ref={drivingRef} id={SCREEN_ANCHORS.driving} label="What's driving this?">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           <StepProgress current={1} total={3} labels={STEP_LABELS} />
 
-          <TeamGuide
-            name="Miles Ramsay"
-            role="Founder"
-            line="No form yet. Just tell us what's going on — the rest follows from that."
-          />
-
           <div>
-            <h2 style={questionStyle}>What's driving this?</h2>
+            <h2 style={questionStyle}>What&rsquo;s driving this?</h2>
             <ChoiceGrid
               legend="What's driving this?"
               options={driverOptions}
@@ -91,8 +134,6 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
               onChange={chooseDriver}
             />
           </div>
-
-          <FlowFooter onDirect={onDirect} />
         </div>
       </StepShell>
 
@@ -100,14 +141,17 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
         ref={showcaseRef}
         value={answers.path}
         onSelect={choosePath}
-        onBackToTop={() => scrollToElement(topRef.current, reduced)}
+        onBackToTop={() => {
+          setHash(SCREEN_ANCHORS.driving);
+          scrollToElement(drivingRef.current, reduced);
+        }}
       />
 
-      <StepShell ref={continueRef} tone="surface" label="Ready to continue">
+      <StepShell ref={continueRef} tone="surface" id={SCREEN_ANCHORS.ready} label="Ready to continue">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           {answers.path ? (
             <>
-              <h2 style={questionStyle}>Good pick. Let's take a look at you.</h2>
+              <h2 style={questionStyle}>Good pick. Let&rsquo;s take a look at you.</h2>
               <p
                 style={{
                   margin: 0,
@@ -118,10 +162,10 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
                   maxWidth: '34rem',
                 }}
               >
-                Next we'll read your site back to you — before you tell us anything else.
+                Next we&rsquo;ll read your site back to you &mdash; before you tell us anything else.
               </p>
               <div>
-                <Button variant="primary" size="lg" onClick={onNext}>
+                <Button variant="accent" size="lg" onClick={onNext}>
                   Show me what you see
                 </Button>
               </div>

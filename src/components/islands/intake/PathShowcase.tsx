@@ -3,6 +3,7 @@ import { Button, colors, radius } from '5280-design-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faCheck, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { pathShowcase } from './flow';
+import { pathAnchor, setHash } from './anchors';
 import { useHeaderHeightVar, usePrefersReducedMotion, useScrollProgress } from './useParallax';
 import type { Path } from './types';
 
@@ -141,6 +142,7 @@ function Panel({
   return (
     <article
       className="showcase__panel"
+      id={pathAnchor[entry.value]}
       data-path={entry.value}
       ref={(node) => {
         ref.current = node;
@@ -161,7 +163,7 @@ function Panel({
           <p style={proofStyle}>{entry.proof}</p>
           <div style={{ marginTop: '1.75rem' }}>
             <Button
-              variant={isPicked ? 'outline' : 'primary'}
+              variant={isPicked ? 'outline' : 'accent'}
               size="lg"
               onClick={() => onSelect(entry.value)}
             >
@@ -247,7 +249,12 @@ export const PathShowcase = forwardRef<HTMLElement, PathShowcaseProps>(function 
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         const id = visible?.target.getAttribute('data-path') as Path | null;
-        if (id) setActiveId(id);
+        if (id) {
+          setActiveId(id);
+          // Keep the address bar on whichever discipline is being read, so it's
+          // a linkable place whether the visitor scrolled or jumped here.
+          setHash(pathAnchor[id]);
+        }
       },
       // A band across the middle of the screen: the panel occupying it is the
       // one being read.
