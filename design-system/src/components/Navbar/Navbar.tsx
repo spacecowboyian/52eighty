@@ -225,7 +225,21 @@ export function Navbar({
           padding: '20px 28px',
         }}
       >
-        <Wordmark tone={tone} href={homeHref} height={28} />
+        {/* The mark is bigger than the header row and hangs over its bottom
+            edge, tilted down to the left — a sticker slapped on, not a logo
+            in a slot. The wrapper keeps the row height; the mark overflows it. */}
+        <div style={{ height: 34, display: 'flex', alignItems: 'center', overflow: 'visible' }}>
+          <Wordmark
+            tone={tone}
+            href={homeHref}
+            height={chrome === 'flush' ? 50 : 34}
+            style={
+              chrome === 'flush'
+                ? { transform: 'rotate(-4deg) translate(-2px, 14px)', transformOrigin: 'left center' }
+                : undefined
+            }
+          />
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
           <div className="sc-navbar-links">
             {resolvedLinks.map((link) => (

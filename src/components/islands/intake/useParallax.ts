@@ -1,19 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from '5280-design-system';
 
-/** True when the visitor has asked for reduced motion. */
-export function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(query.matches);
-    const onChange = () => setReduced(query.matches);
-    query.addEventListener('change', onChange);
-    return () => query.removeEventListener('change', onChange);
-  }, []);
-
-  return reduced;
-}
+/** Re-exported from the design system; kept here so existing imports work. */
+export const usePrefersReducedMotion = useReducedMotion;
 
 /**
  * Scroll progress of an element through the viewport, from 0 (its top edge is
@@ -26,7 +15,7 @@ export function usePrefersReducedMotion(): boolean {
  */
 export function useScrollProgress(ref: React.RefObject<HTMLElement | null>): number {
   const [progress, setProgress] = useState(0.5);
-  const reduced = usePrefersReducedMotion();
+  const reduced = useReducedMotion();
   const frame = useRef<number | null>(null);
 
   useEffect(() => {

@@ -48,12 +48,8 @@ const groupLabelStyle: CSSProperties = {
   margin: '8px 0 12px',
 };
 
-const cardStyle: CSSProperties = {
-  background: '#fff',
-  border: `1px solid ${colors.border}`,
-  borderRadius: 14,
-  overflow: 'hidden',
-};
+// Swatches are arches — the guide's shape — on the page ground, no card.
+const cardStyle: CSSProperties = {};
 
 function LargeSwatch({ name, hex, role }: Swatch) {
   // Cream has a bottom border to separate its near-white chip from the card.
@@ -62,12 +58,13 @@ function LargeSwatch({ name, hex, role }: Swatch) {
     <div style={cardStyle}>
       <div
         style={{
-          height: 96,
+          aspectRatio: '4 / 3',
+          borderRadius: '999px 999px 0 0',
           background: hex,
-          ...(isCream ? { borderBottom: `1px solid ${colors.border}` } : {}),
+          ...(isCream ? { boxShadow: `inset 0 0 0 1px ${colors.border}` } : {}),
         }}
       />
-      <div style={{ padding: '13px 14px' }}>
+      <div style={{ padding: '13px 4px' }}>
         <div style={{ fontFamily: font.ui, fontWeight: 600, fontSize: 14 }}>{name}</div>
         <div style={{ fontFamily: font.ui, fontSize: 12, color: colors.muted, marginTop: 2 }}>
           {hex}
@@ -84,12 +81,13 @@ function SmallSwatch({ name, hex, role }: Swatch) {
     <div style={cardStyle}>
       <div
         style={{
-          height: 72,
+          aspectRatio: '4 / 3',
+          borderRadius: '999px 999px 0 0',
           background: hex,
-          ...(isCream ? { borderBottom: `1px solid ${colors.border}` } : {}),
+          ...(isCream ? { boxShadow: `inset 0 0 0 1px ${colors.border}` } : {}),
         }}
       />
-      <div style={{ padding: '11px 13px' }}>
+      <div style={{ padding: '11px 4px' }}>
         <div style={{ fontFamily: font.ui, fontWeight: 600, fontSize: 13 }}>{name}</div>
         <div style={{ fontFamily: font.ui, fontSize: 11.5, color: colors.muted }}>
           {hex}
@@ -116,9 +114,10 @@ function Colors() {
           <h2
             style={{
               fontFamily: font.display,
-              fontWeight: 800,
+              fontWeight: 400,
+              textTransform: 'uppercase',
               fontSize: 38,
-              letterSpacing: '-.02em',
+              letterSpacing: '.02em',
               margin: '0 0 8px',
             }}
           >

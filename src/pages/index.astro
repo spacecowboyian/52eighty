@@ -2,7 +2,8 @@
 import { existsSync } from 'node:fs';
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
-import { SectionHeader, Card, Button, Band } from '5280-design-system';
+import { SectionHeader, Card, Button, Band, Starburst, Squiggle, projectTone } from '5280-design-system';
+import { coverFor } from '../utils/covers';
 
 const settings = await getSiteSettings();
 const featured = await getFeaturedCaseStudies();
@@ -59,6 +60,9 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     </div>
 
     <div class="reel__copy">
+      {/* The guide's p7 composition: the starburst + heart sits at the
+          headline's first word — beside it from 640px, above it on a phone. */}
+      <div class="reel__mark"><Starburst size={72} heart pulse client:load /></div>
       <h1 class="reel__title t-display-xl">
         <span class="reel__accent">{heroFirstWord}</span> {heroRest.join(' ')}
       </h1>
@@ -77,7 +81,7 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   </Band>
 
   <section id="work" class="work">
-    <SectionHeader variant="divider" label="Selected work" />
+    <SectionHeader variant="trail" title="Selected work" eyebrow="Portfolio" />
     {
       featured.length > 0 ? (
         <div class="work-grid">
@@ -88,13 +92,15 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
                 eyebrow={cs.category}
                 title={cs.title}
                 blurb={cs.summary}
+                image={coverFor(cs)}
+                imageTone={projectTone(cs.slug)}
                 client:load
               />
             </a>
           ))}
         </div>
       ) : (
-        <p class="empty-state">Case studies are on their way.</p>
+        <p class="empty-state"><Starburst size={40} heart /> Case studies are on their way.</p>
       )
     }
     <p class="work__more">
@@ -106,6 +112,8 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     <h2 class="further__line t-display-md">
       We go further. It&rsquo;s less crowded out there.
     </h2>
+    {/* The sky loop off the end of "crowded" — guide p2. Draws itself once. */}
+    <div class="further__mark"><Squiggle draw width={200} client:load /></div>
     <p class="further__body">
       Branding, marketing campaigns, video, and social and digital strategy —
       but we don&rsquo;t sell them separately. Every project starts with the
@@ -218,6 +226,23 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   .reel__accent {
     color: #f0fc97;
   }
+  /* Above the headline on a phone; beside its first word from 640px. */
+  .reel__mark {
+    line-height: 0;
+    margin-bottom: 0.75rem;
+  }
+  .reel__mark :global(span) {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  .reel__mark :global(svg) {
+    width: 56px;
+    height: 56px;
+  }
+  .reel__mark :global(svg + svg) {
+    width: 20px;
+    height: 20px;
+  }
 
   .reel__lede {
     font-family: var(--serif);
@@ -313,6 +338,9 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     color: #5c6b68;
     font-style: italic;
     margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .further {
@@ -320,9 +348,22 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     max-width: 44rem;
   }
 
+  .further {
+    position: relative;
+  }
   .further__line {
     color: #184a4f;
     text-wrap: balance;
+  }
+  .further__mark {
+    color: #8cb6f2;
+    display: flex;
+    justify-content: flex-end;
+    margin: -0.5rem 0 0;
+    line-height: 0;
+  }
+  .further__mark :global(span) {
+    width: clamp(7rem, 24vw, 12.5rem) !important;
   }
 
   .further__body {
@@ -360,6 +401,35 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   @media (min-width: 640px) {
     .work-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+    .reel__copy {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 1.25rem;
+      align-items: start;
+    }
+    .reel__mark {
+      grid-row: 1;
+      margin: 0.35em 0 0;
+    }
+    .reel__mark :global(span) {
+      width: 72px !important;
+      height: 72px !important;
+    }
+    .reel__mark :global(svg) {
+      width: 72px;
+      height: 72px;
+    }
+    .reel__mark :global(svg + svg) {
+      width: 26px;
+      height: 26px;
+    }
+    .reel__title {
+      grid-column: 2;
+    }
+    .reel__lede,
+    .reel__cta {
+      grid-column: 2;
     }
   }
 

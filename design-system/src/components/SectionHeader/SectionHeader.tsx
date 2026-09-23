@@ -1,11 +1,15 @@
 import React from 'react';
 import { colors, text } from '../../tokens';
+import { Pill, type PillTone } from '../Marks/Pill';
+import { Squiggle } from '../Marks/Squiggle';
 
-export type SectionHeaderVariant = 'centered' | 'marker' | 'divider';
+export type SectionHeaderVariant = 'centered' | 'marker' | 'trail' | 'divider';
 
 export interface SectionHeaderProps {
-  /** Small uppercase label. Sits *below* the title, per the guide's composition. */
+  /** Small label, rendered as a tilted Pill tucked under the title's last line (guide: "HOW WE TALK"). */
   eyebrow?: string;
+  /** Pill colour for the eyebrow. Default sky. */
+  eyebrowTone?: PillTone;
   /** Main headline. */
   title?: string;
   /** Supporting lead paragraph (centered variant only). */
@@ -14,7 +18,8 @@ export interface SectionHeaderProps {
    * Layout:
    * - `centered` — centered headline + eyebrow + lead, on the page ground.
    * - `marker` — left-aligned headline + eyebrow.
-   * - `divider` — a small uppercase label heading (uses `label`).
+   * - `trail` — the squiggle (88px, peri) beside the title; replaces the old mile-marker.
+   * - `divider` — alias of `trail`; kept for callers.
    */
   variant?: SectionHeaderVariant;
   /**
@@ -22,7 +27,7 @@ export interface SectionHeaderProps {
    * section size. Default `h2`; pages pass `h1` for their title.
    */
   as?: 'h1' | 'h2' | 'h3';
-  /** Eyebrow color override (defaults to pine). */
+  /** @deprecated Eyebrow colour is the Pill's; use `eyebrowTone`. */
   tone?: string;
   /** @deprecated The marker bar is gone; kept so callers don't break. */
   barColor?: string;
@@ -42,24 +47,15 @@ export function SectionHeader({
   subtitle,
   variant = 'centered',
   as = 'h2',
-  tone,
+  eyebrowTone = 'sky',
   label = 'Mile 5,280',
 }: SectionHeaderProps) {
-  const eyebrowStyle: React.CSSProperties = {
-    ...text.eyebrow,
-    color: tone ?? 'var(--band-accent, #184A4F)',
-    marginTop: 10,
-  };
-
-  if (variant === 'divider') {
-    // The dashed mile-marker rule is gone — a rule is a border by another
-    // name. Until PR 6's `trail` variant, the label reads as a plain heading.
-    return React.createElement(
-      as,
-      { style: { ...text.eyebrow, color: tone ?? 'var(--band-fg-soft, #5C6B68)', margin: 0 } },
-      label,
-    );
-  }
+  // Tucked under the title's last line — the guide's sticker composition.
+  const pill = eyebrow ? (
+    <div style={{ marginTop: '-.4em', position: 'relative', zIndex: 1 }}>
+      <Pill tone={eyebrowTone}>{eyebrow}</Pill>
+    </div>
+  ) : null;
 
   const titleStyle: React.CSSProperties = {
     ...(as === 'h1' ? text.displayLG : text.displayMD),
@@ -68,11 +64,25 @@ export function SectionHeader({
     textWrap: 'balance',
   } as React.CSSProperties;
 
+  if (variant === 'trail' || variant === 'divider') {
+    // The squiggle where the dashed mile-marker used to be: a trail on a map,
+    // not a rule. `label` is the heading text when `title` isn't given.
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20, padding: '8px 0' }}>
+        <Squiggle width={88} style={{ color: colors.peri, flex: 'none' }} />
+        <div>
+          {React.createElement(as, { style: titleStyle }, title ?? label)}
+          {pill}
+        </div>
+      </div>
+    );
+  }
+
   if (variant === 'marker') {
     return (
       <div style={{ padding: '8px 0' }}>
         {React.createElement(as, { style: titleStyle }, title)}
-        {eyebrow && <div style={eyebrowStyle}>{eyebrow}</div>}
+        {pill}
       </div>
     );
   }
@@ -81,7 +91,7 @@ export function SectionHeader({
   return (
     <div style={{ padding: '8px 0', textAlign: 'center' }}>
       {React.createElement(as, { style: titleStyle }, title)}
-      {eyebrow && <div style={eyebrowStyle}>{eyebrow}</div>}
+      {pill}
       {subtitle && (
         <p
           style={{

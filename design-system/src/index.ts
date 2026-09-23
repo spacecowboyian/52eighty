@@ -5,6 +5,8 @@ export { colors, font, text, radius, space, sectionSpace, shadow, ease, spring }
 export type { ColorToken } from './tokens';
 export { useHover, useFocus } from './utils/useHover';
 export { useInView } from './utils/useInView';
+export { useReducedMotion } from './utils/useReducedMotion';
+export { projectTone } from './utils/tone';
 
 // Actions
 export { Button } from './components/Button/Button';
@@ -63,6 +65,14 @@ export type { BandProps, BandTone, BandPad, BandEdge, BandFrame, BandToneSpec } 
 // Marks
 export { Wordmark } from './components/Marks/Wordmark';
 export type { WordmarkProps } from './components/Marks/Wordmark';
+export { Arch, archMedia } from './components/Marks/Arch';
+export type { ArchProps } from './components/Marks/Arch';
+export { Squiggle } from './components/Marks/Squiggle';
+export type { SquiggleProps } from './components/Marks/Squiggle';
+export { Starburst } from './components/Marks/Starburst';
+export type { StarburstProps } from './components/Marks/Starburst';
+export { Pill } from './components/Marks/Pill';
+export type { PillProps, PillTone, PillSize } from './components/Marks/Pill';
 
 // Footer
 export { Footer } from './components/Footer/Footer';

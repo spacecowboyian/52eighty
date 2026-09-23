@@ -3,6 +3,17 @@
 ## [Unreleased]
 
 ### Added
+- Marks. New design-system components from the brand guide's shape language: `Arch`
+  (CSS semicircle-top frame), `Squiggle` (the hand-drawn loop, draws itself once on view),
+  `Starburst` (16-point burst with the red heart, one pulse on mount), `Pill` (tilted
+  sticker label) — plus a `useReducedMotion` util and a `projectTone(slug)` helper that gives
+  each project a deterministic colour. Placements: starburst + heart at the hero's first word,
+  the sky squiggle off the homepage statement, `SectionHeader variant="trail"` (squiggle
+  beside the title, replacing the mile-marker) with the eyebrow as a Pill tucked under the
+  title, work cards with arched covers and a category Pill over the arch's edge (River Bluff
+  uses its real still; the rest are colour fields until Sanity carries covers), case-study
+  headers with an arched cover. Colour swatches in Storybook are arches. The header mark is
+  larger, tilted down-left and hangs over the header's bottom edge.
 - Glass header. The sticky header is a `SiteHeader` island: transparent, borderless, a
   blurred glass layer on a pseudo-element, its palette following the colour field beneath
   it (`useHeaderTone` watches every band's `data-header-tone` through a header-height strip;
