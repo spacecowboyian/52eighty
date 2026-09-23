@@ -30,20 +30,26 @@ export interface PathShowcaseProps {
   onBackToTop: () => void;
 }
 
+// Colours come from the panel's band, so the same panel reads on pine,
+// sky, periwinkle, jade or cream.
 const titleStyle: React.CSSProperties = {
   margin: 0,
   fontFamily: 'var(--display)',
-  fontSize: 'clamp(2.1rem, 1.2rem + 3vw, 3.6rem)',
-  lineHeight: 1.03,
-  color: colors.ink,
-};
+  fontWeight: 400,
+  textTransform: 'uppercase',
+  letterSpacing: '.02em',
+  fontSize: 'clamp(2rem, 1.2rem + 3vw, 3.4rem)',
+  lineHeight: 0.98,
+  color: 'var(--band-fg)',
+  textWrap: 'balance',
+} as React.CSSProperties;
 
 const bodyStyle: React.CSSProperties = {
   margin: '1.1rem 0 0',
   fontFamily: 'var(--serif)',
   fontSize: 'clamp(1rem, .95rem + .35vw, 1.25rem)',
   lineHeight: 1.55,
-  color: colors.ink,
+  color: 'var(--band-fg)',
   maxWidth: '34rem',
 };
 
@@ -53,7 +59,7 @@ const proofStyle: React.CSSProperties = {
   fontSize: 13,
   letterSpacing: '.06em',
   textTransform: 'uppercase',
-  color: colors.muted,
+  color: 'var(--band-fg-soft)',
 };
 
 /** 16:9 stand-in for the discipline reel that isn't cut yet. */
@@ -64,8 +70,9 @@ function ReelPlaceholder({ label }: { label: string }) {
         aspectRatio: '16 / 9',
         width: '100%',
         borderRadius: radius.lg,
-        background: colors.pine,
-        color: colors.paper,
+        // A darker cut of the panel's own colour — no second colour, no shadow.
+        background: 'color-mix(in srgb, var(--band-bg, #184A4F) 40%, #16211F)',
+        color: '#FFFFFF',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -73,7 +80,6 @@ function ReelPlaceholder({ label }: { label: string }) {
         gap: 14,
         textAlign: 'center',
         padding: 24,
-        boxShadow: '0 18px 40px rgba(22,33,31,.16)',
       }}
     >
       <span
@@ -131,7 +137,10 @@ function Panel({
   const drift = (progress - 0.5) * 2; // -1 … 1
 
   return (
-    <article
+    <Band
+      as="article"
+      tone={entry.tone}
+      pad="none"
       className="showcase__panel"
       id={pathAnchor[entry.value]}
       data-path={entry.value}
@@ -141,9 +150,10 @@ function Panel({
       }}
     >
       <div
+        className="showcase__panel-inner"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,24rem),1fr))',
+          gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,22rem),1fr))',
           gap: 'clamp(1.5rem, 3vw, 3rem)',
           alignItems: 'center',
         }}
@@ -166,7 +176,7 @@ function Panel({
           <ReelPlaceholder label={entry.tabLabel} />
         </div>
       </div>
-    </article>
+    </Band>
   );
 }
 
@@ -200,9 +210,9 @@ function NavButton({
         fontWeight: 600,
         padding: '10px 16px',
         borderRadius: radius.pill,
-        border: `1.5px solid ${isActive ? colors.pine : 'transparent'}`,
+        border: 'none',
         background: isActive ? colors.pine : 'transparent',
-        color: isActive ? colors.paper : colors.muted,
+        color: isActive ? colors.paper : colors.ink,
         transition: 'background .2s ease,color .2s ease,border-color .2s ease',
       }}
     >
@@ -297,7 +307,7 @@ export const PathShowcase = forwardRef<HTMLElement, PathShowcaseProps>(function 
                   width: 38,
                   height: 38,
                   borderRadius: radius.pill,
-                  border: `1.5px solid ${colors.border}`,
+                  border: 'none',
                   background: 'transparent',
                   color: colors.pine,
                   cursor: 'pointer',

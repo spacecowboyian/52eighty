@@ -70,7 +70,10 @@ const heroLede: React.CSSProperties = {
 const heroScrim: React.CSSProperties = {
   position: 'absolute',
   inset: 0,
+  // Seam B: the last stop is the page cream, so the photo resolves into the
+  // next screen; that screen's arch then domes over the join.
   background:
+    'linear-gradient(0deg, #FBF9F5 0%, rgba(251,249,245,0) 12%),' +
     'linear-gradient(180deg, rgba(16,33,31,.34) 0%, rgba(16,33,31,.62) 100%),' +
     'linear-gradient(90deg, rgba(16,33,31,.66) 0%, rgba(16,33,31,.20) 58%, rgba(16,33,31,0) 100%)',
 };
@@ -162,7 +165,7 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
         </div>
       </StepShell>
 
-      <StepShell ref={drivingRef} id={SCREEN_ANCHORS.driving} label="What's driving this?">
+      <StepShell ref={drivingRef} edge="arch" id={SCREEN_ANCHORS.driving} label="What's driving this?">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           <StepProgress current={1} total={3} labels={STEP_LABELS} />
 
@@ -188,7 +191,8 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
         }}
       />
 
-      <StepShell ref={continueRef} id={SCREEN_ANCHORS.ready} label="Ready to continue">
+      {/* Q7: the celebratory beat — lime, the exclamation mark. */}
+      <StepShell ref={continueRef} field="lime" id={SCREEN_ANCHORS.ready} label="Ready to continue">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           {answers.path ? (
             <>

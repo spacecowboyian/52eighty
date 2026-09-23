@@ -49,7 +49,7 @@ export function Recap({ answers, delivered, onRestart }: RecapProps) {
   const questions = detailQuestions(answers.path);
 
   return (
-    <StepShell label="Your brief">
+    <StepShell field="lime" label="Your brief">
       <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
       <div>
         <h2

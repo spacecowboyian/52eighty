@@ -7,7 +7,7 @@
   /* The sticky header's height. Deterministic — the header sets it as a
      min-height and the wordmark never wraps — and republished from the live
      element by Layout.astro's ResizeObserver as a safety net. */
-  --site-header-h: 3.75rem;
+  --site-header-h: 4rem;
 }
 
 * {
@@ -52,6 +52,9 @@ body {
      containing block for the mobile drawer's `position: fixed`. */
   background: transparent;
   color: var(--ink);
+  /* The one line on the site: a solid pine rule under the header, with the
+     mark sitting centred on it. */
+  border-bottom: 4px solid #184a4f;
   isolation: isolate;
   transition: color 0.3s var(--ease-out, cubic-bezier(0.2, 0.7, 0.2, 1));
 }
@@ -161,27 +164,41 @@ html[data-reveal-ready] [data-reveal] > *:not(.band__bg) {
    media queries: a sticky chip row under the header on small screens, a
    floating rail beside the panels once there's width for one.
    -------------------------------------------------------------------------- */
-.showcase {
-  /* Mobile-first: plain block flow, so the sticky nav below has the whole
-     showcase to travel inside rather than a one-row-tall grid area. */
-  display: block;
+.band > .showcase {
+  /* The showcase re-exposes the page columns so each discipline panel can
+     flood its own colour edge to edge while the nav stays in the column. */
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.showcase__panels {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.showcase__panels > .band {
+  grid-column: full;
 }
 
-/* Mobile-first: horizontal, scrollable, pinned under the site header. */
+/* Mobile-first: horizontal, scrollable, pinned under the site header. The
+   same glass idiom as the header — no border, no solid strip. */
 .showcase__nav {
+  grid-column: full;
   position: sticky;
   top: var(--site-header-h);
   z-index: 10;
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  padding: 0.6rem 0;
-  margin: 0 0 1rem;
+  padding: 0.6rem var(--gutter);
+  margin: 0;
   list-style: none;
   /* Grid/flex children default to min-width:auto, which lets the chip row grow
      past the viewport instead of scrolling. */
   min-width: 0;
-  background: var(--bg, #fbf9f5);
+  background: color-mix(in srgb, var(--bg, #fbf9f5) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   scrollbar-width: none;
 }
 
@@ -193,20 +210,15 @@ html[data-reveal-ready] [data-reveal] > *:not(.band__bg) {
   flex: 0 0 auto;
 }
 
-.showcase__panels {
-  display: grid;
-  gap: clamp(2rem, 8vh, 5rem);
-}
-
 /* Every discipline fills the window, so scrolling moves one panel at a time.
    `svh` rather than `vh` so mobile browser chrome collapsing doesn't leave a
    panel taller than the screen it's supposed to fit. Height is capped from
    below only — a panel whose content outgrows the viewport still scrolls. */
 .showcase__panel {
   min-height: calc(100svh - var(--site-header-h));
-  display: grid;
   align-content: center;
-  scroll-margin-top: calc(var(--site-header-h) + 4rem);
+  padding-block: clamp(3rem, 8vh, 5rem);
+  scroll-margin-top: calc(var(--site-header-h) + 3.5rem);
 }
 
 @media (min-width: 1024px) {
@@ -216,25 +228,30 @@ html[data-reveal-ready] [data-reveal] > *:not(.band__bg) {
 }
 
 @media (min-width: 1024px) {
-  /* Rail floats alongside the panels and follows the scroll. */
-  .showcase {
-    display: grid;
-    grid-template-columns: minmax(12rem, 16rem) 1fr;
-    gap: clamp(2rem, 5vw, 4rem);
-    /* Deliberately NOT `align-items: start` — the rail's column has to stretch
-       the full height of the panels, otherwise its sticky child has no box to
-       travel inside and scrolls away with the first panel. */
-    align-items: stretch;
-  }
-
+  /* The rail: a zero-height sticky row in the content column whose chips
+     overflow it, floating beside the panels as they scroll under. The panels
+     leave room for it on the left. */
   .showcase__nav {
-    position: sticky;
+    grid-column: content;
+    height: 0;
+    overflow: visible;
     top: calc(var(--site-header-h) + 2rem);
-    align-self: start;
     flex-direction: column;
-    overflow-x: visible;
-    padding: 0;
+    gap: 0.25rem;
+    width: 14rem;
+    padding: 0.5rem;
     margin: 0;
-    background: transparent;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--bg, #fbf9f5) 88%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Height 0 + visible overflow: keep the chips' own box for hit-testing. */
+    pointer-events: none;
+  }
+  .showcase__nav > * {
+    pointer-events: auto;
+  }
+  .showcase__panel-inner {
+    margin-left: calc(14rem + clamp(2rem, 4vw, 3.5rem));
   }
 }

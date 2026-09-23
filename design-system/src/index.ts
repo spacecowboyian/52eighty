@@ -7,6 +7,8 @@ export { useHover, useFocus } from './utils/useHover';
 export { useInView } from './utils/useInView';
 export { useReducedMotion } from './utils/useReducedMotion';
 export { projectTone } from './utils/tone';
+export { contrastRatio, grade, parseColor } from './utils/contrast';
+export type { ContrastGrade } from './utils/contrast';
 
 // Actions
 export { Button } from './components/Button/Button';
@@ -73,6 +75,10 @@ export { Starburst } from './components/Marks/Starburst';
 export type { StarburstProps } from './components/Marks/Starburst';
 export { Pill } from './components/Marks/Pill';
 export type { PillProps, PillTone, PillSize } from './components/Marks/Pill';
+
+// Pillar
+export { Pillar } from './components/Pillar/Pillar';
+export type { PillarProps } from './components/Pillar/Pillar';
 
 // Footer
 export { Footer } from './components/Footer/Footer';

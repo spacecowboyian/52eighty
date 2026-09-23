@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudies } from '../../utils/queries';
-import { SectionHeader, Card, projectTone } from '5280-design-system';
+import { Band, SectionHeader, Card, Starburst, projectTone } from '5280-design-system';
 import { coverFor } from '../../utils/covers';
 import Invite from '../../components/Invite.astro';
 
@@ -11,14 +11,22 @@ const caseStudies = await getAllCaseStudies();
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<Layout title="Our Work — 52Eighty Creative">
-  <section class="work">
+<Layout title="Our Work — 52Eighty Creative" headerTone="dark">
+  <Band as="section" tone="jade" pad="lg" className="work-head">
     <SectionHeader
       as="h1"
+      variant="marker"
       eyebrow="Portfolio"
-      title="Our Work"
-      subtitle="Branding, marketing campaigns, video, and social & digital work for clients who go further."
+      eyebrowTone="sky"
+      title="Our work"
     />
+    <p class="t-lead work-head__lead">
+      Branding, marketing campaigns, video, and social & digital work for clients who go further.
+    </p>
+  </Band>
+
+  {/* Seam A: jade → cream, no rule. */}
+  <Band as="section" tone="cream" pad="md">
     {
       caseStudies.length > 0 ? (
         <div class="work-grid">
@@ -38,30 +46,49 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           ))}
         </div>
       ) : (
-        <p class="empty-state">Case studies are on their way.</p>
+        <p class="empty-state"><Starburst size={40} heart /> Case studies are on their way.</p>
       )
     }
-  </section>
+  </Band>
+
   <Invite reveal={false} />
 </Layout>
 
 <style>
-  .work {
-    padding: 2rem 0;
+  .work-head__lead {
+    color: #ffffff;
+    max-width: 40ch;
+    margin: 1.5rem 0 0;
+    text-wrap: balance;
   }
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 1.5rem;
   }
   .work-grid__link {
     text-decoration: none;
     color: inherit;
+    display: flex;
+  }
+  .work-grid__link :global(> div) {
+    flex: 1;
   }
   .empty-state {
-    color: var(--muted, #5c6b68);
+    color: #5c6b68;
     font-style: italic;
-    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .work-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
