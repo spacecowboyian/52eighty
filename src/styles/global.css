@@ -1,7 +1,13 @@
+/* Site shell. Colour, type and the page grid live in the design system
+   (`5280-design-system/theme.css`); this file is the site's own layout. */
 :root {
   --bg: #fbf9f5;
   --text: #16211f;
   --border: #e7e1d8;
+  /* The sticky header's height. Deterministic — the header sets it as a
+     min-height and the wordmark never wraps — and republished from the live
+     element by Layout.astro's ResizeObserver as a safety net. */
+  --site-header-h: 4.625rem;
 }
 
 * {
@@ -14,15 +20,14 @@ body {
   color: var(--text);
   font-family: var(--ui);
   line-height: 1.5;
-  /* Full-bleed sections (`.step`, the homepage hero) break out with
-     `margin-inline: calc(50% - 50vw)`. `vw` units include the scrollbar, so on
-     a page tall enough to scroll those sections end up scrollbar-width wider
-     than the viewport and the page scrolls sideways by ~7-15px. Clipping here
-     removes that; `clip` rather than `hidden` because `hidden` would make this
-     a scroll container and break the sticky site header. */
+  /* No section breaks out with viewport units any more (bands are grid
+     items), so this is only a guard against a stray wide child. `clip`, not
+     `hidden`, so body never becomes a scroll container and sticky keeps working. */
   overflow-x: clip;
 }
 
+/* Only the header and footer use a centred container; page sections use the
+   `.page` grid's content column. */
 .container {
   max-width: 72rem;
   margin: 0 auto;
@@ -32,61 +37,57 @@ body {
 .site-shell {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  /* No bottom padding: the footer meets the page bottom. */
-  padding: 1.5rem 0 0;
+  min-height: 100svh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  min-height: var(--site-header-h);
+  background: #ffffff;
+}
+
+/* The page starts *under* the header (PR 5 makes the header glass). The
+   first section pays the header's height back: as extra top padding on a
+   band, as a margin on anything else. */
+.page {
+  margin-top: calc(-1 * var(--site-header-h));
+  flex: 1;
+}
+.page > .band:first-child,
+.page > astro-island:first-child > .band:first-child {
+  --band-top-offset: var(--site-header-h);
+}
+.page > :first-child:not(.band, astro-island),
+.page > astro-island:first-child > :first-child:not(.band) {
+  margin-top: var(--site-header-h);
+}
+
+.site-footer {
+  background: #16211f;
+  color: #e8e4dc;
+  padding-block: clamp(3rem, 7vw, 5rem) 2rem;
 }
 
 /* --------------------------------------------------------------------------
-   Intake discipline showcase (`islands/intake/PathShowcase.tsx`).
-
-   Lives here rather than in inline styles because the layout genuinely needs
-   media queries: a sticky chip row under the header on small screens, a
-   floating rail beside the panels once there's width for one.
-
-   `--site-header-h` is what the sticky site header occupies; the showcase nav
-   pins directly beneath it.
-   -------------------------------------------------------------------------- */
-:root {
-  --site-header-h: 4.25rem;
-}
-
-/* --------------------------------------------------------------------------
-   Intake step shell (`islands/intake/StepShell.tsx`).
-
-   Every step in the flow — and every discipline panel — presents as its own
-   full-height screen, so the flow reads as a sequence of moments rather than
-   one long form. Each `.step` fills the viewport below the sticky header and
-   centers its content; taller content (the long step-3 question set) simply
-   grows past the fold and scrolls, since the height is a floor not a cap.
+   Intake step shell (`islands/intake/StepShell.tsx`) — a `Band` that fills
+   the viewport below the sticky header and centres its content, so the flow
+   reads as a sequence of moments rather than one long form. Taller content
+   simply grows past the fold; the height is a floor, not a cap.
    -------------------------------------------------------------------------- */
 .step {
-  /* Break out of the page's reading column to full-bleed. `margin-inline`
-     rather than `100vw` so the scrollbar never causes horizontal overflow. */
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(1.5rem, 5vw, 4rem);
   padding-block: clamp(2rem, 6vh, 4.5rem);
   min-height: calc(100svh - var(--site-header-h));
-  display: grid;
   align-content: center;
   scroll-margin-top: var(--site-header-h);
-  /* Anchor for the full-bleed `.step__bg` layer; clip it to the screen. */
-  position: relative;
-  overflow: hidden;
 }
-
-.step--surface {
-  background: var(--surface, #ffffff);
+/* The opening screen sits under the header, so it owns the whole viewport. */
+.page > astro-island:first-child > .step:first-child {
+  min-height: 100svh;
 }
-
-/* Full-bleed background layer (hero photo + scrim). Sits under the content;
-   the child <img> covers it and a gradient over the top keeps text legible. */
-.step__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.step__bg img {
+.step .band__bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -95,17 +96,21 @@ body {
   object-position: 72% 50%;
 }
 
-/* Inner reading column so prose keeps a sane measure inside the full-bleed
-   section. The showcase opts out of this — it manages its own wide layout.
-   Above the background layer. */
+/* Inner reading column so prose keeps a sane measure inside the band. The
+   showcase opts out of this — it manages its own wide layout. */
 .step__inner {
-  position: relative;
-  z-index: 1;
   width: 100%;
   max-width: 46rem;
   margin-inline: auto;
 }
 
+/* --------------------------------------------------------------------------
+   Intake discipline showcase (`islands/intake/PathShowcase.tsx`).
+
+   Lives here rather than in inline styles because the layout genuinely needs
+   media queries: a sticky chip row under the header on small screens, a
+   floating rail beside the panels once there's width for one.
+   -------------------------------------------------------------------------- */
 .showcase {
   /* Mobile-first: plain block flow, so the sticky nav below has the whole
      showcase to travel inside rather than a one-row-tall grid area. */

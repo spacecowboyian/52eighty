@@ -2,7 +2,7 @@
 import { existsSync } from 'node:fs';
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
-import { SectionHeader, Card, Button } from '5280-design-system';
+import { SectionHeader, Card, Button, Band } from '5280-design-system';
 
 const settings = await getSiteSettings();
 const featured = await getFeaturedCaseStudies();
@@ -27,8 +27,8 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
 ---
 
 <Layout>
-  <section class="reel" aria-label="52Eighty Creative">
-    <div class="reel__media" aria-hidden="true">
+  <Band as="section" tone="transparent" headerTone="dark" pad="none" className="reel" aria-label="52Eighty Creative">
+    <div slot="background" class="reel__media">
       {
         hasReel ? (
           <video
@@ -74,10 +74,9 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
         </Button>
       </p>
     </div>
+  </Band>
 
-  </section>
-
-  <section id="work" class="band">
+  <section id="work" class="work">
     <SectionHeader variant="divider" label="Selected work" />
     {
       featured.length > 0 ? (
@@ -98,7 +97,7 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
         <p class="empty-state">Case studies are on their way.</p>
       )
     }
-    <p class="band__more">
+    <p class="work__more">
       <a href={`${base}/work`}>All ten projects</a>
     </p>
   </section>
@@ -115,44 +114,38 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     </p>
   </section>
 
-  <section class="invite">
+  <Band as="section" tone="pine" pad="lg" className="invite">
     <h2 class="invite__title t-display-md">Got something you want to make?</h2>
     <p class="invite__body">
       Tell us about it. No forms, no pitch deck — it&rsquo;s the first half of a
       discovery call, and you keep your email until you want to give it.
     </p>
-    <Button href={`${base}/start`} variant="accent" size="lg" client:load>
-      Start your project
-    </Button>
-  </section>
+    <p class="invite__cta">
+      <Button href={`${base}/start`} variant="accent" size="lg" client:load>
+        Start your project
+      </Button>
+    </p>
+  </Band>
 </Layout>
 
 <style>
   /* ----------------------------------------------------------------------
      Hero reel.
 
-     Near-fullscreen, per the issue #15 tenet that the reel is the hero. Full
-     bleed uses `margin-inline` rather than `100vw` so a scrollbar can't cause
-     horizontal overflow — same technique as `.step` in global.css. The
-     negative top margin closes the `.site-shell` gap so the hero meets the
-     sticky header with no cream seam.
+     Near-fullscreen, per the issue #15 tenet that the reel is the hero. It's
+     a transparent `Band` with the media in the band's background slot, so
+     it's full-bleed by construction and starts under the header; the page
+     grid pays the header's height back as top padding.
      ---------------------------------------------------------------------- */
   .reel {
-    position: relative;
-    margin-inline: calc(50% - 50vw);
-    margin-top: -1.5rem;
-    min-height: calc(100svh - var(--site-header-h));
-    display: grid;
+    min-height: 100svh;
     align-content: end;
-    padding: clamp(2rem, 8vh, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 10vh, 6rem);
-    overflow: hidden;
-    isolation: isolate;
+    padding-bottom: clamp(3rem, 10vh, 6rem);
   }
 
   .reel__media {
     position: absolute;
     inset: 0;
-    z-index: -1;
     background: #16211f;
   }
 
@@ -277,7 +270,7 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   /* ----------------------------------------------------------------------
      Below the fold.
      ---------------------------------------------------------------------- */
-  .band {
+  .work {
     padding-top: 3.5rem;
   }
 
@@ -301,18 +294,18 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     flex: 1;
   }
 
-  .band__more {
+  .work__more {
     margin: 2rem 0 0;
     font-family: var(--ui);
   }
-  .band__more a {
+  .work__more a {
     color: var(--text);
     text-decoration: none;
     border-bottom: 2px solid #fbba16;
     padding-bottom: 2px;
   }
-  .band__more a:hover,
-  .band__more a:focus-visible {
+  .work__more a:hover,
+  .work__more a:focus-visible {
     border-color: #ff3b3b;
   }
 
@@ -342,10 +335,10 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
 
   .invite {
     margin-top: 4rem;
-    padding: clamp(2.5rem, 6vw, 4rem);
-    background: #184a4f;
-    border-radius: 18px;
     text-align: center;
+  }
+  .invite__cta {
+    margin: 0;
   }
 
   .invite__title {

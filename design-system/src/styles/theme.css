@@ -77,6 +77,12 @@
   --surface: #ffffff;
   --border: #e7e1d8;
   --paper: #f4f1ea;
+  /* Page grid: a full-bleed track either side of a reading column. */
+  --gutter: 1.5rem;
+  --content-max: 72rem;
+  --section-sm: clamp(3rem, 6vw, 4.5rem);
+  --section-md: clamp(4rem, 9vw, 7rem);
+  --section-lg: clamp(5rem, 12vw, 9rem);
   --display: 'Crumb', 'TAY Crumb', 'Lilita One', 'Display Fallback', system-ui, sans-serif;
   --serif: 'Minion 3', 'Source Serif 4 Variable', Georgia, serif;
   --ui: 'Owners Narrow', 'Acumin Pro Wide', 'Archivo Variable', system-ui, sans-serif;
@@ -84,6 +90,98 @@
 
 * {
   box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Page grid + Band.
+
+   `.page` is a named-track grid: [full] gutter | [content] column | gutter.
+   Ordinary children land in the content column; a `.band` spans the full
+   track and re-exposes the same columns to its children via subgrid, so a
+   flooded colour field and the text inside it are built the same way every
+   time, with no `calc(50% - 50vw)` and no `.container` inside sections.
+   -------------------------------------------------------------------------- */
+.page {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [content-start] min(100% - var(--gutter) * 2, var(--content-max))
+    [content-end] minmax(var(--gutter), 1fr)
+    [full-end];
+}
+.page > * {
+  grid-column: content;
+}
+/* Astro islands and static slots are wrappers, not layout; look through them. */
+.page > astro-island,
+.band > astro-static-slot,
+.band > astro-slot {
+  display: contents;
+}
+.page > astro-island > *,
+.band > astro-static-slot > *,
+.band > astro-slot > * {
+  grid-column: content;
+}
+.page > .band,
+.page > astro-island > .band,
+.band > .band,
+.band > astro-static-slot > .band,
+.band > astro-slot > .band {
+  grid-column: full;
+}
+
+.band {
+  position: relative;
+  display: grid;
+  grid-template-columns: subgrid;
+  isolation: isolate;
+  --band-pt: 0px;
+  --band-pb: 0px;
+  padding-block: calc(var(--band-pt) + var(--band-top-offset, 0px)) var(--band-pb);
+}
+.band > * {
+  grid-column: content;
+}
+.band > .band__bg {
+  /* Auto placement, so the containing block is the band's padding box
+     (a placed absolute child would be confined to its grid area). */
+  grid-column: auto;
+  grid-row: auto;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.band--has-bg,
+.band--edge-arch {
+  overflow: clip;
+}
+.band--pad-sm {
+  --band-pt: var(--section-sm);
+  --band-pb: var(--section-sm);
+}
+.band--pad-md {
+  --band-pt: var(--section-md);
+  --band-pb: var(--section-md);
+}
+.band--pad-lg {
+  --band-pt: var(--section-lg);
+  --band-pb: var(--section-lg);
+}
+/* A dome over the band above: elliptical top corners the full width of the
+   band, pulled up by the same amount so nothing shows through underneath. */
+.band--edge-arch {
+  --arch: clamp(2.5rem, 7vw, 5.5rem);
+  --band-top-offset: var(--arch);
+  border-start-start-radius: 50% var(--arch);
+  border-start-end-radius: 50% var(--arch);
+  margin-top: calc(-1 * var(--arch));
+  z-index: 1;
+}
+/* A sky/blush frame around a square-cornered field. The outer band's padding
+   is absorbed by the gutter tracks, so the inner content column still lines up. */
+.band--frame {
+  padding: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 /* Type scale — mirrors `text` in tokens.ts. Display is uppercase at its

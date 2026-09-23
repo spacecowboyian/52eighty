@@ -18,7 +18,7 @@ export function DirectForm({ answers, onChange, onSubmit, onSwitch }: DirectForm
   const canSubmit = Boolean(answers.name?.trim() && answers.email?.trim());
 
   return (
-    <StepShell first label="Send a message">
+    <StepShell label="Send a message">
       <div style={{ display: 'grid', gap: 14 }}>
       <p
         style={{

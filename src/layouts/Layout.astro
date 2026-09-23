@@ -66,25 +66,33 @@ const SITE_LINKS = [
         </header>
       </slot>
 
-      <main class="container">
+      <main class="page">
         <slot />
       </main>
 
       <slot name="footer">
-        <footer class="container">
-          <Footer links={SITE_LINKS} client:load />
+        <footer class="site-footer">
+          <div class="container">
+            <Footer links={SITE_LINKS} variant="band" client:load />
+          </div>
         </footer>
       </slot>
     </div>
+    <script>
+      // Safety net for `--site-header-h`: the header is a fixed min-height and
+      // the wordmark never wraps, but if anything does change its height the
+      // live value wins. PR 5's header island takes this over.
+      const header = document.querySelector<HTMLElement>('.site-header');
+      if (header) {
+        const apply = () =>
+          document.documentElement.style.setProperty(
+            '--site-header-h',
+            `${Math.round(header.getBoundingClientRect().height)}px`,
+          );
+        apply();
+        new ResizeObserver(apply).observe(header);
+      }
+    </script>
   </body>
 </html>
 
-<style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    width: 100%;
-    background: #ffffff;
-  }
-</style>

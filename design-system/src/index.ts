@@ -1,7 +1,7 @@
 // 52Eighty Creative — component library barrel.
 
 // Tokens & utilities
-export { colors, font, text, radius, space, shadow, ease, spring } from './tokens';
+export { colors, font, text, radius, space, sectionSpace, shadow, ease, spring } from './tokens';
 export type { ColorToken } from './tokens';
 export { useHover, useFocus } from './utils/useHover';
 export { useInView } from './utils/useInView';
@@ -55,6 +55,10 @@ export { Tabs } from './components/Tabs/Tabs';
 export { Modal } from './components/Modal/Modal';
 export { Toast, Toaster, ToastViewport, useToaster } from './components/Toast/Toast';
 export type { ToastTone } from './components/Toast/Toast';
+
+// Layout
+export { Band, bandTones } from './components/Band/Band';
+export type { BandProps, BandTone, BandPad, BandEdge, BandFrame, BandToneSpec } from './components/Band/Band';
 
 // Footer
 export { Footer } from './components/Footer/Footer';
