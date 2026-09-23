@@ -4,17 +4,36 @@ Tooling that indexes 52Eighty's case-study media corpus **beyond file paths** �
 
 Design doc and full rationale: `projects/5280-creative/decisions/media-index-architecture.md` in Brains (`brains-staging`).
 
-## ⚠️ Output data is gitignored, and must stay that way
+## ⚠️ Output data: allowlisted, not gitignored wholesale
 
-These scripts write to `media-index/` at the repo root, which `.gitignore` excludes. **This repo is public.** That tree contains:
+These scripts write to `media-index/` at the repo root. **This repo is public**, so `.gitignore` treats that tree as an **allowlist**: everything under it is ignored, and only these credential-free record types are re-included by name —
 
-- Dropbox share URLs carrying live `rlkey` access tokens for Miles's client deliverables
-- copies of client brand-guide PDFs
-- extracted keyframes of identifiable people, whose model-release status is an open question
+- `media-index/data/assets/*/shots.json` — shot records (timecodes + descriptions)
+- `media-index/data/shots-summary.json`
+- `media-index/data/documents/*/synthesis.json` — brand-guide synthesis
 
-None of that belongs in a public repo. It's also ~92 MB of derived output, reproducible by re-running the scripts.
+**A new file added to that tree stays ignored unless it is explicitly listed.** That is deliberate. Everything else in there is unsafe to publish or not worth publishing:
 
-Where the working index should ultimately live is **still undecided** — see the design doc's preconditions. The options were the repo, `~/Documents/5280/`, or a repo of its own. The public-repo exposure above rules out this repo for the *data*; the *scripts* are fine here.
+| Excluded | Why |
+|---|---|
+| `*-share-urls.json`, `data/probe-results.json`, `data/documents-index.json`, `data/assets/*/probe.json` | Dropbox share URLs carrying live `rlkey` access tokens for the client's deliverables |
+| `data/documents/*/source.pdf` | Copies of client brand-guide PDFs (~50 MB) |
+| `data/assets/*/keyframes/` | Extracted frames of identifiable people, model-release status unknown |
+| `manifest.json` | `relative_path` holds real Dropbox folder names, one containing a person's name. Redacting a path would break asset-ID matching (`sha1(caseStudy + relativePath)`) and make the file useless for locating anything. Regenerable via `build-manifest.mjs`. |
+
+### Personal names are redacted in the committed records
+
+The vision pass reads identities off lower-thirds, name badges and uniform patches. Those are replaced with `[name redacted]`, keeping roles, organisations, brands, place names and event names — so a badge reads:
+
+```
+"[name redacted] / ASSOCIATE DIRECTOR / NATIONAL LEGISLATIVE SERVICE / VETERANS OF FOREIGN WARS"
+```
+
+Unredacted originals live outside the repo at `~/Documents/5280/media-index-unscrubbed/`. **They are not cheaply regenerable** — the keyframes they were derived from were deleted once the text was captured, so recovering a name would mean re-extracting frames and re-running vision.
+
+If you re-run the pipeline, it writes fresh unredacted values. Re-scrub before committing.
+
+Where the working *index as a whole* should live is still undecided — see the design doc's preconditions. The exposure above rules this repo out for the bulk data; the scripts and the redacted records are fine here.
 
 ## Inputs
 
