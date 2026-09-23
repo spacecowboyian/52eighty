@@ -27,7 +27,6 @@ export function Footer({
     <div
       style={{
         background: colors.ink,
-        borderRadius: 18,
         padding: '46px 40px 36px',
         color: '#E8E4DC',
       }}

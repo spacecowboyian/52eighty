@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, font, radius, spring } from '../../tokens';
+import { colors, font, radius, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 
 export type CardVariant = 'work' | 'caseStudy' | 'blog';
@@ -19,10 +19,19 @@ export interface CardProps {
   meta?: string;
 }
 
-/** Shared hover lift used by all three card styles. */
-const liftHover: React.CSSProperties = {
-  transform: 'translateY(-6px)',
+/**
+ * Cards are transparent on their ground — no shell, no border, no lift. The
+ * hover is the image easing in inside its own clipped frame and the title's
+ * underline turning from lime to pine.
+ */
+const titleBase: React.CSSProperties = {
+  textDecoration: 'underline',
+  textDecorationThickness: 2,
+  textUnderlineOffset: 4,
+  textDecorationColor: colors.lime,
+  transition: `text-decoration-color .26s ${ease.out}`,
 };
+const titleHover: React.CSSProperties = { textDecorationColor: colors.pine };
 
 export function Card({
   variant = 'work',
@@ -40,45 +49,20 @@ export function Card({
     const titleText = title ?? 'The Long Way Home';
     const blurbText = blurb ?? 'A founder story that put feeling before features.';
 
-    const base: React.CSSProperties = {
-      background: '#fff',
-      border: `1px solid ${colors.border}`,
-      borderRadius: radius.lg,
-      overflow: 'hidden',
-      cursor: 'pointer',
-      transition: `transform .26s ${spring},box-shadow .26s ease`,
-    };
-    const hover: React.CSSProperties = {
-      ...liftHover,
-      boxShadow: '0 18px 38px rgba(22,33,31,.14)',
-    };
-
     return (
-      <div {...hoverProps} style={{ ...base, ...(isHovered ? hover : {}) }}>
-        <div
-          style={{
-            height: 160,
-            backgroundImage:
-              'repeating-linear-gradient(45deg,#EFEAE1 0 11px,#F6F2EA 11px 22px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <span
+      <div {...hoverProps} style={{ cursor: 'pointer' }}>
+        <div style={{ borderRadius: radius.lg, overflow: 'hidden' }}>
+          <div
+            aria-hidden="true"
             style={{
-              fontFamily: 'ui-monospace,monospace',
-              fontSize: 11,
-              color: '#A89F90',
-              background: 'rgba(255,255,255,.7)',
-              padding: '4px 9px',
-              borderRadius: radius.sm,
+              height: 160,
+              background: colors.sky,
+              transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+              transition: `transform .5s ${ease.out}`,
             }}
-          >
-            project image 4:3
-          </span>
+          />
         </div>
-        <div style={{ padding: 20 }}>
+        <div style={{ padding: '18px 0 0' }}>
           <div
             style={{
               fontFamily: font.ui,
@@ -98,6 +82,8 @@ export function Card({
               fontSize: 21,
               margin: '0 0 7px',
               letterSpacing: '-.01em',
+              ...titleBase,
+              ...(isHovered ? titleHover : {}),
             }}
           >
             {titleText}
@@ -130,15 +116,10 @@ export function Card({
       overflow: 'hidden',
       cursor: 'pointer',
       color: colors.paper,
-      transition: `transform .26s ${spring},box-shadow .26s ease`,
-    };
-    const hover: React.CSSProperties = {
-      ...liftHover,
-      boxShadow: '0 18px 38px rgba(24,74,79,.34)',
     };
 
     return (
-      <div {...hoverProps} style={{ ...base, ...(isHovered ? hover : {}) }}>
+      <div {...hoverProps} style={base}>
         <div style={{ padding: '24px 22px' }}>
           <div
             style={{
@@ -181,7 +162,8 @@ export function Card({
               fontWeight: 600,
               fontSize: 14,
               color: colors.lime,
-              borderBottom: `2px solid ${colors.lime}`,
+              borderBottom: `2px solid ${isHovered ? colors.paper : colors.lime}`,
+              transition: `border-color .26s ${ease.out}`,
               paddingBottom: 2,
             }}
           >
@@ -197,22 +179,9 @@ export function Card({
   const titleText = title ?? 'Why safe creative gets forgotten';
   const blurbText = blurb ?? 'The best ideas usually live outside the safest rooms.';
 
-  const base: React.CSSProperties = {
-    background: '#fff',
-    border: `1px solid ${colors.border}`,
-    borderRadius: radius.lg,
-    overflow: 'hidden',
-    cursor: 'pointer',
-    transition: `transform .26s ${spring},box-shadow .26s ease`,
-  };
-  const hover: React.CSSProperties = {
-    ...liftHover,
-    boxShadow: '0 18px 38px rgba(22,33,31,.14)',
-  };
-
   return (
-    <div {...hoverProps} style={{ ...base, ...(isHovered ? hover : {}) }}>
-      <div style={{ padding: 20 }}>
+    <div {...hoverProps} style={{ cursor: 'pointer' }}>
+      <div style={{ padding: 0 }}>
         <div
           style={{
             display: 'flex',
@@ -258,6 +227,8 @@ export function Card({
             fontSize: 21,
             margin: '0 0 7px',
             letterSpacing: '-.01em',
+            ...titleBase,
+            ...(isHovered ? titleHover : {}),
           }}
         >
           {titleText}

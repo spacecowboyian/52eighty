@@ -25,7 +25,6 @@ export function Tabs({ tabs }: TabsProps) {
     <div
       style={{
         background: '#fff',
-        border: `1px solid ${colors.border}`,
         borderRadius: 16,
         padding: 8,
       }}

@@ -3,6 +3,18 @@
 ## [Unreleased]
 
 ### Added
+- De-boxed the design system. Cards, section headers, the contact form, accordion, tabs,
+  logo marquee, testimonials, award badges, the intake mirror/recap panels, the header, the
+  step and showcase rules and the flow footer all lose their `1px` borders and card shells;
+  content sits directly on its ground. Structural edges stay (inputs, focus rings, link
+  underlines, accordion/recap row rules, the toast tone bar). Work cards are transparent
+  with the image in its own clipped frame (a flat sky field until real images land) and a
+  lime→pine title underline on hover instead of a lift and shadow. The footer loses its
+  radius and meets the page bottom.
+- One easing. `ease.out` / `ease.inOut` tokens replace the 56%-overshoot `spring` on all
+  eleven hover/enter sites (`spring` is kept as a deprecated alias). A global
+  `prefers-reduced-motion` guard in `theme.css` collapses every animation and transition,
+  and `scripts/screenshot.mjs` gained `--reduced-motion`.
 - Real brand fonts. The design system no longer imports Google Fonts (Baloo 2 / Source
   Serif 4 / Archivo); the licensed faces load from an Adobe Fonts kit when
   `PUBLIC_ADOBE_FONTS_KIT` is set, and beneath them sit self-hosted OFL stand-ins in

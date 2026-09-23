@@ -71,7 +71,6 @@ export function Recap({ answers, delivered, onRestart }: RecapProps) {
       <div
         style={{
           background: '#fff',
-          border: `1px solid ${colors.border}`,
           borderRadius: radius.lg,
           padding: '4px 22px 18px',
         }}
