@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Toast, Toaster, useToaster } from '../components/Toast/Toast';
 import { Modal } from '../components/Modal/Modal';
-import { colors, font, spring } from '../tokens';
+import { colors, font, ease } from '../tokens';
 import { useHover } from '../utils/useHover';
 
 const meta = {
@@ -77,7 +77,7 @@ function TriggerButton({
         padding,
         borderRadius: 999,
         cursor: 'pointer',
-        transition: `transform .22s ${spring}`,
+        transition: `transform .22s ${ease.out}`,
         transform: isHovered ? 'translateY(-2px)' : 'none',
       }}
     >

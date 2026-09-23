@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from 'react';
 import type { CSSProperties } from 'react';
-import { colors, font, radius, spring } from '../../tokens';
+import { colors, font, radius, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 import { MobileMenu } from './MobileMenu';
 
@@ -94,7 +94,7 @@ function ContactPillLight({ href }: { href?: string }) {
     padding: '10px 22px',
     borderRadius: radius.pill,
     cursor: 'pointer',
-    transition: `transform .2s ${spring}`,
+    transition: `transform .2s ${ease.out}`,
     textDecoration: 'none',
     display: 'inline-block',
   };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, font, radius, spring } from '../../tokens';
+import { colors, font, radius, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 
 export type ButtonVariant = 'primary' | 'accent' | 'outline' | 'ghost';
@@ -76,9 +76,9 @@ const variantHover: Record<ButtonVariant, React.CSSProperties> = {
 };
 
 const variantTransition: Record<ButtonVariant, string> = {
-  primary: `transform .22s ${spring},box-shadow .22s ease,background .2s ease`,
-  accent: `transform .22s ${spring},box-shadow .22s ease`,
-  outline: `transform .22s ${spring},background .2s ease,color .2s ease`,
+  primary: `transform .22s ${ease.out},box-shadow .22s ease,background .2s ease`,
+  accent: `transform .22s ${ease.out},box-shadow .22s ease`,
+  outline: `transform .22s ${ease.out},background .2s ease,color .2s ease`,
   ghost: 'background .2s ease',
 };
 

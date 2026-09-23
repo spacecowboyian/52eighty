@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Modal } from '../components/Modal/Modal';
-import { colors, font, spring } from '../tokens';
+import { colors, font, ease } from '../tokens';
 import { useHover } from '../utils/useHover';
 
 const meta = {
@@ -30,7 +30,7 @@ function OpenModalButton({ onClick }: { onClick: () => void }) {
         padding: '13px 26px',
         borderRadius: 999,
         cursor: 'pointer',
-        transition: `transform .22s ${spring}`,
+        transition: `transform .22s ${ease.out}`,
         transform: isHovered ? 'translateY(-2px)' : 'none',
       }}
     >

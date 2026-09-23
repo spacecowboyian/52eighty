@@ -9,7 +9,6 @@ export type ContactFormProps = {
 
 const cardStyle: React.CSSProperties = {
   background: '#fff',
-  border: `1px solid ${colors.border}`,
   borderRadius: 16,
   padding: 28,
   display: 'flex',
@@ -50,7 +49,7 @@ const emptyBox: React.CSSProperties = {
   width: 18,
   height: 18,
   borderRadius: 5,
-  border: '1.5px solid #C9C2B6',
+  border: '1.5px solid #E0DACF',
 };
 
 /** Selected radio dot. */

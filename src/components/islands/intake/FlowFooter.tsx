@@ -11,7 +11,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 export function FlowFooter({ onDirect, onDark = false }: { onDirect: () => void; onDark?: boolean }) {
   const linkColor = onDark ? 'rgba(255,255,255,.92)' : colors.pine;
   const mutedColor = onDark ? 'rgba(255,255,255,.7)' : colors.muted;
-  const rule = onDark ? 'rgba(255,255,255,.28)' : colors.border;
 
   return (
     <div
@@ -20,8 +19,7 @@ export function FlowFooter({ onDirect, onDark = false }: { onDirect: () => void;
         flexWrap: 'wrap',
         gap: 16,
         marginTop: 28,
-        paddingTop: 18,
-        borderTop: `1px solid ${rule}`,
+        paddingTop: 24,
         fontFamily: 'var(--ui)',
         fontSize: 13,
       }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, font, radius } from '../../tokens';
+import { colors, font } from '../../tokens';
 
 export type SectionHeaderVariant = 'centered' | 'marker' | 'divider';
 
@@ -12,22 +12,22 @@ export interface SectionHeaderProps {
   subtitle?: string;
   /**
    * Layout:
-   * - `centered` — white card, centered eyebrow + headline + lead.
-   * - `marker` — white card with a vertical bar, eyebrow + headline.
-   * - `divider` — the dashed "mile marker" rule (uses `label` for the center text).
+   * - `centered` — centered eyebrow + headline + lead, on the page ground.
+   * - `marker` — left-aligned eyebrow + headline.
+   * - `divider` — a small uppercase label heading (uses `label`).
    */
   variant?: SectionHeaderVariant;
   /** Eyebrow color override (centered defaults to red, marker to pine). */
   tone?: string;
-  /** Vertical bar color on the `marker` variant. */
+  /** @deprecated The marker bar is gone; kept so callers don't break. */
   barColor?: string;
   /** Center label on the `divider` variant. */
   label?: string;
 }
 
 /**
- * Section header / eyebrow + title + subtitle blocks plus the dashed
- * "mile marker" divider, ported pixel-for-pixel from the source.
+ * Section header: eyebrow + title + subtitle. Sits directly on whatever
+ * ground it's placed on — no card shell, no rule.
  */
 export function SectionHeader({
   eyebrow,
@@ -35,77 +35,31 @@ export function SectionHeader({
   subtitle,
   variant = 'centered',
   tone,
-  barColor = colors.gold,
   label = 'Mile 5,280',
 }: SectionHeaderProps) {
   if (variant === 'divider') {
+    // The dashed mile-marker rule is gone — a rule is a border by another
+    // name. Until PR 6's `trail` variant, the label reads as a plain heading.
     return (
-      <div
+      <h2
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 16,
-          padding: '8px 4px',
+          fontFamily: font.ui,
+          fontSize: 12,
+          fontWeight: 600,
+          letterSpacing: '.22em',
+          textTransform: 'uppercase',
+          color: colors.muted,
+          margin: 0,
         }}
       >
-        <span
-          style={{
-            width: 11,
-            height: 11,
-            borderRadius: '50%',
-            background: colors.pine,
-            flex: 'none',
-          }}
-        />
-        <span style={{ flex: 1, borderTop: '2px dashed #C9C2B6' }} />
-        <span
-          style={{
-            fontFamily: font.ui,
-            fontSize: 11,
-            letterSpacing: '.22em',
-            textTransform: 'uppercase',
-            color: colors.muted,
-            flex: 'none',
-          }}
-        >
-          {label}
-        </span>
-        <span style={{ flex: 1, borderTop: '2px dashed #C9C2B6' }} />
-        <span
-          style={{
-            width: 11,
-            height: 11,
-            borderRadius: '50%',
-            background: colors.red,
-            flex: 'none',
-          }}
-        />
-      </div>
+        {label}
+      </h2>
     );
   }
 
   if (variant === 'marker') {
     return (
-      <div
-        style={{
-          background: '#fff',
-          border: `1px solid ${colors.border}`,
-          borderRadius: 16,
-          padding: 36,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 18,
-        }}
-      >
-        <div
-          style={{
-            flex: 'none',
-            width: 8,
-            height: 64,
-            background: barColor,
-            borderRadius: 4,
-          }}
-        />
+      <div style={{ padding: '8px 0' }}>
         <div>
           <div
             style={{
@@ -137,15 +91,7 @@ export function SectionHeader({
 
   // centered
   return (
-    <div
-      style={{
-        background: '#fff',
-        border: `1px solid ${colors.border}`,
-        borderRadius: 16,
-        padding: 40,
-        textAlign: 'center',
-      }}
-    >
+    <div style={{ padding: '8px 0', textAlign: 'center' }}>
       <div
         style={{
           fontFamily: font.ui,

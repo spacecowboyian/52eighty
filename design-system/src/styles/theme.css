@@ -98,6 +98,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* The one reduced-motion contract. Components style inline and can't carry
+   media queries, so every animation and transition collapses here. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 ::selection {
   background: #fbba16;
   color: #16211f;

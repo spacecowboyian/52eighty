@@ -23,7 +23,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const panelStyle: React.CSSProperties = {
   background: '#fff',
-  border: `1px solid ${colors.border}`,
   borderRadius: radius.lg,
   padding: 22,
 };
