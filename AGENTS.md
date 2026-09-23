@@ -4,6 +4,7 @@
 - **All work starts in a fresh git worktree on a new branch from `main`** — use the `EnterWorktree` tool (branches from `origin/main`), not the primary checkout. Same pattern already in use in `repos/brains`.
 - **When a PR is merged, prune the worktree** — `ExitWorktree` with `action: "remove"` (or `git worktree remove` + delete the branch, if the worktree was created outside a Claude Code session).
 - Ask before committing.
+- **Every PR gets a live preview** at `https://spacecowboyian.github.io/52eighty/pr-<number>/` (Storybook at `.../pr-<number>/storybook/`), published by `.github/workflows/pr-preview.yml` and torn down when the PR closes. Use it to check a change as deployed — base paths, real asset URLs, the production build rather than the dev server. `gh-pages` is a generated branch; never commit to it by hand.
 - Conventional Commits for the PR squash-merge title.
 - Log notable changes in `CHANGELOG.md` under `[Unreleased]`.
 - The 5280 design system (React + TS components, tokens, Storybook) lives in this repo at `design-system/` (npm workspace). A stale copy remains in `clayground/projects/5280-design-system/`; this repo is now the source of truth. Storybook publishes to `/storybook` on GitHub Pages via CI (`npm run build:storybook`).

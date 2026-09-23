@@ -98,7 +98,27 @@ npm run dev
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site, builds Storybook into `dist/storybook/`, and deploys the combined `dist/` tree to GitHub Pages — so the site is at the Pages root and Storybook is at `/storybook`. The `PUBLIC_SANITY_PROJECT_ID` repo secret must be set (see repo Settings → Secrets → Actions).
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site, builds Storybook into `dist/storybook/`, and publishes the combined `dist/` tree to GitHub Pages — so the site is at the Pages root and Storybook is at `/storybook`. The `PUBLIC_SANITY_PROJECT_ID` repo secret must be set (see repo Settings → Secrets → Actions).
+
+Pages serves from the **`gh-pages` branch**, not from an uploaded Actions artifact. That branch is generated — never commit to it by hand. Its layout:
+
+```
+gh-pages/
+├── index.html, _astro/, …   ← production (from main)
+├── storybook/               ← published Storybook
+├── pr-20/                   ← preview for PR #20
+└── pr-21/                   ← preview for PR #21
+```
+
+### PR previews
+
+Opening or pushing to a pull request triggers `.github/workflows/pr-preview.yml`, which builds that branch with `BASE_PATH=/52eighty/pr-<number>` and publishes it to `pr-<number>/` on `gh-pages`. A bot comment on the PR carries the URL and is updated in place on each push. Closing the PR triggers `pr-preview-cleanup.yml`, which deletes the directory.
+
+Both production and preview publishes go through `.github/scripts/publish-to-pages.sh`. Production is `rsync --delete`d into the branch root with `/pr-*` excluded, so it clears its own stale files without touching live previews; a preview is scoped to its own directory. All three workflows share one `gh-pages-publish` concurrency group, and the script re-applies onto a fresh branch tip if a concurrent publish lands first.
+
+The script also maintains `.nojekyll` at the branch root. Branch-served Pages runs Jekyll, which drops directories beginning with an underscore — without that file every asset in Astro's `_astro/` 404s.
+
+Previews are skipped for pull requests from forks: a fork's token is read-only and has no access to `PUBLIC_SANITY_PROJECT_ID`, so it cannot publish. Working around that with `pull_request_target` would run fork code with write access to this repo, which isn't a trade worth making for a preview.
 
 ## Content model
 
