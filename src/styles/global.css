@@ -14,6 +14,13 @@ body {
   color: var(--text);
   font-family: var(--ui);
   line-height: 1.5;
+  /* Full-bleed sections (`.step`, the homepage hero) break out with
+     `margin-inline: calc(50% - 50vw)`. `vw` units include the scrollbar, so on
+     a page tall enough to scroll those sections end up scrollbar-width wider
+     than the viewport and the page scrolls sideways by ~7-15px. Clipping here
+     removes that; `clip` rather than `hidden` because `hidden` would make this
+     a scroll container and break the sticky site header. */
+  overflow-x: clip;
 }
 
 .container {

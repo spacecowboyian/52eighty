@@ -3,6 +3,25 @@
 ## [Unreleased]
 
 ### Added
+- Motion-first homepage (issue #15), replacing the static placeholder. A near-fullscreen
+  hero (`100svh` minus the sticky header) carries one continuous slow drift — the
+  behaviour of a held drone shot, 32s, one direction — plus a single orchestrated arrival
+  on load (headline, then lede, then call to action). Everything below the fold is still:
+  motion is spent in one place rather than scattered as fade-up-on-scroll per section,
+  which the competitive analysis flagged as the anti-pattern to avoid. Both are disabled
+  under `prefers-reduced-motion`.
+  - **The hero is built to be the reel.** The reel itself is an explicit non-goal of #15
+    and is gated on Miles's work samples, so the slot is real and checked at build time:
+    drop an encoded file at `public/reel/hero.mp4` (optionally `.webm` alongside) and the
+    hero plays it instead of the still, with no code change. Until then the River Bluff
+    Trails Park frame already in the repo stands in — real 5280 work, not stock.
+  - One `h1` on the page, per the SEO audit's heading-hierarchy finding (the old homepage
+    had roughly five). Copy is minimal per the spec's Conversation 1, and the hero carries
+    a single primary CTA to `/start` — an earlier "See the work" scroll cue was cut for
+    competing with it.
+  - Sections below: selected work from Sanity (real case studies, project-centered rather
+    than service-bucketed), a positioning statement, and a closing invitation to `/start`.
+
 - Full-bleed action photo behind the intake opening screen: a rider on 5280's River Bluff
   Trails Park work, pulled from the case-study footage, darkened with a scrim so the pitch
   reads in light type over it (`public/intake/river-bluff-hero-*.jpg`, served responsively via
@@ -83,6 +102,12 @@
   guides are still to come.
 
 ### Fixed
+- Full-bleed sections no longer scroll the page sideways. `.step` and the homepage hero
+  break out with `margin-inline: calc(50% - 50vw)`, and `vw` includes the scrollbar, so on
+  any page tall enough to scroll they ended up scrollbar-width wider than the viewport —
+  a ~7px horizontal scroll on `/start` and the homepage. `body` now sets `overflow-x: clip`
+  (`clip`, not `hidden`, which would make it a scroll container and break the sticky
+  header — verified the header still pins at `top: 0` after scrolling).
 - `package.json` now declares the Font Awesome packages the intake flow imports
   (`@fortawesome/fontawesome-svg-core`, `-/free-solid-svg-icons`, `-/react-fontawesome`) —
   they were used in the merged step-1 rework but never added as dependencies, so a clean
