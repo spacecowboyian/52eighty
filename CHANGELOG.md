@@ -3,6 +3,12 @@
 ## [Unreleased]
 
 ### Added
+- Brand marks extracted as vector SVG from the 2026-06-22 brand guide PDF
+  (`design-system/src/assets/marks/`): the “5280!” logo (lime `!` as its own path), the
+  hand-drawn squiggle, the 16-point starburst and the heart — all `currentColor`. A
+  `Foundations/Marks` story shows them at 24px and 240px. `public/brand/5280-mark.svg`
+  carries the logo for the site, and `public/favicon.svg` is now that mark on pine
+  (replacing a Georgia “52” in an off-palette gold).
 - Motion-first homepage (issue #15), replacing the static placeholder. A near-fullscreen
   hero (`100svh` minus the sticky header) carries one continuous slow drift — the
   behaviour of a held drone shot, 32s, one direction — plus a single orchestrated arrival
