@@ -82,8 +82,8 @@ function Typography() {
             }}
           >
             Three voices: a characterful display sans for headlines, a warm serif for storytelling,
-            and a clean grotesque for UI and labels. Real fonts named first, with close web
-            fallbacks loaded.
+            and a clean grotesque for UI and labels. Licensed faces named first (Adobe Fonts kit);
+            self-hosted OFL stand-ins beneath them.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ function Typography() {
           <div style={cardStyle}>
             <div style={voiceHeaderStyle}>
               <div style={voiceLabelStyle}>Display · Headlines</div>
-              <div style={voiceNoteStyle}>Crumb (TAY Crumb) → Baloo 2</div>
+              <div style={voiceNoteStyle}>Crumb (TAY Crumb) → Lilita One</div>
             </div>
             <div
               style={{
@@ -126,7 +126,7 @@ function Typography() {
           <div style={cardStyle}>
             <div style={voiceHeaderStyle}>
               <div style={voiceLabelStyle}>Serif · Editorial</div>
-              <div style={voiceNoteStyle}>Minion 3 → Source Serif 4</div>
+              <div style={voiceNoteStyle}>Minion 3 → Source Serif 4 Variable</div>
             </div>
             <div
               style={{
@@ -146,7 +146,7 @@ function Typography() {
           <div style={cardStyle}>
             <div style={voiceHeaderStyle}>
               <div style={voiceLabelStyle}>UI · Labels</div>
-              <div style={voiceNoteStyle}>Owners Narrow → Archivo</div>
+              <div style={voiceNoteStyle}>Owners Narrow → Archivo Variable (90% width)</div>
             </div>
             <div
               style={{
