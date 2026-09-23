@@ -25,3 +25,14 @@ Thumbs.db
 
 # Sanity Studio generated runtime
 sanity/.sanity/
+
+# Media-index working data (scripts/media-index/ output).
+# Never commit this tree — this repo is PUBLIC and the tree contains:
+#   - Dropbox share URLs with live `rlkey` access tokens for Miles's client
+#     deliverables (103 occurrences at last count)
+#   - copies of client brand-guide PDFs
+#   - extracted keyframes of identifiable people (model-release status unknown)
+# It's also ~92 MB of derived output that's reproducible from the scripts.
+# Leading slash matters: an unanchored `media-index/` would also swallow
+# `scripts/media-index/`, which is the tooling and does belong in the repo.
+/media-index/
