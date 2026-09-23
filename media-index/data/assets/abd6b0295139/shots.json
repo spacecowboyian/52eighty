@@ -1,0 +1,423 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 3.169833,
+    "duration_s": 3.17,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-000.jpg",
+    "description": "Aerial drone shot descends on a VFW post with a red metal roof, showing volunteers in blue t-shirts building raised garden beds in the parking lot beside an American flag and a lit 'VFW' sign.",
+    "subjects": [
+      "VFW post building",
+      "VFW sign",
+      "American flag",
+      "volunteers in blue t-shirts",
+      "raised garden beds",
+      "parking lot",
+      "pickup trucks"
+    ],
+    "setting": "exterior, VFW post parking lot and grounds",
+    "framing": "wide",
+    "people_count": 12,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": "Establishing aerial drone shot of the event site; same VFW post recurs in later interview shots (020) later in this same edit."
+  },
+  {
+    "ordinal": 1,
+    "t_in": 3.169833,
+    "t_out": 6.339667,
+    "duration_s": 3.17,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-001.jpg",
+    "description": "Top-down aerial shot of a parking lot where volunteers in blue VFW t-shirts work around raised garden beds, pickup trucks, and a car wrapped with 'RAPID RESPONSE' branding.",
+    "subjects": [
+      "raised garden beds",
+      "pickup trucks",
+      "RAPID RESPONSE branded car",
+      "volunteers in blue shirts",
+      "parking lot"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "wide",
+    "people_count": 5,
+    "faces_present": false,
+    "ocr_text": "RAPID RESPONSE",
+    "notable_details": "Identical top-down aerial framing and location reused in the Kansas cut (e5888da858e4 shot 000), confirming this is the same Day of Service event filmed for the long-form and Kansas edits."
+  },
+  {
+    "ordinal": 2,
+    "t_in": 6.339667,
+    "t_out": 7.465792,
+    "duration_s": 1.126,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-002.jpg",
+    "description": "Close detail shot of a wooden raised garden bed being filled with soil, with a rake and a potted seedling in the foreground and a person visible blurred in the background.",
+    "subjects": [
+      "raised garden bed",
+      "soil",
+      "rake",
+      "potted seedling"
+    ],
+    "setting": "exterior, parking lot garden bed",
+    "framing": "detail",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 3,
+    "t_in": 7.465792,
+    "t_out": 8.717042,
+    "duration_s": 1.251,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-003.jpg",
+    "description": "A woman in a blue VFW t-shirt, sunglasses, and a ball cap leans into the open rear cargo area of a parked SUV, gathering supplies.",
+    "subjects": [
+      "woman in blue VFW t-shirt",
+      "SUV cargo area",
+      "trees"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 4,
+    "t_in": 8.717042,
+    "t_out": 10.26025,
+    "duration_s": 1.543,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-004.jpg",
+    "description": "Two women kneel and bend over a raised garden bed together, one in a gray shirt using a cordless drill and the other in a blue 'Day Of' VFW shirt placing a seedling from a red cup into the soil.",
+    "subjects": [
+      "two women volunteers",
+      "cordless drill",
+      "raised garden bed",
+      "seedling",
+      "red planting cup"
+    ],
+    "setting": "exterior, parking lot garden bed",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 5,
+    "t_in": 10.26025,
+    "t_out": 11.011,
+    "duration_s": 0.751,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-005.jpg",
+    "description": "A woman in a blue '#StillServing' t-shirt carries chunks of charcoal toward a smoking kettle grill while a man in a matching shirt bends over supplies nearby, with green fuel canisters in the foreground.",
+    "subjects": [
+      "woman in blue Still Serving t-shirt",
+      "charcoal",
+      "kettle grill",
+      "green fuel canisters",
+      "man in blue shirt"
+    ],
+    "setting": "exterior, parking lot cookout area",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": "#STILLSERVING",
+    "notable_details": null
+  },
+  {
+    "ordinal": 6,
+    "t_in": 11.011,
+    "t_out": 12.554208,
+    "duration_s": 1.543,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-006.jpg",
+    "description": "A woman wearing a distressed ball cap and blue VFW shirt lifts a bag of 'Garden Soil' with gloved hands while another volunteer looks on in the background.",
+    "subjects": [
+      "woman in ball cap",
+      "Garden Soil bag",
+      "gardening gloves",
+      "VFW shirt"
+    ],
+    "setting": "exterior, parking lot garden bed",
+    "framing": "close",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": "Garden Soil / For In-Ground Use / All Purpose",
+    "notable_details": null
+  },
+  {
+    "ordinal": 7,
+    "t_in": 12.554208,
+    "t_out": 15.932583,
+    "duration_s": 3.378,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-007.jpg",
+    "description": "Aerial drone shot of a second building with a hotel-style brick facade and brick-paved patios, cars parked out front and a person walking near a trailer and equipment staged on the grass.",
+    "subjects": [
+      "brick building with patios",
+      "American flag",
+      "parked cars",
+      "utility trailer",
+      "pond edge"
+    ],
+    "setting": "exterior, aerial view of a building near water",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": "Different building from the main VFW post roof seen in shot 000; appears to be a secondary event location with lodging-style rooms."
+  },
+  {
+    "ordinal": 8,
+    "t_in": 15.932583,
+    "t_out": 21.229542,
+    "duration_s": 5.297,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-008.jpg",
+    "description": "An older woman with short gray hair, wearing a blue shirt printed 'MLA2 South America / Mentor of the Heartline,' speaks to the camera on a tree-lined path, likely a testimonial interview.",
+    "subjects": [
+      "older woman",
+      "MLA2 South America shirt",
+      "tree-lined path"
+    ],
+    "setting": "exterior, tree-lined path",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "MLA2 South America - Mentor of the Heartline",
+    "notable_details": "Interview-style talking-head shot, likely used as testimonial voiceover footage."
+  },
+  {
+    "ordinal": 9,
+    "t_in": 21.229542,
+    "t_out": 23.106417,
+    "duration_s": 1.877,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-009.jpg",
+    "description": "Extreme low-angle close shot of a man in a red polo shirt bending forward, his curly gray hair and beard lit against a clear blue sky.",
+    "subjects": [
+      "man in red polo shirt",
+      "blue sky",
+      "wire fencing"
+    ],
+    "setting": "exterior",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Candid low-angle b-roll, likely a cutaway during garden work."
+  },
+  {
+    "ordinal": 10,
+    "t_in": 23.106417,
+    "t_out": 24.858167,
+    "duration_s": 1.752,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-010.jpg",
+    "description": "An older man in a red polo shirt bends over behind wire garden fencing, planting seedlings into a bed with parked trucks visible behind him.",
+    "subjects": [
+      "older man in red polo",
+      "wire garden fencing",
+      "seedlings",
+      "parked trucks"
+    ],
+    "setting": "exterior, parking lot garden bed",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 11,
+    "t_in": 24.858167,
+    "t_out": 30.363667,
+    "duration_s": 5.505,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-011.jpg",
+    "description": "A heavyset woman in a blue 'Day of Service' t-shirt stands on a tree-lined path speaking to the camera, another testimonial-style interview shot.",
+    "subjects": [
+      "woman in Day of Service shirt",
+      "tree-lined path"
+    ],
+    "setting": "exterior, tree-lined path",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE",
+    "notable_details": "Same location/path as shot 008; likely part of the same interview setup."
+  },
+  {
+    "ordinal": 12,
+    "t_in": 30.363667,
+    "t_out": 31.698333,
+    "duration_s": 1.335,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-012.jpg",
+    "description": "Close shot of a 'Marion Apartments / 150 Marion' building sign mounted on a tan stucco wall, with an elderly man in a red shirt seated on the covered porch in the background.",
+    "subjects": [
+      "Marion Apartments sign",
+      "stucco wall",
+      "elderly man in red shirt",
+      "bushes"
+    ],
+    "setting": "exterior, Marion Apartments senior housing complex",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "150 MARION / Marion Apartments",
+    "notable_details": "Different location from the VFW post -- a senior/assisted living apartment complex the volunteers appear to be serving; the same sign and porch recur identically in the Kansas cut (e5888da858e4 shot 001), confirming shared source footage across edits."
+  },
+  {
+    "ordinal": 13,
+    "t_in": 31.698333,
+    "t_out": 33.450083,
+    "duration_s": 1.752,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-013.jpg",
+    "description": "Close detail of a volunteer's hands in a blue VFW t-shirt planting a seedling into a pot of soil, with a green gardening bag visible nearby.",
+    "subjects": [
+      "hands",
+      "VFW t-shirt sleeve",
+      "potted seedling",
+      "soil"
+    ],
+    "setting": "exterior",
+    "framing": "detail",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 14,
+    "t_in": 33.450083,
+    "t_out": 35.118417,
+    "duration_s": 1.668,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-014.jpg",
+    "description": "A group of volunteers in blue 'Service' t-shirts plant flowers in a mulched bed near a building entrance, some carrying potted marigolds and petunias.",
+    "subjects": [
+      "volunteers in blue Service shirts",
+      "potted marigolds",
+      "potted petunias",
+      "mulched flower bed",
+      "gardening supplies"
+    ],
+    "setting": "exterior, building entrance flower bed",
+    "framing": "medium",
+    "people_count": 5,
+    "faces_present": false,
+    "ocr_text": "SERVICE",
+    "notable_details": null
+  },
+  {
+    "ordinal": 15,
+    "t_in": 35.118417,
+    "t_out": 36.369667,
+    "duration_s": 1.251,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-015.jpg",
+    "description": "Backlit macro close-up of young tomato seedlings growing in red plastic pots, sunlight glowing through the leaves.",
+    "subjects": [
+      "tomato seedlings",
+      "red plastic pots"
+    ],
+    "setting": "exterior, garden bed",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 16,
+    "t_in": 36.369667,
+    "t_out": 37.871167,
+    "duration_s": 1.502,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-016.jpg",
+    "description": "Close detail of a hand tucking a small seedling into dark soil next to a wire garden fence, with green grass and sneakers visible in the frame.",
+    "subjects": [
+      "hand",
+      "seedling",
+      "soil",
+      "wire fence",
+      "sneakers"
+    ],
+    "setting": "exterior, garden bed",
+    "framing": "detail",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 17,
+    "t_in": 37.871167,
+    "t_out": 38.872167,
+    "duration_s": 1.001,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-017.jpg",
+    "description": "Close-up of two people's hands together planting a tomato seedling into a large wooden planter box, one wearing a blue VFW shirt.",
+    "subjects": [
+      "hands",
+      "tomato seedling",
+      "wooden planter box",
+      "VFW shirt"
+    ],
+    "setting": "exterior, garden bed",
+    "framing": "close",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 18,
+    "t_in": 38.872167,
+    "t_out": 39.998292,
+    "duration_s": 1.126,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-018.jpg",
+    "description": "An older man in a white pinstripe shirt and a woman in a blue 'Day of Service' t-shirt bend down together working near the open tailgate of a truck, one holding a small tool.",
+    "subjects": [
+      "older man in pinstripe shirt",
+      "woman in Day of Service shirt",
+      "truck tailgate",
+      "hand tool"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE",
+    "notable_details": null
+  },
+  {
+    "ordinal": 19,
+    "t_in": 39.998292,
+    "t_out": 43.585208,
+    "duration_s": 3.587,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-019.jpg",
+    "description": "A woman with gray-blonde hair in a blue 'Day of Service / All Serving' t-shirt speaks to the camera on a tree-lined path, gesturing with both hands.",
+    "subjects": [
+      "woman in Day of Service shirt",
+      "tree-lined path"
+    ],
+    "setting": "exterior, tree-lined path",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE / ALL SERVING",
+    "notable_details": "Same interview setup and path as shots 008 and 011."
+  },
+  {
+    "ordinal": 20,
+    "t_in": 43.585208,
+    "t_out": 197.072,
+    "duration_s": 153.487,
+    "keyframe_path": "data/assets/abd6b0295139/keyframes/shot-020.jpg",
+    "description": "A woman with braided gray hair in a blue 'Day of Service' t-shirt speaks to the camera in front of the VFW post, with its red awnings and 'VFW' signage visible, volunteers working at tables in the background.",
+    "subjects": [
+      "woman in Day of Service shirt",
+      "VFW post building",
+      "VFW sign",
+      "volunteers",
+      "work tables"
+    ],
+    "setting": "exterior, VFW post entrance",
+    "framing": "close",
+    "people_count": 4,
+    "faces_present": true,
+    "ocr_text": "VFW / DAY OF SERVICE",
+    "notable_details": "By far the longest shot in the edit (153.5s of a ~197s total runtime) -- likely the closing interview/testimonial that plays out under a longer VO or serves as the main talking-head anchor for the piece."
+  }
+]

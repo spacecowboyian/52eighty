@@ -35,4 +35,17 @@ sanity/.sanity/
 # It's also ~92 MB of derived output that's reproducible from the scripts.
 # Leading slash matters: an unanchored `media-index/` would also swallow
 # `scripts/media-index/`, which is the tooling and does belong in the repo.
-/media-index/
+#
+# This is an allowlist, not a denylist: everything under /media-index/ is
+# ignored, then a few specific credential-free records are re-included below.
+# A new file added to that tree stays ignored unless it is named here.
+/media-index/**
+# Re-include directories so git can descend to the allowed files.
+!/media-index/**/
+# Shot records: the durable output of the vision pass — timecodes plus
+# descriptions, the thing that actually feeds the issue #15 reel. Personal
+# names are redacted; see scripts/media-index/README.md.
+!/media-index/data/assets/*/shots.json
+!/media-index/data/shots-summary.json
+# Brand-guide synthesis (not the source PDFs, which are client property).
+!/media-index/data/documents/*/synthesis.json

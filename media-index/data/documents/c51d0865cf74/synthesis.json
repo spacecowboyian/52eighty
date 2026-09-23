@@ -1,0 +1,227 @@
+{
+  "doc_id": "c51d0865cf74",
+  "case_study": "Allied Arts Council",
+  "filename": "AAC Brand Book.pdf",
+  "colors": [
+    {
+      "name": "Dark Navy Blue",
+      "value": "#0C3566 | CMYK 87/47/0/60 | RGB 12/53/102",
+      "usage_notes": "First swatch shown in the palette grid on page 24. No named label (e.g. 'primary'/'secondary') or usage context given in the text beyond being part of the official brand palette; document states only the specified colors should be used across all AAC branded materials.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Medium Blue",
+      "value": "#386DBA | CMYK 70/45/0/27 | RGB 56/109/186",
+      "usage_notes": "Second swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Coral/Orange",
+      "value": "#FC6B49 | CMYK 0/58/71/1 | RGB 252/107/73",
+      "usage_notes": "Third swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Gold/Yellow",
+      "value": "#FCCC54 | CMYK 0/20/66/1 | RGB 252/204/84",
+      "usage_notes": "Fourth swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Deepest Navy",
+      "value": "#102233 | CMYK 73/34/0/80 | RGB 16/34/51",
+      "usage_notes": "Fifth swatch (second row, first) in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Light Blue",
+      "value": "#C7E3FF | CMYK 22/10/0/0 | RGB 199/227/255",
+      "usage_notes": "Sixth swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Light Coral/Peach",
+      "value": "#FFCCC2 | CMYK 0/20/24/0 | RGB 255/204/194",
+      "usage_notes": "Seventh swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    },
+    {
+      "name": "Off-White/Cream",
+      "value": "#F2EFEB | CMYK 0/1/2/5 | RGB 242/239/235",
+      "usage_notes": "Eighth swatch in the palette grid on page 24. No named label given in source.",
+      "source_pages": [24]
+    }
+  ],
+  "typography": [
+    {
+      "role": "display/heading",
+      "typeface": "Museo (Museo Sans)",
+      "weights": "300, 500, 700, 900 (works best in bold or semi-bold)",
+      "usage_notes": "Primary typeface, available via Adobe Fonts. Use for main headers/prominent display text; avoid using for body text (readability). Alternative when Museo is unavailable: Raleway.",
+      "source_pages": [27, 29]
+    },
+    {
+      "role": "accent/subheading",
+      "typeface": "Sofia Pro",
+      "weights": "not specified",
+      "usage_notes": "Secondary typeface, available via Adobe Fonts. Typically used for subheaders, often set in all caps with tracking for a clean modern look, but not limited to that treatment; can also be used for headers. Guidelines are flexible, not hard rules. Alternative when unavailable: Poppins.",
+      "source_pages": [28, 29]
+    },
+    {
+      "role": "body",
+      "typeface": "Nimbus Sans",
+      "weights": "not specified",
+      "usage_notes": "Secondary typeface, available via Adobe Fonts. Recommended for body text due to simplicity and readability. Alternative when unavailable: Source Sans.",
+      "source_pages": [28, 29]
+    }
+  ],
+  "logo_usage": [
+    {
+      "rule_type": "variants",
+      "description": "Primary logo is the main/default logo mark.",
+      "source_pages": [19]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Two alternate logo versions exist beyond the primary: a horizontal version and a stacked version, giving flexibility across different layouts/formats while maintaining brand consistency (page shows three numbered logo examples).",
+      "source_pages": [20]
+    },
+    {
+      "rule_type": "clearspace",
+      "description": "Always give the logo plenty of breathing room / clear space so it isn't crowded by text, images, or other design elements; this negative space keeps the logo legible and impactful. When in doubt, use more space rather than less. No specific minimum-size or exact clearspace measurement (e.g. in inches/logo-widths) is given in the extracted text.",
+      "source_pages": [21]
+    },
+    {
+      "rule_type": "dos-donts",
+      "description": "Do: use the logo so it remains clear, recognizable, and unaltered, maintaining its integrity across designs. Don't: add drop shadows, change the logo's color, stretch it, or place it over busy backgrounds -- these can make it hard to read or stray from brand identity. When in doubt, keep it simple.",
+      "source_pages": [22]
+    }
+  ],
+  "voice_and_tone": [
+    {
+      "attribute": "Collaborative",
+      "description": "Speak with \"we\" language and extend credit freely.",
+      "source_pages": [15]
+    },
+    {
+      "attribute": "Approachable",
+      "description": "Write like a trusted friend, not a gatekeeper.",
+      "source_pages": [15]
+    },
+    {
+      "attribute": "Visionary",
+      "description": "Articulate possibility and purpose.",
+      "source_pages": [15]
+    },
+    {
+      "attribute": "Grounded",
+      "description": "Stay rooted in the real, tangible impact of creativity in everyday life.",
+      "source_pages": [15]
+    },
+    {
+      "attribute": "Voice Guidelines - Do",
+      "description": "Use straightforward, confident language; emphasize shared action and regional pride; tell real stories and invite participation; reference familiar experiences, community spaces, and real outcomes.",
+      "source_pages": [16]
+    },
+    {
+      "attribute": "Voice Guidelines - Don't",
+      "description": "Don't use vague nonprofit jargon or arts elitism; don't overstate institutional credit; don't speak in abstract mission-speak; don't assume the audience has a formal arts background.",
+      "source_pages": [16]
+    },
+    {
+      "attribute": "Voice Calibration (examples in action)",
+      "description": "Not enough: \"We advocate for regional arts initiatives.\" (too passive, lacks identity/impact). Perfect: \"We bring people together to turn bold, creative ideas into real change—on your street, in your school, in your life.\" (specific, human-centered, rooted in place). Too much: \"We facilitate catalytic artistic activation across cross-sector stakeholder environments.\" (overwritten, impersonal, alienating).",
+      "source_pages": [17]
+    }
+  ],
+  "imagery_style": [],
+  "messaging": [
+    {
+      "type": "mission",
+      "text": "Allied Arts Council connects people, organizations, and ideas to strengthen the role of the arts in Northwest Missouri. Through partnerships, advocacy, and community-driven leadership, we support a thriving creative culture—one that is visible, valued, and vital to the identity of our region.",
+      "source_pages": [3]
+    },
+    {
+      "type": "vision",
+      "text": "We envision a region where the arts are woven into everyday life—accessible, celebrated, and deeply valued by people of all ages and backgrounds. Allied Arts Council exists to unite communities, spark creative expression, and lead a movement that makes the arts essential to who we are and how we live in Northwest Missouri.",
+      "source_pages": [4]
+    },
+    {
+      "type": "tagline",
+      "text": "Together, We Create.",
+      "source_pages": [12]
+    },
+    {
+      "type": "core-idea",
+      "text": "\"Together, We Create\" speaks to the heart of the word Allied—a name grounded in collaboration, unity, and shared purpose. This tagline positions AAC as a connector and co-creator, highlighting that the arts in Northwest Missouri thrive through community effort, mutual investment, and collective vision. The tone is approachable, hopeful, and mission-aligned.",
+      "source_pages": [12]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Community — We connect people, organizations, and ideas to strengthen cultural identity and civic pride.",
+      "source_pages": [13]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Opportunity — The arts are an engine for education, talent retention, tourism, and regional development.",
+      "source_pages": [13]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Belonging — Our work makes creative spaces feel welcoming, familiar, and approachable to all.",
+      "source_pages": [13]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Momentum — We help artists, organizations, and partners grow stronger—faster—through collective effort.",
+      "source_pages": [13]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Expression — We give voice to stories, experiences, and perspectives through the power of the arts.",
+      "source_pages": [13]
+    },
+    {
+      "type": "sub-positioning",
+      "text": "Together, We Create Movement — We're leading a cultural shift where the arts become part of everyday life.",
+      "source_pages": [13]
+    }
+  ],
+  "other_notes": [
+    {
+      "topic": "Document metadata",
+      "description": "Brand Book \"FOR EXTERNAL PARTNERS\", Version 1.1 - July 2025, marked Confidential.",
+      "source_pages": [1, 32]
+    },
+    {
+      "topic": "Table of contents / section structure",
+      "description": "Document sections: 01. Brand Mission & Vision (p.2-4); 02. Brand Audiences (p.5-8); 03. Brand Values (p.9-10); 04. Brand Positioning (p.11-13); 05. Brand Voice (p.14-17); 05. Logo [numbering repeats '05' in source] (p.18-22); 06. Color (p.23-25); 07. Typography (p.26-29); 07. Brand Assets [numbering repeats '07' in source] (p.30-31).",
+      "source_pages": [2, 5, 9, 11, 14, 18, 23, 26, 30]
+    },
+    {
+      "topic": "Brand Values",
+      "description": "Collaboration: \"We believe in shared success. We create space where artists, leaders, and communities build together.\" Leadership: \"We take initiative with clarity and courage. We champion big ideas that position the arts as a public good.\" Stewardship: \"We care for what we've inherited and invest in what's next. Our decisions are grounded in responsibility.\"",
+      "source_pages": [10]
+    },
+    {
+      "topic": "Brand Audiences",
+      "description": "Three defined audiences with tailored tone/voice approach and example quotes: (1) Local Artists & Arts Organizations — tone: supportive, energizing, collaborative; quote: \"You shape our region's creative identity. We're here to amplify your work, not compete with it.\" (2) Civic Leaders, Donors & Business Community — tone: strategic, visionary, pragmatic; quote: \"The arts are not an extra—they're an asset. A smart, visible investment in our region's future.\" (3) General Public (families, students, visitors, everyday citizens) — tone: approachable, enthusiastic, clear; quote: \"You don't have to be an 'artist' to enjoy the arts—this is your space, your stage, your story.\"",
+      "source_pages": [6, 7, 8]
+    },
+    {
+      "topic": "Brand assets location",
+      "description": "A folder containing all brand assets is referenced as available (\"A folder with all brand assets can be found here\"), but the actual link/location is not captured in the extracted text (likely a hyperlink on the original page).",
+      "source_pages": [31]
+    },
+    {
+      "topic": "Font download links",
+      "description": "Document references downloadable font links (\"DOWNLOAD MUSEO HERE\", \"DOWNLOAD SOFIA PRO HERE\", \"DOWNLOAD NIMBUS SANS HERE\", \"DOWNLOAD FONTS HERE\" for alternates) but actual URLs are not present in the extracted text (likely hyperlinks in the original PDF).",
+      "source_pages": [27, 28, 29]
+    },
+    {
+      "topic": "Color usage guidance",
+      "description": "Not every color combination in the palette works well together; some pairings may lack sufficient contrast/harmony. Prioritize accessibility with strong color contrast, especially for text, backgrounds, and key design elements. No specific approved/forbidden combo pairs are listed in the extracted text (page likely shows visual combo swatches not captured as text).",
+      "source_pages": [25]
+    }
+  ]
+}

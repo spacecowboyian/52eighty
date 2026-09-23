@@ -1,0 +1,219 @@
+{
+  "doc_id": "33083825394b",
+  "case_study": "Blue River Greenway",
+  "filename": "BRG-Visual-Messaging-Guide-June2026.pdf",
+  "colors": [
+    {
+      "name": "River Depths",
+      "value": "HEX #02253F / RGB 2 37 63 / CMYK 100 81 47 42",
+      "usage_notes": "One of the two main/primary brand colors for Blue River Greenway (the other being Canopy Green).",
+      "source_pages": [31]
+    },
+    {
+      "name": "Canopy Green",
+      "value": "HEX #71A937 / RGB 113 169 55 / CMYK 68 9 100 0",
+      "usage_notes": "One of the two main/primary brand colors for Blue River Greenway (the other being River Depths).",
+      "source_pages": [31]
+    },
+    {
+      "name": "Clear Sky",
+      "value": "HEX #93D7F1 / RGB 147 215 241 / CMYK 44 0 3 0",
+      "usage_notes": "Secondary color only — explicitly stated it 'will only be used as a secondary color', not one of the two main brand colors.",
+      "source_pages": [31]
+    },
+    {
+      "name": "White",
+      "value": "HEX #FFFFFF / RGB 255 255 255 / CMYK 0 0 0 0",
+      "usage_notes": "Used when necessary (alongside Black), not a primary or secondary color.",
+      "source_pages": [31]
+    },
+    {
+      "name": "Black",
+      "value": "HEX #000000 / RGB 0 0 0 / CMYK 75 68 67 90",
+      "usage_notes": "Used when necessary (alongside White), not a primary or secondary color.",
+      "source_pages": [31]
+    }
+  ],
+  "typography": [
+    {
+      "role": "universal (headings & body/paragraphs)",
+      "typeface": "Archivo",
+      "weights": "Thin, Regular, Bold, Extra-Bold",
+      "usage_notes": "Primary (and only named) typeface for Blue River Greenway, available via Google Fonts and Adobe Fonts. Should be used for all text usage including headers and paragraphs. Works best in Bold or Extra-Bold weights to create clear hierarchy.",
+      "source_pages": [34]
+    }
+  ],
+  "logo_usage": [
+    {
+      "rule_type": "variants",
+      "description": "Primary logo is shown on this page as a full-page graphic; no descriptive text was extracted alongside it (visual-only page).",
+      "source_pages": [18]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Secondary logos: in addition to the primary logo, there are two alternate versions for flexibility across layouts/formats — a horizontal version and a stacked version — both designed to maintain brand consistency while fitting a variety of spaces.",
+      "source_pages": [19]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Additional icons: two supporting icons exist beyond the primary and secondary logos — a box/river/tree icon (derived from the main logo) and a standalone tree icon. These are supporting elements only and should not replace the logo. The tree icon can be rotated horizontally to create arrows pointing to the right.",
+      "source_pages": [20]
+    },
+    {
+      "rule_type": "variants",
+      "description": "'Vision' logos represent the future-facing aspect of the Blue River Greenway — the full corridor as imagined, planned, and built over time. Used in partnership, fundraising, and long-range communications focused on what the Greenway will become (not what exists today); intended to signal momentum, invite investment, and align stakeholders around a shared forward-looking vision.",
+      "source_pages": [21]
+    },
+    {
+      "rule_type": "clearspace",
+      "description": "Always allow the logo plenty of breathing room / negative space so it is not crowded by text, images, or other design elements, keeping it legible in any layout. The arrows icon can be used as a measurement reference for spacing.",
+      "source_pages": [22]
+    },
+    {
+      "rule_type": "dos/donts",
+      "description": "Correct usage: logo remains clear, recognizable, and unaltered. Incorrect uses to avoid: adding shadows, changing the logo's color, stretching it, or placing it over busy or too-light backgrounds — these make it hard to read and are inconsistent. Guidance: 'When in doubt, keep it simple.'",
+      "source_pages": [23]
+    },
+    {
+      "rule_type": "placement",
+      "description": "Blue River Greenway is a signature initiative of the parent brand 'Renew the Blue.' When referenced together, the phrase 'A Renew the Blue Initiative' should be used in association with the Blue River Greenway logo and messaging, reinforcing the relationship while letting BRG keep its own distinct, public-facing identity.",
+      "source_pages": [25]
+    },
+    {
+      "rule_type": "hierarchy",
+      "description": "When displayed alongside the Renew the Blue logo, the Blue River Greenway logo should always be the primary visual element and focal point — appearing larger and receiving greater visual emphasis — while the Renew the Blue logo serves as an endorsement mark, used in a single-color application whenever possible.",
+      "source_pages": [26]
+    },
+    {
+      "rule_type": "co-branding",
+      "description": "Partner, municipality, and agency logos may appear alongside the Blue River Greenway logo on communications, signage, events, and promotional materials to celebrate shared ownership/partnership, while the Blue River Greenway remains the clear, recognizable, unifying identity.",
+      "source_pages": [27]
+    },
+    {
+      "rule_type": "hierarchy",
+      "description": "Multi-logo layout rules: the Blue River Greenway logo should appear larger than partner logos whenever possible; partner logos should be visually balanced with one another and treated as supporting marks; sufficient spacing must be maintained between logos to preserve legibility and brand integrity; no partner logo should overpower or compete with the Blue River Greenway logo; when multiple partner logos are present, they should be grouped together as supporting organizations rather than given individual prominence.",
+      "source_pages": [28]
+    },
+    {
+      "rule_type": "placement",
+      "description": "Recommended logo order: 1. Blue River Greenway logo (primary); 2. Partner or municipality logos (supporting); 3. Additional sponsors, agencies, or supporting organizations (as applicable).",
+      "source_pages": [29]
+    }
+  ],
+  "voice_and_tone": [],
+  "imagery_style": [],
+  "messaging": [
+    {
+      "type": "core-idea",
+      "text": "The Blue River Greenway Vision is a future-focused, multi-jurisdiction collaborative framework for investment in Greater Kansas City, which connects communities, restores the river, and creates a shared corridor that people can experience, use, and take pride in.",
+      "source_pages": [3]
+    },
+    {
+      "type": "positioning",
+      "text": "REFINED POSITIONING (INTERNAL USE): The Blue River Greenway is a connected corridor that links communities to each other and back to the Blue River, transforming it into a shared civic asset that Greater Kansas City can experience, value, and reclaim.",
+      "source_pages": [4]
+    },
+    {
+      "type": "pillar",
+      "text": "1. CONNECTION YOU CAN EXPERIENCE — Connects neighborhoods to the river; connects communities along a continuous corridor; creates visible, physical access to a previously disconnected system. Key Idea: 'Connection only matters if people can feel it.'",
+      "source_pages": [6]
+    },
+    {
+      "type": "pillar",
+      "text": "2. A PATH BACK TO THE RIVER — Provides access points, trails, and spaces that bring people to the water; reintroduces the river as part of everyday life in Kansas City; positions the Blue River as Kansas City's river. Key Idea: 'You can't value what you never experience.'",
+      "source_pages": [7]
+    },
+    {
+      "type": "pillar",
+      "text": "3. FROM EXPERIENCE TO STEWARDSHIP — Awareness through use, then value through experience, then care through ownership and pride; builds long-term support for watershed health and restoration; creates a public that advocates for the river's future. Key Idea: 'Experience creates advocates.'",
+      "source_pages": [8]
+    },
+    {
+      "type": "pillar",
+      "text": "4. BUILT FOR THE FUTURE OF GREATER KANSAS CITY — Connects both Kansas and Missouri communities; aligns infrastructure, conservation, and regional growth; designed to serve future generations. Key Idea: 'This is about shaping the future of the region.'",
+      "source_pages": [9]
+    },
+    {
+      "type": "pillar",
+      "text": "5. A SHARED CIVIC ASSET — Not owned by one entity; built through partnership; a corridor that communities can reclaim and take pride in. Key Idea: 'The Blue River is Kansas City's river and the greenway helps people reconnect to it.'",
+      "source_pages": [10]
+    },
+    {
+      "type": "recurring-phrase",
+      "text": "\"A path back to the river\"",
+      "source_pages": [12]
+    },
+    {
+      "type": "recurring-phrase",
+      "text": "\"Reconnecting Kansas City to its river\"",
+      "source_pages": [12]
+    },
+    {
+      "type": "recurring-phrase",
+      "text": "\"Turning the Blue River into something people can experience\"",
+      "source_pages": [12]
+    },
+    {
+      "type": "recurring-phrase",
+      "text": "\"From access to appreciation to stewardship\"",
+      "source_pages": [12]
+    },
+    {
+      "type": "recurring-phrase",
+      "text": "\"A river people can see, experience, and care about\"",
+      "source_pages": [12]
+    },
+    {
+      "type": "sample-messaging",
+      "text": "GENERAL PUBLIC: The Blue River Greenway Vision is about getting people back to the river. By creating connected trails and access points, it turns the Blue River into something you can experience, not just drive past. When people experience it, they start to care about it.",
+      "source_pages": [14]
+    },
+    {
+      "type": "sample-messaging",
+      "text": "CIVIC LEADERS: The Greenway is more than a trail system. It's a way to reconnect communities to the Blue River and build long-term support for its restoration. By creating access and visibility, it turns the river into a shared civic asset that people value, advocate for, and take pride in.",
+      "source_pages": [14]
+    },
+    {
+      "type": "sample-messaging",
+      "text": "FUNDERS: This project creates a direct link between access and impact. By helping people experience the Blue River, the Greenway builds the public awareness and support needed to drive meaningful, long-term watershed restoration.",
+      "source_pages": [14]
+    },
+    {
+      "type": "key-takeaway",
+      "text": "The Blue River Greenway should always be communicated as: A connected corridor; A path back to our river; A shared civic asset; A driver of long-term stewardship. If people can experience the river, they will value it. If they value it, they will help protect it.",
+      "source_pages": [16]
+    },
+    {
+      "type": "co-brand-tagline",
+      "text": "\"A Renew the Blue Initiative\"",
+      "source_pages": [25]
+    }
+  ],
+  "other_notes": [
+    {
+      "topic": "Document versioning discrepancy",
+      "description": "The cover page (page 1) states 'Version 1.1 - March 2026' while the closing page (page 35) states 'Version 2.1 - June 2026.' These are inconsistent with each other; the June 2026 date on the closing page matches the filename 'BRG-Visual-Messaging-Guide-June2026.pdf,' suggesting the cover page may be a stale/unupdated title slide from an earlier version.",
+      "source_pages": [1, 35]
+    },
+    {
+      "topic": "Confidentiality and audience",
+      "description": "The guide is explicitly marked 'FOR EXTERNAL PARTNERS' and 'Confidential' on the cover page.",
+      "source_pages": [1]
+    },
+    {
+      "topic": "Brand assets link",
+      "description": "Closing page contains a 'CLICK HERE to access brand assets' call-to-action; the actual hyperlink target was not present in the extracted text.",
+      "source_pages": [35]
+    },
+    {
+      "topic": "Color combination guidance (visual-only)",
+      "description": "Page states that only certain palette color pairings are approved for use together ('if a certain color combination is not on here, then it should not be used'), for contrast/accessibility reasons, but the actual set of approved combinations is shown as a visual chart/swatch grid that was not captured in the extracted text.",
+      "source_pages": [32]
+    },
+    {
+      "topic": "Internal 'sales funnel' framing for the Core Idea",
+      "description": "Internally (per the Core Idea section), the Greenway is framed as 'the top of our sales funnel' — driving general-public participation and experience first, with the goal of converting that engagement further down the funnel into environmental stewardship and support for full watershed restoration ('participation drives education').",
+      "source_pages": [3]
+    }
+  ]
+}

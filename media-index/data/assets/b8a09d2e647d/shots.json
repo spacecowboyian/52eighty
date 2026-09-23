@@ -1,0 +1,553 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 3.044708,
+    "duration_s": 3.045,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-000.jpg",
+    "description": "A man in a navy blue mountain-bike jersey with a red circular logo speaks to camera at the River Bluff trailhead kiosk, with parked mountain bikes and a trail map board behind him.",
+    "subjects": [
+      "man in navy jersey with red circular logo",
+      "red cap",
+      "black-framed glasses",
+      "mustache",
+      "parked mountain bikes",
+      "wooden trail kiosk",
+      "trail map signage"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area, gravel and grass",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 1,
+    "t_in": 3.044708,
+    "t_out": 6.75675,
+    "duration_s": 3.712,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-001.jpg",
+    "description": "A rider in a red helmet launches his mountain bike off a dirt lip on a shaded singletrack trail, captured in motion blur.",
+    "subjects": [
+      "mountain biker",
+      "red helmet",
+      "gray jersey",
+      "dirt jump lip",
+      "wooded singletrack trail"
+    ],
+    "setting": "exterior, wooded singletrack trail with dirt jump feature",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Motion blur from panning shot; rider launching off a dirt lip mid-trail."
+  },
+  {
+    "ordinal": 2,
+    "t_in": 6.75675,
+    "t_out": 12.721042,
+    "duration_s": 5.964,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-002.jpg",
+    "description": "An extreme low-angle, motion-blurred close-up of a mountain bike's front wheel skimming past exposed tree roots on the trail, with another rider visible descending in the background.",
+    "subjects": [
+      "mountain bike wheel",
+      "tree roots",
+      "dirt trail",
+      "second rider in background"
+    ],
+    "setting": "exterior, wooded dirt trail, ground-level angle",
+    "framing": "detail",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Heavy motion blur, low ground-level GoPro-style angle."
+  },
+  {
+    "ordinal": 3,
+    "t_in": 12.721042,
+    "t_out": 14.014,
+    "duration_s": 1.293,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-003.jpg",
+    "description": "The same navy-jersey interview subject continues speaking at the trailhead kiosk, bikes and trail signage visible behind him.",
+    "subjects": [
+      "man in navy jersey with red circular logo",
+      "red cap",
+      "black-framed glasses",
+      "mustache",
+      "parked mountain bikes",
+      "wooden trail kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 4,
+    "t_in": 14.014,
+    "t_out": 18.351667,
+    "duration_s": 4.338,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-004.jpg",
+    "description": "A low-angle shot looking straight up through the forest canopy shows the silhouette of a mountain bike's wheel and frame against sunlit green leaves.",
+    "subjects": [
+      "mountain bike silhouette",
+      "tree canopy",
+      "lens flare"
+    ],
+    "setting": "exterior, forest canopy viewed from directly below",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Artistic low-angle shot looking up through canopy with bike silhouette and sun glare; no rider visible."
+  },
+  {
+    "ordinal": 5,
+    "t_in": 18.351667,
+    "t_out": 26.359667,
+    "duration_s": 8.008,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-005.jpg",
+    "description": "A bearded man in an olive-green Fox-brand riding jersey with coral 'FOX' lettering speaks to camera at the same trailhead kiosk.",
+    "subjects": [
+      "man in olive green Fox jersey",
+      "coral FOX logo text",
+      "trucker cap",
+      "short beard"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FOX",
+    "notable_details": null
+  },
+  {
+    "ordinal": 6,
+    "t_in": 26.359667,
+    "t_out": 31.114417,
+    "duration_s": 4.755,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-006.jpg",
+    "description": "Two mountain bikers ride single-file down a wooded dirt trail, one in a Fox-branded jersey trailing behind the lead rider.",
+    "subjects": [
+      "two mountain bikers",
+      "Fox-branded jersey",
+      "dirt trail",
+      "wooded hillside"
+    ],
+    "setting": "exterior, wooded dirt trail descent",
+    "framing": "wide",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Two riders spaced along the trail, action riding shot."
+  },
+  {
+    "ordinal": 7,
+    "t_in": 31.114417,
+    "t_out": 34.409375,
+    "duration_s": 3.295,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-007.jpg",
+    "description": "The Fox-jersey interview subject continues speaking at the trailhead.",
+    "subjects": [
+      "man in olive green Fox jersey",
+      "coral FOX logo text",
+      "trucker cap"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FOX",
+    "notable_details": null
+  },
+  {
+    "ordinal": 8,
+    "t_in": 34.409375,
+    "t_out": 36.828458,
+    "duration_s": 2.419,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-008.jpg",
+    "description": "A rider is mostly obscured by dense green trailside foliage as he pushes through thick undergrowth on the wooded course.",
+    "subjects": [
+      "mountain biker",
+      "dense forest undergrowth",
+      "tall green plants"
+    ],
+    "setting": "exterior, dense wooded undergrowth beside trail",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider mostly obscured by foreground foliage and motion blur, low visual clarity."
+  },
+  {
+    "ordinal": 9,
+    "t_in": 36.828458,
+    "t_out": 40.5405,
+    "duration_s": 3.712,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-009.jpg",
+    "description": "A rider in a full-face helmet carves along a raised dirt berm in profile, wearing a tan shirt and black shorts.",
+    "subjects": [
+      "mountain biker",
+      "full-face helmet",
+      "dirt berm jump feature",
+      "wooded backdrop"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Full-face helmet obscures rider's face; dynamic riding position."
+  },
+  {
+    "ordinal": 10,
+    "t_in": 40.5405,
+    "t_out": 44.461083,
+    "duration_s": 3.921,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-010.jpg",
+    "description": "The Fox-jersey man continues his interview segment at the kiosk.",
+    "subjects": [
+      "man in olive green Fox jersey",
+      "coral FOX logo text",
+      "trucker cap"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FOX",
+    "notable_details": null
+  },
+  {
+    "ordinal": 11,
+    "t_in": 44.461083,
+    "t_out": 45.628917,
+    "duration_s": 1.168,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-011.jpg",
+    "description": "A rider descends a dirt trail away from camera, backlit by strong sun flare filtering through the trees.",
+    "subjects": [
+      "mountain biker (rear view)",
+      "dirt trail",
+      "backlit sun flare",
+      "forest"
+    ],
+    "setting": "exterior, wooded trail descent",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Strong backlight/sun flare through trees as rider descends; back to camera."
+  },
+  {
+    "ordinal": 12,
+    "t_in": 45.628917,
+    "t_out": 47.338958,
+    "duration_s": 1.71,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-012.jpg",
+    "description": "A shirtless rider in tan shorts catches significant air off a dirt jump, with a couple of other riders and a spectator watching from the trail below.",
+    "subjects": [
+      "shirtless mountain biker",
+      "dirt jump/berm",
+      "other riders/spectator in background"
+    ],
+    "setting": "exterior, wooded dirt jump feature",
+    "framing": "close",
+    "people_count": 3,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "One of the more dynamic action beats in the footage \u2014 rider fully airborne mid-jump; main rider's face is out of frame, background riders too small/distant to identify."
+  },
+  {
+    "ordinal": 13,
+    "t_in": 47.338958,
+    "t_out": 49.966583,
+    "duration_s": 2.628,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-013.jpg",
+    "description": "A rider in dark clothing is airborne off a dirt tabletop jump, seen from behind against a forested backdrop.",
+    "subjects": [
+      "mountain biker (rear view)",
+      "dirt tabletop jump",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider airborne off jump, seen from behind, face not visible."
+  },
+  {
+    "ordinal": 14,
+    "t_in": 49.966583,
+    "t_out": 57.766042,
+    "duration_s": 7.799,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-014.jpg",
+    "description": "An empty, sculpted dirt berm curves through the wooded trail with no riders in frame, an establishing shot of the terrain.",
+    "subjects": [
+      "dirt trail",
+      "berm",
+      "forest"
+    ],
+    "setting": "exterior, wooded singletrack trail",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Establishing/cutaway shot of trail terrain, no riders present."
+  },
+  {
+    "ordinal": 15,
+    "t_in": 57.766042,
+    "t_out": 63.897167,
+    "duration_s": 6.131,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-015.jpg",
+    "description": "A lead rider approaches the camera down a wooded trail while a second rider in a red helmet follows some distance behind.",
+    "subjects": [
+      "mountain biker approaching camera",
+      "second rider in red helmet",
+      "wooded trail"
+    ],
+    "setting": "exterior, wooded trail descent",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Lead rider's face is visible though motion-blurred; second rider too distant to identify."
+  },
+  {
+    "ordinal": 16,
+    "t_in": 63.897167,
+    "t_out": 72.405667,
+    "duration_s": 8.508,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-016.jpg",
+    "description": "The Fox-jersey man continues speaking in another interview cutaway at the kiosk.",
+    "subjects": [
+      "man in olive green Fox jersey",
+      "coral FOX logo text",
+      "trucker cap"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FOX",
+    "notable_details": null
+  },
+  {
+    "ordinal": 17,
+    "t_in": 72.405667,
+    "t_out": 76.5765,
+    "duration_s": 4.171,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-017.jpg",
+    "description": "An extreme close, motion-blurred shot of an orange-and-black mountain bike's wheel and frame passing the camera on a sunlit dirt trail.",
+    "subjects": [
+      "orange and black mountain bike",
+      "dirt trail",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt trail, ground-level angle",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Extreme close low-angle motion-blur cutaway shot; no rider clearly visible."
+  },
+  {
+    "ordinal": 18,
+    "t_in": 76.5765,
+    "t_out": 82.082,
+    "duration_s": 5.505,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-018.jpg",
+    "description": "A rider clears a jump feature mid-air, looking down at the trail, surrounded by dense forest.",
+    "subjects": [
+      "mountain biker mid-jump",
+      "olive/tan clothing",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider airborne off a jump feature, face angled away from camera."
+  },
+  {
+    "ordinal": 19,
+    "t_in": 82.082,
+    "t_out": 91.257833,
+    "duration_s": 9.176,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-019.jpg",
+    "description": "The navy-jersey, red-cap interview subject continues speaking at the trailhead kiosk.",
+    "subjects": [
+      "man in navy jersey with red circular logo",
+      "red cap",
+      "black-framed glasses",
+      "mustache"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 20,
+    "t_in": 91.257833,
+    "t_out": 93.468375,
+    "duration_s": 2.211,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-020.jpg",
+    "description": "A heavily motion-blurred panning shot captures a rider streaking down the trail at speed, emphasizing velocity.",
+    "subjects": [
+      "mountain biker",
+      "motion-blur panning effect",
+      "dirt trail"
+    ],
+    "setting": "exterior, wooded dirt trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Strong panning motion-blur effect emphasizing speed; stylized dynamic action shot."
+  },
+  {
+    "ordinal": 21,
+    "t_in": 93.468375,
+    "t_out": 98.640208,
+    "duration_s": 5.172,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-021.jpg",
+    "description": "A low-angle shot frames a large sandstone boulder in the foreground with a distant rider silhouette navigating the wooded trail beyond.",
+    "subjects": [
+      "large sandstone boulder (foreground)",
+      "distant mountain biker silhouette",
+      "forest canopy"
+    ],
+    "setting": "exterior, rocky wooded terrain",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Striking low-angle composition with boulder framing distant rider; scenic terrain shot."
+  },
+  {
+    "ordinal": 22,
+    "t_in": 98.640208,
+    "t_out": 100.642208,
+    "duration_s": 2.002,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-022.jpg",
+    "description": "The navy-jersey interview subject continues speaking at the kiosk.",
+    "subjects": [
+      "man in navy jersey with red circular logo",
+      "red cap",
+      "black-framed glasses",
+      "mustache"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 23,
+    "t_in": 100.642208,
+    "t_out": 101.935167,
+    "duration_s": 1.293,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-023.jpg",
+    "description": "Riders wearing helmets gather at a rusty metal pedestrian bridge crossing a wooded ravine, with a caution sign posted at the trail junction ahead.",
+    "subjects": [
+      "rusty metal pedestrian/bike bridge",
+      "multiple riders with helmets",
+      "trail caution signage",
+      "forest ravine"
+    ],
+    "setting": "exterior, bridge crossing over wooded ravine in park",
+    "framing": "wide",
+    "people_count": 4,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Group scene at a bridge crossing; riders' faces obscured by helmets or turned away; small warning/caution sign visible at trail junction, text not legible."
+  },
+  {
+    "ordinal": 24,
+    "t_in": 101.935167,
+    "t_out": 112.112,
+    "duration_s": 10.177,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-024.jpg",
+    "description": "A distant rider disappears down a rock-lined dirt trail beneath a canopy of trees, with a red-and-white warning sign posted trailside.",
+    "subjects": [
+      "distant mountain biker on trail",
+      "rock-lined trail border",
+      "warning sign post",
+      "dense forest canopy"
+    ],
+    "setting": "exterior, wooded rock-lined singletrack trail",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "WARNING",
+    "notable_details": "Rider very distant and back-turned, face not identifiable; trail warning sign visible, fine print not legible at this resolution."
+  },
+  {
+    "ordinal": 25,
+    "t_in": 112.112,
+    "t_out": 116.574792,
+    "duration_s": 4.463,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-025.jpg",
+    "description": "A soft-focus, hazy shot of dense forest canopy and tall tree trunks with climbing vines, showing no riders.",
+    "subjects": [
+      "dense forest canopy",
+      "tall tree trunks",
+      "climbing vines"
+    ],
+    "setting": "exterior, forest interior, no trail visible",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Soft-focus/hazy quality frame, appears to be a filler nature cutaway, possibly slightly out of focus."
+  },
+  {
+    "ordinal": 26,
+    "t_in": 116.574792,
+    "t_out": 120.453667,
+    "duration_s": 3.879,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-026.jpg",
+    "description": "The navy-jersey interview subject wraps up his final interview segment at the trailhead kiosk.",
+    "subjects": [
+      "man in navy jersey with red circular logo",
+      "red cap",
+      "black-framed glasses",
+      "mustache"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 27,
+    "t_in": 120.453667,
+    "t_out": 130.172,
+    "duration_s": 9.718,
+    "keyframe_path": "data/assets/b8a09d2e647d/keyframes/shot-027.jpg",
+    "description": "The closing title card reads 'River Bluff Trails Park' in teal lettering combining hiker and mountain-biker silhouettes, over blurred trail footage of a rider descending.",
+    "subjects": [
+      "River Bluff Trails Park logo/title card",
+      "hiker and mountain-biker icon within logotype",
+      "blurred trail footage background"
+    ],
+    "setting": "graphic overlay over exterior trail footage (blurred)",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "RIVER BLUFF TRAILS PARK",
+    "notable_details": "Closing title/logo card for the piece; brand identity element combining hiker and rider icon into the lettering."
+  }
+]

@@ -1,0 +1,721 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 4.087417,
+    "duration_s": 4.087,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-000.jpg",
+    "description": "A gray-haired man in a blue-and-gray 'FLY Racing' jersey speaks to camera at the River Bluff trailhead kiosk, with parked mountain bikes and a trail map board behind him.",
+    "subjects": [
+      "man in FLY Racing jersey",
+      "trailhead kiosk",
+      "parked mountain bikes",
+      "trail map board"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FLY RACING",
+    "notable_details": null
+  },
+  {
+    "ordinal": 1,
+    "t_in": 4.087417,
+    "t_out": 9.25925,
+    "duration_s": 5.172,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-001.jpg",
+    "description": "A rider in a full-face helmet and black tank top crests a dirt jump mound on a shaded wooded trail.",
+    "subjects": [
+      "mountain biker",
+      "full-face helmet",
+      "black tank top",
+      "dirt jump mound",
+      "wooded trail"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider cresting a dirt mound feature; full-face helmet obscures face."
+  },
+  {
+    "ordinal": 2,
+    "t_in": 9.25925,
+    "t_out": 12.5125,
+    "duration_s": 3.253,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-002.jpg",
+    "description": "A low-angle shot looking up through the forest canopy captures sunlight flaring through the leaves, with no riders in frame.",
+    "subjects": [
+      "forest canopy",
+      "tree trunks",
+      "sun flare"
+    ],
+    "setting": "exterior, forest canopy view from below",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "B-roll nature cutaway with strong lens flare."
+  },
+  {
+    "ordinal": 3,
+    "t_in": 12.5125,
+    "t_out": 16.099417,
+    "duration_s": 3.587,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-003.jpg",
+    "description": "The FLY Racing jersey man continues speaking at the trailhead kiosk.",
+    "subjects": [
+      "man in FLY Racing jersey",
+      "trailhead kiosk",
+      "parked mountain bikes"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FLY RACING",
+    "notable_details": null
+  },
+  {
+    "ordinal": 4,
+    "t_in": 16.099417,
+    "t_out": 20.854167,
+    "duration_s": 4.755,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-004.jpg",
+    "description": "Two mountain bikers corner hard around a dirt berm, the foreground rider in a teal tank top and Fox-branded shorts leaning into the turn with a second rider close behind.",
+    "subjects": [
+      "two mountain bikers cornering",
+      "teal tank top rider",
+      "Fox-branded shorts",
+      "red-helmeted rider (background)",
+      "dirt berm",
+      "wooded trail"
+    ],
+    "setting": "exterior, wooded dirt berm/corner feature",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": "FOX",
+    "notable_details": "Dynamic cornering action shot \u2014 foreground rider leaning hard into the berm with a second rider following close behind."
+  },
+  {
+    "ordinal": 5,
+    "t_in": 20.854167,
+    "t_out": 26.651625,
+    "duration_s": 5.797,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-005.jpg",
+    "description": "Another low-angle canopy shot shows sunlight filtering through dense forest leaves, a quiet nature cutaway with no riders.",
+    "subjects": [
+      "forest canopy",
+      "tree trunks",
+      "sun flare"
+    ],
+    "setting": "exterior, forest canopy view from below",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Similar b-roll nature cutaway to shot 002, different composition."
+  },
+  {
+    "ordinal": 6,
+    "t_in": 26.651625,
+    "t_out": 29.446083,
+    "duration_s": 2.794,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-006.jpg",
+    "description": "A bald, bearded man in an olive-green Fasthouse 'FH/MC Speed Shop' jersey speaks to camera at the trailhead kiosk.",
+    "subjects": [
+      "bald bearded man",
+      "Fasthouse FH/MC Speed Shop jersey",
+      "trailhead kiosk",
+      "parked bikes"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FASTHOUSE FH/MC SPEED SHOP WHEN RULES WERE FEW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 7,
+    "t_in": 29.446083,
+    "t_out": 32.657625,
+    "duration_s": 3.212,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-007.jpg",
+    "description": "A straight-up canopy shot of forest branches and leaves, more diffuse and overcast than the other canopy cutaways, with no riders.",
+    "subjects": [
+      "forest canopy",
+      "tree branches"
+    ],
+    "setting": "exterior, forest canopy viewed from directly below",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "B-roll canopy shot with softer, more diffuse light than the other canopy inserts."
+  },
+  {
+    "ordinal": 8,
+    "t_in": 32.657625,
+    "t_out": 36.953583,
+    "duration_s": 4.296,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-008.jpg",
+    "description": "Two riders in tan shirts and black shorts descend a wooded singletrack trail together, one riding just ahead of the other.",
+    "subjects": [
+      "two mountain bikers descending trail",
+      "tan shirts",
+      "black shorts",
+      "wooded singletrack"
+    ],
+    "setting": "exterior, wooded trail descent",
+    "framing": "wide",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Both riders' backs are to camera; faces not visible."
+  },
+  {
+    "ordinal": 9,
+    "t_in": 36.953583,
+    "t_out": 39.205833,
+    "duration_s": 2.252,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-009.jpg",
+    "description": "A rider in a black shirt and helmet approaches a rusty red metal pedestrian bridge ramp spanning a wooded gully, with a stone-lined trail continuing beyond.",
+    "subjects": [
+      "rusty metal bridge/ramp",
+      "mountain biker in black shirt and helmet",
+      "stone-lined trail",
+      "small trail sign"
+    ],
+    "setting": "exterior, bridge crossing in wooded park",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider is distant and back-turned; face not identifiable."
+  },
+  {
+    "ordinal": 10,
+    "t_in": 39.205833,
+    "t_out": 42.167125,
+    "duration_s": 2.961,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-010.jpg",
+    "description": "A yield/caution triangle sign is mounted on a rusty corrugated-metal and stone retaining structure at a dirt trail junction, with no riders present.",
+    "subjects": [
+      "yield/caution triangle sign",
+      "corrugated metal and stone structure",
+      "dirt trail fork",
+      "dense forest"
+    ],
+    "setting": "exterior, wooded trail junction",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Trail-junction signage cutaway shot; sign text not legible at this resolution, only the yield triangle symbol is clear."
+  },
+  {
+    "ordinal": 11,
+    "t_in": 42.167125,
+    "t_out": 45.378667,
+    "duration_s": 3.212,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-011.jpg",
+    "description": "The Fasthouse-jersey man continues his interview, arms crossed, at the trailhead kiosk.",
+    "subjects": [
+      "bald bearded man",
+      "Fasthouse jersey",
+      "arms crossed",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FASTHOUSE FH/MC SPEED SHOP WHEN RULES WERE FEW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 12,
+    "t_in": 45.378667,
+    "t_out": 53.595208,
+    "duration_s": 8.217,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-012.jpg",
+    "description": "A rider is caught mid-air in motion blur off a trailside jump while a spectator crouches in the foreground filming the moment on a phone, with another rider visible on the trail below.",
+    "subjects": [
+      "mountain biker mid-air (blurred)",
+      "spectator crouched filming with phone",
+      "second rider on trail below",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "wide",
+    "people_count": 3,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Dynamic jump moment paired with a spectator filming on a phone in the foreground \u2014 a strong behind-the-scenes/action combo shot; none of the three people's faces are clearly visible."
+  },
+  {
+    "ordinal": 13,
+    "t_in": 53.595208,
+    "t_out": 56.222833,
+    "duration_s": 2.628,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-013.jpg",
+    "description": "A rider in a gray-and-blue jersey descends a steep dirt bank in a low-angle motion shot, banking into a bermed corner.",
+    "subjects": [
+      "mountain biker descending",
+      "gray/blue jersey",
+      "black shorts",
+      "steep dirt bank",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt trail descent",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider's back is turned and motion-blurred; face not visible."
+  },
+  {
+    "ordinal": 14,
+    "t_in": 56.222833,
+    "t_out": 61.186125,
+    "duration_s": 4.963,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-014.jpg",
+    "description": "A lone rider is visible small in the distance heading down a quiet wooded singletrack trail.",
+    "subjects": [
+      "distant mountain biker",
+      "forest trail",
+      "tall trees"
+    ],
+    "setting": "exterior, wooded singletrack trail",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Quiet establishing shot; rider too small/distant for face to be visible."
+  },
+  {
+    "ordinal": 15,
+    "t_in": 61.186125,
+    "t_out": 62.81275,
+    "duration_s": 1.627,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-015.jpg",
+    "description": "A bald man with a salt-and-pepper beard, wearing a gray 'River Bluff Trails Park' t-shirt and black Santa Cruz cap, speaks to camera at the trailhead kiosk, tattoos visible on his forearms.",
+    "subjects": [
+      "bald man with salt-and-pepper beard",
+      "gray River Bluff Trails Park t-shirt",
+      "black Santa Cruz cap",
+      "tattooed forearms",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": "Raises three fingers while talking; Santa Cruz brand visible on his cap."
+  },
+  {
+    "ordinal": 16,
+    "t_in": 62.81275,
+    "t_out": 73.031292,
+    "duration_s": 10.219,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-016.jpg",
+    "description": "A rider in a red helmet is visible at a distance approaching down a wooded singletrack trail.",
+    "subjects": [
+      "distant mountain biker",
+      "red helmet",
+      "wooded trail"
+    ],
+    "setting": "exterior, wooded singletrack trail",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 17,
+    "t_in": 73.031292,
+    "t_out": 76.618208,
+    "duration_s": 3.587,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-017.jpg",
+    "description": "The tattooed man in the River Bluff Trails Park shirt and Santa Cruz cap continues speaking, laughing, at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "gray River Bluff Trails Park t-shirt",
+      "black Santa Cruz cap",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": "Laughing/smiling mid-interview."
+  },
+  {
+    "ordinal": 18,
+    "t_in": 76.618208,
+    "t_out": 78.870458,
+    "duration_s": 2.252,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-018.jpg",
+    "description": "An extreme close, motion-blurred low-angle shot catches a rider's legs and bike passing over a dirt mound on the trail.",
+    "subjects": [
+      "mountain biker's legs and bike (motion blur)",
+      "dirt mound",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt trail",
+    "framing": "detail",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Rider's face is cropped out of frame in this extreme close-up passing shot."
+  },
+  {
+    "ordinal": 19,
+    "t_in": 78.870458,
+    "t_out": 81.664917,
+    "duration_s": 2.794,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-019.jpg",
+    "description": "A rider in a full-face camo-pattern helmet and gray shirt with a red circular emblem corners hard and low over a dirt berm.",
+    "subjects": [
+      "mountain biker cornering hard",
+      "full-face camo-pattern helmet",
+      "gray shirt with red circular emblem",
+      "dirt berm",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt berm trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "One of the most dynamic action shots in the asset \u2014 rider laying the bike over hard into a banked corner with visible speed and control; full-face helmet obscures identity."
+  },
+  {
+    "ordinal": 20,
+    "t_in": 81.664917,
+    "t_out": 86.795042,
+    "duration_s": 5.13,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-020.jpg",
+    "description": "The tattooed River Bluff Trails Park interview subject continues, smiling broadly, at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "black Santa Cruz cap",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Shirt logo not clearly visible in this tighter framing; big smile."
+  },
+  {
+    "ordinal": 21,
+    "t_in": 86.795042,
+    "t_out": 88.880458,
+    "duration_s": 2.085,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-021.jpg",
+    "description": "The FLY Racing jersey man continues his interview segment at the trailhead kiosk.",
+    "subjects": [
+      "man in FLY Racing jersey",
+      "trailhead kiosk",
+      "parked mountain bikes"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FLY RACING",
+    "notable_details": null
+  },
+  {
+    "ordinal": 22,
+    "t_in": 88.880458,
+    "t_out": 91.758333,
+    "duration_s": 2.878,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-022.jpg",
+    "description": "A small corrugated-metal shed sits beside a dirt trail winding into dense forest, with no riders in frame.",
+    "subjects": [
+      "corrugated metal shed",
+      "dirt trail",
+      "dense forest"
+    ],
+    "setting": "exterior, wooded trail near a small maintenance shed",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Establishing/cutaway shot with a small trailside storage shed."
+  },
+  {
+    "ordinal": 23,
+    "t_in": 91.758333,
+    "t_out": 94.886458,
+    "duration_s": 3.128,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-023.jpg",
+    "description": "A rider in a black FLY-branded jersey and full-face helmet crests a dirt jump mound in the woods.",
+    "subjects": [
+      "mountain biker cresting jump",
+      "black FLY-branded jersey",
+      "full-face helmet",
+      "dirt mound",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "FLY",
+    "notable_details": "Full-face helmet obscures rider's identity."
+  },
+  {
+    "ordinal": 24,
+    "t_in": 94.886458,
+    "t_out": 97.889458,
+    "duration_s": 3.003,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-024.jpg",
+    "description": "The Fasthouse-jersey man continues his interview segment at the kiosk.",
+    "subjects": [
+      "bald bearded man",
+      "Fasthouse jersey",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "FASTHOUSE FH/MC SPEED SHOP WHEN RULES WERE FEW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 25,
+    "t_in": 97.889458,
+    "t_out": 104.813042,
+    "duration_s": 6.924,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-025.jpg",
+    "description": "The tattooed River Bluff Trails Park interview subject continues speaking at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "black Santa Cruz cap",
+      "gray River Bluff Trails Park t-shirt",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": null
+  },
+  {
+    "ordinal": 26,
+    "t_in": 104.813042,
+    "t_out": 106.064292,
+    "duration_s": 1.251,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-026.jpg",
+    "description": "A man in a cap opens the door of '1st Barrel Brewing' in Saint Joseph, Missouri, a storefront with painted signage and a lit 'OPEN' placard.",
+    "subjects": [
+      "storefront door",
+      "1st Barrel Brewing signage",
+      "man in cap opening door",
+      "brick wall",
+      "business-hours signage"
+    ],
+    "setting": "exterior, urban brewery storefront entrance",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "1ST BARREL BREWING - SAINT JOSEPH, MO",
+    "notable_details": "Local brewery/sponsor cutaway; a distinct business unrelated to the trail park despite the coincidental 'River Bluff'-adjacent branding seen elsewhere in this asset. Man's back is to camera."
+  },
+  {
+    "ordinal": 27,
+    "t_in": 106.064292,
+    "t_out": 106.981875,
+    "duration_s": 0.918,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-027.jpg",
+    "description": "A circular 'River Bluff Brewing' logo is painted on a white garage door on a brick building, with electrical meters mounted alongside.",
+    "subjects": [
+      "circular River Bluff Brewing logo",
+      "garage door",
+      "brick building",
+      "electrical meters"
+    ],
+    "setting": "exterior, brewery loading-door entrance, urban setting",
+    "framing": "close",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "RIVER BLUFF BREWING",
+    "notable_details": "A separate local brewery business that coincidentally shares the 'River Bluff' name with the trails park; no people in frame."
+  },
+  {
+    "ordinal": 28,
+    "t_in": 106.981875,
+    "t_out": 111.820042,
+    "duration_s": 4.838,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-028.jpg",
+    "description": "The tattooed River Bluff Trails Park interview subject continues speaking, mid-word with an animated expression, at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "black cap",
+      "gray River Bluff Trails Park t-shirt",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": "Animated, mouth-open delivery mid-sentence."
+  },
+  {
+    "ordinal": 29,
+    "t_in": 111.820042,
+    "t_out": 114.322542,
+    "duration_s": 2.502,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-029.jpg",
+    "description": "A table placard reading 'Parkway Distillery, St. Joseph, Missouri' sits on a marble table in a dim, upscale bar interior, with a patron seated at the bar behind it.",
+    "subjects": [
+      "Parkway Distillery table placard",
+      "bar interior",
+      "patron seated at bar",
+      "bottles on shelf"
+    ],
+    "setting": "interior, upscale bar/distillery tasting room",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "PARKWAY DISTILLERY - ST. JOSEPH - MISSOURI",
+    "notable_details": "B-roll of a local distillery/bar interior, likely a sponsor or community-partner feature; background patron has his back to camera."
+  },
+  {
+    "ordinal": 30,
+    "t_in": 114.322542,
+    "t_out": 118.36825,
+    "duration_s": 4.046,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-030.jpg",
+    "description": "A rider in a red helmet is fully airborne off a big dirt jump, mouth open in an exuberant shout, captured with strong motion blur.",
+    "subjects": [
+      "mountain biker mid-air",
+      "red helmet",
+      "gray shirt",
+      "dirt jump",
+      "forest"
+    ],
+    "setting": "exterior, wooded dirt jump trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "The most dynamic, reel-worthy action moment in this asset \u2014 rider fully airborne with an exuberant, shouting expression and strong motion blur."
+  },
+  {
+    "ordinal": 31,
+    "t_in": 118.36825,
+    "t_out": 120.578792,
+    "duration_s": 2.211,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-031.jpg",
+    "description": "The tattooed River Bluff Trails Park interview subject wraps up another segment at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "black cap",
+      "gray River Bluff Trails Park t-shirt",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": null
+  },
+  {
+    "ordinal": 32,
+    "t_in": 120.578792,
+    "t_out": 121.746625,
+    "duration_s": 1.168,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-032.jpg",
+    "description": "A close shot of a storefront glass door with a stylized circular logo, a 'DON'T MISS!' event flyer, and assorted window stickers.",
+    "subjects": [
+      "storefront glass door",
+      "stylized circular logo (partially legible)",
+      "'DON'T MISS!' event flyer",
+      "assorted window stickers"
+    ],
+    "setting": "exterior, urban commercial storefront",
+    "framing": "close",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Business identity is not clearly legible in this frame; appears to be another local storefront/sponsor cutaway similar to the brewery and distillery shots."
+  },
+  {
+    "ordinal": 33,
+    "t_in": 121.746625,
+    "t_out": 123.915458,
+    "duration_s": 2.169,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-033.jpg",
+    "description": "Raw burger patties, buns, marbled rye bread slices, and bacon strips cook on a flat-top griddle.",
+    "subjects": [
+      "raw burger patties",
+      "hamburger buns",
+      "marbled rye bread slices",
+      "bacon strips",
+      "flat-top griddle"
+    ],
+    "setting": "interior, restaurant/diner kitchen",
+    "framing": "close",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Food-prep b-roll, likely tied to a local restaurant/sponsor segment; appetizing detail shot of items cooking on the griddle."
+  },
+  {
+    "ordinal": 34,
+    "t_in": 123.915458,
+    "t_out": 128.670208,
+    "duration_s": 4.755,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-034.jpg",
+    "description": "The tattooed River Bluff Trails Park interview subject gives a thumbs-up while wrapping up his final interview segment at the kiosk.",
+    "subjects": [
+      "tattooed bald man",
+      "black Santa Cruz cap",
+      "gray River Bluff Trails Park t-shirt",
+      "thumbs-up gesture",
+      "trailhead kiosk"
+    ],
+    "setting": "exterior, park trailhead/kiosk staging area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "RIVERBLUFF TRAILS PARK",
+    "notable_details": null
+  },
+  {
+    "ordinal": 35,
+    "t_in": 128.670208,
+    "t_out": 140.724,
+    "duration_s": 12.054,
+    "keyframe_path": "data/assets/db90986debc4/keyframes/shot-035.jpg",
+    "description": "The closing title card reads 'River Bluff Trails Park' in teal lettering combining hiker and mountain-biker silhouettes, over blurred first-person trail footage showing handlebars.",
+    "subjects": [
+      "River Bluff Trails Park logo/title card",
+      "hiker and mountain-biker icon within logotype",
+      "blurred trail POV background",
+      "handlebars"
+    ],
+    "setting": "graphic overlay over exterior trail footage (blurred)",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "RIVER BLUFF TRAILS PARK",
+    "notable_details": "Closing title/logo card, matching the closing card used in the companion asset (Advanced Riders 1)."
+  }
+]

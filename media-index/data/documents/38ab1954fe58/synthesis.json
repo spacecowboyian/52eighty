@@ -1,0 +1,103 @@
+{
+  "doc_id": "38ab1954fe58",
+  "case_study": "VFW",
+  "filename": "Design Deliverables (derived)",
+  "provenance": "DERIVED -- empirically observed from applied design files, not read from an authored brand guide. Confidence is lower than the other 4 case studies' synthesis.json files, which cite an actual written brand document. Treat as a starting hypothesis for a real brand guide, not a substitute for one.",
+  "colors": [
+    {
+      "name": "Gold / khaki accent",
+      "value": "approx. #A18C45 - #A79F57 (varies slightly by piece/print vs. digital rendering)",
+      "usage_notes": "The one color that recurs across every piece sampled except the Advancement and Service social graphics: dominant in Billboard, Magazine Ad, and Recruitment Cards, and present as a secondary tone in the Leadership social graphic (#A38F61, #CDC0B1). Reads as the primary brand accent -- plausible real-world fit for a military/veterans brand (bronze medal / brass insignia association).",
+      "source_files": [
+        "Design Deliverables/Billboard/VFW-Still-Serving-Billboard_v3.pdf",
+        "Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf",
+        "Design Deliverables/Recruitment Cards/VFW-Still-Serving-Business-Cards_v2.pdf",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Leadership__1.jpg"
+      ]
+    },
+    {
+      "name": "Near-black overlay/background",
+      "value": "approx. #10100E - #211E1E",
+      "usage_notes": "Appears as the top dominant color in every single sample (PDF and JPEG alike). This is very likely a dark photo-overlay/vignette treatment applied consistently across all deliverables, not a flat 'brand color' per se -- but the consistency itself is a real, derivable style rule (see imagery_style below).",
+      "source_files": [
+        "Design Deliverables/Billboard/VFW-Still-Serving-Billboard_v3.pdf",
+        "Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Advancement__1.jpg",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Leadership__1.jpg",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Service__1.jpg"
+      ]
+    },
+    {
+      "name": "Advancement pillar accent (red)",
+      "value": "approx. #962E35 / #54281C",
+      "usage_notes": "Only sampled in the single Advancement social graphic -- may be a pillar-specific accent (VFW's Media Kit Guide defines three pillars: Leadership, Service, Advancement) rather than a universal brand color. Unconfirmed with only one sample; would need to check VFW_Advancement__2-5.jpg to see if it's consistent across the pillar.",
+      "source_files": ["Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Advancement__1.jpg"]
+    },
+    {
+      "name": "Service pillar accent (blue)",
+      "value": "approx. #3770A4 / #6792B9",
+      "usage_notes": "Only sampled in the single Service social graphic -- same caveat as the Advancement accent: plausibly a per-pillar accent color, unconfirmed beyond one sample.",
+      "source_files": ["Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Service__1.jpg"]
+    }
+  ],
+  "typography": [
+    {
+      "role": "display/headline (serif)",
+      "typeface": "PT Serif (Regular, Italic)",
+      "weights": "Regular, Italic",
+      "usage_notes": "Embedded in the Magazine Ad PDF. Paired with Roboto/Roboto Condensed in the same piece -- likely serif for a pull-quote or headline treatment against sans-serif for body/labels.",
+      "source_files": ["Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf"]
+    },
+    {
+      "role": "body/UI (sans)",
+      "typeface": "Roboto",
+      "weights": "Medium, Bold",
+      "usage_notes": "Embedded in the Magazine Ad PDF alongside PT Serif.",
+      "source_files": ["Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf"]
+    },
+    {
+      "role": "headline/label (condensed sans)",
+      "typeface": "Roboto Condensed",
+      "weights": "Regular, Bold",
+      "usage_notes": "Embedded in both the Magazine Ad and the Recruitment Cards PDFs -- the only typeface confirmed in more than one deliverable, making it the strongest candidate for 'the' brand typeface if only one had to be named.",
+      "source_files": [
+        "Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf",
+        "Design Deliverables/Recruitment Cards/VFW-Still-Serving-Business-Cards_v2.pdf"
+      ]
+    }
+  ],
+  "logo_usage": [],
+  "voice_and_tone": [],
+  "imagery_style": [
+    {
+      "description": "Every sampled piece (billboard, magazine ad, and all three pillar social graphics) shows a strong dark overlay/vignette over photography as the single most dominant color in a histogram sample -- consistent enough across unrelated formats (print billboard vs. social JPEG) that it reads as a deliberate, repeated treatment rather than coincidence.",
+      "source_files": [
+        "Design Deliverables/Billboard/VFW-Still-Serving-Billboard_v3.pdf",
+        "Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4.pdf",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Advancement__1.jpg",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Leadership__1.jpg",
+        "Design Deliverables/Media Kit/Social Media Graphics/Ready To Use JPEGs/VFW_Service__1.jpg"
+      ]
+    }
+  ],
+  "messaging": [],
+  "other_notes": [
+    {
+      "topic": "Print production spec",
+      "description": "Both Illustrator preflight reports (Billboard, Magazine Ad) specify CMYK color mode with the 'U.S. Web Coated (SWOP) v2' color profile -- standard commercial print spec. No spot colors were declared in either report (empty 'Spot Color Objects' section), meaning color is managed via CMYK process, not brand-locked Pantone spot colors.",
+      "source_files": [
+        "Design Deliverables/Billboard/VFW-Still-Serving-Billboard_v3 Report.txt",
+        "Design Deliverables/Magazine Ad/VFW-Still-Serving-Magazine-Ad-8x10.5_v4 Report.txt"
+      ]
+    },
+    {
+      "topic": "Fonts unrecoverable from 3 of 5 PDFs",
+      "description": "Billboard and both T-shirt PDFs returned zero embedded font objects via pdffonts -- their text was converted to vector outline paths before export (consistent with the sibling '-paths.ai' file that exists for Billboard). This means typography for those specific pieces can't be confirmed from the PDF alone; the Magazine Ad and Recruitment Cards fonts above are the only directly-confirmed typefaces.",
+      "source_files": [
+        "Design Deliverables/Billboard/VFW-Still-Serving-Billboard_v3.pdf",
+        "Design Deliverables/T-shirt/VFW-Tshirt-Still-Serving.pdf",
+        "Design Deliverables/T-shirt/VFW-Tshirt-Logo.pdf"
+      ]
+    }
+  ]
+}
