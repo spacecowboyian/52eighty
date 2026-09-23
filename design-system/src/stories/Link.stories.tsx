@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from '../components/Link/Link';
+import { font } from '../tokens';
 
 const meta = {
   title: 'Components/Link',
@@ -17,7 +18,7 @@ export const InContext: Story = {
   render: () => (
     <p
       style={{
-        fontFamily: "'Minion 3','Source Serif 4',Georgia,serif",
+        fontFamily: font.serif,
         fontSize: 17,
         color: '#5C6B68',
         maxWidth: '60ch',

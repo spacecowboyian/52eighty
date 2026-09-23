@@ -2,6 +2,9 @@
 import '5280-design-system/theme.css';
 import '../styles/global.css';
 import { Navbar, Footer } from '5280-design-system';
+// The display face is the one font whose late arrival moves the layout, so
+// it's preloaded. Importing the file gives Vite's hashed, base-prefixed URL.
+import displayFontUrl from '5280-design-system/fonts/lilita-one-latin-400-normal.woff2?url';
 
 interface Props {
   title?: string;
@@ -19,6 +22,10 @@ const {
 // deploys to a GitHub Pages project subpath (/52eighty/), where root-relative
 // links resolve against the domain root and 404.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// Licensed brand faces (Crumb, Minion 3, Owners Narrow …) come from an Adobe
+// Fonts kit. The ID lives in the environment so this ships before it exists;
+// without it the self-hosted stand-ins in the design system's theme.css render.
+const adobeKit = import.meta.env.PUBLIC_ADOBE_FONTS_KIT as string | undefined;
 const SITE_LINKS = [
   { label: 'About', href: `${base}/about` },
   { label: 'Our Work', href: `${base}/work` },
@@ -33,6 +40,15 @@ const SITE_LINKS = [
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    {
+      adobeKit && (
+        <>
+          <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+          <link rel="stylesheet" href={`https://use.typekit.net/${adobeKit}.css`} />
+        </>
+      )
+    }
+    <link rel="preload" as="font" type="font/woff2" href={displayFontUrl} crossorigin />
     <title>{title}</title>
   </head>
   <body>
