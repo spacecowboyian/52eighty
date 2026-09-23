@@ -5,6 +5,7 @@ import logo from '../assets/marks/logo-5280.svg?raw';
 import squiggle from '../assets/marks/squiggle.svg?raw';
 import starburst from '../assets/marks/starburst.svg?raw';
 import heart from '../assets/marks/heart.svg?raw';
+import { Wordmark } from '../components/Marks/Wordmark';
 
 /**
  * The brand's hand-drawn marks, extracted as vector paths from the
@@ -71,6 +72,22 @@ export const Small: Story = {
 export const Large: Story = {
   name: 'At 240px',
   render: () => <Row size={240} bg={colors.jade} fg="#FFFFFF" />,
+};
+
+export const WordmarkComponent: Story = {
+  name: 'Wordmark',
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+      <div style={{ background: colors.cream, padding: 32, display: 'grid', gap: 16 }}>
+        <Wordmark tone="light" height={28} href="#" />
+        <Wordmark tone="light" height={60} />
+      </div>
+      <div style={{ background: colors.pine, padding: 32, display: 'grid', gap: 16 }}>
+        <Wordmark tone="dark" height={28} href="#" />
+        <Wordmark tone="dark" height={60} />
+      </div>
+    </div>
+  ),
 };
 
 export const Favicon: Story = {

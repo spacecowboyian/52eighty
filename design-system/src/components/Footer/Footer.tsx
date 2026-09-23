@@ -1,4 +1,5 @@
 import { colors, font } from '../../tokens';
+import { Wordmark } from '../Marks/Wordmark';
 
 export interface FooterLink {
   label: string;
@@ -47,18 +48,8 @@ export function Footer({
         }}
       >
         <div style={{ maxWidth: '30ch' }}>
-          <div
-            style={{
-              fontFamily: font.display,
-              fontWeight: 400,
-              fontSize: 24,
-              letterSpacing: '.02em',
-              textTransform: 'uppercase',
-              color: '#fff',
-              marginBottom: 12,
-            }}
-          >
-            52Eighty Creative
+          <div style={{ marginBottom: 14 }}>
+            <Wordmark tone="dark" height={30} />
           </div>
           <p
             style={{

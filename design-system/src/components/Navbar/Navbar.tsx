@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { colors, font, radius, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 import { MobileMenu } from './MobileMenu';
+import { Wordmark } from '../Marks/Wordmark';
 
 export type NavbarTone = 'light' | 'dark';
 
@@ -19,10 +20,13 @@ export interface NavbarProps {
   links?: NavbarLink[];
   /** Destination for the Contact pill. Renders a `<button>` (no-op) when omitted. */
   contactHref?: string;
+  /** Where the mark links (the home page). Renders a plain mark when omitted. */
+  homeHref?: string;
   /**
-   * 'card' (default) — the floating bordered/rounded card, as shown in Storybook.
-   * 'flush' — no background/border/radius of its own, for embedding in a
-   * full-width sticky page header that supplies its own chrome. Light tone only.
+   * 'card' (default) — the floating card, as shown in Storybook.
+   * 'flush' — no background/border/radius of its own, for embedding in the
+   * site's glass header, which supplies the chrome. Works with either tone:
+   * flush + `dark` is paper type over a dark field.
    */
   chrome?: 'card' | 'flush';
 }
@@ -42,39 +46,23 @@ const DARK_DEFAULT_LINKS: NavbarLink[] = [
 function NavLink({ label, href, tone }: NavbarLink & { tone: NavbarTone }) {
   const { isHovered, hoverProps } = useHover();
 
-  if (tone === 'dark') {
-    return (
-      <a
-        href={href}
-        style={{
-          fontFamily: font.ui,
-          fontWeight: 500,
-          fontSize: 15,
-          color: colors.paper,
-          textDecoration: 'none',
-        }}
-      >
-        {label}
-      </a>
-    );
-  }
-
+  const dark = tone === 'dark';
   const base: CSSProperties = {
     fontFamily: font.ui,
     fontWeight: 500,
     fontSize: 15,
-    color: colors.ink,
+    color: dark ? colors.paper : colors.ink,
     textDecoration: 'none',
     borderBottom: '2px solid transparent',
     paddingBottom: 3,
-    transition: 'border-color .2s ease',
+    transition: `border-color .3s ${ease.out}, color .3s ${ease.out}`,
   };
 
   return (
     <a
       href={href}
       {...hoverProps}
-      style={{ ...base, ...(isHovered ? { borderColor: colors.gold } : {}) }}
+      style={{ ...base, ...(isHovered ? { borderColor: dark ? colors.lime : colors.gold } : {}) }}
     >
       {label}
     </a>
@@ -134,62 +122,6 @@ function ContactPillDark({ href }: { href?: string }) {
   );
 }
 
-/** The "52" circle badge + "52Eighty Creative" wordmark. */
-function Wordmark({ tone }: { tone: NavbarTone }) {
-  if (tone === 'dark') {
-    // Dark variant shows the wordmark text only (no badge), per source.
-    return (
-      <span
-        style={{
-          fontFamily: font.display,
-          fontWeight: 400,
-          fontSize: 18,
-          color: colors.paper,
-          letterSpacing: '.02em',
-          textTransform: 'uppercase',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        52Eighty Creative
-      </span>
-    );
-  }
-
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-      <div
-        style={{
-          width: 34,
-          height: 34,
-          borderRadius: '50%',
-          background: colors.pine,
-          color: colors.lime,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: font.display,
-          fontWeight: 400,
-          fontSize: 13,
-        }}
-      >
-        52
-      </div>
-      <span
-        style={{
-          fontFamily: font.display,
-          fontWeight: 400,
-          fontSize: 18,
-          letterSpacing: '.02em',
-          textTransform: 'uppercase',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        52Eighty Creative
-      </span>
-    </div>
-  );
-}
-
 /** The hamburger that opens the drawer. Only rendered below the 640px breakpoint. */
 function MenuToggle({
   open,
@@ -208,7 +140,7 @@ function MenuToggle({
     height: 2,
     borderRadius: 2,
     background: tone === 'dark' ? colors.paper : colors.ink,
-    transition: 'transform .2s ease, opacity .2s ease',
+    transition: `transform .2s ${ease.out}, opacity .2s ${ease.out}, background .3s ${ease.out}`,
   };
 
   return (
@@ -246,6 +178,7 @@ export function Navbar({
   tone = 'light',
   links,
   contactHref,
+  homeHref,
   chrome = 'card',
 }: NavbarProps) {
   const resolvedLinks =
@@ -265,16 +198,16 @@ export function Navbar({
   }, []);
 
   const outer: CSSProperties =
-    tone === 'dark'
-      ? {
-          borderRadius: 16,
-          overflow: 'hidden',
-          background: colors.ink,
-          backgroundImage:
-            'repeating-linear-gradient(45deg,#1c2a27 0 12px,#1a2724 12px 24px)',
-        }
-      : chrome === 'flush'
-        ? { background: 'transparent' }
+    chrome === 'flush'
+      ? { background: 'transparent' }
+      : tone === 'dark'
+        ? {
+            borderRadius: 16,
+            overflow: 'hidden',
+            background: colors.ink,
+            backgroundImage:
+              'repeating-linear-gradient(45deg,#1c2a27 0 12px,#1a2724 12px 24px)',
+          }
         : {
             background: colors.surface,
             border: `1px solid ${colors.border}`,
@@ -292,7 +225,7 @@ export function Navbar({
           padding: '20px 28px',
         }}
       >
-        <Wordmark tone={tone} />
+        <Wordmark tone={tone} href={homeHref} height={28} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
           <div className="sc-navbar-links">
             {resolvedLinks.map((link) => (

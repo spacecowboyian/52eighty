@@ -60,5 +60,9 @@ export type { ToastTone } from './components/Toast/Toast';
 export { Band, bandTones } from './components/Band/Band';
 export type { BandProps, BandTone, BandPad, BandEdge, BandFrame, BandToneSpec } from './components/Band/Band';
 
+// Marks
+export { Wordmark } from './components/Marks/Wordmark';
+export type { WordmarkProps } from './components/Marks/Wordmark';
+
 // Footer
 export { Footer } from './components/Footer/Footer';

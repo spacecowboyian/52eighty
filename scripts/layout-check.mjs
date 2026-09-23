@@ -44,7 +44,7 @@ for (const url of urls) {
     const header = await page.evaluate(() => {
       const h = document.querySelector('.site-header');
       if (!h) return null;
-      window.scrollTo(0, 1200);
+      window.scrollTo({ top: 1200, behavior: 'instant' });
       const top = h.getBoundingClientRect().top;
       const measured = h.getBoundingClientRect().height;
       const declared = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-header-h'));
@@ -81,8 +81,8 @@ for (const url of urls) {
       const h = document.querySelector('.site-header');
       const out = [];
       for (const y of [0, 900, 2400]) {
-        window.scrollTo(0, y);
-        await new Promise((r) => setTimeout(r, 120));
+        window.scrollTo({ top: y, behavior: 'instant' });
+        await new Promise((r) => setTimeout(r, 400));
         out.push(`${y}:${h?.getAttribute('data-tone') ?? '-'}`);
       }
       window.scrollTo(0, 0);

@@ -3,6 +3,14 @@
 ## [Unreleased]
 
 ### Added
+- Glass header. The sticky header is a `SiteHeader` island: transparent, borderless, a
+  blurred glass layer on a pseudo-element, its palette following the colour field beneath
+  it (`useHeaderTone` watches every band's `data-header-tone` through a header-height strip;
+  pages pass `headerTone` so the server render is already right). `Navbar` gained a
+  flush + dark combination (paper links, lime hover underline) and 0.3s colour transitions.
+  The header and footer now carry the real “5280!” mark (new `Wordmark` component: paper
+  digits + lime bang over dark fields, pine + red over light ones, linking home) in place of
+  the text wordmark and the 34px “52” circle badge.
 - Layout shell rebuilt as a named-track grid. `main.page` is a `[full] gutter | [content]
   column | gutter` grid; the new `Band` design-system primitive (`tone`, `frame`, `edge="arch"`,
   `pad`, `background`, `headerTone`) spans the full track and subgrids the same columns to
