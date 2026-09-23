@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
-import { SectionHeader } from '5280-design-system';
+import { SectionHeader, Arch, archMedia, projectTone } from '5280-design-system';
+import { coverFor } from '../../utils/covers';
 
 export async function getStaticPaths() {
   const slugs = await getAllCaseStudySlugs();
@@ -10,17 +11,26 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const caseStudy = await getCaseStudyBySlug(slug!);
+const cover = caseStudy ? coverFor(caseStudy) : undefined;
+const tone = projectTone(slug!);
 ---
 
 <Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`}>
   <article class="case-study">
-    <SectionHeader
-      as="h1"
-      variant="marker"
-      eyebrow={caseStudy?.category ?? 'Case Study'}
-      title={caseStudy?.title}
-    />
-    <p class="case-study__summary">{caseStudy?.summary}</p>
+    <div class="case-study__head">
+      <div>
+        <SectionHeader
+          as="h1"
+          variant="trail"
+          eyebrow={caseStudy?.category ?? 'Case Study'}
+          title={caseStudy?.title}
+        />
+        <p class="case-study__summary">{caseStudy?.summary}</p>
+      </div>
+      <Arch tone={tone} ratio="4 / 5" className="case-study__cover">
+        {cover && <img src={cover.src} srcset={cover.srcSet} sizes="(min-width: 768px) 40vw, 90vw" alt="" style={archMedia} />}
+      </Arch>
+    </div>
   </article>
 </Layout>
 
@@ -28,11 +38,21 @@ const caseStudy = await getCaseStudyBySlug(slug!);
   .case-study {
     padding: 2rem 0;
   }
+  .case-study__head {
+    display: grid;
+    gap: 2rem;
+  }
   .case-study__summary {
     font-family: var(--serif);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-top: 1.5rem;
     max-width: 60ch;
+  }
+  @media (min-width: 768px) {
+    .case-study__head {
+      grid-template-columns: 3fr 2fr;
+      align-items: end;
+    }
   }
 </style>

@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'inline-radio',
-      options: ['centered', 'marker', 'divider'],
+      options: ['centered', 'marker', 'trail'],
     },
     as: { control: 'inline-radio', options: ['h1', 'h2', 'h3'] },
   },
@@ -35,10 +35,11 @@ export const Marker: Story = {
   },
 };
 
-export const Divider: Story = {
+export const Trail: Story = {
   args: {
-    variant: 'divider',
-    label: 'Mile 5,280',
+    variant: 'trail',
+    title: 'Selected work',
+    eyebrow: 'Portfolio',
   },
 };
 
@@ -56,7 +57,7 @@ export const AllVariants: Story = {
         eyebrow="02 · Work people can feel"
         title="Emotion creates connection."
       />
-      <SectionHeader variant="divider" label="Mile 5,280" />
+      <SectionHeader variant="trail" title="Selected work" eyebrow="Portfolio" />
     </div>
   ),
 };

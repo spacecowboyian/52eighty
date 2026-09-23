@@ -1,92 +1,117 @@
 import type { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { colors, font } from '../tokens';
-import logo from '../assets/marks/logo-5280.svg?raw';
-import squiggle from '../assets/marks/squiggle.svg?raw';
-import starburst from '../assets/marks/starburst.svg?raw';
-import heart from '../assets/marks/heart.svg?raw';
+import { colors, text } from '../tokens';
+import { Band, bandTones, type BandTone } from '../components/Band/Band';
+import { Arch, archMedia } from '../components/Marks/Arch';
+import { Squiggle } from '../components/Marks/Squiggle';
+import { Starburst } from '../components/Marks/Starburst';
+import { Pill } from '../components/Marks/Pill';
 import { Wordmark } from '../components/Marks/Wordmark';
 
 /**
  * The brand's hand-drawn marks, extracted as vector paths from the
- * 2026-06-22 brand guide (p1 logo, p2 squiggle, p7 starburst + heart).
- *
- * Every path is `fill="currentColor"`, so a mark takes the colour of its
- * parent; the logo's exclamation mark reads `var(--lime)` so it can stay lime
- * on any ground. PR 6 wraps these in `Arch` / `Squiggle` / `Starburst` /
- * `Wordmark` components; this story only proves the raw assets are clean.
+ * 2026-06-22 brand guide (p1 logo, p2 squiggle, p7 starburst + heart), and
+ * the CSS arch. Marks are seasoning: at most one per viewport, two squiggles
+ * per page. Every story renders on every band tone so the a11y addon sees
+ * each pairing.
  */
 const meta = {
   title: 'Foundations/Marks',
   parameters: { layout: 'fullscreen' },
+  decorators: [(Story) => <div className="page">{Story()}</div>],
 } satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const marks = [
-  { name: 'Logo “5280!”', file: 'logo-5280.svg', svg: logo, color: '#FFFFFF' },
-  { name: 'Squiggle', file: 'squiggle.svg', svg: squiggle, color: colors.sky },
-  { name: 'Starburst', file: 'starburst.svg', svg: starburst, color: colors.lime },
-  { name: 'Heart', file: 'heart.svg', svg: heart, color: colors.red },
-];
+const TONES = (Object.keys(bandTones) as BandTone[]).filter((t) => t !== 'transparent');
+const label: CSSProperties = { ...text.eyebrow, color: 'var(--band-fg-soft)', margin: '0 0 12px' };
 
-const label: CSSProperties = {
-  fontFamily: font.ui,
-  fontSize: 12,
-  letterSpacing: '.14em',
-  textTransform: 'uppercase',
-  opacity: 0.8,
-  width: 140,
-};
-
-function Row({ size, bg, fg }: { size: number; bg: string; fg: string }) {
+function OnEveryTone({ render }: { render: (tone: BandTone) => React.ReactNode }) {
   return (
-    <div style={{ background: bg, color: fg, padding: 32, display: 'grid', gap: 24 }}>
-      {marks.map((m) => (
-        <div key={m.name} style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-          <span style={label}>
-            {m.name}
-            <br />
-            <code style={{ opacity: 0.6, textTransform: 'none', letterSpacing: 0 }}>{m.file}</code>
-          </span>
-          <span
-            aria-hidden="true"
-            style={{ color: m.color, display: 'inline-flex', height: size }}
-            dangerouslySetInnerHTML={{ __html: m.svg.replace('<svg ', `<svg height="${size}" `) }}
-          />
-        </div>
+    <>
+      {TONES.map((tone) => (
+        <Band key={tone} tone={tone} pad="sm">
+          <p style={label}>{tone}</p>
+          {render(tone)}
+        </Band>
       ))}
-    </div>
+    </>
   );
 }
 
-export const OnPine: Story = {
-  render: () => <Row size={96} bg={colors.pine} fg="#FFFFFF" />,
-};
-
-export const Small: Story = {
-  name: 'At 24px',
-  render: () => <Row size={24} bg={colors.pine} fg="#FFFFFF" />,
-};
-
-export const Large: Story = {
-  name: 'At 240px',
-  render: () => <Row size={240} bg={colors.jade} fg="#FFFFFF" />,
-};
-
-export const WordmarkComponent: Story = {
-  name: 'Wordmark',
+export const Marks: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-      <div style={{ background: colors.cream, padding: 32, display: 'grid', gap: 16 }}>
-        <Wordmark tone="light" height={28} href="#" />
-        <Wordmark tone="light" height={60} />
+    <OnEveryTone
+      render={(tone) => (
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 32 }}>
+          <Wordmark tone={bandTones[tone].header} height={32} />
+          <Squiggle width={120} style={{ color: tone === 'sky' ? colors.pine : colors.sky }} />
+          <Starburst size={72} heart color={tone === 'lime' ? colors.pine : colors.lime} />
+          <Pill tone={tone === 'sky' ? 'pine' : 'sky'}>How we talk</Pill>
+          <Pill tone="red" size="lg">
+            How we look
+          </Pill>
+        </div>
+      )}
+    />
+  ),
+};
+
+export const ArchShape: Story = {
+  name: 'Arch',
+  render: () => (
+    <OnEveryTone
+      render={(tone) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 24, maxWidth: 720 }}>
+          <Arch tone={tone === 'sky' ? 'pine' : 'sky'} />
+          <Arch tone="blush" ratio="1 / 1" />
+          <Arch tone="pine">
+            <img src="/intake/river-bluff-hero-1280.jpg" alt="" style={archMedia} />
+          </Arch>
+        </div>
+      )}
+    />
+  ),
+};
+
+export const SquiggleDraw: Story = {
+  name: 'Squiggle (draws on view)',
+  render: () => (
+    <Band tone="jade" pad="lg">
+      <h2 style={{ ...text.displayMD, color: '#fff', margin: 0, maxWidth: '12ch' }}>
+        Go further. It’s less crowded.
+      </h2>
+      <Squiggle draw width={200} style={{ color: colors.sky, marginTop: -24, marginLeft: '40%' }} />
+    </Band>
+  ),
+};
+
+export const StarburstPulse: Story = {
+  name: 'Starburst (pulses on mount)',
+  render: () => (
+    <Band tone="pine" pad="lg">
+      <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+        <Starburst size={72} heart pulse />
+        <h1 style={{ ...text.displayXL, color: '#fff', margin: 0 }}>
+          <span style={{ color: colors.blush }}>Creative</span> with a heartbeat
+        </h1>
       </div>
-      <div style={{ background: colors.pine, padding: 32, display: 'grid', gap: 16 }}>
-        <Wordmark tone="dark" height={28} href="#" />
-        <Wordmark tone="dark" height={60} />
-      </div>
-    </div>
+    </Band>
+  ),
+};
+
+export const Sizes: Story = {
+  name: 'At 24px and 240px',
+  render: () => (
+    <Band tone="pine" pad="md">
+      {[24, 240].map((size) => (
+        <div key={size} style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 24 }}>
+          <Wordmark tone="dark" height={size} />
+          <Squiggle width={size * 2} style={{ color: colors.sky }} />
+          <Starburst size={size} heart />
+        </div>
+      ))}
+    </Band>
   ),
 };
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import { colors, font, radius, ease, text } from '../../tokens';
 import { useHover } from '../../utils/useHover';
+import { Arch, archMedia } from '../Marks/Arch';
+import { Pill } from '../Marks/Pill';
+import type { BandTone } from '../Band/Band';
 
 export type CardVariant = 'work' | 'caseStudy' | 'blog';
 
@@ -19,6 +22,10 @@ export interface CardProps {
   meta?: string;
   /** Heading level of the title — `h2` when the card is the page's first section under an h1. */
   titleAs?: 'h2' | 'h3';
+  /** work only: the cover, shown in an Arch. Without one the Arch is a colour field. */
+  image?: { src: string; srcSet?: string; sizes?: string; alt?: string };
+  /** work only: the Arch's colour when there's no image (per-project tone). */
+  imageTone?: BandTone;
 }
 
 /**
@@ -43,6 +50,8 @@ export function Card({
   cta = 'Read the story →',
   meta = 'Miles Ramsay · 5 min',
   titleAs: Title = 'h3',
+  image,
+  imageTone = 'sky',
 }: CardProps) {
   const { isHovered, hoverProps } = useHover();
 
@@ -54,30 +63,28 @@ export function Card({
 
     return (
       <div {...hoverProps} style={{ cursor: 'pointer' }}>
-        <div style={{ borderRadius: radius.lg, overflow: 'hidden' }}>
-          <div
-            aria-hidden="true"
-            style={{
-              height: 160,
-              background: colors.sky,
-              transform: isHovered ? 'scale(1.03)' : 'scale(1)',
-              transition: `transform .5s ${ease.out}`,
-            }}
-          />
+        <Arch tone={imageTone} ratio="4 / 5">
+          {image && (
+            <img
+              src={image.src}
+              srcSet={image.srcSet}
+              sizes={image.sizes}
+              alt={image.alt ?? ''}
+              loading="lazy"
+              decoding="async"
+              style={{
+                ...archMedia,
+                transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+                transition: `transform .5s ${ease.out}`,
+              }}
+            />
+          )}
+        </Arch>
+        {/* The category sticker overlaps the arch's bottom edge. */}
+        <div style={{ marginTop: -14, marginLeft: 12, position: 'relative', zIndex: 1 }}>
+          <Pill tone="sky">{eyebrowText}</Pill>
         </div>
-        <div style={{ padding: '18px 0 0' }}>
-          <div
-            style={{
-              fontFamily: font.ui,
-              fontSize: 11,
-              letterSpacing: '.16em',
-              textTransform: 'uppercase',
-              color: colors.red,
-              marginBottom: 7,
-            }}
-          >
-            {eyebrowText}
-          </div>
+        <div style={{ padding: '14px 0 0' }}>
           <Title
             style={{
               ...text.title,
