@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
-import { SectionHeader, Arch, archMedia, projectTone } from '5280-design-system';
+import { Band, SectionHeader, Arch, archMedia, bandTones, projectTone } from '5280-design-system';
 import { coverFor } from '../../utils/covers';
 import Invite from '../../components/Invite.astro';
 
@@ -13,46 +13,54 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const caseStudy = await getCaseStudyBySlug(slug!);
 const cover = caseStudy ? coverFor(caseStudy) : undefined;
+// The same tone the card used on the grid, so the click lands where it left.
 const tone = projectTone(slug!);
+const headerTone = bandTones[tone].header;
+// The eyebrow pill has to read on the header's field: sky on dark fields,
+// pine on the light ones (sky on sky vanishes).
+const pillTone = headerTone === 'dark' ? 'sky' : 'pine';
 ---
 
-<Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`}>
-  <article class="case-study">
-    <div class="case-study__head">
+<Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`} headerTone={headerTone}>
+  <Band as="header" tone={tone} pad="lg" className="cs-head">
+    <div class="cs-head__grid">
       <div>
         <SectionHeader
           as="h1"
-          variant="trail"
+          variant="marker"
           eyebrow={caseStudy?.category ?? 'Case Study'}
+          eyebrowTone={pillTone}
           title={caseStudy?.title}
         />
-        <p class="case-study__summary">{caseStudy?.summary}</p>
       </div>
-      <Arch tone={tone} ratio="4 / 5" className="case-study__cover">
+      {/* Below the title on a phone, beside it from 768px. When Sanity carries
+          a hero image, the Band's background slot is where it lands (seam B). */}
+      <Arch tone={tone === 'sky' ? 'pine' : 'sky'} ratio="4 / 5" className="cs-head__cover">
         {cover && <img src={cover.src} srcset={cover.srcSet} sizes="(min-width: 768px) 40vw, 90vw" alt="" style={archMedia} />}
       </Arch>
     </div>
-  </article>
+  </Band>
+
+  {/* Seam C1: the cream body domes over the header's field. */}
+  <Band as="article" tone="cream" pad="lg" edge="arch" className="cs-body">
+    <p class="t-lead cs-body__summary">{caseStudy?.summary}</p>
+  </Band>
+
   <Invite reveal={false} />
 </Layout>
 
 <style>
-  .case-study {
-    padding: 2rem 0;
-  }
-  .case-study__head {
+  .cs-head__grid {
     display: grid;
     gap: 2rem;
   }
-  .case-study__summary {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-top: 1.5rem;
+  .cs-body__summary {
+    color: #16211f;
     max-width: 60ch;
+    margin: 0;
   }
   @media (min-width: 768px) {
-    .case-study__head {
+    .cs-head__grid {
       grid-template-columns: 3fr 2fr;
       align-items: end;
     }

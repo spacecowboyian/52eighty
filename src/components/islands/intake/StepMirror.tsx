@@ -64,7 +64,7 @@ export function StepMirror({ answers, onChange, onNext, onBack }: StepMirrorProp
   }
 
   return (
-    <StepShell label="What we see">
+    <StepShell field="sky" label="What we see">
       <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
       <StepProgress current={2} total={3} labels={STEP_LABELS} />
       <TeamGuide

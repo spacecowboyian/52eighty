@@ -6,7 +6,7 @@ import {
   faSprayCanSparkles,
   faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
-import type { ChoiceOption } from '5280-design-system';
+import type { BandTone, ChoiceOption } from '5280-design-system';
 import type { DetailQuestion, Driver, Path } from './types';
 
 /**
@@ -78,6 +78,8 @@ export interface PathPanel {
   /** Which real work this discipline is backed by. */
   proof: string;
   cta: string;
+  /** The colour field this discipline's panel floods. */
+  tone: BandTone;
 }
 
 export const pathShowcase: PathPanel[] = [
@@ -89,6 +91,7 @@ export const pathShowcase: PathPanel[] = [
       'Social cuts, product films, event coverage, series work. The kind that survives a thumb moving at speed, and still means something when it lands.',
     proof: 'River Bluff Trails Park · Uncommon Character · Kansas Fairgrounds',
     cta: "That's the one",
+    tone: 'pine',
   },
   {
     value: 'brandFilm',
@@ -98,6 +101,7 @@ export const pathShowcase: PathPanel[] = [
       "One story, room to breathe, and a person at the center of it. Usually the piece that makes someone care before they've been asked for anything.",
     proof: 'Hillyard · Robidoux Resident Theatre',
     cta: "That's the one",
+    tone: 'sky',
   },
   {
     value: 'brandStrategy',
@@ -107,6 +111,7 @@ export const pathShowcase: PathPanel[] = [
       'Positioning, voice, and the way it all looks — from a clip-art logo turned into a real identity, to a brand book a whole team can work from.',
     proof: 'Full Circle GIS · Nomad Trails · Garden Gate Flowers · Outside 45',
     cta: "That's the one",
+    tone: 'peri',
   },
   {
     value: 'campaign',
@@ -116,6 +121,7 @@ export const pathShowcase: PathPanel[] = [
       'Video, radio, outdoor, paid social, email — pointed at a date. The work is holding a single idea together across every channel it shows up in.',
     proof: 'Kansas Fairgrounds "1861 Club" · American Trails',
     cta: "That's the one",
+    tone: 'jade',
   },
   {
     value: 'unsure',
@@ -125,6 +131,7 @@ export const pathShowcase: PathPanel[] = [
       "Plenty of good projects start as a problem nobody's named properly. Tell us what's going on and we'll work out what it needs — that's the job.",
     proof: 'Every project starts here more often than not',
     cta: 'Start there',
+    tone: 'cream',
   },
 ];
 

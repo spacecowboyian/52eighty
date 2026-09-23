@@ -238,7 +238,11 @@ export function Navbar({
             height={chrome === 'flush' ? 50 : 34}
             style={
               chrome === 'flush'
-                ? { transform: 'rotate(-4deg) translate(-2px, 20px)', transformOrigin: 'left center' }
+                ? // Centred on the header's bottom rule: the row is 44px inside
+                  // an 8px inset, so the row's centre is 30px from the top of a
+                  // 60px band (+4px rule) — 32px down puts the mark's centre on
+                  // the line.
+                  { transform: 'rotate(-4deg) translate(-2px, 32px)', transformOrigin: 'left center' }
                 : undefined
             }
           />

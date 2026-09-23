@@ -1,187 +1,179 @@
 import type { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { colors, font } from '../tokens';
+import { colors, font, text } from '../tokens';
+import { Band, bandTones, type BandTone } from '../components/Band/Band';
+import { Pill } from '../components/Marks/Pill';
+import { contrastRatio, grade } from '../utils/contrast';
 
+/**
+ * The palette as it's actually used: whole fields, edge to edge, with the
+ * type each field allows. Type on a field is white / paper / lime only; small
+ * text on periwinkle is white only; red is never text on a field — it's a
+ * mark or a 3:1 UI edge. Lime is the exclamation mark: the CTA, one
+ * highlighted word, pillar numerals.
+ */
 const meta = {
   title: 'Foundations/Colors',
   parameters: { layout: 'fullscreen' },
+  decorators: [(Story) => <div className="page">{Story()}</div>],
 } satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 type Swatch = { name: string; hex: string; role?: string };
-
-const core: Swatch[] = [
-  { name: 'Pine', hex: colors.pine, role: 'primary' },
-  { name: 'Jade', hex: colors.jade, role: 'secondary' },
-  { name: 'Ink', hex: colors.ink, role: 'text' },
+const swatches: Swatch[] = [
+  { name: 'Pine', hex: colors.pine, role: 'primary field' },
+  { name: 'Jade', hex: colors.jade, role: 'secondary field' },
+  { name: 'Periwinkle', hex: colors.peri, role: 'the “alive” field' },
+  { name: 'Sky', hex: colors.sky, role: 'light field · squiggle' },
+  { name: 'Blush', hex: colors.blush, role: 'light field · frame' },
+  { name: 'Lime', hex: colors.lime, role: 'the exclamation mark' },
+  { name: 'Cream', hex: colors.cream, role: 'page ground' },
+  { name: 'Ink', hex: colors.ink, role: 'text on light' },
+  { name: 'Signal red', hex: colors.red, role: 'marks · 3:1 edges' },
+  { name: 'Red (deep)', hex: colors.redDeep, role: 'red as small text' },
+  { name: 'Gold', hex: colors.gold, role: 'selection · stars' },
+  { name: 'Muted', hex: colors.muted, role: 'secondary text on light' },
 ];
 
-const accents: Swatch[] = [
-  { name: 'Signal Red', hex: colors.red, role: 'energy' },
-  { name: 'Periwinkle', hex: colors.peri },
-  { name: 'Gold', hex: colors.gold, role: 'highlight' },
-];
-
-const softs: Swatch[] = [
-  { name: 'Blush', hex: colors.blush },
-  { name: 'Sky', hex: colors.sky },
-  { name: 'Lime', hex: colors.lime },
-  { name: 'Cream', hex: colors.cream, role: 'bg' },
-];
-
-const eyebrowStyle: CSSProperties = {
-  fontFamily: font.ui,
-  fontSize: 12,
-  letterSpacing: '.24em',
-  textTransform: 'uppercase',
-  color: colors.pine,
-  marginBottom: 8,
-};
-
-const groupLabelStyle: CSSProperties = {
-  fontFamily: font.ui,
-  fontSize: 11,
-  letterSpacing: '.18em',
-  textTransform: 'uppercase',
-  color: colors.muted,
-  margin: '8px 0 12px',
-};
-
-// Swatches are arches — the guide's shape — on the page ground, no card.
-const cardStyle: CSSProperties = {};
-
-function LargeSwatch({ name, hex, role }: Swatch) {
-  // Cream has a bottom border to separate its near-white chip from the card.
-  const isCream = hex.toUpperCase() === colors.cream.toUpperCase();
-  return (
-    <div style={cardStyle}>
-      <div
-        style={{
-          aspectRatio: '4 / 3',
-          borderRadius: '999px 999px 0 0',
-          background: hex,
-          ...(isCream ? { boxShadow: `inset 0 0 0 1px ${colors.border}` } : {}),
-        }}
-      />
-      <div style={{ padding: '13px 4px' }}>
-        <div style={{ fontFamily: font.ui, fontWeight: 600, fontSize: 14 }}>{name}</div>
-        <div style={{ fontFamily: font.ui, fontSize: 12, color: colors.muted, marginTop: 2 }}>
-          {hex}
-          {role ? ` · ${role}` : ''}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SmallSwatch({ name, hex, role }: Swatch) {
-  const isCream = hex.toUpperCase() === colors.cream.toUpperCase();
-  return (
-    <div style={cardStyle}>
-      <div
-        style={{
-          aspectRatio: '4 / 3',
-          borderRadius: '999px 999px 0 0',
-          background: hex,
-          ...(isCream ? { boxShadow: `inset 0 0 0 1px ${colors.border}` } : {}),
-        }}
-      />
-      <div style={{ padding: '11px 4px' }}>
-        <div style={{ fontFamily: font.ui, fontWeight: 600, fontSize: 13 }}>{name}</div>
-        <div style={{ fontFamily: font.ui, fontSize: 11.5, color: colors.muted }}>
-          {hex}
-          {role ? ` · ${role}` : ''}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Colors() {
-  return (
-    <section
-      style={{
-        padding: '44px 32px 24px',
-        background: colors.cream,
-        color: colors.ink,
-        minHeight: '100vh',
-      }}
-    >
-      <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-        <div>
-          <div style={eyebrowStyle}>Foundations</div>
-          <h2
-            style={{
-              fontFamily: font.display,
-              fontWeight: 400,
-              textTransform: 'uppercase',
-              fontSize: 38,
-              letterSpacing: '.02em',
-              margin: '0 0 8px',
-            }}
-          >
-            Color Palette
-          </h2>
-          <p
-            style={{
-              fontFamily: font.serif,
-              fontSize: 17,
-              color: colors.muted,
-              maxWidth: '60ch',
-              margin: '0 0 26px',
-            }}
-          >
-            Deep pine anchors the system; jade grounds it. A lively accent set — red, periwinkle,
-            gold — supplies energy, while soft tints keep things human and warm.
-          </p>
-        </div>
-
-        <div style={groupLabelStyle}>Core</div>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))',
-            gap: 14,
-            marginBottom: 26,
-          }}
-        >
-          {core.map((s) => (
-            <LargeSwatch key={s.name} {...s} />
-          ))}
-        </div>
-
-        <div style={groupLabelStyle}>Accents</div>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))',
-            gap: 14,
-            marginBottom: 26,
-          }}
-        >
-          {accents.map((s) => (
-            <LargeSwatch key={s.name} {...s} />
-          ))}
-        </div>
-
-        <div style={groupLabelStyle}>Soft tints &amp; neutrals</div>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill,minmax(140px,1fr))',
-            gap: 14,
-          }}
-        >
-          {softs.map((s) => (
-            <SmallSwatch key={s.name} {...s} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+const label: CSSProperties = { ...text.eyebrow, color: 'var(--band-fg-soft)', margin: 0 };
 
 export const Palette: Story = {
-  render: () => <Colors />,
+  render: () => (
+    <Band tone="cream" pad="md">
+      <h1 style={{ ...text.displayLG, margin: '0 0 8px' } as CSSProperties}>Color palette</h1>
+      <p style={{ ...text.lead, color: colors.muted, maxWidth: '60ch', margin: '0 0 32px' }}>
+        Deep pine anchors the system; jade and periwinkle carry whole pages. Sky, blush and lime are
+        light fields and marks. Every swatch is an arch — the guide's shape.
+      </p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 20 }}>
+        {swatches.map((s) => (
+          <div key={s.name}>
+            <div
+              style={{
+                aspectRatio: '4 / 3',
+                borderRadius: '999px 999px 0 0',
+                background: s.hex,
+                boxShadow: s.hex === colors.cream ? `inset 0 0 0 1px ${colors.border}` : undefined,
+              }}
+            />
+            <div style={{ fontFamily: font.ui, fontWeight: 600, fontSize: 14, marginTop: 10 }}>{s.name}</div>
+            <div style={{ fontFamily: font.ui, fontSize: 12, color: colors.muted }}>
+              {s.hex}
+              {s.role ? ` · ${s.role}` : ''}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Band>
+  ),
+};
+
+const TONES = (Object.keys(bandTones) as BandTone[]).filter((t) => t !== 'transparent');
+
+export const Fields: Story = {
+  name: 'Fields (allowed type per tone)',
+  render: () => (
+    <>
+      {TONES.map((tone) => {
+        const spec = bandTones[tone];
+        const smallAccentOk = contrastRatio(spec.accent, spec.bg) >= 4.5;
+        return (
+          <Band key={tone} tone={tone} pad="md">
+            <p style={label}>
+              {tone} · {spec.bg}
+            </p>
+            <h2 style={{ ...text.displayMD, margin: '12px 0 0' } as CSSProperties}>
+              <span style={{ color: spec.accent }}>One word</span> in the accent.
+            </h2>
+            <h3 style={{ ...text.heading, margin: '20px 0 0' }}>A serif heading, sentence case.</h3>
+            <p style={{ ...text.body, color: 'var(--band-fg-soft)', maxWidth: '54ch', margin: '10px 0 0' }}>
+              Body copy in the soft foreground ({spec.fgSoft}). Small text in the accent is{' '}
+              {smallAccentOk ? 'allowed' : 'display-only'} on this field (
+              {contrastRatio(spec.accent, spec.bg).toFixed(2)}:1).
+            </p>
+            <div style={{ marginTop: 16 }}>
+              <Pill tone={tone === 'sky' ? 'pine' : 'sky'}>Eyebrow pill</Pill>
+            </div>
+          </Band>
+        );
+      })}
+    </>
+  ),
+};
+
+const CANDIDATES: Array<[string, string]> = [
+  ['white', '#FFFFFF'],
+  ['paper', colors.paper],
+  ['ink', colors.ink],
+  ['pine', colors.pine],
+  ['muted', colors.muted],
+  ['lime', colors.lime],
+  ['sky', colors.sky],
+  ['red', colors.red],
+  ['red deep', colors.redDeep],
+];
+
+export const Pairings: Story = {
+  name: 'Pairings (WCAG)',
+  render: () => (
+    <Band tone="cream" pad="md">
+      <h2 style={{ ...text.displayMD, margin: '0 0 16px' } as CSSProperties}>Type on field</h2>
+      <p style={{ ...text.body, color: colors.muted, maxWidth: '60ch', margin: '0 0 24px' }}>
+        AA = body text (≥4.5:1). AA large = display only (≥3:1). The same helper
+        (`utils/contrast.ts`) backs these numbers.
+      </p>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ borderCollapse: 'collapse', fontFamily: font.ui, fontSize: 13, minWidth: 720 }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: 'left', padding: '8px 10px' }}>field</th>
+              {CANDIDATES.map(([n]) => (
+                <th key={n} style={{ textAlign: 'left', padding: '8px 10px' }}>
+                  {n}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {TONES.map((tone) => (
+              <tr key={tone}>
+                <td style={{ padding: '6px 10px', fontWeight: 600 }}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      width: 14,
+                      height: 14,
+                      borderRadius: '50%',
+                      background: bandTones[tone].bg,
+                      marginRight: 8,
+                      verticalAlign: 'middle',
+                      boxShadow: `inset 0 0 0 1px ${colors.border}`,
+                    }}
+                  />
+                  {tone}
+                </td>
+                {CANDIDATES.map(([n, hex]) => {
+                  const r = contrastRatio(hex, bandTones[tone].bg);
+                  const g = grade(r);
+                  return (
+                    <td
+                      key={n}
+                      style={{
+                        padding: '6px 10px',
+                        color: g === 'fail' ? colors.muted : colors.ink,
+                        fontWeight: g === 'AA' || g === 'AAA' ? 600 : 400,
+                      }}
+                    >
+                      {r.toFixed(2)} <span style={{ fontSize: 11, opacity: 0.7 }}>{g}</span>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Band>
+  ),
 };

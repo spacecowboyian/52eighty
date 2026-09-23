@@ -20,6 +20,12 @@ await page.goto(url, { waitUntil: 'networkidle' });
 
 const results = await page.evaluate(() => {
   const parse = (c) => {
+    // `color-mix()` computes to `color(srgb r g b / a)` with 0–1 channels.
+    const srgb = c.match(/color\(srgb ([^)]+)\)/);
+    if (srgb) {
+      const [r, g, b, a = '1'] = srgb[1].replace('/', ' ').split(/\s+/).filter(Boolean).map(parseFloat);
+      return { r: r * 255, g: g * 255, b: b * 255, a: Number.isNaN(a) ? 1 : a };
+    }
     const m = c.match(/rgba?\(([^)]+)\)/);
     if (!m) return null;
     const [r, g, b, a = '1'] = m[1].split(',').map((x) => parseFloat(x));

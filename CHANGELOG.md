@@ -3,6 +3,19 @@
 ## [Unreleased]
 
 ### Added
+- The rest of the site as colour fields. `/work`: jade title band → cream arched grid →
+  invite. Case studies: a header band in the project's own tone (the same one its card used)
+  with the arched cover beside the title from 768px, a cream body doming over it, the invite.
+  `/about`: the guide's positioning page (pine in a sky frame, its own copy), the five
+  expanded messaging pillars (jade in a sky frame, new `Pillar` design-system component,
+  1→2→3 columns) and a people band (cream in a blush frame; the arch is a field until there's
+  a photo). `/start`: the opening photo resolves into cream and the next screen domes over the
+  join; each discipline panel floods its own colour (video pine, brand film sky, brand +
+  identity periwinkle, campaign jade, not-sure cream); the chip row and rail use the header's
+  glass idiom instead of a border; the mirror step is sky and the "ready" and recap screens
+  are lime. Storybook's Colors story is rewritten around fields — arched swatches, a
+  Fields story per tone with its allowed type, and a WCAG pairings table from a new
+  `utils/contrast.ts` helper.
 - Homepage as colour fields. Reel (scrim now resolves into pine) → pine work band (lime
   "Portfolio" pill, paper type, arched cards) → jade statement ("GO FURTHER." in lime, the
   sky squiggle) → periwinkle invite doming over it (new `src/components/Invite.astro`, reused
@@ -17,7 +30,7 @@
   24px, used by `Link` hover. Outline/ghost buttons, card text and the footer take their
   colours from the band they sit on. `scripts/contrast.mjs <url>` walks the rendered DOM and
   flags any text under 4.5:1 (3:1 large).
-- Slimmer header band (60px, was 74px) with the same 50px mark hanging further below it.
+- Slimmer header band (60px, was 74px) closed by a 4px solid pine rule, with the same 50px mark centred on that rule.
 - Marks. New design-system components from the brand guide's shape language: `Arch`
   (CSS semicircle-top frame), `Squiggle` (the hand-drawn loop, draws itself once on view),
   `Starburst` (16-point burst with the red heart, one pulse on mount), `Pill` (tilted
