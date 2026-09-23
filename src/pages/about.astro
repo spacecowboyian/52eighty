@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Band, SectionHeader, Pillar, Arch, Wordmark } from '5280-design-system';
+import { Band, SectionHeader, Pillar, Arch, archMedia, Wordmark } from '5280-design-system';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Copy is the brand guide's own (pp3–5): the positioning paragraph, the five
 // expanded messaging pillars, and the closing line. Q4 for Ian: keep as-is or
@@ -101,11 +103,21 @@ const PILLARS = [
     </div>
   </Band>
 
-  {/* The people. Cream in a blush frame; the arch holds Miles & Alysa once
-      there's a photo (Q6) — until then it's a sky field. */}
+  {/* The people. Cream in a blush frame. The arch holds St. Joseph at golden
+      hour from 5280's own footage until there's a photo of Miles & Alysa (Q6). */}
   <Band as="section" tone="cream" frame="blush" pad="lg">
     <div class="people">
-      <Arch tone="sky" ratio="4 / 5" className="people__photo" />
+      <Arch tone="sky" ratio="4 / 5" className="people__photo">
+        <img
+          src={`${base}/about/st-joseph-aerial-1000.jpg`}
+          srcset={`${base}/about/st-joseph-aerial-500.jpg 500w, ${base}/about/st-joseph-aerial-1000.jpg 1000w`}
+          sizes="(min-width: 640px) 40vw, 90vw"
+          alt="Downtown St. Joseph, Missouri from the air at golden hour"
+          loading="lazy"
+          decoding="async"
+          style={archMedia}
+        />
+      </Arch>
       <div class="people__copy">
         <SectionHeader variant="marker" title="Relationships. Not projects." eyebrow="Miles & Alysa Ramsay" eyebrowTone="blush" />
         <p class="t-body people__body">
