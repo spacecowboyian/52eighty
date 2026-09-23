@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
 import { SectionHeader, Arch, archMedia, projectTone } from '5280-design-system';
 import { coverFor } from '../../utils/covers';
+import Invite from '../../components/Invite.astro';
 
 export async function getStaticPaths() {
   const slugs = await getAllCaseStudySlugs();
@@ -32,6 +33,7 @@ const tone = projectTone(slug!);
       </Arch>
     </div>
   </article>
+  <Invite reveal={false} />
 </Layout>
 
 <style>

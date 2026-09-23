@@ -35,7 +35,7 @@ export function Footer({
     <div
       style={{
         ...(variant === 'card' ? { background: colors.ink, padding: '46px 40px 36px' } : {}),
-        color: '#E8E4DC',
+        color: 'var(--band-fg, #E8E4DC)',
       }}
     >
       <div
@@ -55,7 +55,7 @@ export function Footer({
             style={{
               fontFamily: font.serif,
               fontSize: 16,
-              color: '#9FA8A5',
+              color: 'var(--band-fg-soft, #9FA8A5)',
               lineHeight: 1.5,
               margin: 0,
             }}
@@ -72,7 +72,7 @@ export function Footer({
                 fontSize: 11,
                 letterSpacing: '.2em',
                 textTransform: 'uppercase',
-                color: '#6B7572',
+                color: 'var(--footer-label, rgba(255,255,255,.72))',
                 marginBottom: 14,
               }}
             >
@@ -88,7 +88,7 @@ export function Footer({
                   style={{
                     fontFamily: font.ui,
                     fontSize: 15,
-                    color: '#E8E4DC',
+                    color: 'var(--band-fg, #E8E4DC)',
                     textDecoration: 'none',
                   }}
                 >
@@ -104,7 +104,7 @@ export function Footer({
                 fontSize: 11,
                 letterSpacing: '.2em',
                 textTransform: 'uppercase',
-                color: '#6B7572',
+                color: 'var(--footer-label, rgba(255,255,255,.72))',
                 marginBottom: 14,
               }}
             >
@@ -117,7 +117,7 @@ export function Footer({
                 style={{
                   fontFamily: font.ui,
                   fontSize: 15,
-                  color: '#E8E4DC',
+                  color: 'var(--band-fg, #E8E4DC)',
                 }}
               >
                 Saint Joseph, MO
@@ -126,7 +126,7 @@ export function Footer({
                 style={{
                   fontFamily: font.ui,
                   fontSize: 15,
-                  color: '#E8E4DC',
+                  color: 'var(--band-fg, #E8E4DC)',
                 }}
               >
                 (816) 752-0325
@@ -148,7 +148,7 @@ export function Footer({
       </div>
       <div
         style={{
-          borderTop: '1px solid #2A3633',
+          borderTop: '1px solid var(--footer-rule, rgba(255,255,255,.18))',
           paddingTop: 22,
           display: 'flex',
           justifyContent: 'space-between',
@@ -161,7 +161,7 @@ export function Footer({
           style={{
             fontFamily: font.ui,
             fontSize: 13,
-            color: '#6B7572',
+            color: 'var(--footer-label, rgba(255,255,255,.72))',
           }}
         >
           © {new Date().getFullYear()} 52Eighty Creative. All rights
@@ -172,7 +172,7 @@ export function Footer({
             fontFamily: font.serif,
             fontStyle: 'italic',
             fontSize: 15,
-            color: '#9FC2BF',
+            color: 'var(--band-fg-soft, #9FC2BF)',
           }}
         >
           Creative with a heartbeat.

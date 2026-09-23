@@ -13,7 +13,8 @@ export const colors = {
   ink: '#16211F', // text
   muted: '#5C6B68', // secondary text
   // Accents
-  red: '#FF3B3B', // signal / energy
+  red: '#FF3B3B', // signal / energy — marks and ≥3:1 UI edges, never small text on a field
+  redDeep: '#D92B2B', // red as *text* under 24px (4.85:1 on white)
   peri: '#5A70BB', // periwinkle
   gold: '#FBBA16', // highlight
   // Soft tints & neutrals

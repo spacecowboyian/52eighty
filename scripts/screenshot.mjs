@@ -49,6 +49,19 @@ page.on('console', (msg) => {
 page.on('pageerror', (err) => consoleErrors.push(String(err)));
 
 await page.goto(url, { waitUntil: 'networkidle' });
+if (fullPage) {
+  // Walk the page once so scroll-triggered state (reveals, lazy images, the
+  // header tone) is what a visitor would have seen, then return to the top.
+  await page.evaluate(async () => {
+    const h = document.documentElement.scrollHeight;
+    for (let y = 0; y < h; y += window.innerHeight / 2) {
+      window.scrollTo({ top: y, behavior: 'instant' });
+      await new Promise((r) => setTimeout(r, 60));
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  });
+  await page.waitForTimeout(800);
+}
 if (scrollY) {
   await page.evaluate((y) => window.scrollTo({ top: y, behavior: 'instant' }), scrollY);
   await page.waitForTimeout(200);

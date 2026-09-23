@@ -222,20 +222,23 @@ export function Navbar({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '20px 28px',
+          // Flush (the site's glass header) is a slim band: 8px + a 44px row
+          // (the hamburger's touch target) = 60px, and the mark hangs below it.
+          padding: chrome === 'flush' ? '8px 28px' : '20px 28px',
+          minHeight: chrome === 'flush' ? 60 : undefined,
         }}
       >
         {/* The mark is bigger than the header row and hangs over its bottom
             edge, tilted down to the left — a sticker slapped on, not a logo
             in a slot. The wrapper keeps the row height; the mark overflows it. */}
-        <div style={{ height: 34, display: 'flex', alignItems: 'center', overflow: 'visible' }}>
+        <div style={{ height: 44, display: 'flex', alignItems: 'center', overflow: 'visible' }}>
           <Wordmark
             tone={tone}
             href={homeHref}
             height={chrome === 'flush' ? 50 : 34}
             style={
               chrome === 'flush'
-                ? { transform: 'rotate(-4deg) translate(-2px, 14px)', transformOrigin: 'left center' }
+                ? { transform: 'rotate(-4deg) translate(-2px, 20px)', transformOrigin: 'left center' }
                 : undefined
             }
           />

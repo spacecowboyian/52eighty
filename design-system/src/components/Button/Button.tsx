@@ -2,12 +2,16 @@ import React from 'react';
 import { colors, font, radius, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 
-export type ButtonVariant = 'primary' | 'accent' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'accent' | 'signal' | 'outline' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Visual style. Pine `primary`, red `accent`, `outline`, or `ghost`. */
+  /**
+   * Visual style. Pine `primary`; lime `accent` (the exclamation mark — the
+   * main CTA, 8.95:1); red `signal` with ink text for the rare red button;
+   * `outline` / `ghost` take their colour from the band they sit on.
+   */
   variant?: ButtonVariant;
   /** Padding / font-size scale. */
   size?: ButtonSize;
@@ -39,18 +43,23 @@ const variantBase: Record<ButtonVariant, React.CSSProperties> = {
     border: 'none',
   },
   accent: {
+    background: colors.lime,
+    color: colors.pine,
+    border: 'none',
+  },
+  signal: {
     background: colors.red,
-    color: '#fff',
+    color: colors.ink,
     border: 'none',
   },
   outline: {
     background: 'transparent',
-    color: colors.pine,
-    border: `2px solid ${colors.pine}`,
+    color: 'var(--band-fg, #184A4F)',
+    border: '2px solid var(--band-fg, #184A4F)',
   },
   ghost: {
     background: 'transparent',
-    color: colors.pine,
+    color: 'var(--band-fg, #184A4F)',
     border: 'none',
   },
 };
@@ -62,23 +71,25 @@ const variantHover: Record<ButtonVariant, React.CSSProperties> = {
     background: '#13403F',
   },
   accent: {
-    transform: 'translateY(-3px)',
-    boxShadow: '0 10px 22px rgba(255,59,59,.34)',
+    background: '#E8F77A',
+  },
+  signal: {
+    background: '#F02F2F',
   },
   outline: {
-    transform: 'translateY(-3px)',
-    background: colors.pine,
-    color: colors.paper,
+    background: 'var(--band-fg, #184A4F)',
+    color: 'var(--band-bg, #FBF9F5)',
   },
   ghost: {
-    background: '#F0EFE6',
+    background: 'color-mix(in srgb, var(--band-fg, #184A4F) 10%, transparent)',
   },
 };
 
 const variantTransition: Record<ButtonVariant, string> = {
   primary: `transform .22s ${ease.out},box-shadow .22s ease,background .2s ease`,
-  accent: `transform .22s ${ease.out},box-shadow .22s ease`,
-  outline: `transform .22s ${ease.out},background .2s ease,color .2s ease`,
+  accent: `background .2s ${ease.out}`,
+  signal: `background .2s ${ease.out}`,
+  outline: `background .2s ${ease.out},color .2s ${ease.out}`,
   ghost: 'background .2s ease',
 };
 
