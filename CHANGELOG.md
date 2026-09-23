@@ -50,6 +50,18 @@
   deep-linking straight to any anchor is honored on load — so a particular moment in the flow
   is linkable.
 
+- Real mobile navigation for the site header (issue #13), replacing the stopgap that just
+  hid the link row below 640px. `Navbar` now renders a hamburger toggle under that
+  breakpoint and owns the open state; `MobileMenu` was rebuilt from a fixed-size
+  (300×380) Storybook phone-frame mock into an actual off-canvas drawer — full-height,
+  `min(80vw, 320px)` wide, with a dimmed backdrop. About / Our Work / Contact all live in
+  the drawer as real `<a href>` links; the Contact pill leaves the narrow header because
+  the wordmark (~205px) plus the pill (~110px) plus a 44px toggle overflows 375px once
+  padding is counted. Closes on the close button, the backdrop, or Escape; moves focus to
+  the close button on open and wraps Tab inside the panel; locks body scroll while open;
+  and closes itself when the viewport widens past 640px, so it can't strand itself on a
+  desktop header with no visible toggle. Honors `prefers-reduced-motion`.
+
 ### Changed
 - The intake commit CTAs — "Let's do this", the per-discipline "That's the one", and the
   "Show me what you see" advance — use the brighter `accent` (red) button so the call to

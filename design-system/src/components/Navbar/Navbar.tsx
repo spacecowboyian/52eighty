@@ -1,6 +1,8 @@
+import { useEffect, useId, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { colors, font, radius, spring } from '../../tokens';
 import { useHover } from '../../utils/useHover';
+import { MobileMenu } from './MobileMenu';
 
 export type NavbarTone = 'light' | 'dark';
 
@@ -184,6 +186,57 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
   );
 }
 
+/** The hamburger that opens the drawer. Only rendered below the 640px breakpoint. */
+function MenuToggle({
+  open,
+  onClick,
+  controls,
+  tone,
+}: {
+  open: boolean;
+  onClick: () => void;
+  controls: string;
+  tone: NavbarTone;
+}) {
+  const bar: CSSProperties = {
+    display: 'block',
+    width: 20,
+    height: 2,
+    borderRadius: 2,
+    background: tone === 'dark' ? colors.paper : colors.ink,
+    transition: 'transform .2s ease, opacity .2s ease',
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={open ? 'Close menu' : 'Open menu'}
+      aria-expanded={open}
+      aria-controls={controls}
+      className="sc-navbar-toggle"
+      style={{
+        width: 44,
+        height: 44,
+        borderRadius: radius.sm,
+        border: 'none',
+        background: 'transparent',
+        cursor: 'pointer',
+        // Center the bars and space them without a gap that shifts on animate.
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 5,
+        padding: 0,
+      }}
+    >
+      <span style={{ ...bar, transform: open ? 'translateY(7px) rotate(45deg)' : 'none' }} />
+      <span style={{ ...bar, opacity: open ? 0 : 1 }} />
+      <span style={{ ...bar, transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' }} />
+    </button>
+  );
+}
+
 /** The 52Eighty site header. */
 export function Navbar({
   tone = 'light',
@@ -193,6 +246,19 @@ export function Navbar({
 }: NavbarProps) {
   const resolvedLinks =
     links ?? (tone === 'dark' ? DARK_DEFAULT_LINKS : LIGHT_DEFAULT_LINKS);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuId = useId();
+
+  // Widening past the breakpoint hides the toggle, so close the drawer with it
+  // — otherwise it hangs over the desktop header with nothing that opened it.
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 640px)');
+    const sync = () => {
+      if (query.matches) setMenuOpen(false);
+    };
+    query.addEventListener('change', sync);
+    return () => query.removeEventListener('change', sync);
+  }, []);
 
   const outer: CSSProperties =
     tone === 'dark'
@@ -229,19 +295,35 @@ export function Navbar({
               <NavLink key={link.label} {...link} tone={tone} />
             ))}
           </div>
-          {tone === 'dark' ? (
-            <ContactPillDark href={contactHref} />
-          ) : (
-            <ContactPillLight href={contactHref} />
-          )}
+          <div className="sc-navbar-cta">
+            {tone === 'dark' ? (
+              <ContactPillDark href={contactHref} />
+            ) : (
+              <ContactPillLight href={contactHref} />
+            )}
+          </div>
+          <MenuToggle
+            open={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+            controls={menuId}
+            tone={tone}
+          />
         </div>
       </div>
+
+      <MobileMenu
+        id={menuId}
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        links={resolvedLinks}
+        contactHref={contactHref}
+      />
       {/*
-        Below 640px there's no room for the link row alongside the
-        wordmark + Contact pill (the primary CTA) without overflowing —
-        collapse to wordmark + Contact only. Mobile-first: base state is
-        hidden, min-width reveals it. A real hamburger/drawer is a
-        follow-up; this is the minimum fix for "doesn't clip on a phone".
+        Mobile-first: below 640px the header is wordmark + hamburger, and the
+        links and Contact CTA both live in the drawer — at 375px the wordmark
+        (~205px) plus the Contact pill (~110px) plus a 44px toggle already
+        overflows once padding is counted, so the pill can't stay out here.
+        Base state is the narrow one; min-width queries layer the desktop row on.
       */}
       <style>{`
         .sc-navbar-links {
@@ -249,9 +331,21 @@ export function Navbar({
           align-items: center;
           gap: 26px;
         }
+        .sc-navbar-cta {
+          display: none;
+        }
+        .sc-navbar-toggle {
+          display: flex;
+        }
         @media (min-width: 640px) {
           .sc-navbar-links {
             display: flex;
+          }
+          .sc-navbar-cta {
+            display: block;
+          }
+          .sc-navbar-toggle {
+            display: none;
           }
         }
       `}</style>

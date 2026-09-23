@@ -13,8 +13,9 @@ export { Link } from './components/Link/Link';
 
 // Navigation
 export { Navbar } from './components/Navbar/Navbar';
-export type { NavbarTone } from './components/Navbar/Navbar';
+export type { NavbarTone, NavbarLink, NavbarProps } from './components/Navbar/Navbar';
 export { MobileMenu } from './components/Navbar/MobileMenu';
+export type { MobileMenuProps, MobileMenuLink } from './components/Navbar/MobileMenu';
 
 // Forms
 export { Field, TextInput, SelectInput, TextAreaField } from './components/Field/Field';
