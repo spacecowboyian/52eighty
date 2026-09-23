@@ -1,0 +1,17 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 12.429,
+    "duration_s": 12.429,
+    "keyframe_path": "data/assets/603cb4796294/keyframes/shot-000.jpg",
+    "description": "Vertical (9:16) title-card shot of cyclists in neon-yellow helmets crossing Duluth's teal Aerial Lift Bridge, overlaid with bold white serif text reading 'Why come to NORC?'.",
+    "subjects": ["title card text", "cyclists", "Aerial Lift Bridge", "NORC branding"],
+    "setting": "exterior, Duluth harbor bridge walkway",
+    "framing": "wide",
+    "people_count": 6,
+    "faces_present": false,
+    "ocr_text": "Why come to NORC?",
+    "notable_details": "Single static take (12.4s) used as a promotional teaser/hook opener; same underlying footage as the opening shot of Social 1.mov (asset 7d1af65757a5, shot 0), repurposed here with an added question-prompt title card, suggesting this clip is a short-form promo/recruitment video for the conference."
+  }
+]

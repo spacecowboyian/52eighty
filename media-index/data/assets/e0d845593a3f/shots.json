@@ -1,0 +1,168 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 2.836167,
+    "duration_s": 2.836,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-000.jpg",
+    "description": "Aerial drone shot of a VFW post with a red metal roof and brick facade, brick patios with cafe seating along the back, an American flag, and volunteers staging materials in the adjacent grassy lot near a pond.",
+    "subjects": [
+      "VFW post building",
+      "VFW sign",
+      "American flag",
+      "brick patio",
+      "utility trailer",
+      "pond"
+    ],
+    "setting": "exterior, VFW post grounds near water",
+    "framing": "wide",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": "VFW",
+    "notable_details": "Establishing aerial shot of the Georgia VFW post; same building style/patio design as the LONG_FINAL cut's secondary aerial shot (abd6b0295139 shot 007), suggesting this may be the same property."
+  },
+  {
+    "ordinal": 1,
+    "t_in": 2.836167,
+    "t_out": 3.962292,
+    "duration_s": 1.126,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-001.jpg",
+    "description": "Interior of a box truck, a man wearing a cap and a blue shirt reading 'No Kid Sleeps on the Floor in Our Town!' carries a stack of unassembled wooden bed frame parts toward the open truck door.",
+    "subjects": [
+      "man in blue shirt",
+      "wooden bed frame parts",
+      "box truck interior",
+      "hand truck"
+    ],
+    "setting": "interior, box truck / exterior loading area",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "NO KID SLEEPS ON THE FLOOR IN OUR TOWN!",
+    "notable_details": "Shows the bed-building charity component of the event (distinct from the gardening seen in other assets)."
+  },
+  {
+    "ordinal": 2,
+    "t_in": 3.962292,
+    "t_out": 5.588917,
+    "duration_s": 1.627,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-002.jpg",
+    "description": "A group of volunteers in blue 'Day of Service' / 'No Kid Sleeps on the Floor' t-shirts unload stacked wooden bed frame parts from a Penske rental truck.",
+    "subjects": [
+      "volunteers in blue shirts",
+      "Penske rental truck",
+      "wooden bed frame parts",
+      "work gloves"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "wide",
+    "people_count": 6,
+    "faces_present": true,
+    "ocr_text": "Penske / NO KID SLEEPS ON THE FLOOR IN OUR TOWN! / DAY OF SERVICE",
+    "notable_details": null
+  },
+  {
+    "ordinal": 3,
+    "t_in": 5.588917,
+    "t_out": 7.75775,
+    "duration_s": 2.169,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-003.jpg",
+    "description": "Low-angle close-up of an older bearded man wearing glasses, a cap, and a blue 'Day of Service' VFW shirt, smiling while working, with an out-of-focus wheel or fan blade in the foreground.",
+    "subjects": [
+      "older bearded man",
+      "VFW Day of Service shirt",
+      "glasses"
+    ],
+    "setting": "exterior",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE / VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 4,
+    "t_in": 7.75775,
+    "t_out": 8.717042,
+    "duration_s": 0.959,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-004.jpg",
+    "description": "A group wearing blue 'Day of Service' shirts sands wooden bed-frame boards on a folding table outdoors using orbital sanders, with a pine tree behind them.",
+    "subjects": [
+      "volunteers",
+      "orbital sanders",
+      "wooden boards",
+      "folding table",
+      "safety gloves"
+    ],
+    "setting": "exterior, work station under open sky",
+    "framing": "medium",
+    "people_count": 6,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE / VFW",
+    "notable_details": null
+  },
+  {
+    "ordinal": 5,
+    "t_in": 8.717042,
+    "t_out": 10.135125,
+    "duration_s": 1.418,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-005.jpg",
+    "description": "Volunteers in blue shirts load bagged bedding sets -- comforters, sheets, and pillows -- into a wooden delivery crate at dusk, with a VFW canopy tent visible behind them.",
+    "subjects": [
+      "volunteers",
+      "bagged bedding sets",
+      "wooden crate",
+      "VFW canopy tent",
+      "pillows"
+    ],
+    "setting": "exterior, parking lot at dusk",
+    "framing": "medium",
+    "people_count": 5,
+    "faces_present": true,
+    "ocr_text": "Your Zone Comforter Set with Sheets / Mainstays Comfort Complete",
+    "notable_details": null
+  },
+  {
+    "ordinal": 6,
+    "t_in": 10.135125,
+    "t_out": 11.720042,
+    "duration_s": 1.585,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-006.jpg",
+    "description": "An elderly man wearing a 'VFW Post 665, Macon, GA' cap and a blue 'Day of Service / #StillServing' t-shirt gives a thumbs up to the camera, with the VFW sign and volunteers working behind him.",
+    "subjects": [
+      "elderly man",
+      "VFW Post 665 Macon GA cap",
+      "VFW sign",
+      "volunteers",
+      "smoking grill"
+    ],
+    "setting": "exterior, VFW post grounds",
+    "framing": "close",
+    "people_count": 5,
+    "faces_present": true,
+    "ocr_text": "VFW / DAY OF SERVICE #STILLSERVING / VFW POST 665 MACON, GA",
+    "notable_details": "Cap identifies the specific post as VFW Post 665 in Macon, Georgia."
+  },
+  {
+    "ordinal": 7,
+    "t_in": 11.720042,
+    "t_out": 69.653,
+    "duration_s": 57.933,
+    "keyframe_path": "data/assets/e0d845593a3f/keyframes/shot-007.jpg",
+    "description": "Interior testimonial shot of a young man with a curly afro and a necklace reading 'Jae,' wearing a brown shirt with a rose graphic, smiling in a bedroom decorated with family photos and a red motorcycle helmet.",
+    "subjects": [
+      "young man",
+      "Jae necklace",
+      "rose-graphic shirt",
+      "framed family photos",
+      "motorcycle helmet",
+      "bunk bed frame"
+    ],
+    "setting": "interior, bedroom",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "By far the longest shot (57.9s of ~69.7s total) -- appears to be the beneficiary/recipient testimonial interview, a different subject and location from the volunteer footage, likely the emotional anchor of the piece."
+  }
+]

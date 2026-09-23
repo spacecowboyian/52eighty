@@ -1,0 +1,186 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 1.167833,
+    "duration_s": 1.168,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-000.jpg",
+    "description": "Volunteers in blue 'Day of Service' t-shirts serve food from steam trays at an outdoor covered pavilion behind a red 'Day of Service' VFW banner, with residents including a man in a wheelchair lining up to be served.",
+    "subjects": [
+      "volunteers in Day of Service shirts",
+      "VFW Day of Service banner",
+      "steam trays of food",
+      "wheelchair user",
+      "pavilion",
+      "residents with canes"
+    ],
+    "setting": "exterior, covered pavilion at a residential facility",
+    "framing": "wide",
+    "people_count": 13,
+    "faces_present": true,
+    "ocr_text": "VFW VETERANS OF FOREIGN WARS / DAY OF SERVICE / CenterWell / Humana / USAA",
+    "notable_details": "Setting differs from the other three assets -- appears to be a veterans' care/rehabilitation facility rather than a VFW post, with wheelchair users and canes prominent among attendees; sponsor logos visible on the banner."
+  },
+  {
+    "ordinal": 1,
+    "t_in": 1.167833,
+    "t_out": 2.544208,
+    "duration_s": 1.376,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-001.jpg",
+    "description": "Extreme close-up, backlit shot of a paper fan or program printed with a United States Army crest and the banner text 'United States Army,' with unit flags blurred in the background.",
+    "subjects": [
+      "United States Army crest",
+      "unit flags"
+    ],
+    "setting": "exterior",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "UNITED STATES ARMY",
+    "notable_details": null
+  },
+  {
+    "ordinal": 2,
+    "t_in": 2.544208,
+    "t_out": 3.837167,
+    "duration_s": 1.293,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-002.jpg",
+    "description": "A man in a power wheelchair wearing a red and black flannel shirt raises his fist triumphantly while holding a zip-line or game handle, in front of a brick facility building.",
+    "subjects": [
+      "man in power wheelchair",
+      "flannel shirt",
+      "zip-line handle",
+      "brick building"
+    ],
+    "setting": "exterior, facility courtyard",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Adaptive recreation activity -- appears to be a zip-line or pulley game adapted for wheelchair users."
+  },
+  {
+    "ordinal": 3,
+    "t_in": 3.837167,
+    "t_out": 6.423083,
+    "duration_s": 2.586,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-003.jpg",
+    "description": "Low-angle shot of a person harnessed and suspended partway up an inflatable rock-climbing wall, gripping the belay line, with a brick building behind.",
+    "subjects": [
+      "climber in harness",
+      "inflatable rock climbing wall",
+      "belay ropes",
+      "brick building"
+    ],
+    "setting": "exterior, facility courtyard",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Adaptive/accessible rock climbing activity set up as part of the event."
+  },
+  {
+    "ordinal": 4,
+    "t_in": 6.423083,
+    "t_out": 8.591917,
+    "duration_s": 2.169,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-004.jpg",
+    "description": "A bearded man in a blue 'Day of Service / #StillServing' t-shirt and dog-tag-style pendant stands under trees, looking directly at the camera in a testimonial-style shot, with residents and a stroller visible behind him.",
+    "subjects": [
+      "bearded man",
+      "Day of Service shirt",
+      "pendant necklace",
+      "trees",
+      "residential building"
+    ],
+    "setting": "exterior, facility grounds",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "DAY OF SERVICE #STILLSERVING",
+    "notable_details": null
+  },
+  {
+    "ordinal": 5,
+    "t_in": 8.591917,
+    "t_out": 9.75975,
+    "duration_s": 1.168,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-005.jpg",
+    "description": "A small group -- including a man in a power wheelchair, a woman in business attire, an older woman, and a volunteer with a camera rig -- gather and chat together outdoors in front of a brick facility building.",
+    "subjects": [
+      "man in power wheelchair",
+      "woman in coral blazer",
+      "older woman",
+      "volunteer with camera rig",
+      "brick building"
+    ],
+    "setting": "exterior, facility courtyard",
+    "framing": "medium",
+    "people_count": 5,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 6,
+    "t_in": 9.75975,
+    "t_out": 11.886875,
+    "duration_s": 2.127,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-006.jpg",
+    "description": "An older man in a checked shirt and sunglasses, seated in a power wheelchair, smiles and speaks to the camera in front of a low brick facility building.",
+    "subjects": [
+      "older man",
+      "power wheelchair",
+      "sunglasses",
+      "checked shirt",
+      "brick building"
+    ],
+    "setting": "exterior, facility grounds",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 7,
+    "t_in": 11.886875,
+    "t_out": 13.555208,
+    "duration_s": 1.668,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-007.jpg",
+    "description": "A group of residents in wheelchairs, including men and a woman, laugh and clap together outdoors near raised garden planters while a staff member holds up a wire sculpture and another woman in dark clothing looks on.",
+    "subjects": [
+      "residents in wheelchairs",
+      "raised garden planters",
+      "wire sculpture",
+      "staff members"
+    ],
+    "setting": "exterior, facility garden area",
+    "framing": "medium",
+    "people_count": 6,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 8,
+    "t_in": 13.555208,
+    "t_out": 48.465,
+    "duration_s": 34.91,
+    "keyframe_path": "data/assets/3b956c3cef52/keyframes/shot-008.jpg",
+    "description": "An older man in sunglasses and a blue 'Stronger' t-shirt featuring an American flag graphic sits in a wheelchair, speaking to the camera, with a woman in stars-and-stripes clothing seated beside him.",
+    "subjects": [
+      "older man",
+      "Stronger t-shirt with flag graphic",
+      "wheelchair",
+      "dog tags",
+      "woman in patriotic clothing"
+    ],
+    "setting": "exterior, facility grounds",
+    "framing": "close",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": "STRONGER",
+    "notable_details": "By far the longest shot in this cut (34.9s of ~48.5s total) -- likely the primary resident testimonial anchoring the piece."
+  }
+]

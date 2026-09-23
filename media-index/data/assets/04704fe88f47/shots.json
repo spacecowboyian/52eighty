@@ -1,0 +1,1047 @@
+[
+  {
+    "ordinal": 0,
+    "t_in": 0,
+    "t_out": 1.583333,
+    "duration_s": 1.583,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-000.jpg",
+    "description": "A man in a teal 'Bike to Work Day' t-shirt and glasses, wearing a hydration backpack, speaks to the camera on a bluff overlook with a river and floodplain below.",
+    "subjects": [
+      "man with beard and glasses",
+      "hydration backpack",
+      "wooden fence",
+      "river",
+      "text: BIKE TO WORK DAY"
+    ],
+    "setting": "exterior, bluff overlook above a river valley",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "BIKE TO WORK DAY",
+    "notable_details": "Host introduction shot, talking directly to camera."
+  },
+  {
+    "ordinal": 1,
+    "t_in": 1.583333,
+    "t_out": 6.041667,
+    "duration_s": 4.458,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-001.jpg",
+    "description": "The same man, seen from behind, lifts a mountain bike onto a hitch-mounted bike rack in a parking lot with a river valley in the background.",
+    "subjects": [
+      "man",
+      "hitch bike rack",
+      "mountain bikes",
+      "parking lot",
+      "backpack"
+    ],
+    "setting": "exterior, parking lot overlooking a river valley",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Loading/unloading bikes from a car rack before the ride."
+  },
+  {
+    "ordinal": 2,
+    "t_in": 6.041667,
+    "t_out": 8.041667,
+    "duration_s": 2,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-002.jpg",
+    "description": "Close detail of a mountain bike's rear wheel, disc brake, and drivetrain mounted on a hitch bike rack, with a hand adjusting the rack arm.",
+    "subjects": [
+      "bike rack",
+      "rear wheel",
+      "disc brake",
+      "cassette",
+      "hand"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "detail",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Macro detail shot of bike/rack hardware."
+  },
+  {
+    "ordinal": 3,
+    "t_in": 8.041667,
+    "t_out": 12.041667,
+    "duration_s": 4,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-003.jpg",
+    "description": "A family group -- a teen boy, a woman, a young girl in a helmet, and a toddler -- gathers near a car in a parking lot getting ready to ride, while the host loads bikes in the foreground.",
+    "subjects": [
+      "teen boy",
+      "woman",
+      "girl in helmet",
+      "toddler",
+      "car",
+      "helmets"
+    ],
+    "setting": "exterior, parking lot near a trailhead",
+    "framing": "wide",
+    "people_count": 5,
+    "faces_present": true,
+    "ocr_text": "XR4 TEAM ISSU (tire branding)",
+    "notable_details": "Establishing shot of the whole group before heading out."
+  },
+  {
+    "ordinal": 4,
+    "t_in": 12.041667,
+    "t_out": 15.541667,
+    "duration_s": 3.5,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-004.jpg",
+    "description": "The host stands at the bluff overlook fence again, gesturing with both hands as he continues speaking to camera, river and green farmland behind him.",
+    "subjects": [
+      "man",
+      "wooden fence",
+      "river",
+      "farmland",
+      "text: BIKE TO WORK DAY"
+    ],
+    "setting": "exterior, bluff overlook above a river valley",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "BIKE TO WORK DAY / Two wheels are better than four",
+    "notable_details": null
+  },
+  {
+    "ordinal": 5,
+    "t_in": 15.541667,
+    "t_out": 17.041667,
+    "duration_s": 1.5,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-005.jpg",
+    "description": "Close-up of the host mid-sentence, glasses and beard visible, backpack strap over his shoulder, river valley blurred behind him.",
+    "subjects": [
+      "man",
+      "glasses",
+      "backpack strap"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 6,
+    "t_in": 17.041667,
+    "t_out": 20.041667,
+    "duration_s": 3,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-006.jpg",
+    "description": "Low detail shot of a cyclist's legs, shoe clipped into a pedal, and bike frame with 'Schwalbe Rocket Ron' tires, other riders' legs and bikes visible around a parking lot.",
+    "subjects": [
+      "bike shoe",
+      "pedal",
+      "chain",
+      "tire branding: Schwalbe Rocket Ron",
+      "riders' legs"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "detail",
+    "people_count": 3,
+    "faces_present": false,
+    "ocr_text": "SCHWALBE / ROCKET RON",
+    "notable_details": "Group getting clipped in / ready to ride."
+  },
+  {
+    "ordinal": 7,
+    "t_in": 20.041667,
+    "t_out": 22,
+    "duration_s": 1.958,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-007.jpg",
+    "description": "The host continues his to-camera interview in close-up, mid-word, wearing the teal 'Bike to Work Day' shirt and backpack.",
+    "subjects": [
+      "man",
+      "backpack straps",
+      "text: BIKE TO WORK DAY"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": "BIKE TO WORK DAY",
+    "notable_details": null
+  },
+  {
+    "ordinal": 8,
+    "t_in": 22,
+    "t_out": 24.041667,
+    "duration_s": 2.042,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-008.jpg",
+    "description": "Point-of-view shot over a bike's handlebars following a young girl in a pink cat-ear helmet and elbow pads as she walks toward the park entrance near a trailhead sign.",
+    "subjects": [
+      "girl in pink cat helmet",
+      "elbow pads",
+      "bike handlebars",
+      "trailhead sign",
+      "playground sculpture"
+    ],
+    "setting": "exterior, park trailhead entrance",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Faces obscured/turned away; helmet clearly visible."
+  },
+  {
+    "ordinal": 9,
+    "t_in": 24.041667,
+    "t_out": 25.458333,
+    "duration_s": 1.417,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-009.jpg",
+    "description": "The host continues talking to camera at the overlook, hands raised mid-gesture.",
+    "subjects": [
+      "man",
+      "wooden fence",
+      "river valley"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 10,
+    "t_in": 25.458333,
+    "t_out": 27.625,
+    "duration_s": 2.167,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-010.jpg",
+    "description": "Continued medium shot of the host speaking to camera at the same river overlook location.",
+    "subjects": [
+      "man",
+      "glasses",
+      "beard"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 11,
+    "t_in": 27.625,
+    "t_out": 32,
+    "duration_s": 4.375,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-011.jpg",
+    "description": "Low detail shot of a rider's foot clipping into a pedal on a purple mountain bike frame, other cyclists' legs and bikes visible in a parking lot.",
+    "subjects": [
+      "shoe",
+      "pedal",
+      "crank",
+      "bike frame",
+      "riders' legs"
+    ],
+    "setting": "exterior, parking lot",
+    "framing": "detail",
+    "people_count": 3,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Group preparing to depart on the trail."
+  },
+  {
+    "ordinal": 12,
+    "t_in": 32,
+    "t_out": 33.583333,
+    "duration_s": 1.583,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-012.jpg",
+    "description": "The host, close-up, continues narrating to camera with the river valley softly blurred behind him.",
+    "subjects": [
+      "man",
+      "backpack"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 13,
+    "t_in": 33.583333,
+    "t_out": 34.75,
+    "duration_s": 1.167,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-013.jpg",
+    "description": "A young girl in a black outfit and mint-green helmet sits on a red and black Trek mountain bike, glancing back over her shoulder near a trailhead sign and hedge.",
+    "subjects": [
+      "girl",
+      "Trek mountain bike",
+      "mint helmet",
+      "trailhead sign",
+      "other riders"
+    ],
+    "setting": "exterior, gravel trailhead path, wooded surroundings",
+    "framing": "medium",
+    "people_count": 3,
+    "faces_present": true,
+    "ocr_text": "TREK",
+    "notable_details": null
+  },
+  {
+    "ordinal": 14,
+    "t_in": 34.75,
+    "t_out": 38,
+    "duration_s": 3.25,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-014.jpg",
+    "description": "Wide shot of a cyclist riding away from camera toward a wooden 'Skills Zone' archway sign, with a large decorative butterfly sculpture made of bike parts and a stone picnic pavilion beyond.",
+    "subjects": [
+      "cyclist",
+      "Skills Zone sign",
+      "butterfly bike-part sculpture",
+      "stone pavilion",
+      "picnic tables"
+    ],
+    "setting": "exterior, park skills area with wooded backdrop",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "SKILLS ZONE / WATCH YOUR SIX / XC",
+    "notable_details": "Establishes the bike skills park area and its bicycle-themed art installation."
+  },
+  {
+    "ordinal": 15,
+    "t_in": 38,
+    "t_out": 40,
+    "duration_s": 2,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-015.jpg",
+    "description": "The host, mid-interview close-up with hands raised, continues speaking at the bluff overlook.",
+    "subjects": [
+      "man",
+      "backpack straps"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 16,
+    "t_in": 40,
+    "t_out": 45.958333,
+    "duration_s": 5.958,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-016.jpg",
+    "description": "A teenage boy in a mint-green shirt rides his mountain bike down a gravel path toward the Skills Zone sign and butterfly sculpture, with another rider ahead of him.",
+    "subjects": [
+      "teen boy",
+      "backpack",
+      "Skills Zone sign",
+      "butterfly sculpture",
+      "second rider"
+    ],
+    "setting": "exterior, gravel path through grassy skills park",
+    "framing": "wide",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": "SKILLS ZONE",
+    "notable_details": null
+  },
+  {
+    "ordinal": 17,
+    "t_in": 45.958333,
+    "t_out": 48.083333,
+    "duration_s": 2.125,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-017.jpg",
+    "description": "Close-up of the host continuing his narration at the overlook fence, river and cityscape visible in the distance.",
+    "subjects": [
+      "man",
+      "river",
+      "distant city"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 18,
+    "t_in": 48.083333,
+    "t_out": 50,
+    "duration_s": 1.917,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-018.jpg",
+    "description": "Dynamic panning shot of a teenage boy riding his bike past a stone-pillared pavilion, motion blur in the background emphasizing speed, other riders visible behind him.",
+    "subjects": [
+      "teen boy",
+      "backpack",
+      "stone pavilion",
+      "other cyclists"
+    ],
+    "setting": "exterior, skills park near stone pavilion",
+    "framing": "medium",
+    "people_count": 3,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Motion-blur panning shot, dynamic riding energy."
+  },
+  {
+    "ordinal": 19,
+    "t_in": 50,
+    "t_out": 54,
+    "duration_s": 4,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-019.jpg",
+    "description": "Dynamic panning shot of the host riding his mountain bike past the colorful butterfly bike-part sculpture, motion blur streaking the wheel and background.",
+    "subjects": [
+      "man",
+      "butterfly sculpture",
+      "mountain bike",
+      "backpack"
+    ],
+    "setting": "exterior, skills park path",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Strong motion blur on the sculpture and rear wheel, energetic action shot."
+  },
+  {
+    "ordinal": 20,
+    "t_in": 54,
+    "t_out": 60,
+    "duration_s": 6,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-020.jpg",
+    "description": "A young girl in a helmet rides a mountain bike straight toward the camera through the archway formed by the large red-and-yellow butterfly sculpture made of bicycle frames.",
+    "subjects": [
+      "girl",
+      "helmet",
+      "butterfly sculpture",
+      "bicycle-frame art",
+      "wooden boardwalk"
+    ],
+    "setting": "exterior, skills park boardwalk feature under sculpture archway",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Visually striking shot riding through the bike-frame butterfly art installation; good reel/highlight candidate."
+  },
+  {
+    "ordinal": 21,
+    "t_in": 60,
+    "t_out": 64,
+    "duration_s": 4,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-021.jpg",
+    "description": "The host, arms outstretched, continues his enthusiastic narration at the bluff overlook fence.",
+    "subjects": [
+      "man",
+      "wooden fence",
+      "farmland"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 22,
+    "t_in": 64,
+    "t_out": 66.958333,
+    "duration_s": 2.958,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-022.jpg",
+    "description": "A young girl in a black t-shirt and helmet rides her mountain bike through the butterfly bike-part sculpture archway toward the camera, along a wooden boardwalk.",
+    "subjects": [
+      "girl",
+      "helmet",
+      "butterfly sculpture",
+      "boardwalk"
+    ],
+    "setting": "exterior, skills park boardwalk feature",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Repeat pass through the sculpture archway, good action visual."
+  },
+  {
+    "ordinal": 23,
+    "t_in": 66.958333,
+    "t_out": 69.541667,
+    "duration_s": 2.583,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-023.jpg",
+    "description": "The host, hands open in an expansive gesture, keeps speaking to camera at the bluff overlook.",
+    "subjects": [
+      "man",
+      "wooden fence",
+      "river"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 24,
+    "t_in": 69.541667,
+    "t_out": 73.375,
+    "duration_s": 3.833,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-024.jpg",
+    "description": "The host rides his mountain bike over a wooden boardwalk skills feature near the stone pavilion, with ramp obstacles and the butterfly sculpture visible behind him.",
+    "subjects": [
+      "man",
+      "mountain bike",
+      "wooden boardwalk feature",
+      "ramp obstacle",
+      "stone pavilion",
+      "butterfly sculpture"
+    ],
+    "setting": "exterior, skills park technical trail feature",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Shows the built wooden skills-course features of the park."
+  },
+  {
+    "ordinal": 25,
+    "t_in": 73.375,
+    "t_out": 76.666667,
+    "duration_s": 3.292,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-025.jpg",
+    "description": "A young woman in a gray tank top laughs and gestures with open hands during an interview segment, the butterfly sculpture visible behind her.",
+    "subjects": [
+      "woman",
+      "gray tank top",
+      "butterfly sculpture",
+      "bench"
+    ],
+    "setting": "exterior, grassy skills park area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 26,
+    "t_in": 76.666667,
+    "t_out": 79.666667,
+    "duration_s": 3,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-026.jpg",
+    "description": "A woman with a backpack rides a mountain bike along a gravel path while a small girl on a pink bike with training wheels follows close behind, wearing a cat-themed helmet.",
+    "subjects": [
+      "woman",
+      "small girl",
+      "training-wheel bike",
+      "cat helmet",
+      "gravel path",
+      "farm building"
+    ],
+    "setting": "exterior, gravel trail through open grassy area",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Multi-generational riding moment, toddler following on training wheels."
+  },
+  {
+    "ordinal": 27,
+    "t_in": 79.666667,
+    "t_out": 83.416667,
+    "duration_s": 3.75,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-027.jpg",
+    "description": "The same young woman in a gray tank top continues her interview, hands clasped, near the butterfly sculpture and wooden boardwalk.",
+    "subjects": [
+      "woman",
+      "butterfly sculpture",
+      "boardwalk"
+    ],
+    "setting": "exterior, skills park area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 28,
+    "t_in": 83.416667,
+    "t_out": 89.583333,
+    "duration_s": 6.167,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-028.jpg",
+    "description": "A girl in a mint-green helmet rides her mountain bike along a gravel path near a light pole and picnic shelter, another woman visible at the edge of frame.",
+    "subjects": [
+      "girl",
+      "mint helmet",
+      "gravel path",
+      "light pole",
+      "shelter"
+    ],
+    "setting": "exterior, open park grounds",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 29,
+    "t_in": 89.583333,
+    "t_out": 97.5,
+    "duration_s": 7.917,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-029.jpg",
+    "description": "A toddler in a pink cat-ear helmet, elbow pads, and a lime-green top walks her small bike along a gravel path through an open flowering field, seen from behind.",
+    "subjects": [
+      "toddler",
+      "pink cat helmet",
+      "elbow pads",
+      "small bike",
+      "wildflower field"
+    ],
+    "setting": "exterior, gravel path through open meadow",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Face not visible (back to camera); helmet and gear clearly shown."
+  },
+  {
+    "ordinal": 30,
+    "t_in": 97.5,
+    "t_out": 103.75,
+    "duration_s": 6.25,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-030.jpg",
+    "description": "The same toddler in a pink cat helmet runs playfully across a dirt pump-track mound with arms out, while a woman rides a mountain bike over the dirt jumps behind her.",
+    "subjects": [
+      "toddler",
+      "pink cat helmet",
+      "woman on mountain bike",
+      "dirt pump track",
+      "wildflowers"
+    ],
+    "setting": "exterior, dirt pump track / jump trail area",
+    "framing": "medium",
+    "people_count": 2,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Candid, joyful moment of a child playing on the dirt jumps while a rider passes behind; strong lifestyle/reel candidate."
+  },
+  {
+    "ordinal": 31,
+    "t_in": 103.75,
+    "t_out": 106,
+    "duration_s": 2.25,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-031.jpg",
+    "description": "The young woman in the gray tank top continues her interview with hands clasped, butterfly sculpture blurred in the background.",
+    "subjects": [
+      "woman",
+      "butterfly sculpture"
+    ],
+    "setting": "exterior, skills park area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 32,
+    "t_in": 106,
+    "t_out": 114,
+    "duration_s": 8,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-032.jpg",
+    "description": "A girl in a green helmet rides her mountain bike over a dirt pump-track berm, with two adults and a small child watching from the tree line in the background.",
+    "subjects": [
+      "girl",
+      "green helmet",
+      "dirt pump track berm",
+      "onlookers"
+    ],
+    "setting": "exterior, dirt pump track surrounded by trees",
+    "framing": "wide",
+    "people_count": 4,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Dynamic dirt-jump riding action with family watching."
+  },
+  {
+    "ordinal": 33,
+    "t_in": 114,
+    "t_out": 115.166667,
+    "duration_s": 1.167,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-033.jpg",
+    "description": "Close-up of the host continuing his to-camera narration at the bluff overlook.",
+    "subjects": [
+      "man",
+      "glasses",
+      "beard"
+    ],
+    "setting": "exterior, bluff overlook",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 34,
+    "t_in": 115.166667,
+    "t_out": 118.083333,
+    "duration_s": 2.917,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-034.jpg",
+    "description": "The host rides his mountain bike toward the camera along a shaded, wooded singletrack trail with tall green tree canopy overhead.",
+    "subjects": [
+      "man",
+      "mountain bike",
+      "wooded singletrack trail"
+    ],
+    "setting": "exterior, dense wooded singletrack trail",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Classic shaded singletrack riding shot, good scenic trail coverage."
+  },
+  {
+    "ordinal": 35,
+    "t_in": 118.083333,
+    "t_out": 119,
+    "duration_s": 0.917,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-035.jpg",
+    "description": "A hand with green nail polish holds a large snifter glass being filled with dark beer beneath a row of numbered tap handles at a bar.",
+    "subjects": [
+      "beer taps",
+      "snifter glass",
+      "dark beer",
+      "hand",
+      "numbered taps 8 and 9"
+    ],
+    "setting": "interior, bar/taproom",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "8, 9",
+    "notable_details": "Unrelated cutaway location (bar), not the trail park; appears to be part of a broader town-life sequence."
+  },
+  {
+    "ordinal": 36,
+    "t_in": 119,
+    "t_out": 120,
+    "duration_s": 1,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-036.jpg",
+    "description": "Exterior signage on a teal-framed glass door reads 'The Den, A Modern Speakeasy' with posted hours, a hand pushing the door open.",
+    "subjects": [
+      "door signage",
+      "text: The Den",
+      "hand"
+    ],
+    "setting": "exterior storefront, downtown speakeasy entrance",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": "THE DEN / A MODERN SPEAKEASY / WEDS-THURS 4 PM-10 PM / FRI-SAT 3 PM-11 PM",
+    "notable_details": "Unrelated downtown business signage shot."
+  },
+  {
+    "ordinal": 37,
+    "t_in": 120,
+    "t_out": 121,
+    "duration_s": 1,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-037.jpg",
+    "description": "Dim, string-light-lit interior of a lounge/speakeasy with several patrons seated in armchairs talking, decorative wall art in the background.",
+    "subjects": [
+      "patrons",
+      "armchairs",
+      "string lights",
+      "wall art",
+      "houseplants"
+    ],
+    "setting": "interior, speakeasy lounge",
+    "framing": "wide",
+    "people_count": 5,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Unrelated downtown lounge interior, low-light shot."
+  },
+  {
+    "ordinal": 38,
+    "t_in": 121,
+    "t_out": 122.125,
+    "duration_s": 1.125,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-038.jpg",
+    "description": "Close detail of black and white salt-and-pepper shakers and a branded napkin holder reading 'RC's Lunch Car' on a diner counter, with blurred figures in the background.",
+    "subjects": [
+      "salt and pepper shakers",
+      "napkin holder",
+      "text: RC's Lunch Car",
+      "diner counter"
+    ],
+    "setting": "interior, diner",
+    "framing": "detail",
+    "people_count": 2,
+    "faces_present": false,
+    "ocr_text": "RC'S LUNCH CAR",
+    "notable_details": "Unrelated diner cutaway shot, shallow depth of field."
+  },
+  {
+    "ordinal": 39,
+    "t_in": 122.125,
+    "t_out": 124,
+    "duration_s": 1.875,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-039.jpg",
+    "description": "The young woman in gray continues gesturing and speaking during her interview segment near the butterfly sculpture.",
+    "subjects": [
+      "woman",
+      "butterfly sculpture"
+    ],
+    "setting": "exterior, skills park area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 40,
+    "t_in": 124,
+    "t_out": 128,
+    "duration_s": 4,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-040.jpg",
+    "description": "The host catches air off a dirt jump on his mountain bike, a large concrete block in the foreground framing the shot, dense trees behind him.",
+    "subjects": [
+      "man",
+      "mountain bike",
+      "dirt jump",
+      "concrete block"
+    ],
+    "setting": "exterior, dirt jump trail feature",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Rider airborne off a berm/jump -- a strong dynamic action moment for a highlight reel."
+  },
+  {
+    "ordinal": 41,
+    "t_in": 128,
+    "t_out": 130.208333,
+    "duration_s": 2.208,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-041.jpg",
+    "description": "Close-up of the young woman with a teal-streaked ponytail speaking during her interview, green fields and trees behind her.",
+    "subjects": [
+      "woman",
+      "teal hair streak",
+      "trees",
+      "fields"
+    ],
+    "setting": "exterior, open grassy area near trail",
+    "framing": "close",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 42,
+    "t_in": 130.208333,
+    "t_out": 137.916667,
+    "duration_s": 7.708,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-042.jpg",
+    "description": "The woman rides her mountain bike along a flowing dirt pump-track trail contour with dense forest in the background.",
+    "subjects": [
+      "woman",
+      "mountain bike",
+      "dirt pump track",
+      "forest"
+    ],
+    "setting": "exterior, dirt pump track trail bordered by woods",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": null
+  },
+  {
+    "ordinal": 43,
+    "t_in": 137.916667,
+    "t_out": 138.958333,
+    "duration_s": 1.042,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-043.jpg",
+    "description": "Low-angle exterior shot of an ornate cream-colored theater facade with stained-glass windows and red columned arches, part of a historic downtown building.",
+    "subjects": [
+      "theater facade",
+      "stained glass windows",
+      "red columns",
+      "marquee",
+      "text: Missouri, Music Man"
+    ],
+    "setting": "exterior, historic downtown theater building",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "MISSOURI / MUSIC MAN JULY 12 13 14 2024 / PERFORMING ARTS",
+    "notable_details": "Unrelated downtown architecture/landmark shot, part of broader town sequence."
+  },
+  {
+    "ordinal": 44,
+    "t_in": 138.958333,
+    "t_out": 140.041667,
+    "duration_s": 1.083,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-044.jpg",
+    "description": "Close-up of the ornate 'Missouri' theater marquee sign with light-bulb trim, mounted on the historic building facade against an overcast sky.",
+    "subjects": [
+      "marquee sign",
+      "text: Missouri",
+      "light bulbs"
+    ],
+    "setting": "exterior, historic theater marquee",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "MISSOURI",
+    "notable_details": null
+  },
+  {
+    "ordinal": 45,
+    "t_in": 140.041667,
+    "t_out": 141,
+    "duration_s": 0.958,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-045.jpg",
+    "description": "Wide interior view from the balcony of an ornate, empty theater auditorium looking down at a colorful stage set under construction, crew members working on stage.",
+    "subjects": [
+      "theater auditorium",
+      "stage set",
+      "crew members",
+      "ornate columns",
+      "empty seating"
+    ],
+    "setting": "interior, historic theater auditorium",
+    "framing": "wide",
+    "people_count": 4,
+    "faces_present": false,
+    "ocr_text": "CHUM BUCKET (prop sign)",
+    "notable_details": "Unrelated theater interior, stage crew building a colorful set."
+  },
+  {
+    "ordinal": 46,
+    "t_in": 141,
+    "t_out": 141.958333,
+    "duration_s": 0.958,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-046.jpg",
+    "description": "A large metal dragon sculpture perches on a downtown sidewalk in front of the 'Salve Regina Store,' with parked cars and brick storefronts lining the street.",
+    "subjects": [
+      "metal dragon sculpture",
+      "storefront sign: Salve Regina Store",
+      "parked cars",
+      "street lamp"
+    ],
+    "setting": "exterior, downtown street sidewalk",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "SALVE REGINA STORE / TRADITIONAL ROMAN CATHOLIC ARTICLES / PARK",
+    "notable_details": "Unrelated downtown public-art sculpture shot."
+  },
+  {
+    "ordinal": 47,
+    "t_in": 141.958333,
+    "t_out": 143.041667,
+    "duration_s": 1.083,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-047.jpg",
+    "description": "Close detail of the metal dragon sculpture's head, wings, and scaled body, with a coffee shop storefront reading 'Coffee Tea' blurred behind it.",
+    "subjects": [
+      "dragon sculpture detail",
+      "metal wings",
+      "storefront: Coffee Tea"
+    ],
+    "setting": "exterior, downtown sidewalk",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "COFFEE TEA",
+    "notable_details": null
+  },
+  {
+    "ordinal": 48,
+    "t_in": 143.041667,
+    "t_out": 144.083333,
+    "duration_s": 1.042,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-048.jpg",
+    "description": "Close detail of a metal sculpture styled as a tree with spoon-shaped leaves and red gem-like berries, downtown brick buildings visible out of focus behind it.",
+    "subjects": [
+      "metal spoon-leaf tree sculpture",
+      "red gem accents",
+      "downtown buildings"
+    ],
+    "setting": "exterior, downtown plaza",
+    "framing": "detail",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Unrelated downtown public art detail shot."
+  },
+  {
+    "ordinal": 49,
+    "t_in": 144.083333,
+    "t_out": 146,
+    "duration_s": 1.917,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-049.jpg",
+    "description": "A downtown street corner shows the 'Felix' building sign and a colorful mural of musicians on a brick wall, with an out-of-focus metal sculpture in the foreground and parked cars along the street.",
+    "subjects": [
+      "text: Felix",
+      "musician mural",
+      "brick building",
+      "street sign",
+      "parked cars",
+      "fire hydrant"
+    ],
+    "setting": "exterior, downtown street corner",
+    "framing": "wide",
+    "people_count": 0,
+    "faces_present": false,
+    "ocr_text": "FELIX / FELIX (street sign)",
+    "notable_details": "Establishing shot of a downtown corner with mural and public art, part of broader town coverage."
+  },
+  {
+    "ordinal": 50,
+    "t_in": 146,
+    "t_out": 150.083333,
+    "duration_s": 4.083,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-050.jpg",
+    "description": "Dynamic tracking shot of a teenage boy in a teal shirt and backpack riding his mountain bike quickly across an open grassy field, motion blur in the background.",
+    "subjects": [
+      "teen boy",
+      "backpack",
+      "mountain bike",
+      "grassy field"
+    ],
+    "setting": "exterior, open grassy trail area",
+    "framing": "medium",
+    "people_count": 1,
+    "faces_present": true,
+    "ocr_text": null,
+    "notable_details": "Fast panning action shot with strong motion blur."
+  },
+  {
+    "ordinal": 51,
+    "t_in": 150.083333,
+    "t_out": 171.167,
+    "duration_s": 21.084,
+    "keyframe_path": "data/assets/04704fe88f47/keyframes/shot-051.jpg",
+    "description": "The host rides his mountain bike away from the camera onto a wooden boardwalk trail feature, passing a park bench and hedge, in a long closing shot.",
+    "subjects": [
+      "man",
+      "mountain bike",
+      "wooden boardwalk",
+      "park bench",
+      "hedge"
+    ],
+    "setting": "exterior, skills park boardwalk trail",
+    "framing": "wide",
+    "people_count": 1,
+    "faces_present": false,
+    "ocr_text": null,
+    "notable_details": "Final, longest shot of the edit (21s) -- likely the closing/credits sequence, rider moving away from camera."
+  }
+]

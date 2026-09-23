@@ -1,0 +1,177 @@
+{
+  "doc_id": "7dc093ea0ed0",
+  "case_study": "Full Circle GIS",
+  "filename": "Full Circle Brand Book - print version.pdf",
+  "colors": [
+    {
+      "name": "Data Driven Blue",
+      "value": "HEX 002234 / RGB 0,34,52 / CMYK 96,74,52,62",
+      "usage_notes": "One of three primary brand colors (with Techy Teal and Lime of Sight). Used for the full-color primary logo and as the required one-color alternate logo version on white backgrounds.",
+      "source_pages": [24, 33, 34]
+    },
+    {
+      "name": "Techy Teal",
+      "value": "HEX 015F60 / RGB 1,95,96 / CMYK 100,42,58,24",
+      "usage_notes": "One of three primary brand colors (with Data Driven Blue and Lime of Sight).",
+      "source_pages": [24, 33, 34]
+    },
+    {
+      "name": "Lime of Sight",
+      "value": "HEX C3D652 / RGB 195,214,82 / CMYK 30,0,100,0",
+      "usage_notes": "One of three primary brand colors (with Data Driven Blue and Techy Teal). Forms one end of the 'Systematic Seafoam to Lime of Sight' gradient used in the logo and as accent bars/rules.",
+      "source_pages": [24, 33, 34]
+    },
+    {
+      "name": "Systematic Seafoam",
+      "value": "HEX 88CEBD / RGB 136,206,189 / CMYK 46,0,31,0",
+      "usage_notes": "Secondary color, used as accent/alternate to add variety to the palette; forms the other end of the 'Systematic Seafoam to Lime of Sight' gradient seen in the logo, used as a vertical bar or thin horizontal rule accent.",
+      "source_pages": [33, 34]
+    },
+    {
+      "name": "Muted Map Blue",
+      "value": "HEX 0D3449 / RGB 13,52,73 / CMYK 100,72,47,43",
+      "usage_notes": "Secondary color, used as accent/alternate to add variety to the palette.",
+      "source_pages": [33, 34]
+    }
+  ],
+  "typography": [
+    {
+      "role": "heading/display",
+      "typeface": "Aktiv Grotesk Ex",
+      "weights": "regular, medium",
+      "usage_notes": "Primary brand typeface; should ONLY be used for headlines, titles, headers, and sub-headers. Described as a highly versatile, functional grotesk sans serif with high legibility/readability across sizes and applications. Downloadable via a link in the brand book's resources section.",
+      "source_pages": [36]
+    },
+    {
+      "role": "body",
+      "typeface": "Acumin Pro",
+      "weights": "regular, italic, bold, bold italic",
+      "usage_notes": "Used strictly for body copy; a balanced, rational sans-serif that performs well at both display and text sizes. Headlines, headers, sub-headers, and titles must remain exclusively in Aktiv Grotesk Ex, not this typeface. Downloadable via a link in the brand book's resources section.",
+      "source_pages": [37]
+    }
+  ],
+  "logo_usage": [
+    {
+      "rule_type": "clearspace",
+      "description": "Free space around both the primary and secondary logos must equal the height of the 'F' (fingerprint) icon in the logo, applied on all sides.",
+      "source_pages": [24, 29]
+    },
+    {
+      "rule_type": "clearspace",
+      "description": "When the fingerprint icon mark is used alone, padding on all sides should equal 60% of the current icon size in use. The icon mark may also be used as a background texture that bleeds off the bottom-right corner of a page.",
+      "source_pages": [31]
+    },
+    {
+      "rule_type": "minimum-size",
+      "description": "Logo minimum size is 1 inch wide on full-page, half-page, and quarter-page print ads; on standard web banner sizes, minimum 72 pixels wide.",
+      "source_pages": [25]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Primary logo should be used in full color (Data Driven Blue, Techy Teal, Lime of Sight) whenever possible, or all-white as an alternative. A one-color alternate in Data Driven Blue exists for white backgrounds. A grayscale/black logo variant exists but is limited to cases where color printing is unavailable for external partnerships.",
+      "source_pages": [24, 25, 27]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Secondary logo is a horizontal lockup, used only where a horizontal orientation improves readability; preference is always given to the primary logo, and secondary logo usage must be pre-approved in writing with Full Circle. Same clearance, do/don't, and color rules as the primary logo apply.",
+      "source_pages": [28, 29]
+    },
+    {
+      "rule_type": "variants",
+      "description": "Icon Mark: the fingerprint circle icon (using the Systematic Seafoam-to-Lime of Sight gradient) can be used alone on light/white or medium/dark backgrounds. Must be used sporadically to protect its value; cannot appear alone on product placements; must always appear alongside the Full Circle name within the same application (e.g., a social media profile); can be used standalone on branded apparel/promotional items (shirts, hats, mugs, etc.).",
+      "source_pages": [30, 31]
+    },
+    {
+      "rule_type": "dos",
+      "description": "Do give the logo its specified padding/free space. Do use the white version of the logo on medium-to-dark backgrounds. Do use the alternate one-color logo on white backgrounds when a full-color version isn't an option. Do use the all-white one-color version on dark backgrounds if no color options are available. The gray scale/black logo is limited and should only be used when no color printing is available for external partnerships.",
+      "source_pages": [25]
+    },
+    {
+      "rule_type": "donts",
+      "description": "Do not: rotate the logo; stretch the logo; modify the position of the circle/fingerprint icon; change the leading; place the logo on a busy photograph or pattern if there is poor contrast; use drop shadows or other design effects (emboss, stroke, blur, etc.); use color backgrounds that are not approved brand colors; present the logo in 'outline only' fashion; use a full gradient version of the logo.",
+      "source_pages": [26]
+    }
+  ],
+  "voice_and_tone": [
+    {
+      "attribute": "Talk with transparency, Use real world language",
+      "description": "Derived from the Honest and Authentic brand values. Voice should be simple and easy to understand; professional conversations and business dealings should be transparent with questions answered up front. Do: use easy-to-understand language and real-world examples, be upfront about challenges, be fully transparent. Do Not: use buzzwords/phrases, use industry jargon or acronyms (unless prompted), hide information. Example given: explain GIS via an everyday analogy (e.g., 'like a really fancy Google map with more information') rather than a dictionary-style technical definition (too little) or a condescending over-simplification (too much).",
+      "source_pages": [17, 18, 19]
+    },
+    {
+      "attribute": "If it's the right thing for the client, Figure it out",
+      "description": "Derived from the Agile and Service Oriented brand values. Approach each project with humility, embracing change since 'scope creep is the boogieman' in this industry. Do: be understanding and flexible to change, be patient with out-of-scope requests, try to find a solution. Do Not: show/voice frustration about client-requested scope changes, or dismiss a client's request without first trying to solve the problem. Example given: ask a clarifying question about scope rather than flatly refusing (too little) or over-apologizing / giving away profit (too much).",
+      "source_pages": [17, 20, 21]
+    }
+  ],
+  "imagery_style": [],
+  "messaging": [
+    {
+      "type": "mission",
+      "text": "To connect data models and layers that connect people, generate jobs, and strengthen communities.",
+      "source_pages": [3]
+    },
+    {
+      "type": "vision",
+      "text": "To change the industry and be a positive disruptor in a space where competition is overcharging, over promising, under communicating, and under delivering.",
+      "source_pages": [4]
+    },
+    {
+      "type": "tagline",
+      "text": "Building Autonomy",
+      "source_pages": [13, 14, 15]
+    },
+    {
+      "type": "sub-messaging",
+      "text": "Building Autonomy With a Personal Touch",
+      "source_pages": [15]
+    },
+    {
+      "type": "sub-messaging",
+      "text": "Building Autonomy With Transparency",
+      "source_pages": [15]
+    },
+    {
+      "type": "sub-messaging",
+      "text": "Building Autonomy With Agility",
+      "source_pages": [15]
+    },
+    {
+      "type": "value-prop",
+      "text": "Creating quality experiences for the community",
+      "source_pages": [11]
+    }
+  ],
+  "other_notes": [
+    {
+      "topic": "Brand Values",
+      "description": "Four core brand values: Honest (fair, transparent, true to word - charge a fair price, deliver on time/budget; 'We Are' fair/transparent/true to our word, 'We Are NOT' self-righteous/arrogant), Agile (flexible, adapts to changing project goals/purposes, avoids being bogged down by scope/templates; 'We Are' flexible/understanding/humble to change, 'We Are NOT' disorganized/impulsive), Authentic (not stiff/corporate/buttoned-up, uses real-world language, builds relationships not sales leads; 'We Are' down to earth/conversational/personable, 'We Are NOT' unprofessional or too relaxed), Service Oriented (gratitude is fuel, deeply appreciates each client; 'We Are' appreciative/happy to help, 'We Are NOT' overly emotional/cloy).",
+      "source_pages": [10, 11]
+    },
+    {
+      "topic": "Brand Audiences",
+      "description": "Three defined audiences: (1) Director Level Industry Positions - the decision makers with contract authority; approach with a low-pressure, long-term relationship-building style (shared connections, insight, casual conversation) rather than a hard sales pitch. (2) Manager Level Industry Positions - secondary audience, reports to directors, more receptive to a direct 'what can you do for us' pitch but lacks final decision authority; viewed by others as a potential blocker/gatekeeper, so a strong relationship should be built rather than going around them. (3) Other Consulting Firms - potential subcontracting/overflow-work partners (and possible future hires or founders); to be treated with respect, open to collaboration if values align.",
+      "source_pages": [6, 7, 8]
+    },
+    {
+      "topic": "Color Usage Flexibility",
+      "description": "Varying opacity values of each brand color are permitted within layout designs, although the palette itself (the five named colors) should be strictly adhered to.",
+      "source_pages": [33]
+    },
+    {
+      "topic": "Color & Text Contrast Pairings",
+      "description": "A page is dedicated to approved text-color/background-color combinations to ensure legible, easy-to-read content for websites and brand collateral (e.g., on a given brand-color background, only certain other palette colors or white are approved for text). The source PDF text extraction for this page's grid/table layout is fragmented (columns merged), so exact per-background pairings could not be reliably reconstructed from the raw text; the general rule (only use these prescribed color/text combinations for contrast) is clear.",
+      "source_pages": [34]
+    },
+    {
+      "topic": "Document Metadata",
+      "description": "Document titled 'Brand Book - For external partners'; Version 1.1, dated July 2024; marked Confidential throughout (cover and closing page). Company referred to as 'Full Circle' (a GIS - geographic information systems - company), with a fingerprint used as its icon mark.",
+      "source_pages": [1, 40]
+    },
+    {
+      "topic": "Brand Assets Location",
+      "description": "The book references a resources section (near the end of the document) containing downloadable links for the color palette, typefaces/fonts, and logo variants, plus separate download links for the two brand typefaces (Aktiv Grotesk Ex and Acumin Pro) mentioned on their respective pages. The actual hyperlink URLs were not captured in the extracted text.",
+      "source_pages": [36, 37, 39]
+    }
+  ]
+}

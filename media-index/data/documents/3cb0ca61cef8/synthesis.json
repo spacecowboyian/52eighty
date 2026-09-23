@@ -1,0 +1,126 @@
+{
+  "doc_id": "3cb0ca61cef8",
+  "case_study": "VFW",
+  "filename": "Media Kit Guide.pdf",
+  "colors": [],
+  "typography": [],
+  "logo_usage": [
+    {
+      "rule_type": "hierarchy",
+      "description": "The Still Serving logo is a supporting element within the broader VFW brand and should never replace or overshadow the official VFW logo in contexts where the organization is being formally represented. The two logos can be used together, but with clear hierarchy and thoughtful placement.",
+      "source_pages": [4]
+    },
+    {
+      "rule_type": "placement",
+      "description": "On most materials—especially internal or member-facing ones—the Still Serving logo should be larger and more central, while the VFW logo appears in a secondary position, anchoring the message in the authority of the national organization.",
+      "source_pages": [4]
+    },
+    {
+      "rule_type": "placement",
+      "description": "Apparel: the VFW logo should appear on the front chest or sleeve of t-shirts to maintain institutional identity, while the Still Serving logo is placed separately on the back to emphasize the campaign message.",
+      "source_pages": [5]
+    },
+    {
+      "rule_type": "placement",
+      "description": "Business cards and recruitment cards: the front of the card should prominently feature the VFW logo, while the Still Serving logo can be placed on the reverse side.",
+      "source_pages": [5]
+    },
+    {
+      "rule_type": "placement",
+      "description": "Public-facing materials such as billboards, advertisements, or video content intended for civilian audiences should use only the VFW logo, to ensure brand clarity and reinforce recognition of the national organization.",
+      "source_pages": [5]
+    },
+    {
+      "rule_type": "donts",
+      "description": "The Still Serving logo, while an effective campaign tool, should always remain subordinate to the larger VFW identity—used only when it clearly supports the full picture of who the VFW is and what it stands for.",
+      "source_pages": [5]
+    }
+  ],
+  "voice_and_tone": [
+    {
+      "attribute": "Local & personal adaptation",
+      "description": "Evergreen copy is meant to be adapted, not just posted verbatim: Posts are encouraged to add their own photos, name their members, and localize the message. Verbatim: \"The national messaging is strong, but your local stories are what make it real.\"",
+      "source_pages": [2]
+    },
+    {
+      "attribute": "Three campaign pillars",
+      "description": "The campaign's personality is built on three pillars—Leadership, Service, and Advancement—which \"reflect the values and personality of the VFW, from national leadership to local Posts and Auxiliary members.\"",
+      "source_pages": [17]
+    }
+  ],
+  "imagery_style": [],
+  "messaging": [
+    {
+      "type": "campaign-name",
+      "text": "Still Serving",
+      "source_pages": [1, 2, 7]
+    },
+    {
+      "type": "tagline",
+      "text": "Still Serving",
+      "source_pages": [1, 2]
+    },
+    {
+      "type": "elevator-pitch",
+      "text": "It's more than a tagline; it's a declaration that service doesn't stop with the end of active duty. This campaign puts the spotlight back on local Posts, where the heart of this work truly lives. Whether you're leading a cleanup, mentoring youth, advocating for policy change, or simply showing up, you are the embodiment of what it means to be Still Serving.",
+      "source_pages": [2]
+    },
+    {
+      "type": "value-prop",
+      "text": "The national messaging is strong, but your local stories are what make it real.",
+      "source_pages": [2]
+    },
+    {
+      "type": "core-idea",
+      "text": "Leadership — \"Advocacy that Doesn't Retire.\" Focus: policy impact, representing veterans, national leadership.",
+      "source_pages": [8, 17, 18]
+    },
+    {
+      "type": "core-idea",
+      "text": "Service — \"The Mission Continues.\" Focus: supporting veterans through life's transitions, showing up for communities, delivering hands-on help.",
+      "source_pages": [9, 17, 18]
+    },
+    {
+      "type": "core-idea",
+      "text": "Advancement — \"For Veterans and the VFW.\" Focus: growth, evolution, readiness, staying relevant.",
+      "source_pages": [10, 17, 19]
+    },
+    {
+      "type": "value-prop",
+      "text": "The uniform may come off, but the service NEVER stops.",
+      "source_pages": [9]
+    },
+    {
+      "type": "value-prop",
+      "text": "We led in combat. Now we lead in Congress. From healthcare access to GI Bill protections, the VFW continues to move policy forward.",
+      "source_pages": [8, 13]
+    },
+    {
+      "type": "campaign-origin",
+      "text": "Inspired by the grassroots campaign, \"Still Serving,\" VFW HQ recognizes and adopts the campaign for brand awareness and visibility efforts at the national level.",
+      "source_pages": [17]
+    }
+  ],
+  "other_notes": [
+    {
+      "topic": "Restricted / controlled materials",
+      "description": "Branded t-shirts and recruitment cards are managed exclusively through VFW National Headquarters and should not be independently printed or reproduced by Posts, to ensure consistency in brand quality and representation. Orders/inquiries go through National HQ, contact xyzperson@VFW.org.",
+      "source_pages": [2, 21]
+    },
+    {
+      "topic": "Primary campaign hashtags",
+      "description": "#LeadServeAdvance, #VFWStillServing, #LifeAfterService, #LeadingFromTheFront, #StillLeading, #StillServing, #StillAdvancing",
+      "source_pages": [12]
+    },
+    {
+      "topic": "Hashtag platform guidance",
+      "description": "Instagram: use about 5–10 hashtags matching the post's subject, placed in the caption (not a comment), varied rather than repeated every time, plus a few local/event-specific tags. Facebook: hashtags matter less—use only 1–3 so they don't interfere with readability, and use a dedicated hashtag if running a specific campaign/project.",
+      "source_pages": [13, 14]
+    },
+    {
+      "topic": "Guide structure",
+      "description": "The kit is organized into five numbered sections: (1) How To Use, (2) Social Media, (3) Hashtag Guide, (4) Talking Points, (5) Shirts & Recruitment Cards.",
+      "source_pages": [3, 6, 11, 16, 20]
+    }
+  ]
+}
