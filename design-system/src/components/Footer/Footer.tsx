@@ -44,8 +44,10 @@ export function Footer({
           <div
             style={{
               fontFamily: font.display,
-              fontWeight: 800,
-              fontSize: 26,
+              fontWeight: 400,
+              fontSize: 24,
+              letterSpacing: '.02em',
+              textTransform: 'uppercase',
               color: '#fff',
               marginBottom: 12,
             }}

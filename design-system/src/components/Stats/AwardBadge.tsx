@@ -39,7 +39,7 @@ export function AwardBadge({
           alignItems: 'center',
           justifyContent: 'center',
           fontFamily: font.display,
-          fontWeight: 800,
+          fontWeight: 400,
           color: colors.ink,
         }}
       >
@@ -49,7 +49,7 @@ export function AwardBadge({
         <div
           style={{
             fontFamily: font.display,
-            fontWeight: 700,
+            fontWeight: 400,
             fontSize: 17,
           }}
         >

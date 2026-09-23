@@ -97,13 +97,14 @@ function Typography() {
             <div
               style={{
                 fontFamily: font.display,
-                fontWeight: 800,
+                fontWeight: 400,
                 fontSize: 52,
-                lineHeight: 1,
-                letterSpacing: '-.01em',
+                lineHeight: 0.95,
+                letterSpacing: '.02em',
+                textTransform: 'uppercase',
               }}
             >
-              Go fuRTHER.
+              Go further.
             </div>
             <div
               style={{

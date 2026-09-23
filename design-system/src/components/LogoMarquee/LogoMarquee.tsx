@@ -34,7 +34,7 @@ function Track({ logos, hidden }: { logos: string[]; hidden?: boolean }) {
           key={i}
           style={{
             fontFamily: font.display,
-            fontWeight: 800,
+            fontWeight: 400,
             fontSize: 22,
             color: '#C9C2B6',
           }}

@@ -158,7 +158,7 @@ export function MobileMenu({ open, onClose, links, contactHref, id }: MobileMenu
               href={link.href}
               style={{
                 fontFamily: font.display,
-                fontWeight: 700,
+                fontWeight: 400,
                 fontSize: 24,
                 color: colors.paper,
                 textDecoration: 'none',

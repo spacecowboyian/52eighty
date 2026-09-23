@@ -10,6 +10,7 @@ const meta = {
       control: 'inline-radio',
       options: ['centered', 'marker', 'divider'],
     },
+    as: { control: 'inline-radio', options: ['h1', 'h2', 'h3'] },
   },
 } satisfies Meta<typeof SectionHeader>;
 export default meta;
@@ -18,6 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Centered: Story = {
   args: {
     variant: 'centered',
+    as: 'h1',
     eyebrow: 'A brand-first approach',
     title: 'We dig below the surface.',
     subtitle:

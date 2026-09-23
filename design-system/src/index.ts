@@ -1,7 +1,7 @@
 // 52Eighty Creative — component library barrel.
 
 // Tokens & utilities
-export { colors, font, radius, space, shadow, ease, spring } from './tokens';
+export { colors, font, text, radius, space, shadow, ease, spring } from './tokens';
 export type { ColorToken } from './tokens';
 export { useHover, useFocus } from './utils/useHover';
 export { useInView } from './utils/useInView';

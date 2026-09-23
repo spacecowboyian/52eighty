@@ -19,6 +19,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const reelMp4 = existsSync('public/reel/hero.mp4');
 const reelWebm = existsSync('public/reel/hero.webm');
 const hasReel = reelMp4 || reelWebm;
+
+// One word of the headline goes lime — the guide's "CREATIVE with a
+// heartbeat" composition (p7). The first word, whatever the CMS says.
+const heroTitle = settings?.heroTitle ?? 'Creative with a heartbeat.';
+const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
 ---
 
 <Layout>
@@ -54,8 +59,8 @@ const hasReel = reelMp4 || reelWebm;
     </div>
 
     <div class="reel__copy">
-      <h1 class="reel__title">
-        {settings?.heroTitle ?? 'Creative with a heartbeat.'}
+      <h1 class="reel__title t-display-xl">
+        <span class="reel__accent">{heroFirstWord}</span> {heroRest.join(' ')}
       </h1>
       <p class="reel__lede">
         {
@@ -99,9 +104,9 @@ const hasReel = reelMp4 || reelWebm;
   </section>
 
   <section class="further">
-    <p class="further__line">
+    <h2 class="further__line t-display-md">
       We go further. It&rsquo;s less crowded out there.
-    </p>
+    </h2>
     <p class="further__body">
       Branding, marketing campaigns, video, and social and digital strategy —
       but we don&rsquo;t sell them separately. Every project starts with the
@@ -111,7 +116,7 @@ const hasReel = reelMp4 || reelWebm;
   </section>
 
   <section class="invite">
-    <h2 class="invite__title">Got something you want to make?</h2>
+    <h2 class="invite__title t-display-md">Got something you want to make?</h2>
     <p class="invite__body">
       Tell us about it. No forms, no pitch deck — it&rsquo;s the first half of a
       discovery call, and you keep your email until you want to give it.
@@ -209,18 +214,16 @@ const hasReel = reelMp4 || reelWebm;
     position: relative;
   }
 
+  /* Size, weight, case and tracking come from `.t-display-xl` — the type is
+     the design here, not a label on a picture. */
   .reel__title {
-    font-family: var(--display);
-    /* Tight leading and a hard optical size — the type is the design here,
-       not a label on a picture. */
-    font-size: clamp(2.75rem, 9vw, 6rem);
-    line-height: 0.96;
-    letter-spacing: -0.03em;
     color: #f4f1ea;
-    margin: 0;
-    /* ~2 lines at every size: "Creative with a / heartbeat." */
-    max-width: 15ch;
+    /* ~2 lines at every size: "CREATIVE WITH A / HEARTBEAT." */
+    max-width: 13ch;
     text-wrap: balance;
+  }
+  .reel__accent {
+    color: #f0fc97;
   }
 
   .reel__lede {
@@ -325,12 +328,8 @@ const hasReel = reelMp4 || reelWebm;
   }
 
   .further__line {
-    font-family: var(--display);
-    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    margin: 0;
     color: #184a4f;
+    text-wrap: balance;
   }
 
   .further__body {
@@ -350,12 +349,8 @@ const hasReel = reelMp4 || reelWebm;
   }
 
   .invite__title {
-    font-family: var(--display);
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
     color: #f4f1ea;
-    margin: 0;
+    text-wrap: balance;
   }
 
   .invite__body {

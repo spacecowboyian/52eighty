@@ -3,6 +3,14 @@
 ## [Unreleased]
 
 ### Added
+- Typography per the brand guide. A `text` token scale (`displayXL/LG/MD`, `heading`,
+  `title`, `lead`, `body`, `eyebrow`) mirrored as `.t-*` classes: display type is now the
+  hand-drawn face at its single weight, **uppercase**, with a hair of positive tracking and
+  leading near 0.95 (no more synthesized 800-weight bold or negative tracking anywhere the
+  display face is used); h3s and card titles are the serif. `SectionHeader` gained an
+  `as` prop (`h1`/`h2`/`h3`) and its eyebrow now sits below the title; `/about`, `/work`
+  and case studies render a real `h1`, the homepage statement and invite are `h2`s, and
+  the hero's first word is lime.
 - De-boxed the design system. Cards, section headers, the contact form, accordion, tabs,
   logo marquee, testimonials, award badges, the intake mirror/recap panels, the header, the
   step and showcase rules and the flow footer all lose their `1px` borders and card shells;

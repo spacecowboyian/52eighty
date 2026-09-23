@@ -31,7 +31,7 @@ const eyebrowStyle: React.CSSProperties = {
 
 const headingStyle: React.CSSProperties = {
   fontFamily: 'var(--display)',
-  fontWeight: 800,
+  fontWeight: 400,
   fontSize: 24,
   margin: '0 0 6px',
   lineHeight: 1.1,
