@@ -46,10 +46,13 @@ const introEyebrow: React.CSSProperties = {
 const heroTitle: React.CSSProperties = {
   margin: '12px 0 0',
   fontFamily: 'var(--display)',
-  fontSize: 'clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem)',
-  lineHeight: 1.08,
+  fontWeight: 400,
+  textTransform: 'uppercase',
+  letterSpacing: '.02em',
+  fontSize: 'clamp(1.9rem, 1.2rem + 2.4vw, 3rem)',
+  lineHeight: 0.98,
   color: '#FCFAF4',
-  maxWidth: '18ch',
+  maxWidth: '16ch',
   textShadow: '0 1px 24px rgba(0,0,0,.38)',
 };
 

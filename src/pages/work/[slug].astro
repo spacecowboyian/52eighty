@@ -15,6 +15,7 @@ const caseStudy = await getCaseStudyBySlug(slug!);
 <Layout title={`${caseStudy?.title ?? 'Case Study'} — 52Eighty Creative`}>
   <article class="case-study">
     <SectionHeader
+      as="h1"
       variant="marker"
       eyebrow={caseStudy?.category ?? 'Case Study'}
       title={caseStudy?.title}

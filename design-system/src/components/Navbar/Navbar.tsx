@@ -142,10 +142,12 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
       <span
         style={{
           fontFamily: font.display,
-          fontWeight: 800,
+          fontWeight: 400,
           fontSize: 18,
           color: colors.paper,
-          letterSpacing: '-.01em',
+          letterSpacing: '.02em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         52Eighty Creative
@@ -166,7 +168,7 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
           alignItems: 'center',
           justifyContent: 'center',
           fontFamily: font.display,
-          fontWeight: 800,
+          fontWeight: 400,
           fontSize: 13,
         }}
       >
@@ -175,9 +177,11 @@ function Wordmark({ tone }: { tone: NavbarTone }) {
       <span
         style={{
           fontFamily: font.display,
-          fontWeight: 800,
+          fontWeight: 400,
           fontSize: 18,
-          letterSpacing: '-.01em',
+          letterSpacing: '.02em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         52Eighty Creative

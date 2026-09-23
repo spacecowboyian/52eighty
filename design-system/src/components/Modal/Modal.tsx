@@ -115,7 +115,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
             <h3
               style={{
                 fontFamily: font.display,
-                fontWeight: 800,
+                fontWeight: 400,
                 fontSize: 30,
                 letterSpacing: '-.01em',
                 margin: '0 0 10px',

@@ -54,7 +54,7 @@ export function Accordion({ items }: AccordionProps) {
                 alignItems: 'center',
                 gap: 12,
                 fontFamily: font.display,
-                fontWeight: 700,
+                fontWeight: 400,
                 fontSize: 18,
                 color: colors.ink,
               }}

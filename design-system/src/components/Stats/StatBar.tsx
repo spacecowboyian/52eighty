@@ -52,7 +52,7 @@ function StatNumber({ stat, active }: { stat: Stat; active: boolean }) {
       <div
         style={{
           fontFamily: font.display,
-          fontWeight: 800,
+          fontWeight: 400,
           fontSize: 50,
           lineHeight: 1,
           color: colors.lime,

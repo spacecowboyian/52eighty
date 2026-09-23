@@ -46,7 +46,7 @@ export function Testimonial({
         <div
           style={{
             fontFamily: font.display,
-            fontWeight: 800,
+            fontWeight: 400,
             fontSize: 90,
             lineHeight: 0.6,
             color: colors.pine,

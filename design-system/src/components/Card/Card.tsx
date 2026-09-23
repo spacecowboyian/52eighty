@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, font, radius, ease } from '../../tokens';
+import { colors, font, radius, ease, text } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 
 export type CardVariant = 'work' | 'caseStudy' | 'blog';
@@ -17,6 +17,8 @@ export interface CardProps {
   cta?: string;
   /** blog only: author + read-time meta line. */
   meta?: string;
+  /** Heading level of the title — `h2` when the card is the page's first section under an h1. */
+  titleAs?: 'h2' | 'h3';
 }
 
 /**
@@ -40,6 +42,7 @@ export function Card({
   blurb,
   cta = 'Read the story →',
   meta = 'Miles Ramsay · 5 min',
+  titleAs: Title = 'h3',
 }: CardProps) {
   const { isHovered, hoverProps } = useHover();
 
@@ -75,19 +78,16 @@ export function Card({
           >
             {eyebrowText}
           </div>
-          <h3
+          <Title
             style={{
-              fontFamily: font.display,
-              fontWeight: 700,
-              fontSize: 21,
+              ...text.title,
               margin: '0 0 7px',
-              letterSpacing: '-.01em',
               ...titleBase,
               ...(isHovered ? titleHover : {}),
             }}
           >
             {titleText}
-          </h3>
+          </Title>
           <p
             style={{
               fontFamily: font.serif,
@@ -133,18 +133,15 @@ export function Card({
           >
             {eyebrowText}
           </div>
-          <h3
+          <Title
             style={{
-              fontFamily: font.display,
-              fontWeight: 800,
+              ...text.displayMD,
               fontSize: 26,
               margin: '0 0 10px',
-              lineHeight: 1.05,
-              letterSpacing: '-.01em',
             }}
           >
             {titleText}
-          </h3>
+          </Title>
           <p
             style={{
               fontFamily: font.serif,
@@ -220,19 +217,16 @@ export function Card({
         >
           {eyebrowText}
         </div>
-        <h3
+        <Title
           style={{
-            fontFamily: font.display,
-            fontWeight: 700,
-            fontSize: 21,
+            ...text.title,
             margin: '0 0 7px',
-            letterSpacing: '-.01em',
             ...titleBase,
             ...(isHovered ? titleHover : {}),
           }}
         >
           {titleText}
-        </h3>
+        </Title>
         <p
           style={{
             fontFamily: font.serif,

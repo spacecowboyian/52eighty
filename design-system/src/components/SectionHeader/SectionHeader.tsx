@@ -1,10 +1,10 @@
 import React from 'react';
-import { colors, font } from '../../tokens';
+import { colors, text } from '../../tokens';
 
 export type SectionHeaderVariant = 'centered' | 'marker' | 'divider';
 
 export interface SectionHeaderProps {
-  /** Small uppercase kicker above the title. */
+  /** Small uppercase label. Sits *below* the title, per the guide's composition. */
   eyebrow?: string;
   /** Main headline. */
   title?: string;
@@ -12,12 +12,17 @@ export interface SectionHeaderProps {
   subtitle?: string;
   /**
    * Layout:
-   * - `centered` — centered eyebrow + headline + lead, on the page ground.
-   * - `marker` — left-aligned eyebrow + headline.
+   * - `centered` — centered headline + eyebrow + lead, on the page ground.
+   * - `marker` — left-aligned headline + eyebrow.
    * - `divider` — a small uppercase label heading (uses `label`).
    */
   variant?: SectionHeaderVariant;
-  /** Eyebrow color override (centered defaults to red, marker to pine). */
+  /**
+   * Heading level. `h1` uses the page-title display size, everything else the
+   * section size. Default `h2`; pages pass `h1` for their title.
+   */
+  as?: 'h1' | 'h2' | 'h3';
+  /** Eyebrow color override (defaults to pine). */
   tone?: string;
   /** @deprecated The marker bar is gone; kept so callers don't break. */
   barColor?: string;
@@ -26,65 +31,48 @@ export interface SectionHeaderProps {
 }
 
 /**
- * Section header: eyebrow + title + subtitle. Sits directly on whatever
- * ground it's placed on — no card shell, no rule.
+ * Section header: title + eyebrow + subtitle. Sits directly on whatever
+ * ground it's placed on — no card shell, no rule. Display type is the
+ * uppercase hand-drawn face at its single weight; text colour comes from the
+ * surrounding band (`--band-fg`) so the same header works on any field.
  */
 export function SectionHeader({
   eyebrow,
   title,
   subtitle,
   variant = 'centered',
+  as = 'h2',
   tone,
   label = 'Mile 5,280',
 }: SectionHeaderProps) {
+  const eyebrowStyle: React.CSSProperties = {
+    ...text.eyebrow,
+    color: tone ?? 'var(--band-accent, #184A4F)',
+    marginTop: 10,
+  };
+
   if (variant === 'divider') {
     // The dashed mile-marker rule is gone — a rule is a border by another
     // name. Until PR 6's `trail` variant, the label reads as a plain heading.
-    return (
-      <h2
-        style={{
-          fontFamily: font.ui,
-          fontSize: 12,
-          fontWeight: 600,
-          letterSpacing: '.22em',
-          textTransform: 'uppercase',
-          color: colors.muted,
-          margin: 0,
-        }}
-      >
-        {label}
-      </h2>
+    return React.createElement(
+      as,
+      { style: { ...text.eyebrow, color: tone ?? 'var(--band-fg-soft, #5C6B68)', margin: 0 } },
+      label,
     );
   }
+
+  const titleStyle: React.CSSProperties = {
+    ...(as === 'h1' ? text.displayLG : text.displayMD),
+    color: 'var(--band-fg, #16211F)',
+    margin: 0,
+    textWrap: 'balance',
+  } as React.CSSProperties;
 
   if (variant === 'marker') {
     return (
       <div style={{ padding: '8px 0' }}>
-        <div>
-          <div
-            style={{
-              fontFamily: font.ui,
-              fontSize: 12,
-              letterSpacing: '.24em',
-              textTransform: 'uppercase',
-              color: tone ?? colors.pine,
-              marginBottom: 6,
-            }}
-          >
-            {eyebrow}
-          </div>
-          <h3
-            style={{
-              fontFamily: font.display,
-              fontWeight: 800,
-              fontSize: 28,
-              margin: 0,
-              letterSpacing: '-.01em',
-            }}
-          >
-            {title}
-          </h3>
-        </div>
+        {React.createElement(as, { style: titleStyle }, title)}
+        {eyebrow && <div style={eyebrowStyle}>{eyebrow}</div>}
       </div>
     );
   }
@@ -92,41 +80,20 @@ export function SectionHeader({
   // centered
   return (
     <div style={{ padding: '8px 0', textAlign: 'center' }}>
-      <div
-        style={{
-          fontFamily: font.ui,
-          fontSize: 12,
-          letterSpacing: '.24em',
-          textTransform: 'uppercase',
-          color: tone ?? colors.red,
-          marginBottom: 12,
-        }}
-      >
-        {eyebrow}
-      </div>
-      <h3
-        style={{
-          fontFamily: font.display,
-          fontWeight: 800,
-          fontSize: 34,
-          letterSpacing: '-.01em',
-          margin: '0 0 12px',
-        }}
-      >
-        {title}
-      </h3>
-      <p
-        style={{
-          fontFamily: font.serif,
-          fontSize: 18,
-          color: colors.muted,
-          maxWidth: '54ch',
-          margin: '0 auto',
-          lineHeight: 1.5,
-        }}
-      >
-        {subtitle}
-      </p>
+      {React.createElement(as, { style: titleStyle }, title)}
+      {eyebrow && <div style={eyebrowStyle}>{eyebrow}</div>}
+      {subtitle && (
+        <p
+          style={{
+            ...text.lead,
+            color: 'var(--band-fg-soft, #5C6B68)',
+            maxWidth: '54ch',
+            margin: '18px auto 0',
+          }}
+        >
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }

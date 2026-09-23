@@ -4,6 +4,8 @@
  * Mirrors the CSS custom properties declared in styles/theme.css.
  */
 
+import type React from 'react';
+
 export const colors = {
   // Core
   pine: '#184A4F', // primary
@@ -29,6 +31,78 @@ export const font = {
   serif: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
   ui: "'Owners Narrow','Acumin Pro Wide','Archivo Variable',system-ui,sans-serif",
 } as const;
+
+/**
+ * Type scale. Display is the hand-drawn caps face at its single weight —
+ * uppercase, leading near 0.95, a hair of *positive* tracking (negative
+ * tracking collides the irregular strokes). Headings and body are the serif;
+ * eyebrows the UI face. `text-transform` does the casing so CMS copy and
+ * screen readers keep sentence case. Mirrored as `.t-*` classes in theme.css.
+ */
+export const text = {
+  /** Hero only. */
+  displayXL: {
+    fontFamily: "'Crumb','TAY Crumb','Lilita One','Display Fallback',system-ui,sans-serif",
+    fontWeight: 400,
+    textTransform: 'uppercase',
+    fontSize: 'clamp(3rem, 9vw, 6.5rem)',
+    lineHeight: 0.92,
+    letterSpacing: '.01em',
+  },
+  /** Page h1. */
+  displayLG: {
+    fontFamily: "'Crumb','TAY Crumb','Lilita One','Display Fallback',system-ui,sans-serif",
+    fontWeight: 400,
+    textTransform: 'uppercase',
+    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+    lineHeight: 0.95,
+    letterSpacing: '.02em',
+  },
+  /** Section h2. */
+  displayMD: {
+    fontFamily: "'Crumb','TAY Crumb','Lilita One','Display Fallback',system-ui,sans-serif",
+    fontWeight: 400,
+    textTransform: 'uppercase',
+    fontSize: 'clamp(1.875rem, 4vw, 2.75rem)',
+    lineHeight: 1,
+    letterSpacing: '.02em',
+  },
+  /** h3 / pillar — the guide's pillars are Minion sentence case. */
+  heading: {
+    fontFamily: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
+    fontWeight: 700,
+    fontOpticalSizing: 'auto',
+    fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+    lineHeight: 1.15,
+  },
+  /** Card title. */
+  title: {
+    fontFamily: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
+    fontWeight: 700,
+    fontSize: '1.25rem',
+    lineHeight: 1.2,
+  },
+  lead: {
+    fontFamily: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
+    fontWeight: 400,
+    fontSize: 'clamp(1.125rem, 1.5vw, 1.375rem)',
+    lineHeight: 1.5,
+  },
+  body: {
+    fontFamily: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
+    fontWeight: 400,
+    fontSize: '1.0625rem',
+    lineHeight: 1.65,
+  },
+  eyebrow: {
+    fontFamily: "'Owners Narrow','Acumin Pro Wide','Archivo Variable',system-ui,sans-serif",
+    fontWeight: 600,
+    fontSize: '12px',
+    lineHeight: 1.2,
+    letterSpacing: '.14em',
+    textTransform: 'uppercase',
+  },
+} as const satisfies Record<string, React.CSSProperties>;
 
 export const radius = {
   sm: 6,
