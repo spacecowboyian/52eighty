@@ -61,6 +61,19 @@
   the close button on open and wraps Tab inside the panel; locks body scroll while open;
   and closes itself when the viewport widens past 640px, so it can't strand itself on a
   desktop header with no visible toggle. Honors `prefers-reduced-motion`.
+- Pull-request preview deploys (issue #12). Opening or pushing to a PR builds that branch
+  and publishes it to `pr-<number>/` on GitHub Pages, with a bot comment carrying the URL
+  (updated in place per push, not one comment per build); closing the PR deletes the
+  directory. Production and previews share a `gh-pages` branch, which required moving off
+  `actions/upload-pages-artifact` + `deploy-pages` — that pair replaces the entire Pages
+  deployment on every run and has no way to add a subfolder. Publishing is now
+  `.github/scripts/publish-to-pages.sh`: production `rsync --delete`s into the branch root
+  excluding `/pr-*`, so it clears its own stale files while leaving live previews alone,
+  and each preview is scoped to its own directory. The three workflows share one
+  concurrency group and the script re-applies onto a fresh tip if a concurrent publish
+  lands first. It also maintains `.nojekyll`, which branch-served Pages needs or Jekyll
+  drops Astro's `_astro/` directory and every asset 404s. Fork PRs are skipped — their
+  token is read-only, and `pull_request_target` would run fork code with write access.
 
 ### Changed
 - The intake commit CTAs — "Let's do this", the per-discipline "That's the one", and the
