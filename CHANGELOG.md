@@ -3,6 +3,13 @@
 ## [Unreleased]
 
 ### Added
+- Real brand fonts. The design system no longer imports Google Fonts (Baloo 2 / Source
+  Serif 4 / Archivo); the licensed faces load from an Adobe Fonts kit when
+  `PUBLIC_ADOBE_FONTS_KIT` is set, and beneath them sit self-hosted OFL stand-ins in
+  `design-system/src/styles/fonts/` — Lilita One for Crumb, Source Serif 4 Variable (full
+  optical-size axis) for Minion 3, Archivo Variable at 90% width for Owners Narrow — plus a
+  metric-matched local `Display Fallback` so the layout holds before the display face
+  arrives. The display face is preloaded from the layout.
 - Brand marks extracted as vector SVG from the 2026-06-22 brand guide PDF
   (`design-system/src/assets/marks/`): the “5280!” logo (lime `!` as its own path), the
   hand-drawn squiggle, the 16-point starburst and the heart — all `currentColor`. A

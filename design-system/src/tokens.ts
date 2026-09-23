@@ -25,9 +25,9 @@ export const colors = {
 } as const;
 
 export const font = {
-  display: "'Crumb','TAY Crumb','Baloo 2',system-ui,sans-serif",
-  serif: "'Minion 3','Source Serif 4',Georgia,serif",
-  ui: "'Owners Narrow','Acumin Pro Wide','Archivo',system-ui,sans-serif",
+  display: "'Crumb','TAY Crumb','Lilita One','Display Fallback',system-ui,sans-serif",
+  serif: "'Minion 3','Source Serif 4 Variable',Georgia,serif",
+  ui: "'Owners Narrow','Acumin Pro Wide','Archivo Variable',system-ui,sans-serif",
 } as const;
 
 export const radius = {
