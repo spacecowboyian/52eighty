@@ -1,7 +1,8 @@
 ---
 import '5280-design-system/theme.css';
 import '../styles/global.css';
-import { Navbar, Footer } from '5280-design-system';
+import { Footer } from '5280-design-system';
+import SiteHeader from '../components/islands/site/SiteHeader';
 // The display face is the one font whose late arrival moves the layout, so
 // it's preloaded. Importing the file gives Vite's hashed, base-prefixed URL.
 import displayFontUrl from '5280-design-system/fonts/lilita-one-latin-400-normal.woff2?url';
@@ -9,11 +10,14 @@ import displayFontUrl from '5280-design-system/fonts/lilita-one-latin-400-normal
 interface Props {
   title?: string;
   description?: string;
+  /** What the page's first band is, so the glass header renders right on the server. */
+  headerTone?: 'light' | 'dark';
 }
 
 const {
   title = '52Eighty Creative — Creative with a heartbeat',
   description = 'Warm, faith-based branding & creative-storytelling agency. Video, storytelling, brand work.',
+  headerTone = 'light',
 } = Astro.props;
 
 // No dedicated newsletter page/section exists yet, so it's omitted here
@@ -54,16 +58,13 @@ const SITE_LINKS = [
   <body>
     <div class="site-shell">
       <slot name="header">
-        <header class="site-header">
-          <div class="container">
-            <Navbar
-              links={SITE_LINKS}
-              contactHref={`${base}/start`}
-              chrome="flush"
-              client:load
-            />
-          </div>
-        </header>
+        <SiteHeader
+          links={SITE_LINKS}
+          contactHref={`${base}/start`}
+          homeHref={`${base}/`}
+          initialTone={headerTone}
+          client:load
+        />
       </slot>
 
       <main class="page">
@@ -78,21 +79,6 @@ const SITE_LINKS = [
         </footer>
       </slot>
     </div>
-    <script>
-      // Safety net for `--site-header-h`: the header is a fixed min-height and
-      // the wordmark never wraps, but if anything does change its height the
-      // live value wins. PR 5's header island takes this over.
-      const header = document.querySelector<HTMLElement>('.site-header');
-      if (header) {
-        const apply = () =>
-          document.documentElement.style.setProperty(
-            '--site-header-h',
-            `${Math.round(header.getBoundingClientRect().height)}px`,
-          );
-        apply();
-        new ResizeObserver(apply).observe(header);
-      }
-    </script>
   </body>
 </html>
 

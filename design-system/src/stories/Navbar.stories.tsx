@@ -36,6 +36,16 @@ export const Dark: Story = {
   ),
 };
 
+/** Flush + dark: paper type over a dark field with no chrome of its own — what the site's glass header renders over a photo or pine band. */
+export const FlushDark: Story = {
+  args: { tone: 'dark', chrome: 'flush' },
+  render: (args) => (
+    <div style={{ padding: '0 0 60px', background: 'linear-gradient(#0c1a1c, #184A4F)' }}>
+      <Navbar {...args} />
+    </div>
+  ),
+};
+
 /**
  * The header below the 640px breakpoint: wordmark + hamburger, with the links
  * and the Contact CTA in the drawer. Tap the hamburger to slide it in — Escape,

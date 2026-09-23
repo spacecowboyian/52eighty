@@ -50,7 +50,7 @@ page.on('pageerror', (err) => consoleErrors.push(String(err)));
 
 await page.goto(url, { waitUntil: 'networkidle' });
 if (scrollY) {
-  await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+  await page.evaluate((y) => window.scrollTo({ top: y, behavior: 'instant' }), scrollY);
   await page.waitForTimeout(200);
 }
 await page.screenshot({ path: outPath, fullPage });
