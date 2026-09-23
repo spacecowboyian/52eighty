@@ -40,7 +40,7 @@ const titleBase: React.CSSProperties = {
   textDecorationColor: colors.lime,
   transition: `text-decoration-color .26s ${ease.out}`,
 };
-const titleHover: React.CSSProperties = { textDecorationColor: colors.pine };
+const titleHover: React.CSSProperties = { textDecorationColor: 'var(--band-fg, #184A4F)' };
 
 export function Card({
   variant = 'work',
@@ -88,6 +88,7 @@ export function Card({
           <Title
             style={{
               ...text.title,
+              color: 'var(--band-fg, #16211F)',
               margin: '0 0 7px',
               ...titleBase,
               ...(isHovered ? titleHover : {}),
@@ -99,7 +100,7 @@ export function Card({
             style={{
               fontFamily: font.serif,
               fontSize: 15,
-              color: colors.muted,
+              color: 'var(--band-fg-soft, #5C6B68)',
               margin: 0,
               lineHeight: 1.45,
             }}
@@ -227,6 +228,7 @@ export function Card({
         <Title
           style={{
             ...text.title,
+            color: 'var(--band-fg, #16211F)',
             margin: '0 0 7px',
             ...titleBase,
             ...(isHovered ? titleHover : {}),
@@ -238,7 +240,7 @@ export function Card({
           style={{
             fontFamily: font.serif,
             fontSize: 15,
-            color: colors.muted,
+            color: 'var(--band-fg-soft, #5C6B68)',
             margin: 0,
             lineHeight: 1.45,
           }}

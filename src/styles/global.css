@@ -7,7 +7,7 @@
   /* The sticky header's height. Deterministic — the header sets it as a
      min-height and the wordmark never wraps — and republished from the live
      element by Layout.astro's ResizeObserver as a safety net. */
-  --site-header-h: 4.625rem;
+  --site-header-h: 3.75rem;
 }
 
 * {
@@ -96,9 +96,29 @@ body {
 }
 
 .site-footer {
-  background: #16211f;
-  color: #e8e4dc;
+  background: #184a4f;
+  color: #ffffff;
+  --band-fg: #ffffff;
+  --band-fg-soft: #cfe2e0;
+  --footer-label: rgba(255, 255, 255, 0.72);
+  --footer-rule: rgba(255, 255, 255, 0.18);
   padding-block: clamp(3rem, 7vw, 5rem) 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Whole-block settle (`src/scripts/reveal.ts`). Only bands that follow a hard
+   colour edge opt in with `data-reveal`; their children move as one unit.
+   Guarded by `html[data-reveal-ready]`, which the script sets — if it never
+   runs, nothing is ever hidden.
+   -------------------------------------------------------------------------- */
+html[data-reveal-ready] [data-reveal]:not([data-inview]) > *:not(.band__bg) {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+html[data-reveal-ready] [data-reveal] > *:not(.band__bg) {
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
 }
 
 /* --------------------------------------------------------------------------

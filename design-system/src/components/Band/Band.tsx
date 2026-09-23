@@ -33,7 +33,7 @@ export const bandTones: Record<BandTone, BandToneSpec> = {
   cream: { bg: colors.cream, fg: colors.ink, fgSoft: colors.muted, accent: colors.pine, header: 'light' },
   pine: { bg: colors.pine, fg: '#FFFFFF', fgSoft: '#CFE2E0', accent: colors.lime, header: 'dark' }, // lime 8.95
   jade: { bg: colors.jade, fg: '#FFFFFF', fgSoft: 'rgba(255,255,255,.84)', accent: colors.lime, header: 'dark' }, // white 6.23, lime 5.66
-  peri: { bg: colors.peri, fg: '#FFFFFF', fgSoft: 'rgba(255,255,255,.88)', accent: colors.lime, header: 'dark' }, // white 4.70, lime 4.27 (display only)
+  peri: { bg: colors.peri, fg: '#FFFFFF', fgSoft: '#FFFFFF', accent: colors.lime, header: 'dark' }, // white 4.70 — no room for a softer white; lime 4.27 (display only)
   sky: { bg: colors.sky, fg: colors.pine, fgSoft: colors.ink, accent: colors.pine, header: 'light' }, // pine 4.73, ink 7.93
   blush: { bg: colors.blush, fg: colors.pine, fgSoft: colors.ink, accent: colors.red, header: 'light' }, // pine 7.08; red = marks only
   lime: { bg: colors.lime, fg: colors.pine, fgSoft: colors.ink, accent: colors.red, header: 'light' }, // pine 8.95; red = marks only

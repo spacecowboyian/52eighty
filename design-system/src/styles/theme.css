@@ -66,6 +66,8 @@
   --teal: #184a4f; /* pine */
   --jade: #096d61;
   --red: #ff3b3b;
+  --red-deep: #d92b2b;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
   --peri: #5a70bb;
   --gold: #fbba16;
   --blush: #ffd0c7;

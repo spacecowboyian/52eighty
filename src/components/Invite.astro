@@ -1,0 +1,60 @@
+---
+/**
+ * The closing invitation: a periwinkle field (the guide's "alive" page, p6)
+ * that domes over the band above it, white display type, the lime CTA.
+ * Reused by the homepage, /work and case studies.
+ */
+import { Band, Button } from '5280-design-system';
+
+interface Props {
+  title?: string;
+  body?: string;
+  cta?: string;
+  /** Dome the top edge over the band above (the default seam for this block). */
+  edge?: 'none' | 'arch';
+  /** Opt in to the one whole-block settle after a hard colour edge. */
+  reveal?: boolean;
+}
+
+const {
+  title = 'Got something you want to make?',
+  body = 'Tell us about it. No forms, no pitch deck — it’s the first half of a discovery call, and you keep your email until you want to give it.',
+  cta = 'Start your project',
+  edge = 'arch',
+  reveal = true,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Band as="section" tone="peri" pad="lg" edge={edge} reveal={reveal} className="invite">
+  <h2 class="invite__title t-display-md">{title}</h2>
+  <p class="invite__body">{body}</p>
+  <p class="invite__cta">
+    <Button href={`${base}/start`} variant="accent" size="lg" client:load>{cta}</Button>
+  </p>
+</Band>
+
+<style>
+  .invite {
+    text-align: center;
+  }
+  .invite__title {
+    color: #ffffff;
+    text-wrap: balance;
+  }
+  .invite__body {
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 46ch;
+    margin: 1rem auto 2rem;
+  }
+  .invite__cta {
+    margin: 0;
+  }
+  .invite__cta :global(a) {
+    white-space: nowrap;
+  }
+</style>

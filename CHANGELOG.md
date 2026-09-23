@@ -3,6 +3,21 @@
 ## [Unreleased]
 
 ### Added
+- Homepage as colour fields. Reel (scrim now resolves into pine) → pine work band (lime
+  "Portfolio" pill, paper type, arched cards) → jade statement ("GO FURTHER." in lime, the
+  sky squiggle) → periwinkle invite doming over it (new `src/components/Invite.astro`, reused
+  by `/work` and case studies) → pine footer. Zero rules on the page; the one hard edge is
+  peri → pine at the footer. Motion: the reel's media parallaxes as it leaves
+  (`animation-timeline: view()`, progressive), the statement and invite settle once as whole
+  blocks (`src/scripts/reveal.ts`, guarded so nothing is hidden without it), and the intake
+  flow's step scroll honours reduced motion.
+- Contrast at the token level: `Button accent` is now lime on pine (8.95:1) — the red/white
+  CTA was 3.53:1 and the most-clicked failing element; a red `signal` variant with ink text
+  covers the rare red button; `colors.redDeep` (#D92B2B, 4.85:1 on white) for red text under
+  24px, used by `Link` hover. Outline/ghost buttons, card text and the footer take their
+  colours from the band they sit on. `scripts/contrast.mjs <url>` walks the rendered DOM and
+  flags any text under 4.5:1 (3:1 large).
+- Slimmer header band (60px, was 74px) with the same 50px mark hanging further below it.
 - Marks. New design-system components from the brand guide's shape language: `Arch`
   (CSS semicircle-top frame), `Squiggle` (the hand-drawn loop, draws itself once on view),
   `Starburst` (16-point burst with the red heart, one pulse on mount), `Pill` (tilted

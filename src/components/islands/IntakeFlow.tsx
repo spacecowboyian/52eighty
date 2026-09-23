@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useReducedMotion } from '5280-design-system';
 import { StepHook } from './intake/StepHook';
 import { StepMirror } from './intake/StepMirror';
 import { StepClose } from './intake/StepClose';
@@ -29,6 +30,7 @@ export default function IntakeFlow() {
   const [step, setStep] = useState(1);
   const [answers, setAnswers] = useState<IntakeAnswers>(emptyAnswers);
   const [done, setDone] = useState<{ delivered: boolean } | null>(null);
+  const reduced = useReducedMotion();
 
   const patch = (next: Partial<IntakeAnswers>) => setAnswers((prev) => ({ ...prev, ...next }));
   const patchDetail = (id: string, value: string) =>
@@ -37,7 +39,7 @@ export default function IntakeFlow() {
   const go = (next: number) => {
     setStep(next);
     // Each step is its own screen: start the new one at the top.
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   };
 
   async function finish() {

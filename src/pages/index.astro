@@ -3,6 +3,7 @@ import { existsSync } from 'node:fs';
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
 import { SectionHeader, Card, Button, Band, Starburst, Squiggle, projectTone } from '5280-design-system';
+import Invite from '../components/Invite.astro';
 import { coverFor } from '../utils/covers';
 
 const settings = await getSiteSettings();
@@ -28,7 +29,10 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
 ---
 
 <Layout headerTone="dark">
-  <Band as="section" tone="transparent" headerTone="dark" pad="none" className="reel" aria-label="52Eighty Creative">
+  {/* Pine, not transparent: the media parallaxes up as the reel exits and the
+      band's own colour is what shows beneath it — the same pine the scrim
+      resolves into. */}
+  <Band as="section" tone="pine" pad="none" className="reel" aria-label="52Eighty Creative">
     <div slot="background" class="reel__media">
       {
         hasReel ? (
@@ -80,8 +84,9 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     </div>
   </Band>
 
-  <section id="work" class="work">
-    <SectionHeader variant="trail" title="Selected work" eyebrow="Portfolio" />
+  {/* Seam B above: the reel's scrim resolves into this band's pine. */}
+  <Band as="section" tone="pine" pad="md" id="work" className="work">
+    <SectionHeader variant="trail" title="Selected work" eyebrow="Portfolio" eyebrowTone="lime" />
     {
       featured.length > 0 ? (
         <div class="work-grid">
@@ -106,13 +111,14 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     <p class="work__more">
       <a href={`${base}/work`}>All ten projects</a>
     </p>
-  </section>
+  </Band>
 
-  <section class="further">
+  {/* Seam A: pine → jade, no rule. Guide p2, the statement page. */}
+  <Band as="section" tone="jade" pad="md" reveal className="further">
     <h2 class="further__line t-display-md">
-      We go further. It&rsquo;s less crowded out there.
+      <span class="further__accent">Go further.</span> It&rsquo;s less crowded out there.
     </h2>
-    {/* The sky loop off the end of "crowded" — guide p2. Draws itself once. */}
+    {/* The sky loop off the end of "there" — guide p2. Draws itself once. */}
     <div class="further__mark"><Squiggle draw width={200} client:load /></div>
     <p class="further__body">
       Branding, marketing campaigns, video, and social and digital strategy —
@@ -120,20 +126,11 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
       thing you&rsquo;re actually trying to make happen, and the work follows
       from there.
     </p>
-  </section>
-
-  <Band as="section" tone="pine" pad="lg" className="invite">
-    <h2 class="invite__title t-display-md">Got something you want to make?</h2>
-    <p class="invite__body">
-      Tell us about it. No forms, no pitch deck — it&rsquo;s the first half of a
-      discovery call, and you keep your email until you want to give it.
-    </p>
-    <p class="invite__cta">
-      <Button href={`${base}/start`} variant="accent" size="lg" client:load>
-        Start your project
-      </Button>
-    </p>
   </Band>
+
+  {/* Seam C1: the periwinkle invite domes over the jade. Then peri → pine
+      footer is the page's one intentional hard edge — the full stop. */}
+  <Invite />
 </Layout>
 
 <style>
@@ -154,7 +151,12 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   .reel__media {
     position: absolute;
     inset: 0;
-    background: #16211f;
+    /* Pine under the media: the frame's own shadow, and the colour the scrim
+       resolves into, so a slow image never flashes anything else. Clipped, so
+       the drifting (scaled) frame can't poke out past the scrim when the
+       parallax lifts the whole layer. */
+    background: #184a4f;
+    overflow: hidden;
   }
 
   .reel__media :is(img, video) {
@@ -174,12 +176,15 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     content: '';
     position: absolute;
     inset: 0;
+    /* Seam B: the last stop is the next band's pine at 100%, so the photo
+       resolves into the work band rather than stopping against it. */
     background:
       linear-gradient(
         to top,
-        rgba(9, 18, 17, 0.88) 0%,
-        rgba(9, 18, 17, 0.62) 28%,
-        rgba(9, 18, 17, 0.12) 62%,
+        #184a4f 0%,
+        rgba(24, 74, 79, 0.86) 14%,
+        rgba(9, 18, 17, 0.58) 32%,
+        rgba(9, 18, 17, 0.12) 64%,
         rgba(9, 18, 17, 0.28) 100%
       ),
       radial-gradient(
@@ -197,6 +202,21 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     animation: reel-drift 32s ease-in-out infinite alternate;
     transform-origin: 68% 45%;
     will-change: transform;
+  }
+
+  /* Parallax as the reel leaves: CSS-only, scroll-driven, progressive — a
+     browser without `animation-timeline` just scrolls it away normally. */
+  @supports (animation-timeline: view()) {
+    .reel__media {
+      animation: reel-parallax linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes reel-parallax {
+      to {
+        transform: translate3d(0, -12%, 0);
+      }
+    }
   }
 
   @keyframes reel-drift {
@@ -295,9 +315,6 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
   /* ----------------------------------------------------------------------
      Below the fold.
      ---------------------------------------------------------------------- */
-  .work {
-    padding-top: 3.5rem;
-  }
 
   .work-grid {
     display: grid;
@@ -324,18 +341,19 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     font-family: var(--ui);
   }
   .work__more a {
-    color: var(--text);
+    color: #ffffff;
     text-decoration: none;
-    border-bottom: 2px solid #fbba16;
+    border-bottom: 2px solid #f0fc97;
     padding-bottom: 2px;
+    transition: border-color 0.2s var(--ease-out);
   }
   .work__more a:hover,
   .work__more a:focus-visible {
-    border-color: #ff3b3b;
+    border-color: #ffffff;
   }
 
   .empty-state {
-    color: #5c6b68;
+    color: #cfe2e0;
     font-style: italic;
     margin-top: 1.5rem;
     display: flex;
@@ -343,22 +361,20 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     gap: 0.75rem;
   }
 
-  .further {
-    padding: 4.5rem 0 1rem;
-    max-width: 44rem;
-  }
-
-  .further {
-    position: relative;
-  }
   .further__line {
-    color: #184a4f;
+    color: #ffffff;
+    max-width: 16ch;
     text-wrap: balance;
+  }
+  .further__accent {
+    color: #f0fc97;
   }
   .further__mark {
     color: #8cb6f2;
     display: flex;
     justify-content: flex-end;
+    max-width: 16ch;
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
     margin: -0.5rem 0 0;
     line-height: 0;
   }
@@ -370,30 +386,9 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     font-family: var(--serif);
     font-size: 1.0625rem;
     line-height: 1.7;
-    color: #5c6b68;
+    color: rgba(255, 255, 255, 0.84);
+    max-width: 44rem;
     margin: 1.25rem 0 0;
-  }
-
-  .invite {
-    margin-top: 4rem;
-    text-align: center;
-  }
-  .invite__cta {
-    margin: 0;
-  }
-
-  .invite__title {
-    color: #f4f1ea;
-    text-wrap: balance;
-  }
-
-  .invite__body {
-    font-family: var(--serif);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    color: rgba(244, 241, 234, 0.82);
-    max-width: 46ch;
-    margin: 1rem auto 2rem;
   }
 
   /* Two-up once there's room, three-up on a real desktop. Mobile-first: the
@@ -443,6 +438,11 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
     .reel__drift {
       animation: none;
       transform: scale(1.04);
+    }
+    /* Scroll-driven animations have no duration for the global guard to
+       zero, so switch the parallax off explicitly. */
+    .reel__media {
+      animation: none;
     }
     .reel__title,
     .reel__lede,
