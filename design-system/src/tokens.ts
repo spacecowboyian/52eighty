@@ -46,7 +46,17 @@ export const shadow = {
   lg: '0 18px 40px rgba(22,33,31,.16)',
 } as const;
 
-/** The springy easing used across hover lifts. */
-export const spring = 'cubic-bezier(.34,1.56,.64,1)';
+/**
+ * The one easing family. `out` is what the hero's arrival already used —
+ * a fast start that settles without overshoot. Hand-drawn aliveness lives in
+ * the marks, not in bouncing UI.
+ */
+export const ease = {
+  out: 'cubic-bezier(.2,.7,.2,1)',
+  inOut: 'cubic-bezier(.65,0,.35,1)',
+} as const;
+
+/** @deprecated The 56%-overshoot spring is retired; use `ease.out`. */
+export const spring = ease.out;
 
 export type ColorToken = keyof typeof colors;

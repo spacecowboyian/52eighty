@@ -13,8 +13,8 @@ export interface TestimonialProps {
   /**
    * Visual style:
    * - `feature` — large lime card with oversized quote-mark + avatar.
-   * - `plain` — white bordered card with small avatar.
-   * - `rating` — white bordered card with a gold star row, no author.
+   * - `plain` — white card with small avatar.
+   * - `rating` — white card with a gold star row, no author.
    */
   variant?: TestimonialVariant;
   /** Avatar fill color (feature uses pine, plain blush by default). */
@@ -101,7 +101,6 @@ export function Testimonial({
       <div
         style={{
           background: '#fff',
-          border: `1px solid ${colors.border}`,
           borderRadius: radius.lg,
           padding: 24,
         }}
@@ -137,7 +136,6 @@ export function Testimonial({
     <div
       style={{
         background: '#fff',
-        border: `1px solid ${colors.border}`,
         borderRadius: radius.lg,
         padding: 24,
       }}

@@ -22,7 +22,6 @@ export function AwardBadge({
         flex: 1,
         minWidth: 140,
         background: '#fff',
-        border: `1px solid ${colors.border}`,
         borderRadius: 14,
         padding: 20,
         display: 'flex',

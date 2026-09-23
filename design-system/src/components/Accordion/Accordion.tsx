@@ -26,7 +26,6 @@ export function Accordion({ items }: AccordionProps) {
     <div
       style={{
         background: '#fff',
-        border: `1px solid ${colors.border}`,
         borderRadius: 16,
         overflow: 'hidden',
       }}

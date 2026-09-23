@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { colors, font, spring } from '../../tokens';
+import { colors, font, ease } from '../../tokens';
 
 export type ToastTone = 'success' | 'info' | 'error';
 
@@ -45,7 +45,7 @@ export function Toast({ tone = 'success', title, message, onClose }: ToastProps)
         alignItems: 'flex-start',
         gap: 12,
         borderLeft: `4px solid ${color}`,
-        animation: `sc-toastin .32s ${spring} both`,
+        animation: `sc-toastin .32s ${ease.out} both`,
       }}
     >
       <div

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { colors, spring } from '../../tokens';
+import { colors, ease } from '../../tokens';
 import { useHover, useFocus } from '../../utils/useHover';
 
 export type NewsletterSignupProps = {
@@ -53,7 +53,7 @@ const confirmStyle: React.CSSProperties = {
   padding: '14px 16px',
   borderRadius: 12,
   textAlign: 'center',
-  animation: `sc-pop .3s ${spring} both`,
+  animation: `sc-pop .3s ${ease.out} both`,
 };
 
 const inputBase: React.CSSProperties = {
@@ -83,7 +83,7 @@ const buttonBase: React.CSSProperties = {
   padding: '12px 22px',
   borderRadius: 11,
   cursor: 'pointer',
-  transition: `transform .2s ${spring}`,
+  transition: `transform .2s ${ease.out}`,
 };
 
 const buttonHover: React.CSSProperties = {

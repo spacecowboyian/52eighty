@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, font, spring } from '../../tokens';
+import { colors, font, ease } from '../../tokens';
 import { useHover } from '../../utils/useHover';
 
 export interface ModalProps {
@@ -64,7 +64,7 @@ function StartProjectButton({ onClick }: { onClick: () => void }) {
 }
 
 /**
- * A controlled dialog that springs in (sc-pop) over a blurred dark scrim.
+ * A controlled dialog that pops in (sc-pop) over a blurred dark scrim.
  * Clicking the scrim closes it; clicking the dialog body does not.
  */
 export function Modal({ isOpen, onClose, children }: ModalProps) {
@@ -95,7 +95,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
           width: '100%',
           padding: '34px 34px 30px',
           boxShadow: '0 30px 70px rgba(22,33,31,.4)',
-          animation: `sc-pop .26s ${spring} both`,
+          animation: `sc-pop .26s ${ease.out} both`,
         }}
       >
         {children ?? (

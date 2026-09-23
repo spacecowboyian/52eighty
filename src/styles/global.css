@@ -33,7 +33,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem 0 3rem;
+  /* No bottom padding: the footer meets the page bottom. */
+  padding: 1.5rem 0 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -69,25 +70,13 @@ body {
   display: grid;
   align-content: center;
   scroll-margin-top: var(--site-header-h);
-  border-top: 1px solid var(--border);
   /* Anchor for the full-bleed `.step__bg` layer; clip it to the screen. */
   position: relative;
   overflow: hidden;
 }
 
-/* The opening screen sits directly under the intro, so no divider rule. */
-.step--first {
-  border-top: none;
-}
-
 .step--surface {
   background: var(--surface, #ffffff);
-}
-
-/* A screen carrying a photo/scrim behind light text. The border rule would
-   read as a seam over the image, so drop it. */
-.step--dark {
-  border-top: none;
 }
 
 /* Full-bleed background layer (hero photo + scrim). Sits under the content;
@@ -138,7 +127,6 @@ body {
      past the viewport instead of scrolling. */
   min-width: 0;
   background: var(--bg, #fbf9f5);
-  border-bottom: 1px solid var(--border);
   scrollbar-width: none;
 }
 
@@ -192,7 +180,6 @@ body {
     overflow-x: visible;
     padding: 0;
     margin: 0;
-    border-bottom: none;
     background: transparent;
   }
 }

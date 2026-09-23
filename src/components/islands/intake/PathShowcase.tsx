@@ -35,7 +35,6 @@ const fullBleed: React.CSSProperties = {
   paddingInline: 'clamp(1.5rem, 5vw, 4rem)',
   paddingBottom: 'clamp(2rem, 5vw, 4rem)',
   background: colors.cream,
-  borderTop: `1px solid ${colors.border}`,
   scrollMarginTop: '4.5rem',
 };
 

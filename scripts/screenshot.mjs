@@ -1,5 +1,5 @@
 // Ad-hoc verification driver — not a test suite. Usage:
-//   node scripts/screenshot.mjs <url> <output-path> [--viewport=mobile|tablet|desktop] [--full-page] [--scroll-y=<px>]
+//   node scripts/screenshot.mjs <url> <output-path> [--viewport=mobile|tablet|desktop] [--full-page] [--scroll-y=<px>] [--reduced-motion]
 //
 // Defaults to `mobile`. Per this project's mobile-first convention
 // (AGENTS.md), always check the mobile viewport first — the default
@@ -18,12 +18,13 @@ const [, , url, outPath, ...rest] = process.argv;
 
 if (!url || !outPath) {
   console.error(
-    'Usage: node scripts/screenshot.mjs <url> <output-path> [--viewport=mobile|tablet|desktop] [--full-page] [--scroll-y=<px>]',
+    'Usage: node scripts/screenshot.mjs <url> <output-path> [--viewport=mobile|tablet|desktop] [--full-page] [--scroll-y=<px>] [--reduced-motion]',
   );
   process.exit(1);
 }
 
 const fullPage = rest.includes('--full-page');
+const reducedMotion = rest.includes('--reduced-motion');
 const scrollYArg = rest.find((a) => a.startsWith('--scroll-y='));
 const scrollY = scrollYArg ? Number(scrollYArg.split('=')[1]) : 0;
 const viewportArg = rest.find((a) => a.startsWith('--viewport='));
@@ -39,6 +40,7 @@ if (!viewport) {
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport });
+if (reducedMotion) await page.emulateMedia({ reducedMotion: 'reduce' });
 
 const consoleErrors = [];
 page.on('console', (msg) => {
@@ -54,7 +56,9 @@ if (scrollY) {
 await page.screenshot({ path: outPath, fullPage });
 await browser.close();
 
-console.log(`Saved ${viewportName} (${viewport.width}x${viewport.height}) screenshot to ${outPath}`);
+console.log(
+  `Saved ${viewportName} (${viewport.width}x${viewport.height})${reducedMotion ? ' reduced-motion' : ''} screenshot to ${outPath}`,
+);
 if (consoleErrors.length) {
   console.log('Console errors:');
   for (const e of consoleErrors) console.log(`  - ${e}`);

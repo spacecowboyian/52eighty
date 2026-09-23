@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { colors, radius, spring } from '../../tokens';
+import { colors, radius, ease } from '../../tokens';
 
 export interface ChoiceOption {
   /** Stable value written into form state. */
@@ -43,7 +43,7 @@ const cardBase: React.CSSProperties = {
   cursor: 'pointer',
   fontFamily: 'var(--ui)',
   color: colors.ink,
-  transition: `transform .2s ${spring},border-color .2s ease,box-shadow .2s ease,background .2s ease`,
+  transition: `transform .2s ${ease.out},border-color .2s ease,box-shadow .2s ease,background .2s ease`,
 };
 
 const cardSelected: React.CSSProperties = {

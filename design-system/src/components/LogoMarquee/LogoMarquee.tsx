@@ -55,7 +55,6 @@ export function LogoMarquee({
     <div
       style={{
         background: '#fff',
-        border: `1px solid ${colors.border}`,
         borderRadius: 16,
         padding: '30px 0',
         overflow: 'hidden',
