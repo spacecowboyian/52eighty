@@ -1,4 +1,5 @@
 ---
+import { existsSync } from 'node:fs';
 import Layout from '../layouts/Layout.astro';
 import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
 import { SectionHeader, Card, Button } from '5280-design-system';
@@ -8,28 +9,71 @@ const featured = await getFeaturedCaseStudies();
 
 // Internal links need the Pages base path — see Layout.astro.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// The hero is built to be a reel. The reel itself doesn't exist yet — it's
+// gated on Miles's work samples and is an explicit non-goal of issue #15 — so
+// the slot is real and checked at build time: drop an encoded file at
+// `public/reel/hero.mp4` (optionally `.webm` alongside it) and the hero plays
+// it instead of the still, no code change. Until then the River Bluff Trails
+// Park frame stands in, which is real 5280 work rather than stock.
+const reelMp4 = existsSync('public/reel/hero.mp4');
+const reelWebm = existsSync('public/reel/hero.webm');
+const hasReel = reelMp4 || reelWebm;
 ---
 
 <Layout>
-  <section class="hero">
-    <SectionHeader
-      eyebrow="52Eighty Creative"
-      title={settings?.heroTitle ?? 'Creative with a heartbeat.'}
-      subtitle={
-        settings?.heroText ??
-        'A brand-first agency for video, storytelling, and brand work.'
+  <section class="reel" aria-label="52Eighty Creative">
+    <div class="reel__media" aria-hidden="true">
+      {
+        hasReel ? (
+          <video
+            class="reel__drift"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster={`${base}/intake/river-bluff-hero-1280.jpg`}
+          >
+            {reelWebm && <source src={`${base}/reel/hero.webm`} type="video/webm" />}
+            {reelMp4 && <source src={`${base}/reel/hero.mp4`} type="video/mp4" />}
+          </video>
+        ) : (
+          <img
+            class="reel__drift"
+            src={`${base}/intake/river-bluff-hero-2560.jpg`}
+            srcset={`${base}/intake/river-bluff-hero-1280.jpg 1280w, ${base}/intake/river-bluff-hero-2560.jpg 2560w`}
+            sizes="100vw"
+            alt=""
+            width="2560"
+            height="1440"
+            fetchpriority="high"
+          />
+        )
       }
-    />
-    <div class="hero__ctas">
-      <Button href={`${base}/work`} variant="primary" client:load>See our work</Button>
-      <Button href={`${base}/start`} variant="outline" client:load>
-        Start your project
-      </Button>
     </div>
+
+    <div class="reel__copy">
+      <h1 class="reel__title">
+        {settings?.heroTitle ?? 'Creative with a heartbeat.'}
+      </h1>
+      <p class="reel__lede">
+        {
+          settings?.heroText ??
+          'Brand, film and campaign work for people building something worth the trip.'
+        }
+      </p>
+      <p class="reel__cta">
+        <Button href={`${base}/start`} variant="accent" size="lg" client:load>
+          Start your project
+        </Button>
+      </p>
+    </div>
+
   </section>
 
-  <section>
-    <SectionHeader variant="divider" label="Recent Work" />
+  <section id="work" class="band">
+    <SectionHeader variant="divider" label="Selected work" />
     {
       featured.length > 0 ? (
         <div class="work-grid">
@@ -49,32 +93,303 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <p class="empty-state">Case studies are on their way.</p>
       )
     }
+    <p class="band__more">
+      <a href={`${base}/work`}>All ten projects</a>
+    </p>
+  </section>
+
+  <section class="further">
+    <p class="further__line">
+      We go further. It&rsquo;s less crowded out there.
+    </p>
+    <p class="further__body">
+      Branding, marketing campaigns, video, and social and digital strategy —
+      but we don&rsquo;t sell them separately. Every project starts with the
+      thing you&rsquo;re actually trying to make happen, and the work follows
+      from there.
+    </p>
+  </section>
+
+  <section class="invite">
+    <h2 class="invite__title">Got something you want to make?</h2>
+    <p class="invite__body">
+      Tell us about it. No forms, no pitch deck — it&rsquo;s the first half of a
+      discovery call, and you keep your email until you want to give it.
+    </p>
+    <Button href={`${base}/start`} variant="accent" size="lg" client:load>
+      Start your project
+    </Button>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    padding: 2rem 0 1rem;
+  /* ----------------------------------------------------------------------
+     Hero reel.
+
+     Near-fullscreen, per the issue #15 tenet that the reel is the hero. Full
+     bleed uses `margin-inline` rather than `100vw` so a scrollbar can't cause
+     horizontal overflow — same technique as `.step` in global.css. The
+     negative top margin closes the `.site-shell` gap so the hero meets the
+     sticky header with no cream seam.
+     ---------------------------------------------------------------------- */
+  .reel {
+    position: relative;
+    margin-inline: calc(50% - 50vw);
+    margin-top: -1.5rem;
+    min-height: calc(100svh - var(--site-header-h));
+    display: grid;
+    align-content: end;
+    padding: clamp(2rem, 8vh, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 10vh, 6rem);
+    overflow: hidden;
+    isolation: isolate;
   }
-  .hero__ctas {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    margin-top: 1.5rem;
+
+  .reel__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #16211f;
   }
+
+  .reel__media :is(img, video) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Bias the crop toward the rider so he survives the tall mobile crop and
+       the open trail falls under the headline. Matches the intake hero. */
+    object-position: 72% 50%;
+  }
+
+  /* The scrim is two layers rather than one flat wash: a bottom-weighted
+     gradient that carries the type, and a wide soft vignette that keeps the
+     frame from feeling cropped. Pine rather than black so it reads as the
+     brand's own shadow. */
+  .reel__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to top,
+        rgba(9, 18, 17, 0.88) 0%,
+        rgba(9, 18, 17, 0.62) 28%,
+        rgba(9, 18, 17, 0.12) 62%,
+        rgba(9, 18, 17, 0.28) 100%
+      ),
+      radial-gradient(
+        120% 90% at 70% 40%,
+        transparent 40%,
+        rgba(24, 74, 79, 0.45) 100%
+      );
+  }
+
+  /* The one continuous motion on the page: a slow, one-directional drift, the
+     behaviour of a held drone shot rather than an effect. 32s, and it never
+     returns to its start on a visible beat. Everything below the fold is
+     still — motion is spent here or not at all. */
+  .reel__drift {
+    animation: reel-drift 32s ease-in-out infinite alternate;
+    transform-origin: 68% 45%;
+    will-change: transform;
+  }
+
+  @keyframes reel-drift {
+    from {
+      transform: scale(1.04) translate3d(0, 0, 0);
+    }
+    to {
+      transform: scale(1.12) translate3d(-1.5%, -1.2%, 0);
+    }
+  }
+
+  /* The copy block doesn't cap the measure — the headline and lede each set
+     their own, in their own type size. Capping here squeezed the display type
+     into four lines with an orphaned "a". */
+  .reel__copy {
+    position: relative;
+  }
+
+  .reel__title {
+    font-family: var(--display);
+    /* Tight leading and a hard optical size — the type is the design here,
+       not a label on a picture. */
+    font-size: clamp(2.75rem, 9vw, 6rem);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    color: #f4f1ea;
+    margin: 0;
+    /* ~2 lines at every size: "Creative with a / heartbeat." */
+    max-width: 15ch;
+    text-wrap: balance;
+  }
+
+  .reel__lede {
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 2.2vw, 1.375rem);
+    line-height: 1.55;
+    color: rgba(244, 241, 234, 0.86);
+    max-width: 34ch;
+    margin: 1.25rem 0 0;
+  }
+
+  .reel__cta {
+    margin: 2rem 0 0;
+  }
+
+  /* The design-system Button sets its own inline styles, so reach the rendered
+     anchor with :global — scoped selectors don't apply to island DOM. Without
+     this the label breaks across two lines at 375px. */
+  .reel__cta :global(a) {
+    white-space: nowrap;
+  }
+
+  /* One orchestrated arrival on load — the headline settles, then the lede,
+     then the call to action. Not repeated per section on scroll. */
+  .reel__title,
+  .reel__lede,
+  .reel__cta {
+    animation: reel-arrive 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+  .reel__title {
+    animation-delay: 0.1s;
+  }
+  .reel__lede {
+    animation-delay: 0.28s;
+  }
+  .reel__cta {
+    animation-delay: 0.44s;
+  }
+
+  @keyframes reel-arrive {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ----------------------------------------------------------------------
+     Below the fold.
+     ---------------------------------------------------------------------- */
+  .band {
+    padding-top: 3.5rem;
+  }
+
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
   }
+
+  /* Cards carry summaries of different lengths, so let each one fill its grid
+     row instead of ending wherever its text does — ragged card bottoms read as
+     a layout bug rather than a choice. The link stretches (grid default) and
+     the Card's own root element is stretched to match. */
   .work-grid__link {
     text-decoration: none;
     color: inherit;
+    display: flex;
   }
+  .work-grid__link :global(> div) {
+    flex: 1;
+  }
+
+  .band__more {
+    margin: 2rem 0 0;
+    font-family: var(--ui);
+  }
+  .band__more a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 2px solid #fbba16;
+    padding-bottom: 2px;
+  }
+  .band__more a:hover,
+  .band__more a:focus-visible {
+    border-color: #ff3b3b;
+  }
+
   .empty-state {
-    color: var(--muted, #5c6b68);
+    color: #5c6b68;
     font-style: italic;
     margin-top: 1.5rem;
+  }
+
+  .further {
+    padding: 4.5rem 0 1rem;
+    max-width: 44rem;
+  }
+
+  .further__line {
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #184a4f;
+  }
+
+  .further__body {
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #5c6b68;
+    margin: 1.25rem 0 0;
+  }
+
+  .invite {
+    margin-top: 4rem;
+    padding: clamp(2.5rem, 6vw, 4rem);
+    background: #184a4f;
+    border-radius: 18px;
+    text-align: center;
+  }
+
+  .invite__title {
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #f4f1ea;
+    margin: 0;
+  }
+
+  .invite__body {
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: rgba(244, 241, 234, 0.82);
+    max-width: 46ch;
+    margin: 1rem auto 2rem;
+  }
+
+  /* Two-up once there's room, three-up on a real desktop. Mobile-first: the
+     single column above is the base state. */
+  @media (min-width: 640px) {
+    .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .work-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reel__drift {
+      animation: none;
+      transform: scale(1.04);
+    }
+    .reel__title,
+    .reel__lede,
+    .reel__cta {
+      animation: none;
+    }
   }
 </style>
