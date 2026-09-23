@@ -16,18 +16,24 @@ export interface FooterProps {
   links?: FooterLink[];
   /** Contact email, rendered as a `mailto:` link. */
   email?: string;
+  /**
+   * `card` — the ink slab with its own padding (Storybook / standalone).
+   * `band` — no background or padding of its own: the page's full-width
+   * footer band supplies the ground and the vertical rhythm.
+   */
+  variant?: 'card' | 'band';
 }
 
 /** The ink footer with wordmark, blurb, link columns, and sign-off. */
 export function Footer({
   links = DEFAULT_EXPLORE_LINKS,
   email = 'hello@52eightycreative.com',
+  variant = 'card',
 }: FooterProps) {
   return (
     <div
       style={{
-        background: colors.ink,
-        padding: '46px 40px 36px',
+        ...(variant === 'card' ? { background: colors.ink, padding: '46px 40px 36px' } : {}),
         color: '#E8E4DC',
       }}
     >

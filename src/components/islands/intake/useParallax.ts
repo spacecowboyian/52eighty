@@ -64,31 +64,6 @@ export function useScrollProgress(ref: React.RefObject<HTMLElement | null>): num
   return progress;
 }
 
-/**
- * Publish the sticky site header's real height as `--site-header-h`, so
- * anything pinning beneath it lands in the right place.
- *
- * A constant doesn't work: the header is taller on narrow screens where the
- * wordmark wraps to two lines, which left the showcase nav tucked underneath
- * it on mobile.
- */
-export function useHeaderHeightVar() {
-  useEffect(() => {
-    const header = document.querySelector('.site-header');
-    if (!header) return;
-
-    const apply = () => {
-      const { height } = header.getBoundingClientRect();
-      document.documentElement.style.setProperty('--site-header-h', `${Math.round(height)}px`);
-    };
-
-    apply();
-    const observer = new ResizeObserver(apply);
-    observer.observe(header);
-    return () => observer.disconnect();
-  }, []);
-}
-
 /** Smooth-scroll to an element, honoring the reduced-motion preference. */
 export function scrollToElement(node: HTMLElement | null, reduced: boolean) {
   if (!node) return;

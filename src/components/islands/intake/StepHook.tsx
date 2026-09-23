@@ -138,7 +138,6 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
     <>
       <StepShell
         ref={heroRef}
-        first
         onDark
         background={heroBackground}
         id={SCREEN_ANCHORS.start}
@@ -189,7 +188,7 @@ export function StepHook({ answers, onChange, onNext, onDirect }: StepHookProps)
         }}
       />
 
-      <StepShell ref={continueRef} tone="surface" id={SCREEN_ANCHORS.ready} label="Ready to continue">
+      <StepShell ref={continueRef} id={SCREEN_ANCHORS.ready} label="Ready to continue">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           {answers.path ? (
             <>

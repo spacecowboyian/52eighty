@@ -111,6 +111,13 @@ export const radius = {
   pill: 999,
 } as const;
 
+/** Vertical rhythm for bands: same-colour neighbours `sm`, a colour seam `md`, the reel's bottom `lg`. */
+export const sectionSpace = {
+  sm: 'clamp(3rem, 6vw, 4.5rem)',
+  md: 'clamp(4rem, 9vw, 7rem)',
+  lg: 'clamp(5rem, 12vw, 9rem)',
+} as const;
+
 /** 8-point spacing rhythm. */
 export const space = [4, 8, 12, 16, 24, 32, 48] as const;
 

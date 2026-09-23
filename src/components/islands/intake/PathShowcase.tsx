@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
-import { Button, colors, radius } from '5280-design-system';
+import { Band, Button, colors, radius } from '5280-design-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faCheck, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { pathShowcase } from './flow';
 import { pathAnchor, setHash } from './anchors';
-import { useHeaderHeightVar, usePrefersReducedMotion, useScrollProgress } from './useParallax';
+import { usePrefersReducedMotion, useScrollProgress } from './useParallax';
 import type { Path } from './types';
 
 /**
@@ -29,14 +29,6 @@ export interface PathShowcaseProps {
   /** Scrolls back up to the opening question. */
   onBackToTop: () => void;
 }
-
-const fullBleed: React.CSSProperties = {
-  marginInline: 'calc(50% - 50vw)',
-  paddingInline: 'clamp(1.5rem, 5vw, 4rem)',
-  paddingBottom: 'clamp(2rem, 5vw, 4rem)',
-  background: colors.cream,
-  scrollMarginTop: '4.5rem',
-};
 
 const titleStyle: React.CSSProperties = {
   margin: 0,
@@ -232,7 +224,6 @@ export const PathShowcase = forwardRef<HTMLElement, PathShowcaseProps>(function 
   const navRef = useRef<HTMLUListElement | null>(null);
   const [activeId, setActiveId] = useState<Path>(pathShowcase[0].value);
   const reduced = usePrefersReducedMotion();
-  useHeaderHeightVar();
 
   const registerPanel = (path: Path, node: HTMLElement | null) => {
     if (node) panelRefs.current.set(path, node);
@@ -282,7 +273,14 @@ export const PathShowcase = forwardRef<HTMLElement, PathShowcaseProps>(function 
   };
 
   return (
-    <section ref={ref} style={fullBleed} aria-label="What's on your mind to make?">
+    <Band
+      ref={ref}
+      as="section"
+      tone="cream"
+      pad="none"
+      style={{ paddingBottom: 'clamp(2rem, 5vw, 4rem)', scrollMarginTop: 'var(--site-header-h)' }}
+      aria-label="What's on your mind to make?"
+    >
       <div className="showcase">
         <ul className="showcase__nav" ref={navRef}>
             <li className="showcase__nav-item" style={{ display: 'flex', alignItems: 'center' }}>
@@ -333,6 +331,6 @@ export const PathShowcase = forwardRef<HTMLElement, PathShowcaseProps>(function 
           ))}
         </div>
       </div>
-    </section>
+    </Band>
   );
 });

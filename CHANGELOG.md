@@ -3,6 +3,19 @@
 ## [Unreleased]
 
 ### Added
+- Layout shell rebuilt as a named-track grid. `main.page` is a `[full] gutter | [content]
+  column | gutter` grid; the new `Band` design-system primitive (`tone`, `frame`, `edge="arch"`,
+  `pad`, `background`, `headerTone`) spans the full track and subgrids the same columns to
+  its children, so every full-bleed colour field is built one way. No section uses
+  `margin-inline: calc(50% - 50vw)` any more; `.site-shell` has no gap or padding hacks; the
+  page starts under the header and the first section pays the header height back. The footer
+  is a full-width `site-footer` band outside `main` (`Footer variant="band"`). `StepShell` is
+  a thin wrapper over `Band` (`tone`/`first` props removed), `PathShowcase` is a `Band`, and
+  the homepage reel and invite are `Band`s. `--site-header-h` is deterministic (header
+  `min-height` + non-wrapping wordmark) with a layout-level ResizeObserver as a safety net.
+- `scripts/layout-check.mjs <url>` — Playwright check at 375/768/1280: no sideways scroll,
+  sticky header pins, `--site-header-h` matches the measured header, one `h1`, no skipped
+  heading levels, and no running animations under reduced motion.
 - Typography per the brand guide. A `text` token scale (`displayXL/LG/MD`, `heading`,
   `title`, `lead`, `body`, `eyebrow`) mirrored as `.t-*` classes: display type is now the
   hand-drawn face at its single weight, **uppercase**, with a hair of positive tracking and
