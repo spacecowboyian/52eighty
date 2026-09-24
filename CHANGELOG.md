@@ -3,6 +3,13 @@
 ## [Unreleased]
 
 ### Added
+- Selected work carries real photography. Three new case studies in Sanity from the media
+  corpus — VFW Day of Service (marketing campaigns), National Outdoor Recreation Conference
+  (video) and Allied Arts Council (branding) — with stills pulled from the footage as arched
+  covers and galleries (`public/work/vfw-day-of-service`, `public/work/norc`). The homepage
+  now features River Bluff, VFW and NORC; Nomad Trails and Uncommon Character stay as case
+  studies but are unfeatured until they have imagery. Category pills show labels
+  ("Marketing campaigns") instead of CMS slugs.
 - First real stills from the media index. Seven frames pulled from the case-study footage
   (River Bluff Trails Park × 6, a St. Joseph aerial) as 4:5 arch crops under `public/work/`
   and `public/about/`: the River Bluff card and case-study cover is now the trailhead welcome

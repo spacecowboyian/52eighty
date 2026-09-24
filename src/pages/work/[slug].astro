@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
 import { Band, SectionHeader, Arch, archMedia, bandTones, projectTone } from '5280-design-system';
 import { coverFor, galleryFor } from '../../utils/covers';
+import { categoryLabel } from '../../utils/categories';
 import Invite from '../../components/Invite.astro';
 
 export async function getStaticPaths() {
@@ -29,7 +30,7 @@ const pillTone = headerTone === 'dark' ? 'sky' : 'pine';
         <SectionHeader
           as="h1"
           variant="marker"
-          eyebrow={caseStudy?.category ?? 'Case Study'}
+          eyebrow={categoryLabel(caseStudy?.category)}
           eyebrowTone={pillTone}
           title={caseStudy?.title}
         />

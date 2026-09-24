@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudies } from '../../utils/queries';
 import { Band, SectionHeader, Card, Starburst, projectTone } from '5280-design-system';
 import { coverFor } from '../../utils/covers';
+import { categoryLabel } from '../../utils/categories';
 import Invite from '../../components/Invite.astro';
 
 const caseStudies = await getAllCaseStudies();
@@ -35,7 +36,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <Card
                 variant="work"
                 titleAs="h2"
-                eyebrow={cs.category}
+                eyebrow={categoryLabel(cs.category)}
                 title={cs.title}
                 blurb={cs.summary}
                 image={coverFor(cs)}
