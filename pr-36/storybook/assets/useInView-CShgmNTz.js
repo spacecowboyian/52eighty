@@ -1,1 +1,0 @@
-import{r as t}from"./index-DURGLf5P.js";function a(r=.3){const n=t.useRef(null),[c,u]=t.useState(!1);return t.useEffect(()=>{const s=n.current;if(!s)return;const e=new IntersectionObserver(i=>{i.forEach(o=>{o.isIntersecting&&(u(!0),e.unobserve(o.target))})},{threshold:r});return e.observe(s),()=>e.disconnect()},[r]),{ref:n,inView:c}}export{a as u};
