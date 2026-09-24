@@ -3,6 +3,12 @@
 ## [Unreleased]
 
 ### Added
+- First real stills from the media index. Seven frames pulled from the case-study footage
+  (River Bluff Trails Park × 6, a St. Joseph aerial) as 4:5 arch crops under `public/work/`
+  and `public/about/`: the River Bluff card and case-study cover is now the trailhead welcome
+  stone, its case study gets a five-still gallery of arches, and the About page's arch holds
+  downtown St. Joseph at golden hour. No identifiable people in any of them; the
+  model-release question for the rest of the corpus is still open.
 - The rest of the site as colour fields. `/work`: jade title band → cream arched grid →
   invite. Case studies: a header band in the project's own tone (the same one its card used)
   with the arched cover beside the title from 768px, a cream body doming over it, the invite.

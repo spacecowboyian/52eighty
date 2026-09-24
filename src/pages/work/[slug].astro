@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getAllCaseStudySlugs, getCaseStudyBySlug } from '../../utils/queries';
 import { Band, SectionHeader, Arch, archMedia, bandTones, projectTone } from '5280-design-system';
-import { coverFor } from '../../utils/covers';
+import { coverFor, galleryFor } from '../../utils/covers';
 import Invite from '../../components/Invite.astro';
 
 export async function getStaticPaths() {
@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const caseStudy = await getCaseStudyBySlug(slug!);
 const cover = caseStudy ? coverFor(caseStudy) : undefined;
+const gallery = galleryFor(slug!);
 // The same tone the card used on the grid, so the click lands where it left.
 const tone = projectTone(slug!);
 const headerTone = bandTones[tone].header;
@@ -44,6 +45,17 @@ const pillTone = headerTone === 'dark' ? 'sky' : 'pine';
   {/* Seam C1: the cream body domes over the header's field. */}
   <Band as="article" tone="cream" pad="lg" edge="arch" className="cs-body">
     <p class="t-lead cs-body__summary">{caseStudy?.summary}</p>
+    {
+      gallery.length > 0 && (
+        <div class="cs-gallery" aria-label="Stills from the work">
+          {gallery.map((g) => (
+            <Arch tone={tone} ratio="4 / 5">
+              <img src={g.src} srcset={g.srcSet} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" alt={g.alt} loading="lazy" decoding="async" style={archMedia} />
+            </Arch>
+          ))}
+        </div>
+      )
+    }
   </Band>
 
   <Invite reveal={false} />
@@ -58,6 +70,22 @@ const pillTone = headerTone === 'dark' ? 'sky' : 'pine';
     color: #16211f;
     max-width: 60ch;
     margin: 0;
+  }
+  /* Stills from the footage, as arches: one up, then two, then three. */
+  .cs-gallery {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+  @media (min-width: 640px) {
+    .cs-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    .cs-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
   @media (min-width: 768px) {
     .cs-head__grid {
