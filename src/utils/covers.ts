@@ -29,9 +29,22 @@ const still = (slug: string, name: string, alt = ''): CoverImage => ({
 // identifiable people — the model-release question is still open.
 const LOCAL_STILLS: Record<string, CoverImage> = {
   riverblufftrailspark: still('riverblufftrailspark', 'welcome-sign', 'The River Bluff Trails Park welcome stone at the trailhead'),
+  'vfw-day-of-service': still('vfw-day-of-service', 'post-aerial', 'A VFW post from the air, volunteers building raised garden beds in the lot'),
+  norc: still('norc', 'bluff-hike', 'Conference attendees hiking a gravel trail toward a rocky bluff outside Duluth'),
 };
 
 const LOCAL_GALLERIES: Record<string, CoverImage[]> = {
+  'vfw-day-of-service': [
+    still('vfw-day-of-service', 'lot-aerial', 'Top-down view of volunteers working around raised beds in a parking lot'),
+    still('vfw-day-of-service', 'garden-bed', 'A raised bed being filled with soil, a rake and a seedling in the frame'),
+    still('vfw-day-of-service', 'planting', 'A hand tucking a seedling into dark soil beside a wire garden fence'),
+    still('vfw-day-of-service', 'seedlings', 'Tomato seedlings in red pots, backlit by the sun'),
+  ],
+  norc: [
+    still('norc', 'duluth-aerial', 'Duluth harbor and the Aerial Lift Bridge from the air'),
+    still('norc', 'wheel-repair', 'A cyclist\'s hands working a multitool on a wheel'),
+    still('norc', 'handout', 'A conference handout open to a page of Anishinaabe terms'),
+  ],
   riverblufftrailspark: [
     still('riverblufftrailspark', 'jump', 'A rider launching off a dirt jump in the woods'),
     still('riverblufftrailspark', 'berm', 'An empty bermed turn on a sunlit singletrack trail'),

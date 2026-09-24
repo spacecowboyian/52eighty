@@ -5,6 +5,7 @@ import { getSiteSettings, getFeaturedCaseStudies } from '../utils/queries';
 import { SectionHeader, Card, Button, Band, Starburst, Squiggle, projectTone } from '5280-design-system';
 import Invite from '../components/Invite.astro';
 import { coverFor } from '../utils/covers';
+import { categoryLabel } from '../utils/categories';
 
 const settings = await getSiteSettings();
 const featured = await getFeaturedCaseStudies();
@@ -94,7 +95,7 @@ const [heroFirstWord, ...heroRest] = heroTitle.split(' ');
             <a href={`${base}/work/${cs.slug}`} class="work-grid__link">
               <Card
                 variant="work"
-                eyebrow={cs.category}
+                eyebrow={categoryLabel(cs.category)}
                 title={cs.title}
                 blurb={cs.summary}
                 image={coverFor(cs)}
