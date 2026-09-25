@@ -1,194 +1,302 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Band, SectionHeader, Pillar, Arch, archMedia, Wordmark } from '5280-design-system';
+import { Band, SectionHeader, Arch, archMedia, Wordmark, Starburst, Squiggle, Pill } from '5280-design-system';
+import Invite from '../components/Invite.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// Copy is the brand guide's own (pp3–5): the positioning paragraph, the five
-// expanded messaging pillars, and the closing line. Q4 for Ian: keep as-is or
-// re-voice; the CMS `aboutText` used to stand in here and is no longer read.
+// The guide's five pillars (pp4–5), each reduced to its title and key idea.
+// The full text with bullets lives in the brand guide; on the page they're
+// beats, not a document.
 const PILLARS = [
-  {
-    title: 'Below the surface',
-    lead: 'We believe the best creative work starts below the obvious answer.',
-    keyIdea: 'Better questions create better brands.',
-    points: [
-      'We dig deeper than logos and taglines',
-      'We uncover the emotional core behind the work',
-      'We help organizations identify hidden tensions, opportunities, and stories',
-      'We believe meaningful creative starts with curiosity',
-    ],
-  },
-  {
-    title: 'Work people can feel',
-    lead: 'We’re not interested in empty content or polished corporate noise.',
-    keyIdea: 'Emotion creates connection.',
-    points: [
-      'We create work with heartbeat and personality',
-      'We believe people remember how something made them feel',
-      'We prioritize honesty, energy, and human connection',
-      'We believe creative should move people emotionally before it asks them to act',
-    ],
-  },
-  {
-    title: 'Relationships. Not projects.',
-    lead: 'The best creative work happens when trust exists first.',
-    keyIdea: 'Strong relationships create stronger creative.',
-    points: [
-      'We care deeply about the people behind the project',
-      'We value honesty and collaboration over ego',
-      'We extend ourselves further than expected',
-      'We believe trust allows organizations to tell better stories',
-      'We believe people matter more than deliverables ever will',
-    ],
-  },
-  {
-    title: 'Great stories are worth chasing',
-    lead: 'Most organizations already have a meaningful story.',
-    keyIdea: 'The challenge is being willing to go far enough to uncover it.',
-    points: [
-      'We chase the deeper story beneath the surface',
-      'We believe personality matters',
-      'We believe strategy and storytelling should work together',
-      'We create campaigns, films, and brands rooted in emotional truth',
-    ],
-  },
-  {
-    title: 'Create with conviction',
-    lead: 'We believe safe creative rarely gets remembered.',
-    keyIdea: 'Meaningful work requires courage.',
-    points: [
-      'We challenge surface-level thinking',
-      'We care more about authenticity than trends',
-      'We value timelessness over temporary attention',
-      'We believe the best ideas usually live outside the safest rooms',
-    ],
-  },
+  { title: 'Below the surface', idea: 'Better questions create better brands.' },
+  { title: 'Work people can feel', idea: 'Emotion creates connection.' },
+  { title: 'Relationships, not projects', idea: 'Strong relationships create stronger creative.' },
+  { title: 'Great stories are worth chasing', idea: 'The challenge is being willing to go far enough to uncover it.' },
+  { title: 'Create with conviction', idea: 'Meaningful work requires courage.' },
 ];
 ---
 
 <Layout title="About — 52Eighty Creative" headerTone="dark">
-  {/* Guide p3: the positioning page, pine in a sky frame. */}
-  <Band as="section" tone="pine" frame="sky" pad="lg" className="about-intro">
-    <SectionHeader as="h1" variant="marker" title="A brand-first agency." eyebrow="About" eyebrowTone="lime" />
-    <p class="t-lead about-intro__lead">
-      52Eighty Creative helps organizations move beyond surface-level marketing by uncovering
-      deeper stories, stronger emotional connections, and more meaningful creative direction.
+  {/* Hero: downtown St. Joseph at golden hour from 5280's own drone footage.
+      The scrim's last stop is cream, so the photo resolves into the next band. */}
+  <Band as="section" tone="pine" pad="none" className="about-hero" aria-label="About 52Eighty Creative">
+    <div slot="background" class="about-hero__media">
+      <img
+        src={`${base}/about/st-joseph-aerial-wide-1600.jpg`}
+        alt=""
+        width="1600"
+        height="670"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="about-hero__copy">
+      <h1 class="t-display-xl about-hero__title">A brand-first agency.</h1>
+      <p class="t-lead about-hero__lead">
+        Two people in St. Joseph, Missouri who’d rather find the real story than polish the safe one.
+      </p>
+    </div>
+  </Band>
+
+  {/* Positioning: the one sentence, big, with the starburst beside it. */}
+  <Band as="section" tone="cream" pad="lg" className="position">
+    <div class="position__mark"><Starburst size={64} heart /></div>
+    <p class="position__statement">
+      We help organizations move beyond surface-level marketing by uncovering deeper stories,
+      stronger emotional connections, and more meaningful creative direction.
     </p>
-    <div class="about-intro__body">
+    <div class="position__body t-body">
       <p>
-        At our core, we believe the best ideas usually exist a little further beyond the obvious
-        answer. Most brands stop at safe messaging, generic campaigns, and polished-but-forgettable
-        creative. We’re more interested in the version that feels human, emotionally honest, and
-        alive.
+        The best ideas usually exist a little further beyond the obvious answer. Most brands stop
+        at safe messaging, generic campaigns, and polished-but-forgettable creative. We’re more
+        interested in the version that feels human, emotionally honest, and alive.
       </p>
       <p>
-        That means asking better questions. Digging deeper into the story. Understanding the
-        people behind the project. Finding the tension, personality, and purpose that actually
-        makes someone care.
-      </p>
-      <p>
-        We don’t just create deliverables. We help organizations discover the heart behind what
-        they do — then build strategy, campaigns, films, and brands that move people emotionally
-        before they ever ask them to act.
+        That means asking better questions, digging deeper into the story, and understanding the
+        people behind the project — then building strategy, campaigns, films, and brands that move
+        people before they’re ever asked to act.
       </p>
     </div>
   </Band>
 
-  {/* Guide pp4–5: the pillars, jade in a sky frame. */}
-  <Band as="section" tone="jade" frame="sky" pad="lg">
-    <SectionHeader variant="marker" title="Expanded messaging pillars" eyebrow="How we think" eyebrowTone="sky" />
-    <div class="pillars">
-      {PILLARS.map((p, i) => <Pillar index={i + 1} {...p} />)}
-    </div>
+  {/* Pillars as five beats on jade. Seam A above (cream → jade), no rule. */}
+  <Band as="section" tone="jade" pad="lg" className="pillars">
+    <SectionHeader variant="marker" title="How we think" eyebrow="Five things we believe" eyebrowTone="sky" />
+    <ol class="pillars__list">
+      {PILLARS.map((p, i) => (
+        <li class="pillar">
+          <span class="pillar__num">{String(i + 1).padStart(2, '0')}.</span>
+          <h3 class="t-heading pillar__title">{p.title}</h3>
+          <p class="t-lead pillar__idea">{p.idea}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="pillars__mark"><Squiggle draw width={220} client:load /></div>
   </Band>
 
-  {/* The people. Cream in a blush frame. The arch holds St. Joseph at golden
-      hour from 5280's own footage until there's a photo of Miles & Alysa (Q6). */}
-  <Band as="section" tone="cream" frame="blush" pad="lg">
-    <div class="people">
-      <Arch tone="sky" ratio="4 / 5" className="people__photo">
+  {/* The studio: who, where, how to reach them. Pine, a trail still in the
+      arch until there's a photo of Miles & Alysa. */}
+  <Band as="section" tone="pine" pad="lg" className="studio">
+    <div class="studio__grid">
+      <Arch tone="jade" ratio="4 / 5" className="studio__photo">
         <img
-          src={`${base}/about/st-joseph-aerial-1000.jpg`}
-          srcset={`${base}/about/st-joseph-aerial-500.jpg 500w, ${base}/about/st-joseph-aerial-1000.jpg 1000w`}
-          sizes="(min-width: 640px) 40vw, 90vw"
-          alt="Downtown St. Joseph, Missouri from the air at golden hour"
+          src={`${base}/work/riverblufftrailspark/sunlit-trail-1000.jpg`}
+          srcset={`${base}/work/riverblufftrailspark/sunlit-trail-500.jpg 500w, ${base}/work/riverblufftrailspark/sunlit-trail-1000.jpg 1000w`}
+          sizes="(min-width: 768px) 38vw, 90vw"
+          alt="Singletrack under a canopy at River Bluff Trails Park, low sun through the trees"
           loading="lazy"
           decoding="async"
           style={archMedia}
         />
       </Arch>
-      <div class="people__copy">
-        <SectionHeader variant="marker" title="Relationships. Not projects." eyebrow="Miles & Alysa Ramsay" eyebrowTone="blush" />
-        <p class="t-body people__body">
-          A husband-and-wife studio in St. Joseph, Missouri. We care about the people behind the
-          project, we extend ourselves further than expected, and we’d rather earn a decade of
-          trust than win a quarter.
+      <div class="studio__copy">
+        <div class="studio__pill"><Pill tone="lime">The studio</Pill></div>
+        <h2 class="t-display-md studio__title">Miles &amp; Alysa Ramsay</h2>
+        <p class="t-lead studio__where">St. Joseph, Missouri</p>
+        <p class="t-body studio__body">
+          A husband-and-wife studio that treats trust as the first deliverable. We care about the
+          people behind the project, we extend ourselves further than expected, and we’d rather
+          earn a decade of work than win a quarter of it.
         </p>
-        <p class="t-heading people__close">Surface-level marketing is crowded. Good stories aren’t.</p>
-        <div class="people__mark"><Wordmark tone="light" height={40} /></div>
+        <ul class="studio__contact">
+          <li><a href="mailto:hello@52eightycreative.com">hello@52eightycreative.com</a></li>
+          <li><a href="tel:+18167520325">(816) 752-0325</a></li>
+        </ul>
+        <div class="studio__mark"><Wordmark tone="dark" height={44} /></div>
       </div>
     </div>
   </Band>
+
+  <Invite
+    title="Surface-level marketing is crowded. Good stories aren’t."
+    body="Tell us what you’re trying to make happen. It’s the first half of a discovery call, and you keep your email until you want to give it."
+    cta="Start your project"
+    reveal={false}
+  />
 </Layout>
 
 <style>
-  .about-intro__lead {
+  /* ---------------------------------------------------------------- hero */
+  .about-hero {
+    min-height: 72svh;
+    align-content: end;
+    padding-bottom: clamp(3rem, 8vh, 5rem);
+  }
+  .about-hero__media {
+    position: absolute;
+    inset: 0;
+    background: #184a4f;
+    overflow: hidden;
+  }
+  .about-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+  }
+  /* Seam B: the last stop is the page cream, so the photo resolves into
+     the positioning band instead of stopping against it. */
+  .about-hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to top,
+        #fbf9f5 0%,
+        rgba(251, 249, 245, 0.85) 9%,
+        rgba(9, 18, 17, 0.55) 30%,
+        rgba(9, 18, 17, 0.1) 62%,
+        rgba(9, 18, 17, 0.3) 100%
+      );
+  }
+  .about-hero__copy {
+    position: relative;
+    /* Sits in the dark part of the scrim, above the cream resolve. */
+    padding-bottom: clamp(2.5rem, 8vh, 5rem);
+  }
+  .about-hero__title {
     color: #ffffff;
-    max-width: 34ch;
-    margin: 1.75rem 0 0;
+    max-width: 12ch;
+    text-wrap: balance;
+    text-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+  }
+  .about-hero__lead {
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 36ch;
+    margin: 1.25rem 0 0;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  /* ---------------------------------------------------------- positioning */
+  .position__mark {
+    line-height: 0;
+    margin-bottom: 1.25rem;
+  }
+  .position__statement {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-optical-sizing: auto;
+    font-size: clamp(1.625rem, 3.4vw, 2.75rem);
+    line-height: 1.2;
+    color: #184a4f;
+    max-width: 26ch;
+    margin: 0;
     text-wrap: balance;
   }
-  .about-intro__body {
+  .position__body {
+    color: #5c6b68;
     max-width: 60ch;
-    margin-top: 1.5rem;
-    color: #cfe2e0;
-    font-family: var(--serif);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    margin-top: 2rem;
   }
-  .about-intro__body p {
+  .position__body p {
     margin: 0 0 1em;
   }
 
-  /* 1 → 2 → 3 columns, content-driven. */
-  .pillars {
+  /* ------------------------------------------------------------- pillars */
+  .pillars__list {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
     display: grid;
-    gap: 2.5rem 2rem;
+    gap: 2.25rem;
+  }
+  .pillar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    row-gap: 0.35rem;
+    align-items: baseline;
+  }
+  .pillar__num {
+    font-family: var(--ui);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: #f0fc97;
+    grid-row: 1 / span 2;
+  }
+  .pillar__title {
+    color: #ffffff;
+    margin: 0;
+  }
+  .pillar__idea {
+    color: rgba(255, 255, 255, 0.84);
+    margin: 0;
+    max-width: 40ch;
+  }
+  .pillars__mark {
+    color: #8cb6f2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    line-height: 0;
+  }
+  .pillars__mark :global(span) {
+    width: clamp(7rem, 22vw, 13.75rem) !important;
+  }
+
+  /* -------------------------------------------------------------- studio */
+  .studio__grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+  .studio__pill {
+    margin-bottom: 1rem;
+  }
+  .studio__title {
+    color: #ffffff;
+  }
+  .studio__where {
+    color: #f0fc97;
+    margin: 0.5rem 0 0;
+  }
+  .studio__body {
+    color: #cfe2e0;
+    max-width: 48ch;
+    margin: 1.5rem 0 0;
+  }
+  .studio__contact {
+    list-style: none;
+    padding: 0;
+    margin: 1.75rem 0 0;
+    display: grid;
+    gap: 0.5rem;
+    font-family: var(--ui);
+    font-size: 1.0625rem;
+  }
+  .studio__contact a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 2px solid #f0fc97;
+    padding-bottom: 2px;
+    transition: border-color 0.2s var(--ease-out);
+  }
+  .studio__contact a:hover,
+  .studio__contact a:focus-visible {
+    border-color: #ffffff;
+  }
+  .studio__mark {
     margin-top: 2.5rem;
   }
 
-  .people {
-    display: grid;
-    gap: 2rem;
-  }
-  .people__body {
-    color: #16211f;
-    max-width: 52ch;
-    margin: 1.25rem 0 0;
-  }
-  .people__close {
-    color: #184a4f;
-    max-width: 24ch;
-    margin: 1.75rem 0 0;
-    text-wrap: balance;
-  }
-  .people__mark {
-    margin-top: 2rem;
-  }
-
   @media (min-width: 640px) {
-    .pillars {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .pillar {
+      grid-template-columns: 4rem minmax(0, 18rem) 1fr;
+      column-gap: 2rem;
     }
-    .people {
+    .pillar__num {
+      grid-row: auto;
+    }
+    .pillar__idea {
+      max-width: 34ch;
+    }
+  }
+  @media (min-width: 768px) {
+    .studio__grid {
       grid-template-columns: 2fr 3fr;
       align-items: center;
-    }
-  }
-  @media (min-width: 1024px) {
-    .pillars {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(2.5rem, 6vw, 5rem);
     }
   }
 </style>
