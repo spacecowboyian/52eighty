@@ -3,6 +3,12 @@
 ## [Unreleased]
 
 ### Added
+- About page rebuilt as a sequence, not a document: a St. Joseph golden-hour photo hero that
+  resolves into cream, the positioning sentence set large in serif beside the starburst with
+  two short paragraphs, the five pillars as beats (numeral, title, key idea — no bullets) on
+  jade with the squiggle, a pine studio band (Miles & Alysa, St. Joseph, contact, the mark; a
+  trail still in the arch until there's a photo of them), and the invite closing on "Surface-level
+  marketing is crowded. Good stories aren't." No frames anywhere.
 - Selected work carries real photography. Three new case studies in Sanity from the media
   corpus — VFW Day of Service (marketing campaigns), National Outdoor Recreation Conference
   (video) and Allied Arts Council (branding) — with stills pulled from the footage as arched
